@@ -1,0 +1,58 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.1"
+  Description="
+The NY Flame User Group Summer bash is just a few days away, featuring the winners of our 2017 One Frame of White contest!
+
+To make the event even more exciting: We will be streaming it LIVE!
+Plus, one lucky person at the meeting is going to go home with a license of Flamemark Shaders Matchbox Plugins!
+
+As always, there will be fabulous food and drinks provided by our sponsors, Autodesk and Cinesys/Oceana.
+
+Tuesday, July 25th at 7:00pm. Doors open at 6:30pm and registration is required!
+https://docs.google.com/forms/d/e/1FAIpQLSdlOSsH2iugdKmN2tdazSghQyZNM6rx6llDM0lmMPnxIk3P8w/viewform
+
+Based on: https://www.shadertoy.com/view/ldcSR7 by Hsiang Yun
+
+Demo clip: https://vimeo.com/226553936
+MatchBox shader by ivar@inferno-op.com"
+  Name="LOGIK NY OFOW 2017">
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_texture_grid"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2"></Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="5">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+    <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="CineSys-Oceana" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" DisplayName="50 Eldridge St" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" DisplayName="7th Floor" Type="bool" Name="dummy"></Uniform>
+
+    <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Tuesday" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="July 25th" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="" DisplayName="7pm" Type="bool" Name="dummy"></Uniform>
+
+    <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="One Frame of White" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="YOU, YOU and YOU! " Type="bool" Name="dummy"></Uniform>
+  </Shader>
+  <Page Name="" Page="0">
+    <Col Name="Where" Col="0" Page="0"></Col>
+    <Col Name="When" Col="1" Page="0"></Col>
+    <Col Name="With" Col="2" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>

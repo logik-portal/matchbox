@@ -1,0 +1,48 @@
+<ShaderNodePreset  LimitInputsToTexture="True" Version="1" Description="
+  Hi Logik, it’s that time again! It’s been too long since the great night at ARRI in December.
+
+  In April we invite you to Chimney to meet and talk all things Flame. Ivar will share some new shaders he has in the pipeline and James will share how Chimney is using Flame in their Shotgun pipeline and we will also look at the new 2019 release!
+
+  Feel free to bring in some work that you want to share with the rest of the artists.
+
+  We don’t have a fireplace, but we have beer.
+
+  Friday, April 13 at 7 PM - 11:59 PM
+  Große Hamburger Straße 17, 10115 Berlin, Germany
+
+  Hope to see you there!
+  logik-matchbook.org/shader/LOGIK_Berlin_2018
+  Music Creditz: Die 4 | EFX Solo
+
+  Based on shadertoy.com/view/MdKyRw by wyatt
+
+  Shader Demo: vimeo.com/261693435
+
+  " Name="LOGIK Berlin 2018">
+   <Shader OutputBitDepth="Output" Index="1">
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="2">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="3">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="4">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" OutputWidth="256.0" OutputHeight="256.0" Index="5">
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="6">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5">
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

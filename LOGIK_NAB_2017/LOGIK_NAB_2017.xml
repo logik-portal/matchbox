@@ -1,0 +1,79 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1.1" Description="
+2017 Logik NAB Party:
+On Monday April 24, 2017, please join us once again for another amazing round of drinks, prizes, announcements and the awarding of the Annual Flame Award at this years Logik NAB Party.
+Here is the planned schedule for the events of the night:
+- Check in 6:30PM – 7:00PM
+- Flame Award 7:00PM - 7:30PM
+- Party 7:30PM - 11:00PM
+
+As we only have space for a limited number of guests please register timely to make sure you can attend and get in:
+http://area.autodesk.com/nab2017/logik
+
+Many thanks to Autodesk and our Prize Sponsors, for what we know will be another great event focused on You, the amazing people that continue to drive this unique community and make Logik what it is today, tomorrow and beyond....
+We look forward to seeing you all there.
+
+Based on: Fractal Lab's uber 3D fractal shader
+
+Demo clip: https://vimeo.com/212383892
+MatchBox shader by ivar@inferno-op.com" Name="LOGIK NAB 2017">
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_texture_grid">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+   <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="3" Page="0" Type="float" ChannelName="aa_strength" DisplayName="Amount" Name="aa_strength">
+   </Uniform>
+   <Uniform Row="0" Col="3" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="antialiasing" DisplayName="Enable Antialiasing" Name="antialiasing">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="5">
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+   </Uniform>
+
+   <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Lily Lounge" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Bellagio Hotel" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" DisplayName="3600 S Las Vegas Blvd" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="3" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Las Vegas" Type="bool" Name="dummy">
+   </Uniform>
+
+   <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Monday           April 24" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Check in:         6:30PM" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Flame Award:  7:00PM" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="3" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Party:             7:30PM" Type="bool" Name="dummy">
+   </Uniform>
+
+
+   <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Announcements" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Drinks and Prizes" Type="bool" Name="dummy">
+   </Uniform>
+   <Uniform Row="2" Col="2" Page="0" Default="False" Tooltip="" DisplayName="YOU, YOU and YOU! " Type="bool" Name="dummy">
+   </Uniform>
+</Shader>
+   <Page Name="" Page="0">
+      <Col Name="Where" Col="0" Page="0">
+      </Col>
+ 		  <Col Name="When" Col="1" Page="0">
+ 		  </Col>
+      <Col Name="With" Col="2" Page="0">
+ 		  </Col>
+      <Col Name="Antialiasing" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
