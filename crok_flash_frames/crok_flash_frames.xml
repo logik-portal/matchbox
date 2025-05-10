@@ -1,0 +1,154 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" LimitInputsToTexture="True" Version="1.0" Description="" Name="CROK Frame Flash">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Frame" Type="float" Name="slide02"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Frame" Type="float" Name="slide03"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="0" Page="0" DisplayName="Frame" Type="float" Name="slide01"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="0" Page="0" DisplayName="Frame" Type="float" Name="slide04"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="0" Page="0" DisplayName="Frame" Type="float" Name="slide05"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="0" DisplayName="Frame" Type="float" Name="slide06"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="1" Page="0" DisplayName="Frame" Type="float" Name="slide07"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="1" Page="0" DisplayName="Frame" Type="float" Name="slide08"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="1" Page="0" DisplayName="Frame" Type="float" Name="slide09"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="1" Page="0" DisplayName="Frame" Type="float" Name="slide10"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="2" Page="0" DisplayName="Frame" Type="float" Name="slide11"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="2" Page="0" DisplayName="Frame" Type="float" Name="slide12"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="2" Page="0" DisplayName="Frame" Type="float" Name="slide13"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="2" Page="0" DisplayName="Frame" Type="float" Name="slide14"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="2" Page="0" DisplayName="Frame" Type="float" Name="slide15"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="3" Page="0" DisplayName="Frame" Type="float" Name="slide16"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="3" Page="0" DisplayName="Frame" Type="float" Name="slide17"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="3" Page="0" DisplayName="Frame" Type="float" Name="slide18"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="3" Page="0" DisplayName="Frame" Type="float" Name="slide19"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="3" Page="0" DisplayName="Frame" Type="float" Name="slide20"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="0" Page="1" DisplayName="Frame" Type="float" Name="slide21"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="1" DisplayName="Frame" Type="float" Name="slide22"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="0" Page="1" DisplayName="Frame" Type="float" Name="slide23"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="0" Page="1" DisplayName="Frame" Type="float" Name="slide24"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="0" Page="1" DisplayName="Frame" Type="float" Name="slide25"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="1" DisplayName="Frame" Type="float" Name="slide26"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="1" Page="1" DisplayName="Frame" Type="float" Name="slide27"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="1" Page="1" DisplayName="Frame" Type="float" Name="slide28"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="1" Page="1" DisplayName="Frame" Type="float" Name="slide29"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="1" Page="1" DisplayName="Frame" Type="float" Name="slide30"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="2" Page="1" DisplayName="Frame" Type="float" Name="slide31"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="2" Page="1" DisplayName="Frame" Type="float" Name="slide32"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="2" Page="1" DisplayName="Frame" Type="float" Name="slide33"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="2" Page="1" DisplayName="Frame" Type="float" Name="slide34"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="2" Page="1" DisplayName="Frame" Type="float" Name="slide35"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="3" Page="1" DisplayName="Frame" Type="float" Name="slide36"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="3" Page="1" DisplayName="Frame" Type="float" Name="slide37"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="3" Page="1" DisplayName="Frame" Type="float" Name="slide38"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="3" Page="1" DisplayName="Frame" Type="float" Name="slide39"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="3" Page="1" DisplayName="Frame" Type="float" Name="slide40"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="0" Page="2" DisplayName="Frame" Type="float" Name="slide41"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="2" DisplayName="Frame" Type="float" Name="slide42"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="0" Page="2" DisplayName="Frame" Type="float" Name="slide43"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="0" Page="2" DisplayName="Frame" Type="float" Name="slide44"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="0" Page="2" DisplayName="Frame" Type="float" Name="slide45"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="2" DisplayName="Frame" Type="float" Name="slide46"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="1" Page="2" DisplayName="Frame" Type="float" Name="slide47"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="1" Page="2" DisplayName="Frame" Type="float" Name="slide48"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="1" Page="2" DisplayName="Frame" Type="float" Name="slide49"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="1" Page="2" DisplayName="Frame" Type="float" Name="slide50"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="2" Page="2" DisplayName="Frame" Type="float" Name="slide51"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="2" Page="2" DisplayName="Frame" Type="float" Name="slide52"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="2" Page="2" DisplayName="Frame" Type="float" Name="slide53"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="2" Page="2" DisplayName="Frame" Type="float" Name="slide54"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="2" Page="2" DisplayName="Frame" Type="float" Name="slide55"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="3" Page="2" DisplayName="Frame" Type="float" Name="slide56"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="3" Page="2" DisplayName="Frame" Type="float" Name="slide57"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="3" Page="2" DisplayName="Frame" Type="float" Name="slide58"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="3" Page="2" DisplayName="Frame" Type="float" Name="slide59"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="3" Page="2" DisplayName="Frame" Type="float" Name="slide60"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="0" Page="3" DisplayName="Frame" Type="float" Name="slide61"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="3" DisplayName="Frame" Type="float" Name="slide62"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="0" Page="3" DisplayName="Frame" Type="float" Name="slide63"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="0" Page="3" DisplayName="Frame" Type="float" Name="slide64"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="0" Page="3" DisplayName="Frame" Type="float" Name="slide65"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="3" DisplayName="Frame" Type="float" Name="slide66"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="1" Page="3" DisplayName="Frame" Type="float" Name="slide67"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="1" Page="3" DisplayName="Frame" Type="float" Name="slide68"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="1" Page="3" DisplayName="Frame" Type="float" Name="slide69"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="1" Page="3" DisplayName="Frame" Type="float" Name="slide70"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="2" Page="3" DisplayName="Frame" Type="float" Name="slide71"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="2" Page="3" DisplayName="Frame" Type="float" Name="slide72"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="2" Page="3" DisplayName="Frame" Type="float" Name="slide73"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="2" Page="3" DisplayName="Frame" Type="float" Name="slide74"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="2" Page="3" DisplayName="Frame" Type="float" Name="slide75"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="3" Page="3" DisplayName="Frame" Type="float" Name="slide76"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="3" Page="3" DisplayName="Frame" Type="float" Name="slide77"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="3" Page="3" DisplayName="Frame" Type="float" Name="slide78"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="3" Page="3" DisplayName="Frame" Type="float" Name="slide79"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="3" Page="3" DisplayName="Frame" Type="float" Name="slide80"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="0" Page="4" DisplayName="Frame" Type="float" Name="slide81"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="4" DisplayName="Frame" Type="float" Name="slide82"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="0" Page="4" DisplayName="Frame" Type="float" Name="slide83"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="0" Page="4" DisplayName="Frame" Type="float" Name="slide84"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="0" Page="4" DisplayName="Frame" Type="float" Name="slide85"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="4" DisplayName="Frame" Type="float" Name="slide86"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="1" Page="4" DisplayName="Frame" Type="float" Name="slide87"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="1" Page="4" DisplayName="Frame" Type="float" Name="slide88"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="1" Page="4" DisplayName="Frame" Type="float" Name="slide89"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="1" Page="4" DisplayName="Frame" Type="float" Name="slide90"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="2" Page="4" DisplayName="Frame" Type="float" Name="slide91"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="2" Page="4" DisplayName="Frame" Type="float" Name="slide92"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="2" Page="4" DisplayName="Frame" Type="float" Name="slide93"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="2" Page="4" DisplayName="Frame" Type="float" Name="slide94"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="2" Page="4" DisplayName="Frame" Type="float" Name="slide95"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="3" Page="4" DisplayName="Frame" Type="float" Name="slide96"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="3" Page="4" DisplayName="Frame" Type="float" Name="slide97"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="3" Page="4" DisplayName="Frame" Type="float" Name="slide98"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="3" Page="4" DisplayName="Frame" Type="float" Name="slide99"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="3" Page="4" DisplayName="Frame" Type="float" Name="slide100"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="0" Page="5" DisplayName="Frame" Type="float" Name="slide101"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="5" DisplayName="Frame" Type="float" Name="slide102"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="0" Page="5" DisplayName="Frame" Type="float" Name="slide103"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="0" Page="5" DisplayName="Frame" Type="float" Name="slide104"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="0" Page="5" DisplayName="Frame" Type="float" Name="slide105"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="5" DisplayName="Frame" Type="float" Name="slide106"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="1" Page="5" DisplayName="Frame" Type="float" Name="slide107"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="1" Page="5" DisplayName="Frame" Type="float" Name="slide108"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="1" Page="5" DisplayName="Frame" Type="float" Name="slide109"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="1" Page="5" DisplayName="Frame" Type="float" Name="slide110"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="2" Page="5" DisplayName="Frame" Type="float" Name="slide111"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="2" Page="5" DisplayName="Frame" Type="float" Name="slide112"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="2" Page="5" DisplayName="Frame" Type="float" Name="slide113"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="2" Page="5" DisplayName="Frame" Type="float" Name="slide114"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="2" Page="5" DisplayName="Frame" Type="float" Name="slide115"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="3" Page="5" DisplayName="Frame" Type="float" Name="slide116"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="3" Page="5" DisplayName="Frame" Type="float" Name="slide117"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="2" Col="3" Page="5" DisplayName="Frame" Type="float" Name="slide118"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="3" Col="3" Page="5" DisplayName="Frame" Type="float" Name="slide119"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="4" Col="3" Page="5" DisplayName="Frame" Type="float" Name="slide120"></Uniform>
+  </Shader>
+  <Page Name="Page 1" Page="0"></Page>
+  <Page Name="Page 2" Page="1"></Page>
+  <Page Name="Page 3" Page="2"></Page>
+  <Page Name="Page 4" Page="3"></Page>
+  <Page Name="Page 5" Page="4"></Page>
+  <Page Name="Page 6" Page="5"></Page>
+
+</ShaderNodePreset>

@@ -1,0 +1,158 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="False" SupportsTimeline="True" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1.1" Description="
+This shader gives you a simple gradient effect which works nice in Action and on the Timeline.
+
+Setup:
+- Gardient Type: select Linear, Radial or Line Dist
+- Bias: adjust the ramp of the gradient
+
+- Start: adjust the start position of the gradient
+- Stop: adjust the stop position of the gradient
+
+- Color: colors being used for the gradient
+
+
+Demo clip: http://vimeo.com/146548233
+
+Based on https://www.shadertoy.com/view/ltjXDt by anastadunbar
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+Matchbox version by ivar@inferno-op.com" Name="CROK Gradient">
+   <Shader OutputBitDepth="Output" Index="1">
+       <Uniform Index="0" NoInput="White" Tooltip="" DisplayName="Front" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="source">
+       </Uniform>
+
+	  <Uniform Max="1000000" Min="0" Default="0" Inc="1" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Gradient Type" Type="int" Name="style" ValueType="Popup">
+           <PopupEntry Title="Linear" Value="0">
+           </PopupEntry>
+           <PopupEntry Title="Radial" Value="1">
+           </PopupEntry>
+           <PopupEntry Title="Line Dist" Value="2">
+           </PopupEntry>
+	  </Uniform>
+
+      <Uniform Default="-1" Inc="1" Tooltip="" Row="2" Col="2" Page="0" DisplayName="Blend Modes" Type="int" ValueType="Popup" Name="adskUID_blendModes">
+         <PopupEntry Title="No Blending" Value="-1">
+         </PopupEntry>
+         <PopupEntry Title="Min/Darken" Value="30">
+         </PopupEntry>
+	 <PopupEntry Title="Mutliply" Value="2">
+         </PopupEntry>
+	 <PopupEntry Title="Max/Lighten" Value="29">
+         </PopupEntry>
+	 <PopupEntry Title="Screen" Value="17">
+         </PopupEntry>
+	 <PopupEntry Title="Add" Value="0">
+         </PopupEntry>
+	 <PopupEntry Title="Overlay" Value="18">
+         </PopupEntry>
+	 <PopupEntry Title="Soft Light" Value="13">
+         </PopupEntry>
+	 <PopupEntry Title="Hard Light" Value="14">
+         </PopupEntry>
+	 <PopupEntry Title="Spotlight" Value="11">
+         </PopupEntry>
+	 <PopupEntry Title="Difference" Value="19">
+         </PopupEntry>
+	 <PopupEntry Title="Exclusion" Value="20">
+         </PopupEntry>
+	 <PopupEntry Title="Subtract" Value="1">
+         </PopupEntry>
+	 <PopupEntry Title="Linear Burn" Value="10">
+         </PopupEntry>
+	 <PopupEntry Title="Lighter Color" Value="33">
+         </PopupEntry>
+	 <PopupEntry Title="Linear Light" Value="32">
+         </PopupEntry>
+	 <PopupEntry Title="Pin Light" Value="15">
+         </PopupEntry>
+      </Uniform>
+
+	  <Uniform ResDependent="None" Max="0.99" Min="0.01" Default="0.5" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" DisplayName="Bias" Name="bias_adj">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="0.01" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" DisplayName="Aspect" Name="aspect"
+		  		  UIConditionSource="style" UIConditionValue="1" UIConditionInvert="False" UIConditionType="Hide">
+      </Uniform>
+
+	  <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" Type="float" DisplayName="Blend" Name="blend">
+      </Uniform>
+
+	  <Uniform Row="4" Col="2" Page="0" Default="False" Tooltip="" Type="bool" DisplayName="Invert" Name="invert">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" IconType="Light" Type="vec2" DisplayName="Stop" Name="point1"
+		  UIConditionSource="style" UIConditionValue="0" UIConditionInvert="False" UIConditionType="Hide">
+
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" IconType="Light" Type="vec2" DisplayName="Start" Name="point2"
+		  UIConditionSource="style" UIConditionValue="0" UIConditionInvert="False" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" IconType="Light" Type="vec2" DisplayName="Center" Name="point3"
+		  UIConditionSource="style" UIConditionValue="1" UIConditionInvert="False" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" IconType="Light" Type="vec2" DisplayName="Outer Edge" Name="point4"
+		  UIConditionSource="style" UIConditionValue="1" UIConditionInvert="False" UIConditionType="Hide">
+
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" IconType="Light" Type="vec2" DisplayName="point5" Name="point5"
+		  UIConditionSource="style" UIConditionValue="2" UIConditionInvert="False" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" IconType="Light" Type="vec2" DisplayName="point6" Name="point6"
+		  UIConditionSource="style" UIConditionValue="2" UIConditionInvert="False" UIConditionType="Hide">
+
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+	  <Uniform Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" DisplayName="Color 1" IconType="None" ValueType="Colour" Type="vec3" Name="col1">
+	         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+	         </SubUniform>
+	         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+	         </SubUniform>
+	         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+	         </SubUniform>
+	      </Uniform>
+
+		  <Uniform Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" DisplayName="Color 2" IconType="None" ValueType="Colour" Type="vec3" Name="col2">
+	         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+	         </SubUniform>
+	         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+	         </SubUniform>
+	         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+	         </SubUniform>
+	      </Uniform>
+
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Style" Col="0" Page="0">
+      </Col>
+      <Col Name="Position" Col="1" Page="0">
+      </Col>
+      <Col Name="Color" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
