@@ -1,0 +1,254 @@
+<Presets>
+   <Preset Name="Blood Vein 01">
+      <Shader Index="1">
+         <Uniform Value="40" Type="int" ChannelName="steps" DisplayName="Steps" Name="STEPS">
+         </Uniform>
+         <Uniform Value="1.1" Type="float" ChannelName="amp" DisplayName="Amplification" Name="amp">
+         </Uniform>
+         <Uniform Value="0.3" Type="float" ChannelName="ts" DisplayName="Advection Curl" Name="ts">
+         </Uniform>
+         <Uniform Value="0.05" Type="float" ChannelName="ls" DisplayName="Laplacian" Name="ls">
+         </Uniform>
+         <Uniform Value="-2.5" Type="float" ChannelName="ps" DisplayName="Lap. Divergence" Name="ps">
+         </Uniform>
+         <Uniform Value="-0.82" Type="float" ChannelName="cs" DisplayName="Curl" Name="cs">
+         </Uniform>
+         <Uniform Value="-0.4" Type="float" ChannelName="ds" DisplayName="Divergence" Name="ds">
+         </Uniform>
+         <Uniform Value="-0.03" Type="float" ChannelName="dp" DisplayName="Div. Update" Name="dp">
+         </Uniform>
+         <Uniform Value="0.5" Type="float" ChannelName="upd" DisplayName="Update" Name="upd">
+         </Uniform>
+         <Uniform Value="0.3" Type="float" ChannelName="pl" DisplayName="Divergence" Name="pl">
+         </Uniform>
+      </Shader>
+      <Shader Index="2">
+         <Uniform Type="vec3" ChannelName="fg" DisplayName="Foreground" Name="fg">
+            <SubUniform Value="0.793744">
+            </SubUniform>
+            <SubUniform Value="0.086999">
+            </SubUniform>
+            <SubUniform Value="0.216031">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" ChannelName="bg" DisplayName="Background" Name="bg">
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+         </Uniform>
+      </Shader>
+   </Preset>
+   <Preset Name="BW Painting 01">
+     <Shader Index="1">
+         <Uniform Value="70" Type="int" ChannelName="steps" DisplayName="Steps" Name="STEPS">
+         </Uniform>
+         <Uniform Value="1.01" Type="float" ChannelName="amp" DisplayName="Amplification" Name="amp">
+         </Uniform>
+         <Uniform Value="0.0700001" Type="float" ChannelName="ts" DisplayName="Advection Curl" Name="ts">
+         </Uniform>
+         <Uniform Value="0.05" Type="float" ChannelName="ls" DisplayName="Laplacian" Name="ls">
+         </Uniform>
+         <Uniform Value="2.14" Type="float" ChannelName="ps" DisplayName="Lap. Divergence" Name="ps">
+         </Uniform>
+         <Uniform Value="-2.44" Type="float" ChannelName="cs" DisplayName="Curl" Name="cs">
+         </Uniform>
+         <Uniform Value="-0.4" Type="float" ChannelName="ds" DisplayName="Divergence" Name="ds">
+         </Uniform>
+         <Uniform Value="-0.03" Type="float" ChannelName="dp" DisplayName="Div. Update" Name="dp">
+         </Uniform>
+         <Uniform Value="0.2" Type="float" ChannelName="upd" DisplayName="Update" Name="upd">
+         </Uniform>
+         <Uniform Value="0.3" Type="float" ChannelName="pl" DisplayName="Divergence" Name="pl">
+         </Uniform>
+      </Shader>
+      <Shader Index="2">
+         <Uniform Type="vec3" ChannelName="fg" DisplayName="Foreground" Name="fg">
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" ChannelName="bg" DisplayName="Background" Name="bg">
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+         </Uniform>
+      </Shader>
+   </Preset>
+   <Preset Name="Keith Haring 01">
+      <Shader Index="1">
+         <Uniform Value="13" Type="int" ChannelName="steps" DisplayName="Steps" Name="STEPS">
+         </Uniform>
+         <Uniform Value="1.08" Type="float" ChannelName="amp" DisplayName="Amplification" Name="amp">
+         </Uniform>
+         <Uniform Value="0.2" Type="float" ChannelName="ts" DisplayName="Advection Curl" Name="ts">
+         </Uniform>
+         <Uniform Value="0.05" Type="float" ChannelName="ls" DisplayName="Laplacian" Name="ls">
+         </Uniform>
+         <Uniform Value="-1.58" Type="float" ChannelName="ps" DisplayName="Lap. Divergence" Name="ps">
+         </Uniform>
+         <Uniform Value="-2" Type="float" ChannelName="cs" DisplayName="Curl" Name="cs">
+         </Uniform>
+         <Uniform Value="0.6" Type="float" ChannelName="ds" DisplayName="Divergence" Name="ds">
+         </Uniform>
+         <Uniform Value="-0.03" Type="float" ChannelName="dp" DisplayName="Div. Update" Name="dp">
+         </Uniform>
+         <Uniform Value="0.4" Type="float" ChannelName="upd" DisplayName="Update" Name="upd">
+         </Uniform>
+         <Uniform Value="0.3" Type="float" ChannelName="pl" DisplayName="Divergence" Name="pl">
+         </Uniform>
+      </Shader>
+      <Shader Index="2">
+         <Uniform Type="vec3" ChannelName="fg" DisplayName="Foreground" Name="fg">
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" ChannelName="bg" DisplayName="Background" Name="bg">
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+         </Uniform>
+      </Shader>
+   </Preset>
+   <Preset Name="Sketch 01">
+      <Shader Index="1">
+         <Uniform Value="13" Type="int" ChannelName="steps" DisplayName="Steps" Name="STEPS">
+         </Uniform>
+         <Uniform Value="1.08" Type="float" ChannelName="amp" DisplayName="Amplification" Name="amp">
+         </Uniform>
+         <Uniform Value="0.2" Type="float" ChannelName="ts" DisplayName="Advection Curl" Name="ts">
+         </Uniform>
+         <Uniform Value="0.05" Type="float" ChannelName="ls" DisplayName="Laplacian" Name="ls">
+         </Uniform>
+         <Uniform Value="-1.58" Type="float" ChannelName="ps" DisplayName="Lap. Divergence" Name="ps">
+         </Uniform>
+         <Uniform Value="-2" Type="float" ChannelName="cs" DisplayName="Curl" Name="cs">
+         </Uniform>
+         <Uniform Value="0.6" Type="float" ChannelName="ds" DisplayName="Divergence" Name="ds">
+         </Uniform>
+         <Uniform Value="0.11" Type="float" ChannelName="dp" DisplayName="Div. Update" Name="dp">
+         </Uniform>
+         <Uniform Value="0.56" Type="float" ChannelName="upd" DisplayName="Update" Name="upd">
+         </Uniform>
+         <Uniform Value="0.3" Type="float" ChannelName="pl" DisplayName="Divergence" Name="pl">
+         </Uniform>
+      </Shader>
+      <Shader Index="2">
+         <Uniform Type="vec3" ChannelName="fg" DisplayName="Foreground" Name="fg">
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" ChannelName="bg" DisplayName="Background" Name="bg">
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+         </Uniform>
+      </Shader>
+   </Preset>
+   <Preset Name="Rose Blooms 01">
+      <Shader Index="1">
+         <Uniform Value="40" Type="int" ChannelName="steps" DisplayName="Steps" Name="STEPS">
+         </Uniform>
+         <Uniform Value="1.11" Type="float" ChannelName="amp" DisplayName="Amplification" Name="amp">
+         </Uniform>
+         <Uniform Value="0.54" Type="float" ChannelName="ts" DisplayName="Advection Curl" Name="ts">
+         </Uniform>
+         <Uniform Value="0.26" Type="float" ChannelName="ls" DisplayName="Laplacian" Name="ls">
+         </Uniform>
+         <Uniform Value="1.09" Type="float" ChannelName="ps" DisplayName="Lap. Divergence" Name="ps">
+         </Uniform>
+         <Uniform Value="-0.82" Type="float" ChannelName="cs" DisplayName="Curl" Name="cs">
+         </Uniform>
+         <Uniform Value="-0.4" Type="float" ChannelName="ds" DisplayName="Divergence" Name="ds">
+         </Uniform>
+         <Uniform Value="-0.03" Type="float" ChannelName="dp" DisplayName="Div. Update" Name="dp">
+         </Uniform>
+         <Uniform Value="0.74" Type="float" ChannelName="upd" DisplayName="Update" Name="upd">
+         </Uniform>
+         <Uniform Value="0.14" Type="float" ChannelName="pl" DisplayName="Divergence" Name="pl">
+         </Uniform>
+      </Shader>
+      <Shader Index="2">
+         <Uniform Type="vec3" ChannelName="fg" DisplayName="Foreground" Name="fg">
+            <SubUniform Value="0.774194">
+            </SubUniform>
+            <SubUniform Value="0.364614">
+            </SubUniform>
+            <SubUniform Value="0.335288">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" ChannelName="bg" DisplayName="Background" Name="bg">
+            <SubUniform Value="0.957967">
+            </SubUniform>
+            <SubUniform Value="0.756598">
+            </SubUniform>
+            <SubUniform Value="0.695015">
+            </SubUniform>
+         </Uniform>
+      </Shader>
+   </Preset>
+   <Preset Name="Pulsating Fur 01">
+      <Shader Index="1">
+         <Uniform Value="40" Type="int" ChannelName="steps" DisplayName="Steps" Name="STEPS">
+         </Uniform>
+         <Uniform Value="1.1" Type="float" ChannelName="amp" DisplayName="Amplification" Name="amp">
+         </Uniform>
+         <Uniform Value="1" Type="float" ChannelName="ts" DisplayName="Advection Curl" Name="ts">
+         </Uniform>
+         <Uniform Value="0.05" Type="float" ChannelName="ls" DisplayName="Laplacian" Name="ls">
+         </Uniform>
+         <Uniform Value="-1.36" Type="float" ChannelName="ps" DisplayName="Lap. Divergence" Name="ps">
+         </Uniform>
+         <Uniform Value="-0.82" Type="float" ChannelName="cs" DisplayName="Curl" Name="cs">
+         </Uniform>
+         <Uniform Value="-0.7" Type="float" ChannelName="ds" DisplayName="Divergence" Name="ds">
+         </Uniform>
+         <Uniform Value="-0.01" Type="float" ChannelName="dp" DisplayName="Div. Update" Name="dp">
+         </Uniform>
+         <Uniform Value="0.31" Type="float" ChannelName="upd" DisplayName="Update" Name="upd">
+         </Uniform>
+         <Uniform Value="0.46" Type="float" ChannelName="pl" DisplayName="Divergence" Name="pl">
+         </Uniform>
+      </Shader>
+      <Shader Index="2">
+         <Uniform Type="vec3" ChannelName="fg" DisplayName="Foreground" Name="fg">
+            <SubUniform Value="0.793744">
+            </SubUniform>
+            <SubUniform Value="0.086999">
+            </SubUniform>
+            <SubUniform Value="0.216031">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" ChannelName="bg" DisplayName="Background" Name="bg">
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+         </Uniform>
+      </Shader>
+   </Preset>
+</Presets>
