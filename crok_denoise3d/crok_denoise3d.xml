@@ -1,0 +1,17 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" OverrideNormals="False" CommercialUsePermitted="False" ShaderType="Lightbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1.0" Description="
+This LightBox shader applies a denoise to an image.
+
+
+Based on https://www.shadertoy.com/view/4tfSDr by gongenhao
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+Matchbox version by ivar@inferno-op.com" Name="CROK Denoise 3D">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="1000000.0" Min="0.01" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" DisplayName="Amount" Name="adskUID_sigma">
+      </Uniform>
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Setup" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

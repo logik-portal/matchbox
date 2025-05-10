@@ -1,0 +1,76 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="0"
+  LimitInputsToTexture="True"
+  Version="2.0"
+  Description="
+This Matchbox shader removes grain / noise
+
+Input:
+
+- Front: source clip
+
+Setup:
+
+- Amount: how much grain is removed
+- Detail: blend in detail
+
+
+Shader developer: ttoinou
+
+Based on https://www.shadertoy.com/view/MtcSzH
+
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+Matchbox version by ivar@inferno-op.com"
+  Name="CROK Denoise">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="3">
+    <Uniform Type="int" Name="GRADIENT_RADIUS">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="4">
+    <Uniform Max="10" Min="0" Default="5" Inc="1" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Amount" Type="int" Name="RADIUS"></Uniform>
+    <Uniform ResDependent="None" Max="20.0" Min="0.0" Default="10.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Detail" Type="float" Name="LUMCOEFF"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+    <Uniform
+      Index="1"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Matte"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+    <Uniform Type="int" Name="GRADIENT_RADIUS">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Page Name="General" Page="0">
+    <Col Name="Setup" Col="0" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>
