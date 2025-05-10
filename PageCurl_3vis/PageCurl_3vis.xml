@@ -1,0 +1,48 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="- 3vis - PageCurl between 1 and 2, uses 3 for back page - Author: Eric Pouliot" Name="PageCurl_3vis">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="time" Type="float" Name="time">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="15.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="back_trans" Type="float" Name="back_trans">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" DisplayName="shadow_bottom" Type="float" Name="shadow_bottom">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="30.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" DisplayName="shadow_top" Type="float" Name="shadow_top">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="30.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" DisplayName="roll_angle" Type="float" Name="roll_angle">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" DisplayName="r_offset_1" Type="float" Name="r_offset_1">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" DisplayName="r_offset_2" Type="float" Name="r_offset_2">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.12" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" DisplayName="r_offset_3" Type="float" Name="r_offset_3">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.258" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" DisplayName="r_offset_4" Type="float" Name="r_offset_4">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="4" Col="2" Page="0" DisplayName="r_offset_5" Type="float" Name="r_offset_5">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="3" Page="0" DisplayName="rr_offset_1" Type="float" Name="rr_offset_1">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="3" Page="0" DisplayName="rr_offset_2" Type="float" Name="rr_offset_2">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.15" Inc="0.01" Tooltip="" Row="2" Col="3" Page="0" DisplayName="rr_offset_3" Type="float" Name="rr_offset_3">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="-0.5" Inc="0.01" Tooltip="" Row="3" Col="3" Page="0" DisplayName="rr_offset_4" Type="float" Name="rr_offset_4">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="4" Col="3" Page="0" DisplayName="rr_offset_5" Type="float" Name="rr_offset_5">
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="iChannel2">
+      </Uniform>
+       <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Back" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="iChannel1">
+      </Uniform>
+      <Uniform Index="2" NoInput="Error" Tooltip="" DisplayName="FrontBack" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="iChannel0">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+      <Col Name="Column 2" Col="1" Page="0">
+      </Col>
+      <Col Name="Column 3" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
