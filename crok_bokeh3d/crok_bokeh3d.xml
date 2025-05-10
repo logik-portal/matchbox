@@ -1,0 +1,113 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" OverrideNormals="False" CommercialUsePermitted="True" ShaderType="Lightbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1.2" Description="
+This LightBox shader creates random defocused lights.
+
+Based on https://www.shadertoy.com/view/4lXXDB by BigWIngs / Martijn Steinrucken
+
+License CC Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) 
+
+Ligtbox version by ivar@inferno-op.com" Name="CROK Bokeh 3D">
+   <Shader OutputBitDepth="Output" Index="1">
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="35.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" DisplayName="Amount" Name="adskUID_NUM_LIGHTS">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" DisplayName="Amplitude" Name="adskUID_amplitude">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="1.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" DisplayName="Softness" Name="adskUID_height">
+      </Uniform>
+      <Uniform Row="3" Col="0" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Enable Fast Noise" Name="adskUID_noise_type">
+      </Uniform>
+ 
+ 
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="75.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" DisplayName="Zoom" Name="adskUID__ZOOM">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" DisplayName="Focal Distance" Name="adskUID__FocalDistance">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" DisplayName="Depth Of Field" Name="adskUID__DOF">
+      </Uniform>
+
+
+	  
+	  
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" DisplayName="Overall Speed" Name="adskUID_Speed">
+      </Uniform>
+	  <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Type="float" DisplayName="Overall Offset" Name="adskUID_Offset">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" DisplayName="Motion Speed" Name="adskUID_motion_speed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" Type="float" DisplayName="Flicker Speed" Name="adskUID_flicker_speed">
+      </Uniform>
+
+	  
+	  
+      <Uniform Default="4" Inc="1" Tooltip="" Row="4" Col="0" Page="0" DisplayName="Blend Modes" Type="int" ValueType="Popup" Name="adskUID_blendModes">
+         <PopupEntry Title="No Blending" Value="-1">
+         </PopupEntry>
+         <PopupEntry Title="Min/Darken" Value="30">
+         </PopupEntry>
+	 <PopupEntry Title="Mutliply" Value="2">
+         </PopupEntry>
+	 <PopupEntry Title="Max/Lighten" Value="29">
+         </PopupEntry>
+	 <PopupEntry Title="Screen" Value="17">
+         </PopupEntry>
+	 <PopupEntry Title="Add" Value="0">
+         </PopupEntry>
+	 <PopupEntry Title="Overlay" Value="18">
+         </PopupEntry>
+	 <PopupEntry Title="Soft Light" Value="13">
+         </PopupEntry>
+	 <PopupEntry Title="Hard Light" Value="14">
+         </PopupEntry>
+	 <PopupEntry Title="Spotlight" Value="11">
+         </PopupEntry>
+	 <PopupEntry Title="Difference" Value="19">
+         </PopupEntry>
+	 <PopupEntry Title="Exclusion" Value="20">
+         </PopupEntry>
+	 <PopupEntry Title="Subtract" Value="1">
+         </PopupEntry>
+	 <PopupEntry Title="Linear Burn" Value="10">
+         </PopupEntry>
+	 <PopupEntry Title="Lighter Color" Value="33">
+         </PopupEntry>
+	 <PopupEntry Title="Linear Light" Value="32">
+         </PopupEntry>
+	 <PopupEntry Title="Pin Light" Value="15">
+         </PopupEntry>
+      </Uniform>  
+	  
+      <Uniform Inc="0.1" Tooltip="" Row="0" Col="0" Page="1" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour 1" Name="adskUID_colourWheel1" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Sat">
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="33.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="500.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="40.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.1" Tooltip="" Row="0" Col="1" Page="1" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour 2" Name="adskUID_colourWheel2" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Sat">
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="216.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="400.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="25.0">
+         </SubUniform>
+      </Uniform>
+	  
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Setup" Col="0" Page="0">
+      </Col>
+      <Col Name="Camera" Col="1" Page="0">
+      </Col>
+      <Col Name="Timing" Col="2" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Color" Page="1">
+      <Col Name="Color 1" Col="0" Page="1">
+      </Col>
+      <Col Name="Color 2" Col="1" Page="1">
+      </Col>
+   </Page>
+</ShaderNodePreset>

@@ -1,0 +1,112 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="True" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1.0" Description="
+  This Matchbox shader creates a binoculars effect
+
+  Input:
+
+  - Front: source clip
+
+  Demo clip: https://vimeo.com/291237944
+
+  Matchbox version by ivar@inferno-op.com"
+  Name="CROK Binoculars" HelpLink="https://vimeo.com/291237944">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="2">
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="3">
+     <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="0.42" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="size" DisplayName="Size" Name="size">
+     </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.9" Inc="0.001" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="offset" DisplayName="Offset" Name="offset">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="0.0" Default="0.95" Inc="0.001" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="aspect" DisplayName="Aspect" Name="aspect">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="4">
+      <Uniform ResDependent="None" Max="1024.0" Min="0.0" Default="80.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="blur_black_mask" DisplayName="Softness" Name="blur_black_mask">
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="5">
+      <Uniform Type="float" ChannelName="blur_black_mask" DisplayName="blur_black_mask" Name="blur_black_mask">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="6">
+      <Uniform ResDependent="None" Max="1024.0" Min="0.0" Default="256.0" Inc="0.1" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="blur_chroma_mask" DisplayName="Softness" Name="blur_chroma_mask">
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="7">
+      <Uniform Type="float" ChannelName="blur_chroma_mask" DisplayName="blur_chroma_mask" Name="blur_chroma_mask">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="8">
+      <Uniform ResDependent="None" Max="1024.0" Min="0.0" Default="75.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="blur_distortion_mask" DisplayName="Softness" Name="blur_distortion_mask">
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="9">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass8">
+      </Uniform>
+      <Uniform Type="float" ChannelName="blur_distortion_mask" DisplayName="blur_distortion_mask" Name="blur_distortion_mask">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="10">
+     <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="chromatic_abb" DisplayName="Amount" Name="chromatic_abb">
+     </Uniform>
+     <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.001" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="off_chroma" DisplayName="Saturation" Name="off_chroma">
+     </Uniform>
+   <Uniform  Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+   </Uniform>
+   <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7">
+   </Uniform>
+</Shader>
+<Shader OutputBitDepth="Output" Index="11">
+   <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9">
+   </Uniform>
+</Shader>
+<Shader OutputBitDepth="Output" Index="12">
+   <Uniform ResDependent="None" Max="128.0" Min="-128.0" Default="2.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="blength" DisplayName="Distortion" Name="blength">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass10">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass11">
+   </Uniform>
+</Shader>
+<Shader OutputBitDepth="Output" Index="13">
+   <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass12">
+   </Uniform>
+   <Uniform ResDependent="None" Max="128.0" Min="0.0" Default="5.0" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="blur_length" DisplayName="Distort Blur" Name="blur_length">
+   </Uniform>
+   <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass11">
+   </Uniform>
+</Shader>
+<Shader OutputBitDepth="Output" Index="14">
+   <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass13">
+   </Uniform>
+   <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5">
+   </Uniform>
+</Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Mask" Col="0" Page="0">
+      </Col>
+      <Col Name="Chromatic Abberation" Col="1" Page="0">
+      </Col>
+      <Col Name="Distortion" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
