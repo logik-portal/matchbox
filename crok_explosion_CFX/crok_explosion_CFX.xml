@@ -1,0 +1,61 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2.1" Description="
+This MatchBox CameraFX shader will create volumetric explosions inside Action.
+This shader ist 2017 ONLY
+
+Demo movie: https://vimeo.com/171311763
+
+Based on www.shadertoy.com/view/lsySzd by Duke
+License: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+
+MatchBox version by ivar@inferno-op.com" Name="CROK Explosion CFX">
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputColor="67, 77, 83" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Z-Depth" InputColor="67, 77, 83" InputType="Z-Depth" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="depth_matte">
+      </Uniform>
+      <Uniform Max="1000000" Min="-1000000" Default="86" Inc="1" Tooltip="" Row="0" Col="0" Page="0" Type="int" ChannelName="volume_steps" DisplayName="Volume Steps" Name="steps">
+      </Uniform>
+      <Uniform Max="16" Min="1" Default="8" Inc="1" Tooltip="" Row="1" Col="0" Page="0" Type="int" ChannelName="detail" DisplayName="Detail" Name="detail">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="Speed" DisplayName="Speed" Name="Speed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="5.00" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="Offset" DisplayName="Offset" Name="Offset">
+      </Uniform>
+
+      <Uniform Inc="1.0" Tooltip="" Row="0" Col="0" Page="1" DisplayName="Position" ValueType="Position" Type="vec3" Name="sphere_center" IconType="Axis" Action3DWidget="True">
+         <SubUniform Max="1000000.0" Min="-1000000.0" Default="0.0" ResDependent="None">
+         </SubUniform>
+         <SubUniform Max="1000000.0" Min="-1000000.0" Default="0.0" ResDependent="None">
+         </SubUniform>
+         <SubUniform Max="1000000.0" Min="-1000000.0" Default="0.0" ResDependent="None">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" IconType="None" ValueType="Colour" Type="vec3" DisplayName="Colour" Name="lightColor">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.9">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.55">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.4">
+         </SubUniform>
+      </Uniform>
+
+
+
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Setup" Col="0" Page="0">
+      </Col>
+      <Col Name="Speed" Col="1" Page="0">
+      </Col>
+      <Col Name="Light" Col="2" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Translation" Page="1">
+      <Col Name="Explosion" Col="0" Page="1">
+      </Col>
+   </Page>
+   <Page Name="Render" Page="2">
+      <Col Name="Antialiasing" Col="0" Page="2">
+      </Col>
+   </Page>
+</ShaderNodePreset>

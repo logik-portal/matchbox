@@ -1,0 +1,132 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1"
+  Description=""
+  Name="CROK Texture Equalizer">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform ResDependent="None" Max="256.0" Min="0.0" Default="2.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="blur_01" DisplayName="Radius 1" Name="blur_01"></Uniform>
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="source"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform Type="float" ChannelName="blur_01" DisplayName="Radius 1" Name="blur_01">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="3">
+    <Uniform Index="1" Tooltip="" DisplayName="source" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="source">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="blend_01" DisplayName="Amount 1" Name="blend_01"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="4">
+    <Uniform ResDependent="None" Max="256.0" Min="0.0" Default="4.0" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="blur_02" DisplayName="Radius 2" Name="blur_02"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="5">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+    <Uniform Type="float" ChannelName="blur_02" DisplayName="Radius 2" Name="blur_02">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="6">
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="blend_02" DisplayName="Amount 2" Name="blend_02"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="7">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+    <Uniform ResDependent="None" Max="256.0" Min="0.0" Default="8.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="blur_03" DisplayName="Radius 3" Name="blur_03"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="8">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7"></Uniform>
+    <Uniform Type="float" ChannelName="blur_03" DisplayName="Radius 3" Name="blur_03">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="9">
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="blend_03" DisplayName="Amount 3" Name="blend_03"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass8"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="10">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9"></Uniform>
+    <Uniform ResDependent="None" Max="256.0" Min="0.0" Default="16.0" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" Type="float" ChannelName="blur_04" DisplayName="Radius 4" Name="blur_04"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="11">
+    <Uniform Type="float" ChannelName="blur_04" DisplayName="Radius 4" Name="blur_04">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass10"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="12">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9"></Uniform>
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="1" Page="0" Type="float" ChannelName="blend_04" DisplayName="Amount 4" Name="blend_04"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass11"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="13">
+    <Uniform ResDependent="None" Max="256.0" Min="0.0" Default="32.0" Inc="0.01" Tooltip="" Row="4" Col="2" Page="0" Type="float" ChannelName="blur_05" DisplayName="Radius 5" Name="blur_05"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass12"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="14">
+    <Uniform Type="float" ChannelName="blur_05" DisplayName="blur_05" Name="blur_05">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass13"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="15">
+    <Uniform
+      Index="1"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Matte"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+    <Uniform Index="2" Tooltip="" DisplayName="source" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="source">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass14"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="4" Col="1" Page="0" Type="float" ChannelName="blend_05" DisplayName="Amount 5" Name="blend_05"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass12"></Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="-10.0" Default="1.0" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="blend_overall" DisplayName="Amount" Name="blend_overall"></Uniform>
+  </Shader>
+
+  <Page Name="General" Page="0">
+    <Col Name="Overall" Col="0" Page="0"></Col>
+    <Col Name="Sharpen | Soften" Col="1" Page="0"></Col>
+    <Col Name="Threshold" Col="2" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>

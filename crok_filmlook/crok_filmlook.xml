@@ -1,0 +1,107 @@
+<ShaderNodePreset Name="crok filmlook" Description="
+This Matchbox shader gives you different FilmLook presets.
+
+
+Setup:
+
+- Look: select the desired filmlook preset
+- Saturation: adjust overall saturation
+- Contrast: adjust overall contrast
+- Gamma: adjust overall gamma
+- Blend: blend between original image and applied preset
+
+
+Demo clip: http://vimeo.com/119370189
+
+Matchbox version by ivar@inferno-op.com" LimitInputsToTexture="True" SupportsAdaptiveDegradation="0">
+   <Shader Index="1" OutputBitDepth="Output">
+      <Uniform Name="source" Type="sampler2D" GL_TEXTURE_MIN_FILTER="GL_NEAREST" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Mipmaps="False" InputType="Front" DisplayName="Source" Tooltip="" NoInput="Error" Index="0">
+      </Uniform>
+      <Uniform ValueType="Popup" Name="look" Type="int" DisplayName="Look" Page="0" Col="0" Row="0" Tooltip="" Inc="1" Default="3" Min="0" Max="1000000">
+         <PopupEntry Value="0" Title="None">
+         </PopupEntry>
+         <PopupEntry Value="1" Title="Kodak 2383">
+         </PopupEntry>
+         <PopupEntry Value="2" Title="Kodak 2393">
+         </PopupEntry>
+         <PopupEntry Value="3" Title="Kodak 2395">
+         </PopupEntry>
+         <PopupEntry Value="5" Title="Agfa 1905">
+         </PopupEntry>
+         <PopupEntry Value="6" Title="Agfa 1935">
+         </PopupEntry>
+         <PopupEntry Value="4" Title="Agfa 1978">
+         </PopupEntry>
+         <PopupEntry Value="13" Title="Fuji 4711">
+         </PopupEntry>
+         <PopupEntry Value="14" Title="ORWO 0815">
+         </PopupEntry>
+         <PopupEntry Value="8" Title="Beer 1933">
+         </PopupEntry>
+         <PopupEntry Value="7" Title="Beer 1973">
+         </PopupEntry>
+         <PopupEntry Value="9" Title="Beer 2001">
+         </PopupEntry>
+         <PopupEntry Value="18" Title="Beer 2006">
+         </PopupEntry>
+         <PopupEntry Value="11" Title="Polaroid">
+         </PopupEntry>
+         <PopupEntry Value="12" Title="Cuba Libre">
+         </PopupEntry>
+         <PopupEntry Value="17" Title="Tea Time">
+         </PopupEntry>
+         <PopupEntry Value="16" Title="Spearmint">
+         </PopupEntry>
+         <PopupEntry Value="19" Title="Purple Rain">
+         </PopupEntry>			 
+         <PopupEntry Value="15" Title="BlackWhite">
+         </PopupEntry>
+
+      </Uniform>
+   </Shader>
+   <Shader Index="2" OutputBitDepth="Output">
+      <Uniform Name="adsk_results_pass1" Type="sampler2D" GL_TEXTURE_MIN_FILTER="GL_NEAREST" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Mipmaps="False">
+      </Uniform>
+      <Uniform Name="source" Type="sampler2D" GL_TEXTURE_MIN_FILTER="GL_NEAREST" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Mipmaps="False" DisplayName="Source" Tooltip="" InputType="Front" Index="0">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Name="m_sat" Type="float" DisplayName="Saturation" Page="0" Col="0" Row="1" Tooltip="" Inc="0.002" Default="1.0" Min="-5.0" Max="5.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_con" Type="float" DisplayName="Contrast" Page="0" Col="0" Row="2" Tooltip="" Inc="0.002" Default="1.0" Min="0.0" Max="10.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_gam" Type="float" DisplayName="Gamma" Page="0" Col="0" Row="3" Tooltip="" Inc="0.002" Default="1.0" Min="0.001" Max="10.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="blend" Type="float" DisplayName="Blend" Page="0" Col="0" Row="4" Tooltip="" Inc="0.005" Default="1.0" Min="0.0" Max="10.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_slope_r" Type="float" DisplayName="Red" Page="0" Col="1" Row="0" Tooltip="" Inc="0.01" Default="1.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_slope_g" Type="float" DisplayName="Green" Page="0" Col="1" Row="1" Tooltip="" Inc="0.01" Default="1.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_slope_b" Type="float" DisplayName="Blue" Page="0" Col="1" Row="2" Tooltip="" Inc="0.01" Default="1.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_offset_r" Type="float" DisplayName="Red" Page="0" Col="2" Row="0" Tooltip="" Inc="0.01" Default="0.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_offset_g" Type="float" DisplayName="Green" Page="0" Col="2" Row="1" Tooltip="" Inc="0.01" Default="0.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_offset_b" Type="float" DisplayName="Blue" Page="0" Col="2" Row="2" Tooltip="" Inc="0.01" Default="0.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_power_r" Type="float" DisplayName="Red" Page="0" Col="3" Row="0" Tooltip="" Inc="0.01" Default="1.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_power_g" Type="float" DisplayName="Green" Page="0" Col="3" Row="1" Tooltip="" Inc="0.01" Default="1.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+      <Uniform Name="m_power_b" Type="float" DisplayName="Blue" Page="0" Col="3" Row="2" Tooltip="" Inc="0.01" Default="1.0" Min="-1000000.0" Max="1000000.0" ResDependent="None">
+      </Uniform>
+   </Shader>
+   <Page Page="0" Name="">
+      <Col Page="0" Col="0" Name="Overall">
+      </Col>
+      <Col Page="0" Col="1" Name="Slope">
+      </Col>
+      <Col Page="0" Col="2" Name="Offset">
+      </Col>
+      <Col Page="0" Col="3" Name="Power">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+
