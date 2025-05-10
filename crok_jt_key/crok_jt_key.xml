@@ -1,0 +1,203 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description=""
+  Name="CROK JT Keyer">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      InputType="Front"
+      DisplayName="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front"></Uniform>
+    <Uniform
+      Index="2"
+      NoInput="White"
+      InputType="Matte"
+      DisplayName="Matte | opt"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+    <Uniform
+      Index="3"
+      NoInput="White"
+      Tooltip="Despilled FG"
+      DisplayName="Despill FG | opt"
+      InputColor="67, 0, 0"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="ext_despill"></Uniform>
+    <Uniform Default="0" Tooltip="" Row="1" Col="2" Page="0" DisplayName="Type" Type="int" Name="type" ValueType="Popup" UIConditionType="Hide" UIConditionInvert="True" UIConditionValue="1" UIConditionSource="use_external_despilled_fg">
+      <PopupEntry Title="Green" Value="0"></PopupEntry>
+      <PopupEntry Title="Blue" Value="1"></PopupEntry>
+      <PopupEntry Title="Red" Value="2"></PopupEntry>
+    </Uniform>
+    <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="use_external_despilled_fg" DisplayName="Use External Despill" Name="use_external_despilled_fg"></Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="1.0"
+      Min="0.1"
+      Default="1.0"
+      Inc="0.001"
+      Tooltip=""
+      Row="2"
+      Col="2"
+      Page="0"
+      Type="float"
+      ChannelName="amount"
+      DisplayName="Amount"
+      Name="amount"
+      UIConditionType="Hide"
+      UIConditionInvert="True"
+      UIConditionValue="1"
+      UIConditionSource="use_external_despilled_fg"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform Index="0" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Use External Matte" Type="bool" Name="use_external_matte"></Uniform>
+    <Uniform Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Screen Color" ValueType="Colour" Type="vec3" Name="colour" UIConditionType="Hide" UIConditionInvert="True" UIConditionValue="1" UIConditionSource="use_external_matte">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.616"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.819"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.651"></SubUniform>
+    </Uniform>
+    <Uniform Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" DisplayName="Weights" ValueType="none" Type="vec3" IconType="None" Name="weights" UIConditionType="Hide" UIConditionInvert="True" UIConditionValue="1" UIConditionSource="use_external_matte">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="6.0"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="5.0"></SubUniform>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="3">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform Index="0" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="4">
+    <Uniform ResDependent="None" Max="1024.0" Min="0.0" Default="500.0" Inc="0.1" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="fill_hole" DisplayName="Fill Hole" Name="fill_hole"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="5">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+    <Uniform Type="float" ChannelName="fill_hole" DisplayName="fill_hole" Name="fill_hole">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="6">
+    <Uniform GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="7">
+    <Uniform Max="2048.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="blur_m" DisplayName="Blur" Name="blur_m"
+    UIConditionType="Hide" UIConditionInvert="True" UIConditionValue="1" UIConditionSource="use_ext_core_matte"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="8">
+    <Uniform Type="float" ChannelName="blur_m" DisplayName="blur_m" Name="blur_m">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="9">
+    <Uniform Type="int" ChannelName="type" DisplayName="type" Name="type">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform Type="float" ChannelName="amount" DisplayName="amount" Name="amount">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+    <Uniform GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform Index="0" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <Uniform
+      Index="1"
+      NoInput="White"
+      DisplayName="Back | opt"
+      InputType="Back"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="background"></Uniform>
+    <Uniform
+      Index="4"
+      NoInput="Black"
+      Tooltip="Despilled Cleaned Screen"
+      DisplayName="Desp Cl FG | opt"
+      InputColor="0, 77, 0"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="despilled_bg"></Uniform>
+    <Uniform
+      Index="5"
+      NoInput="Black"
+      Tooltip="External Core Matte"
+      DisplayName="Ext Core M | opt"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="ext_core_matte"></Uniform>
+    <Uniform Default="3" Tooltip="" Row="0" Col="3" Page="0" DisplayName="Output" Type="int" Name="outp" ValueType="Popup">
+      <PopupEntry Title="Result" Value="0"></PopupEntry>
+      <PopupEntry Title="Despilled FG" Value="1"></PopupEntry>
+      <PopupEntry Title="Clean BG" Value="2"></PopupEntry>
+      <PopupEntry Title="Original FG" Value="3"></PopupEntry>
+      <PopupEntry Title="CleanUp Matte" Value="4"></PopupEntry>
+      <PopupEntry Title="Core Matte" Value="5"></PopupEntry>
+    </Uniform>
+    <Uniform Type="bool" ChannelName="use_external_despilled_fg" DisplayName="use_external_despilled_fg" Name="use_external_despilled_fg">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="use_ext_core_matte" DisplayName="Use External Core Matte" Name="use_ext_core_matte"></Uniform>
+    <Uniform Max="10.0" Min="-1.0" Default="1.0" Inc="0.001" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="ga_amount" DisplayName="Gamma" Name="ga_amount"
+    UIConditionType="Hide" UIConditionInvert="True" UIConditionValue="1" UIConditionSource="use_ext_core_matte"></Uniform>
+    <Uniform Max="10.0" Min="1.0" Default="1.0" Inc="0.001" Tooltip="" Row="3" Col="1" Page="0" Type="float" ChannelName="con_amount" DisplayName="Contrast" Name="con_amount"
+      UIConditionType="Hide" UIConditionInvert="True" UIConditionValue="1" UIConditionSource="use_ext_core_matte"></Uniform>
+    <Uniform Max="2.0" Min="0.0" Default="0.0" Inc="0.001" Tooltip="" Row="4" Col="1" Page="0" Type="float" ChannelName="blend_amount" DisplayName="Blend" Name="blend_amount"></Uniform>
+  </Shader>
+
+  <Page Name="General" Page="0">
+    <Col Name="Create Clean Plate" Col="0" Page="0"></Col>
+    <Col Name="Core Matte Adjustments" Col="1" Page="0"></Col>
+    <Col Name="Despill FG and Clean Screen" Col="2" Page="0"></Col>
+    <Col Name="Output" Col="3" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>
