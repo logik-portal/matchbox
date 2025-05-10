@@ -1,0 +1,54 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description="This Matchbox shader creates a particle type transition between 2 clips.
+
+      Based on shadertoy.com/view/tlsyW7 by zhilichen
+
+      Matchbox version by ivar@inferno-op.com"
+  Name="CROK Particle Transition">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform Max="100.0" Min="0.01" Default="3.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="period" DisplayName="Timing" Name="period"></Uniform>
+    <Uniform Max="50.0" Min="0.01" Default="10.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="particleSizeMin" DisplayName="Min Particle Size" Name="particleSizeMin"></Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="rotationRange" DisplayName="Rotation" Name="rotationRange"></Uniform>
+    <Uniform Row="4" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="reverse" DisplayName="Reverse" Name="reverse"></Uniform>
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="iChannel1"></Uniform>
+    <Uniform
+      Index="1"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Back"
+      InputType="Back"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="iChannel0"></Uniform>
+  </Shader>
+  <Page Name="General" Page="0">
+    <Col Name="Setup" Col="0" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>
