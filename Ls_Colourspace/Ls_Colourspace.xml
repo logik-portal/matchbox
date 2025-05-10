@@ -1,0 +1,88 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2" Description="Converts between various colourspaces, mainly perceptual ones (ColorMgmt already handles most camera and display spaces)
+
+All the spaces use illuminant/reference white D65 and are as follows:
+
+linear sRGB: scene-referred (un-tonemapped) linear with sRGB/Rec709 primaries (you can convert to this space from most camera spaces with a Colour Mgmt node, by first converting to ACES and then using primaries/ACES_to_LinearRec709-sRGB.ctf)
+
+XYZ: the classic CIE 1931 XYZ space with white at Y=1, again useful as an interchange space by using the various CIE-XYZ .ctf options in Colour Mgmt
+
+xyY: the CIE 1931 xyY space where x and y are chromaticities in [0,1] and Y is brightness
+
+L*a*b*: CIELAB 1976 where L* is perceptual lightness with white at 1, a* is broadly green/red and b* blue/yellow, both centred around 0.0 so likely using negatives
+
+L*a*b* (0.5-centred chroma): as above but with a* and b* centred around 0.5, so easier to see and work with
+
+LCHab: cylindrical version of L*a*b* where L* is as before, but C is colorfulness and H is hue
+
+LUV: CIELUV 1976 space similar to L*a*b* but better suited for screens and emissive surfaces
+
+LUV (0.5-centred chroma): as above but with u and v centred around 0.5
+
+LCHuv: cylindrical version of LUV
+
+Oklab: recent (2020) perceptual space designed to be similar to but faster and better behaved than the above CIE spaces
+
+Oklab (0.5-centred chroma): as above but with a and b centred around 0.5
+
+HSV: classic hue/saturation/value space used in CG and colour picking - we convert to BT1886 2.4 gamma before converting to HSV, rather than converting from linear colour directly, to better match other apps
+
+HSL: similar to HSV but with higher L values tending towards white rather than saturated colours - we convert to BT1886 2.4 gamma before converting to HSL, rather than converting from linear colour directly, to match other apps (unlike Flame's Separate node which assumes the input is already in video space)
+
+YCbCr: YUV space used in digital video with Y including head/footroom and Cb/Cr centred around 0.5
+
+YPbPr: YUV space used in analog video with Pb/Pr centred around 0
+
+lewis@lewissaunders.com" Name="Colourspace">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="ingamma" DisplayName="Input gamma" Name="ingamma"></Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="ingamma" DisplayName="Output gamma" Name="outgamma"></Uniform>
+
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="1" Col="1" Page="0" Type="int" ChannelName="inspace" DisplayName="Input space" Name="inspace" ValueType="Popup">
+          <PopupEntry Title="linear sRGB" Value="0"></PopupEntry>
+          <PopupEntry Title="XYZ" Value="1"></PopupEntry>
+          <PopupEntry Title="xyY" Value="2"></PopupEntry>
+          <PopupEntry Title="L*a*b*" Value="3"></PopupEntry>
+          <PopupEntry Title="L*a*b* (0.5-centred chroma)" Value="4"></PopupEntry>
+          <PopupEntry Title="LCHab" Value="5"></PopupEntry>
+          <PopupEntry Title="LUV" Value="6"></PopupEntry>
+          <PopupEntry Title="LUV (0.5-centred chroma)" Value="7"></PopupEntry>
+          <PopupEntry Title="LCHuv" Value="8"></PopupEntry>
+          <PopupEntry Title="Oklab" Value="9"></PopupEntry>
+          <PopupEntry Title="Oklab (0.5-centred chroma)" Value="10"></PopupEntry>
+          <PopupEntry Title="HSV" Value="11"></PopupEntry>
+          <PopupEntry Title="HSL" Value="12"></PopupEntry>
+          <PopupEntry Title="YCbCr" Value="13"></PopupEntry>
+          <PopupEntry Title="YPbPr" Value="14"></PopupEntry>
+      </Uniform>
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="1" Col="2" Page="0" Type="int" ChannelName="outspace" DisplayName="Output space" Name="outspace" ValueType="Popup">
+          <PopupEntry Title="linear sRGB" Value="0"></PopupEntry>
+          <PopupEntry Title="XYZ" Value="1"></PopupEntry>
+          <PopupEntry Title="xyY" Value="2"></PopupEntry>
+          <PopupEntry Title="L*a*b*" Value="3"></PopupEntry>
+          <PopupEntry Title="L*a*b* (0.5-centred chroma)" Value="4"></PopupEntry>
+          <PopupEntry Title="LCHab" Value="5"></PopupEntry>
+          <PopupEntry Title="LUV" Value="6"></PopupEntry>
+          <PopupEntry Title="LUV (0.5-centred chroma)" Value="7"></PopupEntry>
+          <PopupEntry Title="LCHuv" Value="8"></PopupEntry>
+          <PopupEntry Title="Oklab" Value="9"></PopupEntry>
+          <PopupEntry Title="Oklab (0.5-centred chroma)" Value="10"></PopupEntry>
+          <PopupEntry Title="HSV" Value="11"></PopupEntry>
+          <PopupEntry Title="HSL" Value="12"></PopupEntry>
+          <PopupEntry Title="YCbCr" Value="13"></PopupEntry>
+          <PopupEntry Title="YPbPr" Value="14"></PopupEntry>
+      </Uniform>
+      <Uniform Row="0" Col="3" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="invert" DisplayName="Invert" Name="invert">
+      </Uniform>
+
+   </Shader>
+   <Page Name="Colourspace" Page="0">
+      <Col Name="Input" Col="1" Page="0">
+      </Col>
+      <Col Name="Output" Col="2" Page="0">
+      </Col>
+      <Col Name="Swap input/output controls" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
