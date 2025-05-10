@@ -1,0 +1,110 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="2"
+  Description="
+This Matchbox shader simulates digital glitches.
+
+Input:
+Front: source clip
+Matte: Matte clip
+
+Based on https://www.shadertoy.com/view/WdX3Wj by and
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+Matchbox version by ivar@inferno-op.com"
+  Name="CROK Median">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform Max="64" Min="0" Default="9" Inc="1" Tooltip="" Row="0" Col="0" Page="0" Type="int" ChannelName="m_amount" DisplayName="Amount" Name="m_amount"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="3">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <Uniform Type="int" ChannelName="m_amount" DisplayName="m_amount" Name="m_amount">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="4">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+    <Uniform Type="int" ChannelName="m_amount" DisplayName="m_amount" Name="m_amount">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="5">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+    <Uniform Type="int" ChannelName="m_amount" DisplayName="m_amount" Name="m_amount">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="6">
+    <Uniform Type="int" ChannelName="m_amount" DisplayName="m_amount" Name="m_amount">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="7">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+    <Uniform Max="5" Min="1" Default="1" Inc="1" Tooltip="" Row="1" Col="0" Page="0" Type="int" ChannelName="num_iter" DisplayName="Iterations" Name="num_iter"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="8">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="9">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="10">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9"></Uniform>
+    <Uniform Max="10" Min="0" Default="3" Inc="1" Tooltip="" Row="0" Col="1" Page="0" Type="int" ChannelName="amount" DisplayName="Amount" Name="amount"></Uniform>
+    <Uniform Max="20.0" Min="0.0" Default="10.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="Detail" DisplayName="Detail" Name="Detail"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass8"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="11">
+    <Uniform
+      Index="1"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Matte"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass10"></Uniform>
+  </Shader>
+  <Page Name="General" Page="0">
+    <Col Name="Median" Col="0" Page="0"></Col>
+    <Col Name="Denoise" Col="1" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>
