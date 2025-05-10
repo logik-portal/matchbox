@@ -1,0 +1,22 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" LimitInputsToTexture="True" Description="
+This Matchbox shader creates Digital Chaos
+
+based on www.shadertoy.com/view/ttBSDR by 104
+Matchbox version by ivar@inferno-op.com" Name="Digital Chaos v06">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.9" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="density" DisplayName="Density" Name="density">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="1.0" Default="5.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="complexity" DisplayName="Complexity" Name="complexity">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.001" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="speed" DisplayName="Speed" Name="speed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="offset" DisplayName="Offset" Name="offset">
+</Uniform>
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Look" Col="0" Page="0">
+      </Col>
+      <Col Name="Time" Col="1" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
