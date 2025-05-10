@@ -1,0 +1,120 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1.3" Description="
+This shader creates Mandelbulb Fractals inside Action.
+
+Demo clip: http://vimeo.com/117717079
+
+Based on: http://hirnsohle.de/test/fractalLab/
+
+Matchbox version by ivar@inferno-op.com" Name="CROK Mandelbulb CFX">
+ <Shader OutputBitDepth="Output" Index="1">
+  <Uniform Name="power"              DisplayName="Power"              Page="0" Col="0" Row="0" Type="float"      Default="8.0"        Min="0.0"        Max="100.0"      Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="surfaceDetail"      DisplayName="Detail"             Page="0" Col="0" Row="1" Type="float"      Default="0.6"        Min="0.0"        Max="50.0"       Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="surfaceSmoothness"  DisplayName="Smoothness"         Page="0" Col="0" Row="2" Type="float"      Default="0.8"        Min="-10.0"      Max="10.0"       Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="boundingRadius"     DisplayName="Bounding Radius"    Page="0" Col="0" Row="3" Type="float"      Default="50.0"        Min="0.0"        Max="100.0"      Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="translate"          DisplayName="Position"           Page="0" Col="1" Row="0" Type="vec3"       Action3DWidget="True"                 IconType="Axis"  Inc="0.01"                                 ValueType="Position" Tooltip="">
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="objRotation"        DisplayName="Rotation"           Page="0" Col="1" Row="2" Type="vec3"       Action3DWidget="True"                 IconType="Axis"  Inc="0.1"                                  ValueType="Position" Tooltip="">
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="juliaFactor"        DisplayName="Julia Bulb Factor"  Page="0" Col="2" Row="0" Type="float"      Default="0.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.001"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="radiolaria"         DisplayName="Radiolaria"         Page="0" Col="2" Row="1" Type="float"      Default="0.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.001"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="radiolariaFactor"   DisplayName="Radiolaria Factor"  Page="0" Col="2" Row="2" Type="float"      Default="0.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.001"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="light"              DisplayName="Position"           Page="1" Col="0" Row="0" Type="vec3"       Action3DWidget="True" IconType="Light"                 Inc="0.1"                                  ValueType="Position" Tooltip="">
+                                                                                                     <SubUniform Default="-16.0"      Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="100.0"      Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="-60.0"      Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="specularity"        DisplayName="Specularity"        Page="1" Col="0" Row="3" Type="float"      Default="1.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="specularExponent"   DisplayName="Exponent"           Page="1" Col="0" Row="4" Type="float"      Default="5.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+
+  <Uniform Name="aoIntensity"        DisplayName="Intensity"          Page="1" Col="1" Row="0" Type="float"      Default="3.0"       Min="0.0"        Max="10.0"       Inc="0.001"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="aoSpread"           DisplayName="Spread"             Page="1" Col="1" Row="1" Type="float"      Default="1.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.001"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="aoIterations"       DisplayName="Iterations"         Page="1" Col="1" Row="2" Type="int"        Default="8"          Min="0"   Max="24"    Inc="1"                                    Tooltip=""></Uniform>
+  <Uniform Name="fog"                DisplayName="Intensity"          Page="1" Col="2" Row="0" Type="float"      Default="0.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="fogFalloff"         DisplayName="Falloff"            Page="1" Col="2" Row="1" Type="float"      Default="0.0"        Min="0.0"        Max="1000000.0"  Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="colorIterations"    DisplayName="Iterations"         Page="2" Col="0" Row="0" Type="int"        Default="4"          Min="0"          Max="10"         Inc="1"                                    Tooltip=""></Uniform>
+  <Uniform Name="ambientColor"       DisplayName="Ambient Color"      Page="2" Col="0" Row="1" Type="float"      Default="5.0"        Min="-1000000.0" Max="1000000.0"  Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="ambientIntensity"   DisplayName="AmbientIntensity"   Page="2" Col="0" Row="2" Type="float"      Default="0.7"        Min="-1000000.0" Max="1000000.0"  Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="background1Color"   DisplayName="Background Top"     Page="2" Col="0" Row="3" Type="vec3"                                                              Inc="0.01"                                 ValueType="Colour" Tooltip="">
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.4"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.9"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="background2Color"   DisplayName="background2Color"   Page="2" Col="0" Row="4" Type="vec3"                                                              Inc="0.01"                                 ValueType="Colour" Tooltip="">
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="color1"             DisplayName="Color 1"            Page="2" Col="1" Row="0" Type="vec3"                                                              Inc="0.01"                                 ValueType="Colour" Tooltip="">
+                                                                                                     <SubUniform Default="1.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="1.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="1.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="color2"             DisplayName="Color 2"            Page="2" Col="1" Row="1" Type="vec3"                                                              Inc="0.01"                                 ValueType="Colour" Tooltip="">
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.5"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.9"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="color3"             DisplayName="Color 3"            Page="2" Col="1" Row="2" Type="vec3"                                                              Inc="0.01"                                 ValueType="Colour" Tooltip="">
+                                                                                                     <SubUniform Default="1.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.5"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="innerGlowColor"     DisplayName="Inner Glow"         Page="2" Col="1" Row="3" Type="vec3"                                                              Inc="0.01"                                 ValueType="Colour" Tooltip="">
+                                                                                                     <SubUniform Default="0.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.4"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="0.9"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="outerGlowColor"     DisplayName="Outer Glow"         Page="2" Col="1" Row="4" Type="vec3"                                                              Inc="0.01"                                 ValueType="Colour" Tooltip="">
+                                                                                                     <SubUniform Default="1.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="1.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform>
+                                                                                                     <SubUniform Default="1.0"        Min="-1000000.0" Max="1000000.0"                   ResDependent="None"></SubUniform></Uniform>
+  <Uniform Name="color1Intensity"    DisplayName="Color 1"            Page="2" Col="2" Row="0" Type="float"      Default="0.45"       Min="0.0"        Max="1.0"        Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="color2Intensity"    DisplayName="Color 2"            Page="2" Col="2" Row="1" Type="float"      Default="0.3"        Min="0.0"        Max="1.0"        Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="color3Intensity"    DisplayName="Color 3"            Page="2" Col="2" Row="2" Type="float"      Default="0.0"        Min="0.0"        Max="1.0"        Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="innerGlowIntensity" DisplayName="Inner Glow"         Page="2" Col="2" Row="3" Type="float"      Default="5.0"        Min="0.0"        Max="50.0"       Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="outerGlowIntensity" DisplayName="Outer Glow"         Page="2" Col="2" Row="4" Type="float"      Default="0.0"        Min="0.0"        Max="50.0"       Inc="0.01"       ResDependent="None"       Tooltip=""></Uniform>
+  <Uniform Name="maxIterations"      DisplayName="Iterations"         Page="3" Col="0" Row="0" Type="int"        Default="8"          Min="0"          Max="16"        Inc="1"                                    Tooltip=""></Uniform>
+  <Uniform Name="stepLimit"          DisplayName="Max Steps"          Page="3" Col="0" Row="1" Type="int"        Default="500"        Min="0"          Max="5000"       Inc="1"                                    Tooltip=""></Uniform>
+  <Uniform Name="antialiasing"       DisplayName="Enable"             Page="3" Col="1" Row="0" Type="bool"       Default="False"                                                                                   Tooltip=""></Uniform>
+
+  <Uniform Max="1000000" Min="1" Default="8" Inc="1" Tooltip="" Row="1" Col="1" Page="3" DisplayName="Steps" Type="int" Name="aa_strength" ValueType="Popup">
+           <PopupEntry Title="1 Sample" Value="1">
+           </PopupEntry>
+           <PopupEntry Title="4 Samples" Value="4">
+           </PopupEntry>
+           <PopupEntry Title="8 Samples" Value="8">
+           </PopupEntry>
+           <PopupEntry Title="16 Samples" Value="16">
+           </PopupEntry>
+           <PopupEntry Title="32 Samples" Value="32">
+           </PopupEntry>
+           <PopupEntry Title="64 Samples" Value="64">
+           </PopupEntry>
+           <PopupEntry Title="128 Samples" Value="128">
+           </PopupEntry>
+    </Uniform>
+
+  <Uniform Name="aa_softness"        DisplayName="Softness"           Page="3" Col="1" Row="2" Type="float"      Default="1.0"        Min="0.0001"     Max="10.0"       Inc="0.01"     ResDependent="None"          Tooltip=""></Uniform>
+
+  <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputColor="67, 77, 83" InputType="Front" Mipmaps="True" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+  </Uniform>
+  <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Depth" InputColor="67, 77, 83" InputType="Z-Depth" Mipmaps="True" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="depth">
+  </Uniform>
+ </Shader>
+ <Page Page="0" Name="Fractal">
+  <Col Page="0" Col="0" Name="Setup"></Col>
+  <Col Page="0" Col="1" Name="Position / Rotation"></Col>
+  <Col Page="0" Col="2" Name="Additional Parameters"></Col>
+ </Page>
+ <Page Page="1" Name="Light">
+  <Col Page="1" Col="0" Name="Light"></Col>
+  <Col Page="1" Col="1" Name="Ambient Occlusion"></Col>
+  <Col Page="1" Col="2" Name="Fog"></Col>
+ </Page>
+ <Page Page="2" Name="Look">
+  <Col Page="2" Col="0" Name="General"></Col>
+  <Col Page="2" Col="1" Name="Color"></Col>
+  <Col Page="2" Col="2" Name="Intensity"></Col>
+ </Page>
+ <Page Page="3" Name="Render">
+  <Col Page="3" Col="0" Name="Fractal"></Col>
+  <Col Page="3" Col="1" Name="Antialiasing"></Col>
+ </Page>
+</ShaderNodePreset>
