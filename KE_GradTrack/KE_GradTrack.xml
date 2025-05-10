@@ -1,0 +1,122 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2" Description="
+Generates a gradient between two or four tracked points by continuously sampling the color underneath them.
+
+Front input required, matte input optional.
+
+Get tracking data from Action axis nodes, then link those channels to the Tracking fields.
+Use the Adjustments fields to dial in where the sample should come from.
+
+•Sample Blur will average a larger area under the point.
+•Bias will move the center of the gradient closer or further to the Start or End location.
+(Bias only works for a 2-point gradient)
+
+There are three Output options:
+-UI Overlay will show where the samples are coming from, and the direction of the gradient.
+-Gradient will draw the full frame gradient.
+-Comp will put the gradient over the Front input, through a matte.
+
+Matte output is a black-and-white version of the gradient, so each color could be adjusted downstream.
+(Matte output only works for a 2-point gradient)
+
+4-point gradients can be created differently by changing the Version drop down.
+
+Demo:
+https://vimeo.com/953262222
+Live Demo:
+https://www.youtube.com/watch?v=O7nElwMPi48
+Begins six minutes in.
+
+Based on Ivar's crok_gradient: https://logik-matchbook.org/shader/crok_gradient" Name="KE_GradTrack">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Inc="0.1" Tooltip="" Row="2" Col="0" Page="0" Action3DWidget="False" IconType="None" Type="vec2" ChannelName="point2Track" DisplayName="Point 2 Track - Blue LR" Name="point2Track">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.1" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="False" IconType="None" Type="vec2" ChannelName="point1Track" DisplayName="Point 1 Track - Red LL" Name="point1Track">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.1" Tooltip="" Row="2" Col="2" Page="0" Action3DWidget="False" IconType="None" Type="vec2" ChannelName="point4Track" DisplayName="Point 4 Track - Magenta UR" Name="point4Track" UIConditionSource="gradNo" UIConditionValue="1" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.1" Tooltip="" Row="0" Col="2" Page="0" Action3DWidget="False" IconType="None" Type="vec2" ChannelName="point3Track" DisplayName="Point 3 Track - Yellow UL" Name="point3Track" UIConditionSource="gradNo" UIConditionValue="1" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Name="point1AdjustIcon" Type="vec2" DisplayName="Point 1 Adjust" Page="0" Col="1" Row="0" Tooltip="" Inc="0.001" ValueType="Position" IconType="Axis" IconDefaultState="True">
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.3">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.3">
+         </SubUniform>
+      </Uniform>
+      <Uniform Name="point2AdjustIcon" Type="vec2" DisplayName="Point 2 Adjust " Page="0" Col="1" Row="2" Tooltip="" Inc="0.001" ValueType="Position" IconType="Axis" IconDefaultState="True">
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.7">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.3">
+         </SubUniform>
+      </Uniform>
+      <Uniform Name="point3AdjustIcon" Type="vec2" DisplayName="Point 3 Adjust" Page="0" Col="3" Row="0" Tooltip="" Inc="0.001" ValueType="Position" IconType="Axis" IconDefaultState="True" UIConditionSource="gradNo" UIConditionValue="1" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.3">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.7">
+         </SubUniform>
+      </Uniform>
+      <Uniform Name="point4AdjustIcon" Type="vec2" DisplayName="Point 4 Adjust" Page="0" Col="3" Row="2" Tooltip="" Inc="0.001" ValueType="Position" IconType="Axis" IconDefaultState="True" UIConditionSource="gradNo" UIConditionValue="1" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.7">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.7">
+         </SubUniform>
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+      <Uniform Index="1" NoInput="White" Tooltip="" DisplayName="Matte (Optional)" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="matte" InputType="Matte">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="3.0" Inc="0.1" Tooltip="" Row="4" Col="0" Page="0" DisplayName="Sample Blur" Type="float" Name="blurAmount">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.99" Min="0.01" Default="0.5" Inc="0.01" Tooltip="" Row="4" Col="1" Page="0" Type="float" DisplayName="Bias" Name="bias_adj" UIConditionSource="gradNo" UIConditionValue="0" UIConditionType="Disable">
+      </Uniform>
+      <Uniform Max="1000000" Min="0" Default="0" Inc="1" Tooltip="" Row="0" Col="4" Page="0" DisplayName="Output:" Type="int" Name="outputType" ValueType="Popup">
+           <PopupEntry Title="UI Overlay" Value="0">
+           </PopupEntry>
+           <PopupEntry Title="Gradient" Value="1">
+           </PopupEntry>
+           <PopupEntry Title="Comp" Value="2">
+           </PopupEntry>
+	  </Uniform>
+     <Uniform Max="1" Min="0" Default="0" Inc="1" Tooltip="" Row="3" Col="4" Page="0" DisplayName="Gradient:" Type="int" Name="gradNo" ValueType="Popup">
+           <PopupEntry Title="2 Point" Value="0">
+           </PopupEntry>
+           <PopupEntry Title="4 Point" Value="1">
+           </PopupEntry>
+	  </Uniform>
+     <Uniform Max="2" Min="0" Default="2" Inc="1" Tooltip="" Row="2" Col="4" Page="0" DisplayName="Version:" Type="int" Name="gradType" ValueType="Popup" UIConditionSource="gradNo" UIConditionValue="1" UIConditionType="Hide">
+           <PopupEntry Title="Ver. 1" Value="0">
+           </PopupEntry>
+           <PopupEntry Title="Ver. 2" Value="1">
+           </PopupEntry>
+           <PopupEntry Title="Ver. 3" Value="2">
+           </PopupEntry>
+	  </Uniform>
+   </Shader>
+   <Page Name="Controls" Page="0">
+      <Col Name="Tracking 1-2" Col="0" Page="0">
+      </Col>
+      <Col Name="Adjustments 1-2" Col="1" Page="0">
+      </Col>
+      <Col Name="Tracking 3-4" Col="2" Page="0">
+      </Col>
+      <Col Name="Adjustments 3-4" Col="3" Page="0">
+      </Col>
+      <Col Name="Options" Col="4" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
