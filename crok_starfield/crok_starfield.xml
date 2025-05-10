@@ -1,0 +1,23 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" OverrideNormals="False" CommercialUsePermitted="True" ShaderType="Lightbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1.0" Description="
+Lightbox shader which creates a Starfield
+
+NOTE: This shader works only, if you have a large sphere surrounding your scene
+
+Lightbox version by ivar@inferno-op.com" Name="CROK Starfield">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="10.0" Min="1.0" Default="2.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" DisplayName="Amount" Name="adskUID_itterations">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000.0" Min="1.0" Default="50.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" DisplayName="Noise" Name="adskUID_density">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="2.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" DisplayName="Gain" Name="adskUID_gain">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="0.3" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" DisplayName="Saturation" Name="adskUID_saturation">
+      </Uniform>
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Setup" Col="0" Page="0">
+      </Col>
+      <Col Name="Colour" Col="1" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

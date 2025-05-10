@@ -1,0 +1,84 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" OverrideNormals="False" CommercialUsePermitted="True" ShaderType="Lightbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1.0" Description="
+This LightBox shader creates volumetric snow like particles.
+
+
+Based on https://www.shadertoy.com/view/4tSSzt by FabriceNeyret2 using the base ray-marcher of Trisomie21: https://www.shadertoy.com/view/4tfGRB#
+Bias code by Dominik Schmid https://www.shadertoy.com/view/llBSWc
+
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+Lightbox version by ivar@inferno-op.com" Name="CROK Snow 3D">
+   <Shader OutputBitDepth="Output" Index="1">
+       <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="0.5" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" DisplayName="Amount" Name="adskUID_amount">
+       </Uniform>
+       <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" DisplayName="Size" Name="adskUID_size">
+       </Uniform>
+       <Uniform ResDependent="None" Max="0.999" Min="0.0" Default="0.75" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" DisplayName="Bias" Name="adskUID_bias_adj">
+       </Uniform>
+       
+	  
+       <!-- Disabled Uniforms
+	   <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="4" Col="0" Page="0" Type="float" DisplayName="max_rad" Name="adskUID_max_rad">
+       </Uniform>
+	   -->
+	   
+       <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" DisplayName="Overall" Name="adskUID_Speed">
+       </Uniform>
+       <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.08" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" DisplayName="Offset" Name="adskUID_Offset">
+       </Uniform>
+	  <Uniform Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" IconType="None" ValueType="Position" Type="vec3" DisplayName="Speed" Name="adskUID_speed">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Default="0" Inc="1" Tooltip="" Row="0" Col="2" Page="0" DisplayName="Blend Modes" Type="int" ValueType="Popup" Name="adskUID_blendModes">
+         <PopupEntry Title="No Blending" Value="-1">
+         </PopupEntry>
+         <PopupEntry Title="Min/Darken" Value="30">
+         </PopupEntry>
+	 <PopupEntry Title="Mutliply" Value="2">
+         </PopupEntry>
+	 <PopupEntry Title="Max/Lighten" Value="29">
+         </PopupEntry>
+	 <PopupEntry Title="Screen" Value="17">
+         </PopupEntry>
+	 <PopupEntry Title="Add" Value="0">
+         </PopupEntry>
+	 <PopupEntry Title="Overlay" Value="18">
+         </PopupEntry>
+	 <PopupEntry Title="Soft Light" Value="13">
+         </PopupEntry>
+	 <PopupEntry Title="Hard Light" Value="14">
+         </PopupEntry>
+	 <PopupEntry Title="Spotlight" Value="11">
+         </PopupEntry>
+	 <PopupEntry Title="Difference" Value="19">
+         </PopupEntry>
+	 <PopupEntry Title="Exclusion" Value="20">
+         </PopupEntry>
+	 <PopupEntry Title="Subtract" Value="1">
+         </PopupEntry>
+	 <PopupEntry Title="Linear Burn" Value="10">
+         </PopupEntry>
+	 <PopupEntry Title="Lighter Color" Value="33">
+         </PopupEntry>
+	 <PopupEntry Title="Linear Light" Value="32">
+         </PopupEntry>
+	 <PopupEntry Title="Pin Light" Value="15">
+         </PopupEntry>
+      </Uniform>  
+   </Shader>
+
+   <Page Name="General" Page="0">
+      <Col Name="Look" Col="0" Page="0">
+      </Col>
+      <Col Name="Timing" Col="1" Page="0">
+      </Col>
+      <Col Name="Blending" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
