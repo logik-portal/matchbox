@@ -1,0 +1,45 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="Uses the supplied Zdepth image to do Screen Space Ambient Occlusion" Name="L_SSAO">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.01" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="znear" Type="float" Name="znear">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.40" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="gdisplace" Type="float" Name="gdisplace">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.250" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" DisplayName="aoclamp" Type="float" Name="aoclamp">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.90" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" DisplayName="miststart" Type="float" Name="miststart">
+      </Uniform>
+      <Uniform Max="1000000" Min="-1000000" Default="32" Inc="1" Tooltip="" Row="4" Col="0" Page="0" DisplayName="samples" Type="int" Name="samples">
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP" GL_TEXTURE_WRAP_S="GL_CLAMP" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Type="sampler2D" Name="Front">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Depth" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP" GL_TEXTURE_WRAP_S="GL_CLAMP" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Type="sampler2D" Name="Depth">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" DisplayName="mistend" Type="float" Name="mistend">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" DisplayName="zfar" Type="float" Name="zfar">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.30" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" DisplayName="radius" Type="float" Name="radius">
+      </Uniform>
+      <Uniform Row="3" Col="1" Page="0" Default="False" Tooltip="" DisplayName="noise" Type="bool" Name="noise">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.10" Inc="0.01" Tooltip="" Row="4" Col="1" Page="0" DisplayName="noiseamount" Type="float" Name="noiseamount">
+      </Uniform>
+      <Uniform Row="0" Col="2" Page="0" Default="True" Tooltip="" DisplayName="onlyAO" Type="bool" Name="onlyAO">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.40" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" DisplayName="lumInfluence" Type="float" Name="lumInfluence">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.40" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" DisplayName="diffarea" Type="float" Name="diffarea">
+      </Uniform>
+      <Uniform Row="3" Col="2" Page="0" Default="False" Tooltip="" DisplayName="mist" Type="bool" Name="mist">
+      </Uniform>
+   </Shader>
+   <Page Name="L_SSAO" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+      <Col Name="Column 2" Col="1" Page="0">
+      </Col>
+      <Col Name="Column 3" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+

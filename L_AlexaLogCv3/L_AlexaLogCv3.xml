@@ -1,0 +1,13 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="Linearise the AlexalogCv3 encoded input or go back out as the inverse using the Arri AlexaLogCv3 function for EI800" Name="L_AlexaLogCv3">
+   <Shader OutputBitDepth="Output" Index="1">
+	<Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="Encode linear input as ArriLogCv3." DisplayName="Convert to ArriLogCv3" Type="bool" Name="lin_2_log">
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="input" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Type="sampler2D" Name="sceneBuffer">
+      </Uniform>
+   </Shader>
+   <Page Name="Options" Page="0">
+      <Col Name="L_AlexaLogCv3 v2.0" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+
