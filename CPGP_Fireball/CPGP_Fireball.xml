@@ -1,0 +1,18 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="This Matchbox shader generates a simple fireball!
+
+Demo: https://vimeo.com/80257415
+	
+Contact us at dev@cpgp.nu if you want us to customize or create new shaders for you!
+
+Based on https://www.shadertoy.com/view/lsf3RH
+
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License" Name="CPGP_FireBall">
+    <Shader OutputBitDepth="Output" Index="1">
+        <Uniform ResDependent="None" Max="100.0" Min="1.0" Default="1.0" Inc="1.0" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Flame Speed" Type="float" Name="paramFlameSpeed">
+        </Uniform>
+    </Shader>
+    <Page Name="Controls" Page="0">
+        <Col Name="" Col="0" Page="0">
+        </Col>
+    </Page>
+</ShaderNodePreset>

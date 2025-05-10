@@ -1,0 +1,669 @@
+<ShaderNodePreset
+    ShaderType="Matchbox"
+    Name="Chromatic Adaptation"
+    Description="This Matchbox shader performs a chromatic adaptation.
+It also takes care of any necessary color space conversions.
+
+Note that this shader does not perform any image scaling or reformatting, so that the operation may be incorrect if the result image format does not match the input image format.
+It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+
+This shader is licensed under the terms of the MIT license.
+
+For questions contact:
+nobbl211@gmail.com"
+    HelpLink=""
+    Version="0"
+    CommercialUsePermitted="True"
+    SoftwareVersion="2020"
+    LimitInputsToTexture="True"
+    TimelineUseBack="False"
+    SupportsAdaptiveDegradation="False"
+    SupportsAction="True"
+    SupportsTransition="False"
+    SupportsTimeline="True"
+    MatteProvider="False">
+    <Shader
+        Index="1"
+        OutputBitDepth="Float32">
+        <Uniform
+            Type="sampler2D"
+            Index="0"
+            Name="front"
+            DisplayName="Front"
+            InputType="Front"
+            NoInput="Error"
+            Mipmaps="False"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_MAG_FILTER="GL_NEAREST"
+            GL_TEXTURE_MIN_FILTER="GL_NEAREST">
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="input_cs"
+            ChannelName="input_cs"
+            DisplayName="Colour Space"
+            Tooltip="input colour space
+note that the input must be linear in all cases"
+            Page="0"
+            Col="0"
+            Row="0"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="ACEScg"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ACES2065-1"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 709"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 2020"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="P3D65"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="XYZ"
+                Value="5">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="input_white_type"
+            ChannelName="input_white_type"
+            DisplayName="White Type"
+            Tooltip="input white point type"
+            Page="0"
+            Col="1"
+            Row="0"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="Native"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Illuminant"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Colour Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coordinates"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="from Colour"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="input_illuminant"
+            ChannelName="input_illuminant"
+            DisplayName="Illuminant"
+            Tooltip="input white point illuminant"
+            Page="0"
+            Col="1"
+            Row="1"
+            ValueType="Popup"
+            UIConditionSource="input_white_type"
+            UIConditionValue="1"
+            UIConditionType="Hide"
+            Default="0">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Equal Energy"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="input_temperature"
+            ChannelName="input_temperature"
+            DisplayName="Temp"
+            Tooltip="correlated colour temperature of the input white point (per Illuminant series D)"
+            Page="0"
+            Col="1"
+            Row="1"
+            UIConditionSource="input_white_type"
+            UIConditionValue="2"
+            UIConditionType="Hide"
+            Default="6000.0"
+            Inc="50.0"
+            Min="4000.0"
+            Max="25000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="input_tint"
+            ChannelName="input_tint"
+            DisplayName="Tint"
+            Tooltip="correlated colour tint of the input white point"
+            Page="0"
+            Col="1"
+            Row="2"
+            UIConditionSource="input_white_type"
+            UIConditionValue="2"
+            UIConditionType="Hide"
+            Default="0.0"
+            Inc="0.001"
+            Min="-1.0"
+            Max="1.0">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Name="input_temperature_shift"
+            ChannelName="input_temperature_shift"
+            DisplayName="Temp shift"
+            Tooltip="applies a scaling of the colour temperature by a factor of 1.4388/1.438
+to mimic the CIE D-series behavior instead of
+maintaining the physical exact correlated colour temperature"
+            Page="0"
+            Col="1"
+            Row="3"
+            UIConditionSource="input_white_type"
+            UIConditionValue="2"
+            UIConditionType="Hide"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Name="input_coordinates"
+            ChannelName="input_coordinates"
+            DisplayName="Coords"
+            Tooltip="CIE 1931 xy coordinates of the input white point"
+            Page="0"
+            Col="1"
+            Row="1"
+            ValueType="Position"
+            IconType="None"
+            UIConditionSource="input_white_type"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                ResDependent="None"
+                Default="0.32168"
+                Inc="0.0001"
+                Min="-1.0"
+                Max="2.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="0.33767"
+                Inc="0.0001"
+                Min="-1.0"
+                Max="2.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Name="input_colour"
+            ChannelName="input_colour"
+            DisplayName="Colour"
+            Tooltip="colour representation of the input white point"
+            Page="0"
+            Col="1"
+            Row="1"
+            ValueType="Colour"
+            IconType="None"
+            UIConditionSource="input_white_type"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <SubUniform
+                ResDependent="None"
+                Default="1.0"
+                Inc="0.001"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="1.0"
+                Inc="0.001"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="1.0"
+                Inc="0.001"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="input_surround"
+            ChannelName="input_surround"
+            DisplayName="Surround"
+            Tooltip="viewing conditions"
+            Page="0"
+            Col="2"
+            Row="0"
+            ValueType="Popup"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Hide"
+            Default="0">
+            <PopupEntry
+                Title="Average"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Dim"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Dark"
+                Value="2">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="input_field_luminance"
+            ChannelName="input_field_luminance"
+            DisplayName="L_A"
+            Tooltip="input field luminance"
+            Page="0"
+            Col="2"
+            Row="1"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Hide"
+            Default="20.0"
+            Inc="10"
+            Min="0.0000001"
+            Max="1000000000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="input_rel_background"
+            ChannelName="input_rel_background"
+            DisplayName="n"
+            Tooltip="relative input background brightness compared to the scene white"
+            Page="0"
+            Col="2"
+            Row="2"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Hide"
+            Default="1.0"
+            Inc="0.01"
+            Min="0.0000001"
+            Max="1000000000.0">
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="output_cs"
+            ChannelName="output_cs"
+            DisplayName="Colour Space"
+            Tooltip="output colour space
+note that the output must be linear in all cases"
+            Page="1"
+            Col="0"
+            Row="0"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="ACEScg"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ACES2065-1"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 709"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 2020"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="P3D65"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="XYZ"
+                Value="5">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="output_white_type"
+            ChannelName="output_white_type"
+            DisplayName="White Type"
+            Tooltip="output white point type"
+            Page="1"
+            Col="1"
+            Row="0"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="Native"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Illuminant"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Colour Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coordinates"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="from Colour"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="output_illuminant"
+            ChannelName="output_illuminant"
+            DisplayName="Illuminant"
+            Tooltip="output white point illuminant"
+            Page="1"
+            Col="1"
+            Row="1"
+            ValueType="Popup"
+            UIConditionSource="output_white_type"
+            UIConditionValue="1"
+            UIConditionType="Hide"
+            Default="0">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Equal Energy"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="output_temperature"
+            ChannelName="output_temperature"
+            DisplayName="Temp"
+            Tooltip="correlated colour temperature of the output white point (per Illuminant series D)"
+            Page="1"
+            Col="1"
+            Row="1"
+            UIConditionSource="output_white_type"
+            UIConditionValue="2"
+            UIConditionType="Hide"
+            Default="6000.0"
+            Inc="50.0"
+            Min="4000.0"
+            Max="25000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="output_tint"
+            ChannelName="output_tint"
+            DisplayName="Tint"
+            Tooltip="correlated colour tint of the output white point"
+            Page="1"
+            Col="1"
+            Row="2"
+            UIConditionSource="output_white_type"
+            UIConditionValue="2"
+            UIConditionType="Hide"
+            Default="0.0"
+            Inc="0.001"
+            Min="-1.0"
+            Max="1.0">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Name="output_temperature_shift"
+            ChannelName="output_temperature_shift"
+            DisplayName="Temp shift"
+            Tooltip="applies a scaling of the colour temperature by a factor of 1.4388/1.438
+to mimic the CIE D-series behavior instead of
+maintaining the physical exact correlated colour temperature"
+            Page="1"
+            Col="1"
+            Row="3"
+            UIConditionSource="output_white_type"
+            UIConditionValue="2"
+            UIConditionType="Hide"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Name="output_coordinates"
+            ChannelName="output_coordinates"
+            DisplayName="Coords"
+            Tooltip="CIE 1931 xy coordinates of the output white point"
+            Page="1"
+            Col="1"
+            Row="1"
+            ValueType="Position"
+            IconType="None"
+            UIConditionSource="output_white_type"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                ResDependent="None"
+                Default="0.32168"
+                Inc="0.0001"
+                Min="-1.0"
+                Max="2.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="0.33767"
+                Inc="0.0001"
+                Min="-1.0"
+                Max="2.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Name="output_colour"
+            ChannelName="output_colour"
+            DisplayName="Colour"
+            Tooltip="colour representation of the output white point"
+            Page="1"
+            Col="1"
+            Row="1"
+            ValueType="Colour"
+            IconType="None"
+            UIConditionSource="output_white_type"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <SubUniform
+                ResDependent="None"
+                Default="1.0"
+                Inc="0.001"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="1.0"
+                Inc="0.001"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="1.0"
+                Inc="0.001"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="output_surround"
+            ChannelName="output_surround"
+            DisplayName="Surround"
+            Tooltip="viewing conditions"
+            Page="1"
+            Col="2"
+            Row="0"
+            ValueType="Popup"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Hide"
+            Default="0">
+            <PopupEntry
+                Title="Average"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Dim"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Dark"
+                Value="2">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="output_field_luminance"
+            ChannelName="output_field_luminance"
+            DisplayName="L_A"
+            Tooltip="output field luminance"
+            Page="1"
+            Col="2"
+            Row="1"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Hide"
+            Default="20.0"
+            Inc="10"
+            Min="0.0000001"
+            Max="1000000000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="output_rel_background"
+            ChannelName="output_rel_background"
+            DisplayName="n"
+            Tooltip="relative output background brightness compared to the scene white"
+            Page="1"
+            Col="2"
+            Row="2"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Hide"
+            Default="1.0"
+            Inc="0.01"
+            Min="0.0000001"
+            Max="1000000000.0">
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="method"
+            ChannelName="method"
+            DisplayName="Method"
+            Tooltip="adaptation method"
+            Page="2"
+            Col="0"
+            Row="0"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="CAT02"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="CAT02 (simple)"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Bradford"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Von Kries"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+    </Shader>
+    <Page
+        Name="Input"
+        Page="0">
+        <Col
+            Name="Colour Space"
+            Page="0"
+            Col="0">
+        </Col>
+        <Col
+            Name="White Point"
+            Page="0"
+            Col="1">
+        </Col>
+        <Col
+            Name="Scene"
+            Page="0"
+            Col="2">
+        </Col>
+    </Page>
+    <Page
+        Name="Output"
+        Page="1">
+        <Col
+            Name="Colour Space"
+            Page="1"
+            Col="0">
+        </Col>
+        <Col
+            Name="White Point"
+            Page="1"
+            Col="1">
+        </Col>
+        <Col
+            Name="Scene"
+            Page="1"
+            Col="2">
+        </Col>
+    </Page>
+    <Page
+        Name="Controls"
+        Page="2">
+        <Col
+            Name="Method"
+            Page="2"
+            Col="0">
+        </Col>
+    </Page>
+</ShaderNodePreset>

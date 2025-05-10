@@ -1,0 +1,28 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="This Matchbox shader creates a cheap lens flare.
+Inputs:
+- Front Noise: a noise texture
+Params:
+- Direction : the direction of lens flare
+- Move: Use automated movement 
+- Speed: the speed for movement
+Based on https://www.shadertoy.com/view/4sX3Rs
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License" Name="Lens Flare">
+    <Shader OutputBitDepth="Output" Index="1">
+        <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Move" Type="bool" Name="paramMove">
+        </Uniform>
+        <Uniform Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Direction" Type="vec2" Name="paramDirection">
+            <SubUniform ResDependent="None" Max="2.0" Min="0.0" Default="0.0">
+            </SubUniform>
+            <SubUniform ResDependent="None" Max="2.0" Min="0.0" Default="0.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front Noise" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="inputNoise">
+        </Uniform>
+        <Uniform ResDependent="None" Max="10.0" Min="1.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" DisplayName="Speed" Type="float" Name="paramSpeed">
+        </Uniform>
+    </Shader>
+    <Page Name="Page 1" Page="0">
+        <Col Name="Column 1" Col="0" Page="0">
+        </Col>
+    </Page>
+</ShaderNodePreset>

@@ -1,0 +1,15 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="
+This Matchbox shader manage generative particules based on Kleinian Fractals
+Parameter:
+- Particules Speed : the global speed of particules
+
+Based on https://www.shadertoy.com/view/MssGD8" Name="Particules Fractals">
+  <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="30.0" Min="0.1" Default="2.0" Inc="0.1" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Particules Speed" Type="float" Name="paramSpeed">
+      </Uniform>
+  </Shader>
+  <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+  </Page>
+</ShaderNodePreset>

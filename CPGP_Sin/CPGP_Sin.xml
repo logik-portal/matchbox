@@ -1,0 +1,22 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="This Matchbox generates a a bar that moves with a sinusoidal movement.
+
+Demo: https://vimeo.com/80257415
+	
+Contact us at dev@cpgp.nu if you want us to customize or create new shaders for you!
+
+    Parameters:
+    - Sin Speed: change the speed of the sinusoid
+    - Sin Pos X axis : change sin X position
+    Based on http://glsl.heroku.com/e#12457.0
+    License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License" Name="CPGP_Sin">
+    <Shader OutputBitDepth="Output" Index="1">
+        <Uniform ResDependent="None" Max="100.0" Min="1.0" Default="10.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Sin Speed" Type="float" Name="paramSinSpeed">
+        </Uniform>
+        <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Sin Pos X axis" Type="float" Name="paramSinSPosX">
+        </Uniform>
+    </Shader>
+    <Page Name="Page 1" Page="0">
+        <Col Name="Column 1" Col="0" Page="0">
+        </Col>
+    </Page>
+</ShaderNodePreset>
