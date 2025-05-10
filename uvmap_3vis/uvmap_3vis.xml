@@ -1,0 +1,16 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="- 3vis - Remap a texture via a UV Map - Author: Eric Pouliot" Name="UV Map-3vis">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="0" Col="1" Page="0" DisplayName="Object ID" Type="int" Name="selectObj">
+      </Uniform>
+     <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Texture" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="iChannel1">
+      </Uniform>
+      <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="Enter object ID" DisplayName="Select Object" Type="bool" Name="PickObj">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="UV Map" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="iChannel0">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
