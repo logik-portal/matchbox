@@ -1,0 +1,102 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description="This node is the reverse grade function found inside the Nuke Grade node. Set your black and white points from your source material (look at front view), then look at the target footage (either via the back or just a context view) and pull the blacks and whites off that plate, then look at result view and tada! they should be a pretty close match.... 
+
+Made by John Ashby" Name="AFX_ReverseGrade">
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front"></Uniform>
+   <Uniform
+      Index="1"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Back"
+      InputType="Back"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="back">
+   </Uniform>
+    <Uniform
+      Index="2"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Matte"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="False" IconType="None" ValueType="Colour" Type="vec3" ChannelName="s_blackPoint" DisplayName="Black Point" Name="s_blackPoint">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Action3DWidget="False" IconType="None" ValueType="Colour" Type="vec3" ChannelName="s_whitePoint" DisplayName="White Point" Name="s_whitePoint">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Action3DWidget="False" IconType="None" ValueType="Colour" Type="vec3" ChannelName="t_blackPoint" DisplayName="Black Point" Name="t_blackPoint">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Action3DWidget="False" IconType="None" ValueType="Colour" Type="vec3" ChannelName="t_whitePoint" DisplayName="White Point" Name="t_whitePoint">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Premultiplied" Type="bool" Name="premultiplied">
+      </Uniform>
+
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Front" Col="0" Page="0">
+      </Col>
+      <Col Name="Back" Col="1" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+

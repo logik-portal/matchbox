@@ -1,0 +1,117 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description="This is based off the Nuke grade node, so people who are used to the math of this node will be right at home, this node can create negative values, but that's the point, so you will want to clamp if outputing for broadcast... 
+
+Made by John Ashby" Name="AFX_Grade">
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front"></Uniform>
+    <Uniform
+      Index="1"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Matte"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="False" IconType="None" ValueType="Colour" Type="vec3" ChannelName="WhitePoint" DisplayName="White Point" Name="s_whitePoint">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.0" Inc="0.001" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="Temp" DisplayName="Temp" Name="temp">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.0" Inc="0.001" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="Tint" DisplayName="Tint" Name="tint">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.001" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="Offset" DisplayName="Offset" Name="offset">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.001" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="Multiply" DisplayName="Multiply" Name="multiply">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="Gamma" DisplayName="Gamma" Name="gamma">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="3" Col="1" Page="0" Type="float" ChannelName="Saturation" DisplayName="Saturation" Name="t_saturation">
+      </Uniform>
+
+      <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Premultiplied" Type="bool" Name="premultiplied">
+      </Uniform>
+
+      <Uniform Inc="0.001" Tooltip="" Row="0" Col="0" Page="1" IconType="None" ValueType="ColourWheelRGBOffset" Type="vec3" DisplayName="Offset" Name="RGBOffset" ChannelName="RGBOffset">
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0" DisplayName="R" ChannelName="r">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0" DisplayName="G" ChannelName="g">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0" DisplayName="B" ChannelName="b">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Inc="0.001" Tooltip="" Row="0" Col="1" Page="1" IconType="None" ValueType="ColourWheelRGBOffset" Type="vec3" DisplayName="Multiply" Name="RGBMultiply" ChannelName="RGBMultiply">
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="1.0" DisplayName="R" ChannelName="r">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="1.0" DisplayName="G" ChannelName="g">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="1.0" DisplayName="B" ChannelName="b">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Inc="0.001" Tooltip="" Row="0" Col="2" Page="1" IconType="None" ValueType="ColourWheelRGBOffset" Type="vec3" DisplayName="Gamma" Name="RGBGamma" ChannelName="RGBGamma">
+         <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="1.0" DisplayName="R" ChannelName="r">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="1.0" DisplayName="G" ChannelName="g">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="1.0" DisplayName="B" ChannelName="b">
+         </SubUniform>
+      </Uniform>
+   </Shader>
+
+   <Page Name="Base Grade" Page="0">
+      <Col Name="White Balance" Col="0" Page="0">
+      </Col>
+      <Col Name="Base Grade" Col="1" Page="0">
+      </Col>
+      <Col Name="Premultiplication - Batch Only" Col="2" Page="0">
+      </Col>
+   </Page>
+
+   <Page Name="RGB Grade" Page="1">
+      <Col Name="Offset" Col="0" Page="1">
+      </Col>
+      <Col Name="Multiply" Col="1" Page="1">
+      </Col>
+      <Col Name="Gamma" Col="2" Page="1">
+      </Col>
+   </Page>
+
+</ShaderNodePreset>
+

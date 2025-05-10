@@ -1,0 +1,53 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description="Based on the Despill algo if green is greater than the average of the red and blue channels, then bring green down to that color... also works with blue and redscreen, this algo is excellent for maintaining skintones.... 
+
+Made by John Ashby" Name="AFX_DeSpill">
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front">
+   </Uniform>
+      
+      <Uniform Default="0" Tooltip="" Row="0" Col="0" Page="0" DisplayName="TYPE" Type="int" Name="type" ValueType="Popup">
+         <PopupEntry Title="GREEN"     Value="0">
+         </PopupEntry>
+         <PopupEntry Title="BLUE"   Value="1">
+         </PopupEntry>
+         <PopupEntry Title="RED"    Value="2">
+         </PopupEntry>             
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.001" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="amount" DisplayName="Amount" Name="amount">
+      </Uniform>
+
+
+   </Shader>
+
+   <Page Name="Page 1" Page="0">
+      <Col Name="CONTROLS" Col="0" Page="0">
+      </Col>
+   </Page>
+
+</ShaderNodePreset>
+

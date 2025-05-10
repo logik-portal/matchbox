@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShaderNodePreset 
+	SupportsAdaptiveDegradation="False" 
+	SupportsAction="True" 
+	SupportsTransition="False" 
+	SupportsTimeline="True" 
+	TimelineUseBack="False" 
+	MatteProvider="True" 
+	DefaultIsNoOp="True"
+	CommercialUsePermitted="True" 
+	ShaderType="Matchbox" 
+	SoftwareVersion="2018.3.0" 
+	LimitInputsToTexture="True" 
+	Version="1" 
+	Description="Sat vs. Sat curve that works in HSV color science. Additional feautre is tapering the change by the distance from the target hue value. When enabled, the further from the selected target hue the lighter the change is. In additionl that falloff curve, which is linear by default can be re-shaped"
+	Name="AK HSV Saturation">
+   <Shader GridSubdivision="1" OutputBitDepth="Output" Index="1">
+	<Uniform 
+		Index="0" 
+		NoInput="Error" 
+		InputType="Front"
+		DisplayName="Source"
+		Mipmaps="False"
+		GL_TEXTURE_WRAP_T="GL_REPEAT"
+		GL_TEXTURE_WRAP_S="GL_REPEAT"
+		GL_TEXTURE_MAG_FILTER="GL_NEAREST"
+		GL_TEXTURE_MIN_FILTER="GL_NEAREST"
+		Type="sampler2D"
+		Name="front">
+	</Uniform>
+	<Uniform 
+		Index="1" 
+		NoInput="White" 
+		InputType="Selective"
+		DisplayName="Selective"
+		Mipmaps="False"
+		GL_TEXTURE_WRAP_T="GL_REPEAT"
+		GL_TEXTURE_WRAP_S="GL_REPEAT"
+		GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+		GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+		Type="sampler2D"
+		Name="selective">
+	</Uniform>
+	<Uniform 
+		Index="2" 
+		NoInput="White" 
+		InputType="Matte"
+		DisplayName="Matte"
+		Mipmaps="False"
+		GL_TEXTURE_WRAP_T="GL_REPEAT"
+		GL_TEXTURE_WRAP_S="GL_REPEAT"
+		GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+		GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+		Type="sampler2D"
+		Name="matte">
+	</Uniform>
+	<Uniform
+		Type="bool"
+                IconType="None"
+		DisplayName="Hue Falloff"
+		Default="False"
+		Tooltip=""
+		Row="0"
+		Col="2"
+		Page="0"
+		Name="falloff">	
+	</Uniform>
+        <Uniform
+                Type="vec3"
+		ValueType="Colour"
+                IconType="None"
+                ToolTip="Select Hue To Fall Off From"
+                DisplayName="Target Color"
+                Name="color_ref"
+                Inc="0.01"
+		UIConditionSource="falloff"
+		UIConditionValue="True"
+		UIConditionType="Hide"
+                Row="1"
+		Col="2" 
+		Page="0">
+                <SubUniform ResDependent="None" Min="0.0" Max="1.0" Default="1.0"></SubUniform>
+                <SubUniform ResDependent="None" Min="0.0" Max="1.0" Default="1.0"></SubUniform>
+                <SubUniform ResDependent="None" Min="0.0" Max="1.0" Default="1.0"></SubUniform>
+        </Uniform>
+	<Uniform
+		ResDependent="None"
+		CurveMinX="0.0"
+		CurveMaxX="1.0"
+		CurveMinY="0.0"
+		CurveMaxY="2.0"
+		CurveShape="6"
+		ToolTip="S-S Curve"
+		Row="0"
+		Col="0"
+		Page="0"
+		Inc="0.1"
+		DisplayName="Sat Change"
+		Type="int"
+		Background="2"
+		ValueType="Curve"
+		Name="strength_curve">
+	</Uniform>
+	<Uniform
+		ResDependent="None"
+		CurveMinX="0.0"
+		CurveMaxX="1.0"
+		CurveMinY="0.0"
+		CurveMaxY="1.0"
+		CurveShape="1"
+		ToolTip="Saturation Fall Off Shape"
+		Row="0"
+		Col="3"
+		Page="0"
+		UIConditionSource="falloff"
+		UIConditionValue="True"
+		UIConditionType="Hide"
+		Inc="0.1"
+		DisplayName="Falloff"
+		Type="int"
+		Background="2"
+		ValueType="Curve"
+		Name="falloff_curve">
+	</Uniform>
+    </Shader>
+   <Page Name="HSV Saturation" Page="0">
+      <Col Name="" Col="0" Page="0">
+      </Col>
+      <Col Name="Falloff" Col="2" Page="0">
+      </Col>
+      <Col Name="" Col="3" Page="0">
+      </Col>
+    </Page>
+</ShaderNodePreset>
