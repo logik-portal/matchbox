@@ -1,0 +1,3394 @@
+[
+    {
+        "name": "Atlanta_UG_2016",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "The next Atlanta User Group will be on Thursday, May 12th from 6pm to 9pm at Turner Studios in the Training Center 1030 Techwood Drive NW Atlanta, Georgia 30318.\n\tAlex Arce from Autodesk will demo Flame 2017 and Lee Fraser from Autodesk will demo Maya 2017.\n\tCineSys and Boxx will be sponsors.\n\n\tDemo clip: https://vimeo.com/162247935\n\tShader based on: http://hirnsohle.de/test/fractalLab/\n\n\tMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "Dallas_UG_2016",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "We are excited to announce the Dallas Flame Summer Blast on Wednesday June 1st at Lucky Post!\n\n\tThere will be several short tips and tricks presentations this time around.\n\tMike Roy from ReelFX will show some tips on making things loopable.\n\tDavid Hannah from CharlieUniformTango will showcase 3d shading and lighting in Action and the new PBR shader.\n\tBryan Bayley will give connected conform tips and show camera tricks for screen tracking.\n\tJason Starne from CineSys-Oceana will be presenting bottle condensation.\n\n\tWe we will be giving away a Sapphire for Flame license by GenArts at the event.\n\n\tPlease RSVP here, so we know you are coming.\n\n\tWednesday, June 1st at 6:30pm\n\n\n\tDemo clip: https://vimeo.com/168447659\n\tShader based on: https://www.shadertoy.com/view/XtsSWs\n\n\tMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "LOGIK_Berlin_2018",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "Hi Logik, it is that time again! It has been too long since the great night at ARRI in December.\n\n  In April we invite you to Chimney to meet and talk all things Flame. Ivar will share some new shaders he has in the pipeline and James will share how Chimney is using Flame in their Shotgun pipeline and we will also look at the new 2019 release!\n\n  Feel free to bring in some work that you want to share with the rest of the artists.\n\n  We do not have a fireplace, but we have beer.\n\n  Friday, April 13 at 7 PM - 11:59 PM\n  Große Hamburger Straße 17, 10115 Berlin, Germany\n\n  Hope to see you there!\n  logik-matchbook.org/shader/LOGIK_Berlin_2018\n  Music Creditz: Die 4 | EFX Solo\n\n  Based on shadertoy.com/view/MdKyRw by wyatt\n\n  Shader Demo: vimeo.com/261693435",
+        "flame_min_version": "2015.0.0"
+    },
+    {
+        "name": "LOGIK_CHICAGO_2019",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "Join us on Thursday, August 8 at Framestore Chicago for the summer 2019 Flame User Group featuring:\n\n  Will Harris\n  Frédéric Warren\n  Andy Milkis\n  Brian Higgins\n  Ross Shain\n\n  Eventbrite link to sign up:\n  https://bit.ly/2IXutwq\n\n  In addition to the 12-month Sapphire OFX and Mocha OFX subscriptions being raffled off courtesy of Boris FX, we will also be raffling off a 12-month subscription to FXPHD courtesy of John Montgomery.\n\n  Video Demo: https://vimeo.com/345293160\n\n  Based on https://www.shadertoy.com/view/Xd2GW3 by srtuss, 2014\n\n  MatchBox shader by ivar@inferno-op.com",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "LOGIK_IBC_2019",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "Logik Event IBC 2019\n  September 13, 2019\n  7:00 PM - 10:00 PM\n  Central Time\n  DoubleTree by Hilton Amsterdam Centraal Station – Skylounge Bar\n  Oosterdoksstraat 4\n  Amsterdam 1011\n  Netherlands\n\n  Demo clip: https://vimeo.com/357394586\n  Shader based on: https://www.shadertoy.com/view/tljXWy by leon\n\n  MatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2015.0.0"
+    },
+    {
+        "name": "LOGIK_NAB_2017",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "2017 Logik NAB Party:\nOn Monday April 24, 2017, please join us once again for another amazing round of drinks, prizes, announcements and the awarding of the Annual Flame Award at this years Logik NAB Party.\nHere is the planned schedule for the events of the night:\n- Check in 6:30PM to 7:00PM\n- Flame Award 7:00PM to 7:30PM\n- Party 7:30PM to 11:00PM\n\nAs we only have space for a limited number of guests please register timely to make sure you can attend and get in:\nhttp://area.autodesk.com/nab2017/logik\n\nMany thanks to Autodesk and our Prize Sponsors, for what we know will be another great event focused on You, the amazing people that continue to drive this unique community and make Logik what it is today, tomorrow and beyond....\nWe look forward to seeing you all there.\n\nBased on: Fractal Labs uber 3D fractal shader\n\nDemo clip: https://vimeo.com/212383892\nMatchBox shader by ivar@inferno-op.com",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "LOGIK_NAB_2018",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "LOGIK @ NAB 2018\n\nMARK YOUR CALENDARS!\n\nRegistration is now OPEN for the 2018 NAB Logik Party!\n\nMonday April 9th @ 7pm\nAlibi Ultra Bar _ Lounge in the ARIA Hotel\n\nPlease note: Registration is REQUIRED, and you will need to show a valid photo ID to enter.\nNon-US residents will need to show their passports as ID.\n\nSpace is limited, so register today!\n\nThanks, as always to Autodesk for their support.\nSee you in Vegas!!\n\nhttp://gems.autodesk.com/d/ktqh11\n\nVideo Demo: https://vimeo.com/260622477\n\nMatchBox shader by ivar@inferno-op.com",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "LOGIK_NY_OFOW_2016",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "You are invited to the NY Flame User Group One Frame of White Summer Party!\n\nTuesday, July 19th at 7pm.\n\nWe are going to dedicate the whole night to this years One Frame of White entries and announce the winners.\nAnd for the first time...we are going to stream the event LIVE!\nAs always, fabulous food and drink will be provided by our event sponsors, Autodesk and CineSys-Oceana.\n\nRegistration is required and space is limited! Sign up using the link below.\nhttp://tinyurl.com/hxr48rw\n\nThank you to everyone who contributed to this years One Frame of White contest\nand a special thank you to our contest sponsors, Autodesk, CineSys-Oceana, Alt Systems, HP, Nvidia, GenArts and Wacom.\n\n\nBased on: https://www.shadertoy.com/view/ldcSR7 by Hsiang Yun\n\nDemo clip: https://vimeo.com/173253034\nMatchBox shader by ivar@inferno-op.com",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "LOGIK_NY_OFOW_2017",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "The NY Flame User Group Summer bash is just a few days away, featuring the winners of our 2017 One Frame of White contest!\n\nTo make the event even more exciting: We will be streaming it LIVE!\nPlus, one lucky person at the meeting is going to go home with a license of Flamemark Shaders Matchbox Plugins!\n\nAs always, there will be fabulous food and drinks provided by our sponsors, Autodesk and Cinesys/Oceana.\n\nTuesday, July 25th at 7:00pm. Doors open at 6:30pm and registration is required!\nhttps://docs.google.com/forms/d/e/1FAIpQLSdlOSsH2iugdKmN2tdazSghQyZNM6rx6llDM0lmMPnxIk3P8w/viewform\n\nBased on: https://www.shadertoy.com/view/ldcSR7 by Hsiang Yun\n\nDemo clip: https://vimeo.com/226553936\nMatchBox shader by ivar@inferno-op.com",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "LOGIK_NY_OFOW_2018",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "LOGIK_UG_Berlin_2016",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "We are thrilled to announce the LOGIK Berlin UG Meeting - A New Hope on Tuesday, 2016 January 5th !\n\nTuesday, 2016 January 5th 7PM\nCinePostproduction Berlin\nRingbahnstrasse 16/18/20\n12099 Berlin\n\nDemo clip: https://vimeo.com/149555721\n\nShader based on: http://glslsandbox.com/e#29134.0 and http://glslsandbox.com/e#9743.\n\n\nMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "LOGIK_UG_Berlin_ARRI_2016",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "Hey Gang,\nthis year we invite you to our place in Berlin. Germanys one and only Flame with a Flame.\nSaturday, December 17 at 7 PM\nARRI Berlin Mitte | Auguststr. 48, 10119 Berlin, Germany\nCome and enjoy the the new hot upcoming stuff from Ivar Beer and have a chat about all that matters...\nAnd drink beer and more.\nLets end this year relaxed together\n\nDemo clip: https://vimeo.com/195146573\n\nBased on https://www.shadertoy.com/view/XtcXWM by zackpudil\nMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "LOGIK_UG_London_2015",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "LOGIK_UG_NY_2015",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "We are thrilled to announce the 2015 Holiday Edition of the NY Flame User Group on Wednesday, Dec 16th!!\n\nWhat a lineup:\n• Paul Andrews from Autodesk will be going in-depth with the new Connected Conform Workflow.\n• Javier Mendez from CineSys-Oceana will be showing an app he developed to automate archiving in the background.\n• Joel Osis from Tendril in Toronto is back to break down 2 recent jobs: One that involved giving life to 2d stills using projectors, substance textures and extended bicubics, and another showing his take on additive keying.\n• And Flame Family Product Manager Will Harris will be making his first appearance at the NY Flame User Group! Will is going to talk about the recent changes to the Flame product line and share his thoughts for the future before engaging in one of our legendary Q_A sessions.\n\nAnd if that isnt enough\nKevin Rosin from Eizo will be showing off the Eizo CG277 27 IPS LCD Monitor.\nThere will be a Flame running on a Mac Pro for people to check out, food and drinks will be provided, and at the end of the night we will be giving away some fabulous holiday prizes!\nNot a bad way to wrap up a phenomenal year for the NY Flame User Group!\nAs usual, space is limited and registration is required, so please RSVP via the link below.\nThanks as always to our sponsors, Autodesk and Cinesys/Oceana for their support!\n\nWednesday, December 16th 7PM\nCinesys/Oceana\n50 Eldridge St, 7th Floor\nNew York\n\nShader based on: https://www.shadertoy.com/view/4dl3R4\n\nMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "LOGIK_UG_NewYork_2015",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "The next NY Flame User Group meeting is set for Wednesday, September 30th. It’s going to be an amazing night!\nFlame 2016 Exension 1\n\t◦ New Yorks own Alex Arce will take us through some of the exciting new features in the Flame 2016 Extension 1 release.\n\t◦ Greg-Paul Malone\nFlame Artist/Owner and original One Frame of White winner Greg-Paul Malone returns to the NY User Group! Fresh off a Flame Master Class tour in South Korea, Greg-Paul will be sharing a wide variety of work with us, including:\n\t◦ A Magical 2-minute Beauty Rig in Batch that requires no tracking and no skin blurring\n\t◦ Creating 3D geometry Fluid Simulations in Action\n\t◦ Additive Keying for hair, transparencies and motion blur, without needing a clean plate\n\t◦ Creative Uses for Lightbox and Matchbox in Action.\nPerspective: Female Flame Artists\nThis is going to be a very special night for the NY Flame User Group. We are proud to present our first original production, Perspective: Female Flame Artists. This short film profiles six of New York’s female Flame Artists:\n\t◦ Amanda Amalfi, Freelance\n\t◦ Pierina Bustamante, Poetica\n\t◦ Philana Dias, Spontaneous\n\t◦ Mindy Dubin, Freelance\n\t◦ Suzanne Dyer, Suspect\n\t◦ Anne Trotman, The Mill NY\nFollowing the screening, Flame Artist Krysten Richardson will moderate a discussion with several of the women profiled in the film.\nAs always, there will be fabulous food and drinks, provided by our sponsors - Autodesk and Cinesys/Oceana.\nRegistration is required and space is limited! Please RSVP via the following link:\n\nhttp://cinesysoceana.com/files/ny-flame-user-group-sept.html\n\nWednesday, September 30th\nSign in: 6:30pm\nStart time: 7pm\n\nCineSys-Oceana\n50 Eldridge Street, 7th Floor\nNew York, NY 10002\n\nShader based on: http://www.shadertoy.com/view/XdjGW3\n\nDemo Video: http://vimeo.com/139808005\n\nMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "LOGIK_UG_Toronto_2017",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "We are hosting the winter meeting of the Toronto Flame Users Group next Tuesday Jan 24th 2017.\nPlease do RSVP at http://www.flameusers.com ,it really helps with numbers for food and drink, etc.\nIt promises to be a great night with wonderful demos by Sean Cochrane and Michael Madeiros, as well as a special appearance by Yann Laforest.\nAlso... GIVEAWAYS!!\nCome one, come all, but please do RSVP at http://www.flameusers.com !!!\n\nDemo clip: https://vimeo.com/200512678\n\nBased on www.shadertoy.com/view/MdjGWc by Antonalog\nMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "LOGIK_ibc_2015",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "LOGIK IBC 2015 Party Invitation shader.\n\nWith help from:\n\nStarScroller effect based on http://glslsandbox.com/e#25489 by LJ\nPlasma demo effect based on https://www.shadertoy.com/view/XsfSW2  by twitchingace\nAmiga BoingBall effect based on https://www.shadertoy.com/view/4ssGWn by UnitZeroOne\nStarDust effect based on https://www.shadertoy.com/view/4sSSWz by and\nGroovymap effect based on http://glslsandbox.com/e#26453.3 by Jonathan Proxy\nC64 Logo effect based on http://glslsandbox.com/e#26313.0 by Sander and gigatron\nCheckerTube effect based on http://glslsandbox.com/e#25880.0\nFlowerPlasma effect based on https://www.shadertoy.com/view/Xdf3zH by epsilum\nDithering code based on http://devlog-martinsh.blogspot.se/2011/03/glsl-8x8-bayer-matrix-dithering.html\nC64 look effect based on http://oos.moxiecode.com/js_webgl/c64_shader/  by @oosmoxiecode\nCRT Scanline effect based on https://www.shadertoy.com/view/ltB3zK by Timothy Lottes\n38911 BASIC BYTES based on https://www.shadertoy.com/view/MljGWG by 104\n\nDemo video: https://vimeo.com/137751856\n\nMatchbox version by ivar@inferno-op.com",
+        "flame_min_version": "2015.0.0"
+    },
+    {
+        "name": "Sydney_UG_2016",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "Hey Hive! A quick reminder to clear your diaries for next Thursdays Sydney Flame User Group @ The Harbour View Hotel in The Rocks.\nWeve had a great response so its looking to be a great night out! Food and Drinks kindly supplied by our friends at Digistor and Autodesk.\nIf you havent already please RSVP to the event or to howie.hill@gmail.com. Looking forward to seeing you there!\n\nDemo clip: https://vimeo.com/188040152\nShader based on: https://www.shadertoy.com/view/Mty3DV\n\nMatchBox version by ivar@inferno-op.com",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "kan_ExposureFix",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "Adjusts the exposure of the whole image so that the luminance of the selected pixels hits the target.\n\nCan be used to remove in-camera exposure adjustments.\n\nShow measured luminance enables a bar indicating the measured luminance.\nIf youre monitoring in HD then the x-coordinate of the end of the bar\nis the value youll want to enter in Target luminance to get unaltered exposure on that frame.\n\nIve written the shader for Baselight for Avid, but hope itll work in Flame too... The shader expects linear input. Baselights converts automatically, for other hosts you might need to convert manually.\n\nDemonstration: https://youtu.be/Vl4PXTvA8X8\nLatest version at https://github.com/knejmann/kan_shaders.\nFor questions contact post@kan.dk",
+        "flame_min_version": "2015.0.0"
+    },
+    {
+        "name": "nob_Devignetting",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "This Matchbox shader compensates for vignetting.\n\nUp to four reference points can be defined as radii and the respective gain compensation, optionally separate for red, green and blue colour channels. The vignetting centre is treated as an implicit fifth point with unchanged gain.\nThe shader calculates an even polynomial of eighth degree (in the radius from the vignetting centre) to interpolate those points.\nThis kind of interpolation may lead to undesired oscillations for higher numbers data points. However with sensible spacing of radii and lens vignetting being a rather smooth function, so to say, oscillations or overshoot is hardly an issue.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as {Same As Input 1}.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
+        "flame_min_version": "2024.1.0"
+    },
+    {
+        "name": "nob_devignette",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "This Matchbox shader compensates for vignetting.\n\nUp to four reference points can be defined as radii and the respective gain compensation, optionally separate for red, green and blue colour channels. The vignetting centre is treated as an implicit fifth point with unchanged gain.\nThe shader calculates an even polynomial of eighth degree (in the radius from the vignetting centre) to interpolate those points.\nThis kind of interpolation may lead to undesired oscillations for higher numbers of data points. However with sensible spacing of radii and lens vignetting being a rather smooth function, so to say, oscillations or overshoot is hardly an issue.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as {Same As Input 1}.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
+        "flame_min_version": "2024.1.0"
+    },
+    {
+        "name": "pac_man",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "This Matchbox shader simulates the old video game Pac Man.\n\nSetup:\n\n- Speed : speed of pac man eating pills\n\nShader developer: tsone\n\nBased on https://www.shadertoy.com/view/Xsl3D8\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
+        "flame_min_version": "2015.0.0"
+    },
+    {
+        "name": "super_mario",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Knarkowicz",
+        "description": "based on by https://www.shadertoy.com/view/XtlSD7 by  knarkowicz",
+        "flame_min_version": "2012.0.0"
+    },
+    {
+        "name": "the_popular_demo",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar",
+        "description": "This Matchbox shader is inspired by one of most popular PC demo ever released. the original was done in 2003 by Farbrausch and it was called: fr-025: the.popular.demo\n\nOffset: offset the demo in time\n\nDemo clip: https://vimeo.com/83396631\n\nShader developer: fizzer\n\nBased on https://www.shadertoy.com/view/XdB3Dw\n\nnice work fizzer !!!!\n\nMatchbox version by ivar@inferno-op.com",
+        "flame_min_version": "2015.0.0"
+    },
+    {
+        "name": "AFX_DeSpill",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "John Ashby",
+        "description": "Based on the Despill algo if green is greater than the average of the red and blue channels, then bring green down to that color... also works with blue and redscreen, this algo is excellent for maintaining skintones."
+    },
+    {
+        "name": "AFX_Grade",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "John Ashby",
+        "description": "Based off the Nuke grade node, so people who are used to the math of this node will be right at home, this node can create negative values, but that's the point, so you will want to clamp if outputing for broadcast."
+    },
+    {
+        "name": "AFX_ReverseGrade",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "John Ashby",
+        "description": "Reverse grade function found inside the Nuke Grade node. Set your black and white points from your source material (look at front view), then look at the target footage (either via the back or just a context view) and pull the blacks and whites off that plate, then look at result view and tada! they should be a pretty close match."
+    },
+    {
+        "name": "BKM_BLADES",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "CPGP_BasicLensFlare",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a cheap lens flare.\nInputs:\n\n    - Front Noise: a noise texture\n\nParams:\n\n    - Direction : the direction of lens flare\n    - Move: Use automated movement\n    - Speed: the speed for movement"
+    },
+    {
+        "name": "CPGP_Clouds",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates puffy clouds.\n\nSetup:\n\n    - Rotation : the clouds rotation on X/Y axis\n    - Speed : the speed for the auto-movement\n\n    - Use Action Camera: enable linking to action camera\n    - Camera Position: action camera postion\n    - Camera Interest: action camera point of interest\n    - FOV: action camera fov\n    - Roll: action camera roll"
+    },
+    {
+        "name": "CPGP_Fireball",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Generates a simple fireball!"
+    },
+    {
+        "name": "CPGP_Flame",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Generates a simple moving flame.\nYou can change the color of the base and trail of it.\n\nSince we can't have RGB in the GUI yet, X stands for R, Y for G, Z for B."
+    },
+    {
+        "name": "CPGP_FractalCell",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Generates a fractal cell texture.\n\nParameters:\n\n    - Cell Speed: change the speed of the Cell generation, to get more or less 'life'\n    - Use Light Modulation : adds flickering"
+    },
+    {
+        "name": "CPGP_PaleBlueDot",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Manage planet generation.\n\nInputs:\n\n    - Front Bump: a bump texture Input\n    - Front Noise: a noise texture Input\n\nParameter:\n\n    - Speed: the speed of rotation"
+    },
+    {
+        "name": "CPGP_ParticuleFractale",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Manage generative particules based on Kleinian Fractals.\n\nParameter:\n\n    - Particules Speed : the global speed of particules"
+    },
+    {
+        "name": "CPGP_Sin",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Generates a a bar that moves with a sinusoidal movement.\n\nParameters:\n\n    - Sin Speed: change the speed of the sinusoid\n    - Sin Pos X axis : change sin X position"
+    },
+    {
+        "name": "CPGP_Texturevortex",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "This Matchbox allows to bend your video."
+    },
+    {
+        "name": "ColouredFrame",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller and Ivar Beer",
+        "description": "Creates Colors, Noise, Checkerboards, Colorbars, Colorwheels, Gradients and Shapesto get you started.\n\nInput:\n\n    - Front: source clip\n    - Back: background clip\n    - Matte: mask used for the applied effect\n    - Strength: amount of effect being applied\n\nOutput:\n\n    - Result: result clip\n    - Matte: alpha channel\n\nType:\n\n    Color:\n\n        - Color: color of the generated frame\n        - Selected Color Swatch: switch color circle on/off\n        - Swatch Position: position of color circle\n        - Palette: switch palette overlay on/off\n        - Detail: palette color resolution\n\n    Noise:\n\n        - Color: switch colored noise on/off\n        - Static: switch static frame on/off\n        - Resolution: zoom in/out of the noise\n\n    Checkerboard:\n\n        - Color1: 1st color of the checkerboard\n        - Color2: 2nd color of the checkerboard\n        - Size: zoom in/out of the checkerboard\n        - Aspect: adjust the aspect of the checkerboard\n        - Palette: switch palette overlay on/off\n        - Detail: palette color resolution\n\n    Colorbars:\n\n        - SMPTE: SMPTE style color bars\n        - PAL: PAL style color bars\n        - SMPTE2: SMPTE2 style color bars\n        - 75%/100%: switch betweeen 75% and 100% brightness\n        - Blue Only: show only the blue channel\n\n    Colorwheel:\n\n        - Size: adjust colorwheel size\n        - Value: adjust the gain value\n        - Position: position of colorwheel\n        - Aspect: adjust the aspect of the colorwheel\n\n    Gradient:\n\n        - Horizontal/Vertical/Radial: switch between the different modes\n        - Reverse Gradient: invert the selected gradient\n        - Color1: 1st color of the gradient\n        - Color2: 2nd color of the gradient\n        - Palette: switch palette overlay on/off\n        - Detail: palette color resolution\n\n    Shapes:\n        - Square/Circle: switch between different shapes\n        - Size: zoom in/out of the shapes\n        - Aspect: adjust the aspect of the shapes\n\n    Grid:\n\n        - Color1: grid color\n        - Color2: bg color\n        - Invert: invert color selection\n        - Size: adjust grid size\n        - Width: adjust grid width\n        - Rotation: rotates the grid\n\n    ST Map:\n\n        Normal Map\n\n    Reflection Map:\n\n        - Speed: animation speed\n        - Offset: offset animation in time\n        - Static Chrome: static relection map\n        - Zoom: Zoom in/out of the texture\n        - Detail: fractal detail\n        - Center: fractal center"
+    },
+    {
+        "name": "Cryptomatte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Cryptomatte - extract up to four mattes from the ID/coverage pairs generated by Arnold/Clarisse/Mantra's Cryptomatte shaders.\n\nThere's no need for this shader unless using very old Flame versions - since 2020 there's a built-in node for it: https://help.autodesk.com/view/FLAME/2023/ENU/?guid=GUID-0402116E-B47C-4E32-9010-DB8C334853E0\n\nIt's crucially important to use the floating colour sampler window - pick the colours from the first input, add them to the floating swatches and only then transfer them to the shader controls!  Auto Key needs to be off as well. This works in Flame 2018 Update 1 and above. See demo:\nhttp://youtube.com/watch?v=p5D1FRRlplU\n\nlewis@lewissaunders.com"
+    },
+    {
+        "name": "EPC_KeyCleaner",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Eduardo Pricinato",
+        "description": "Tries to create a cleaner background for keying.\n\nIt creates a matte from the channels differences and use it to apply the reference color.\n\nIf the created matte is affecting something that shouldn't be, use the input matte as a cutout."
+    },
+    {
+        "name": "JB_autoMatte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Automatic multimatte node."
+    },
+    {
+        "name": "JB_colorRemap",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Remaps RGB of input1 using RGB of input 2."
+    },
+    {
+        "name": "JB_erodeMatte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Simple erode node."
+    },
+    {
+        "name": "JB_fractal",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Simple fractal generator."
+    },
+    {
+        "name": "JB_lidar",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Tries to emulate a fake point cloud data provided by a lidar."
+    },
+    {
+        "name": "JB_multiMatteManager",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Manages up to three inputs RGB to output one combined mulitmatte with alpha."
+    },
+    {
+        "name": "JB_ocean",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Creates a realistic-ish ocean system, with wave height/freq/speed as well as camera control."
+    },
+    {
+        "name": "JB_pixelDisplace",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Transforms input1 using input2 rgb values."
+    },
+    {
+        "name": "JB_skyLapse",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Generates a sky system suitable for timelapse effects."
+    },
+    {
+        "name": "JB_timeDisplace",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Tries to emulate s_TimeDisplace node."
+    },
+    {
+        "name": "JT_SyLens",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julik",
+        "description": "Straightens and distorts footage according to the Syntheyes lens distortion model. Send a mail to me@julik.nl if you have questions.\n  See this tutorial video made by Joel Osis for instructions\n  https://www.youtube.com/watch?v=S_mfdIyCSWE"
+    },
+    {
+        "name": "KE_Ascii",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "None"
+    },
+    {
+        "name": "KE_Extruder",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "Creates extruded 3D cubes from your image."
+    },
+    {
+        "name": "KE_LineDrawing",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "Set Input 1 to color noise or white, set Input 2 to your image."
+    },
+    {
+        "name": "KE_PredCamo",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "Distorts the back plate (Input 1) according to movement in the front plate (Input 2)."
+    },
+    {
+        "name": "KE_SineWave",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "Distorts your image based on a sine wave."
+    },
+    {
+        "name": "KE_VCR",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "Plug noise or color noise into Input 1, and your image into Input 2."
+    },
+    {
+        "name": "K_BW",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Kyle Obley",
+        "description": "Creates a black and white image based on the dominance of R-G-B channels.\n\nCommon values to mimic specific filters:\n\n    Yellow: 60 28 12\n    Orange: 78 22 0\n    Red: 90 10 0\n    Green: 10 70 20\n    Infrared: 40 140 -80"
+    },
+    {
+        "name": "K_BlurMask",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Kyle Obley",
+        "description": "Blurs an isolated region based on the matte input. v1.2"
+    },
+    {
+        "name": "K_Chroma",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Kyle Obley",
+        "description": "Warps chroma channels with the ability to add barrel distortion."
+    },
+    {
+        "name": "K_NormalizeChannel",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Kyle Obley",
+        "description": "Normalize an input based on a single channel. Useful when you need to normalize a 32-bit image so to avoid banding when creating mattes from position passes."
+    },
+    {
+        "name": "K_RgbcmyMatte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Kyle Obley",
+        "description": "Seperates Red, Green, Blue, Cyan, Magenta, Yellow and White from a matte pass."
+    },
+    {
+        "name": "L_ASC_CDL",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Apply slope, offset and power transfer functions to the input pixels as defined by the ASC CDL standard."
+    },
+    {
+        "name": "L_AlexaLogCv3",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Linearise the AlexalogCv3 encoded input or go back out as the inverse using the Arri AlexaLogCv3 function for EI800."
+    },
+    {
+        "name": "L_CanonLog",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Linearises the Canon Clog curve."
+    },
+    {
+        "name": "L_Clamp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Clamp selected pixels to user defined minimum and maximum values."
+    },
+    {
+        "name": "L_Fstop",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Adjust the linear encoded front input exposure in Stops."
+    },
+    {
+        "name": "L_Molten",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Molten Metal Texture Gradient shader."
+    },
+    {
+        "name": "L_Mult",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Multiplies the pixel values in the image."
+    },
+    {
+        "name": "L_Picker",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "L_SSAO",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Uses the supplied Zdepth image to do Screen Space Ambient Occlusion."
+    },
+    {
+        "name": "L_Slog",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Linearise the SLog encoded input using the Sony S-Log function."
+    },
+    {
+        "name": "Ls_Advect",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Pushes an image along the contours of another, like ink in a river; try big soft noise on the second input.\n\nBy default the movement is 'around' the shapes in the map input, but the 'Rotate 90' button switches it to move inwards/outwards, or the 'Use map as vectors directly' allows you to use motion vectors or x/y red/green displacement maps."
+    },
+    {
+        "name": "Ls_Airglow",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Exponential falloff glow modelled on how light scatters in air. A bunch of blurs added up, using mipmaps to keep it fast. Accepts alpha input.\n\nRecommended listening: https://soundcloud.com/lone-1/lone-airglow-fires"
+    },
+    {
+        "name": "Ls_Ash",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Adaptive sharpening - sharpen without ringing edges, or sharpen edges without increasing texture."
+    },
+    {
+        "name": "Ls_Bevel",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders and Sebastien Delecour",
+        "description": "Cheap pseudo-bevel for text, using the Gaussian Distance Transform.  Can output normals to be fed into an Action normal map for more sophisticated lighting.  Sadly it is not possible to create a displacement map this way, so it's not a true 3D surface :(\n\nDemo: https://www.youtube.com/watch?v=Y7dUx1An_30\n\nHeight map is the shape of the area to bevel, typically a black/white matte but images are possible too.\nBack input gives colour to the beveled area.\nMatte is used to limit the area which is comped over the back."
+    },
+    {
+        "name": "Ls_Chips",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Sample colours and show their names.  For sensible results the input should be sRGB or video, not scene linear or log.\n\nMake sure to use the .mx version of this shader rather than the .glsl, to work around Flame losing the connection to the font texture grid image when the batch setup is closed!\n\nDemo: https://www.youtube.com/watch?v=VVhRQ0sqTUM"
+    },
+    {
+        "name": "Ls_Colourmatrix",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Colourmatrix - apply 3x3 matrices to RGB for white balance, colourspace conversion or well disco grades."
+    },
+    {
+        "name": "Ls_Colourspace",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Converts between various colourspaces, mainly perceptual ones (ColorMgmt already handles most camera and display spaces)\n\nAll the spaces use illuminant/reference white D65 and are as follows:\n\nlinear sRGB: scene-referred (un-tonemapped) linear with sRGB/Rec709 primaries (you can convert to this space from most camera spaces with a Colour Mgmt node, by first converting to ACES and then using primaries/ACES_to_LinearRec709-sRGB.ctf)\n\nXYZ: the classic CIE 1931 XYZ space with white at Y=1, again useful as an interchange space by using the various CIE-XYZ .ctf options in Colour Mgmt\n\nxyY: the CIE 1931 xyY space where x and y are chromaticities in [0,1] and Y is brightness\n\nL*a*b*: CIELAB 1976 where L* is perceptual lightness with white at 1, a* is broadly green/red and b* blue/yellow, both centred around 0.0 so likely using negatives\n\nL*a*b* (0.5-centred chroma): as above but with a* and b* centred around 0.5, so easier to see and work with\n\nLCHab: cylindrical version of L*a*b* where L* is as before, but C is colorfulness and H is hue\n\nLUV: CIELUV 1976 space similar to L*a*b* but better suited for screens and emissive surfaces\n\nLUV (0.5-centred chroma): as above but with u and v centred around 0.5\n\nLCHuv: cylindrical version of LUV\n\nOklab: recent (2020) perceptual space designed to be similar to but faster and better behaved than the above CIE spaces\n\nOklab (0.5-centred chroma): as above but with a and b centred around 0.5\n\nHSV: classic hue/saturation/value space used in CG and colour picking - we convert to BT1886 2.4 gamma before converting to HSV, rather than converting from linear colour directly, to better match other apps\n\nHSL: similar to HSV but with higher L values tending towards white rather than saturated colours - we convert to BT1886 2.4 gamma before converting to HSL, rather than converting from linear colour directly, to match other apps (unlike Flame's Separate node which assumes the input is already in video space)\n\nYCbCr: YUV space used in digital video with Y including head/footroom and Cb/Cr centred around 0.5\n\nYPbPr: YUV space used in analog video with Pb/Pr centred around 0"
+    },
+    {
+        "name": "Ls_Contacts",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Tile inputs into a grid for impressing clients, choosing versions or checking continuity.\n\nFor more than 6 inputs, use multiple nodes to make multiple 2x2 grids, then tile those together with another node.  For really large numbers of frames, join them into a clip and use Ls_Filmstrip."
+    },
+    {
+        "name": "Ls_Dilate",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Shrink or expand pixels based on brightness, or on closeness to a particular colour\n\nThe strength input modulates the effet and can also use negative colours to reverse the dilation into erosion, and vice-versa\n\nWhen using colour weighting, the third input can set the colour to use per-pixel - using a clean greenscreen can let you spread edge colours inwards or outwards without having to pull a key to use with PixelSpread\n\nMake sure input is 16fp rather than 8-bit!\n\nQuick demo: https://www.youtube.com/watch?v=t2jISkR7fGc"
+    },
+    {
+        "name": "Ls_Dollface",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Blend similar colours with a bilateral filter whilst preserving edges, to remove grain or wrinkles."
+    },
+    {
+        "name": "Ls_FXAA",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Fast cheap antialiasing, soften those crunchy edges."
+    },
+    {
+        "name": "Ls_Filmstrip",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Arranges input frames in a grid.  Go to frame 1, turn off All Frames Same and hit play\n\nDemo: https://www.youtube.com/watch?v=NkS_wXSheME"
+    },
+    {
+        "name": "Ls_Fireflies",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Attempts to remove the hot firefly pixel noise that appears in CG renders with bright lights hidden behind other objects\n\nQuick demo: https://www.youtube.com/watch?v=GuvRoN5WfM4"
+    },
+    {
+        "name": "Ls_Flock",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Outputs a position map of points flocking and swarming about. Feed into a Position map in Action, attach an Atomize to the image, set the image's resolution slider to 1, and remember to turn Adaptive Degradation off on this Matchbox node! For speed, keep the output resolution of this shader as low as possible - view the result or matte output, and adjust the image size so there's not much black at the top. Make certain the bit depth is 16-bit fp!\n\nDemo: https://www.youtube.com/watch?v=Z_HmdLqt3Xw"
+    },
+    {
+        "name": "Ls_Fluid",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "A 2D fluid simulation. Make sure bit depth is 16-bit fp!\n\nThe vector input can be fed motion vectors to affect the fluid, and the obstacle input can be fed with a matte for areas which the fluid should move around.\n\nThe matte output works well as the Displacement input to BumpDisplace, or as a displacement map in Action.  The RGB output can be the front input image mapped onto the surface of the fluid, or various vector or UV outputs.\n\nThe simulation is based on Jos Stam's 'Stable Fluids', 1999.  The process also owes a debt to Theodor Groeneboom's Sprut gizmo for Nuke.\n\nRemember to disable Adaptive Degradation on this node if viewing downstream!\n\nDemo: https://www.youtube.com/watch?v=N6nIwt2BcMM"
+    },
+    {
+        "name": "Ls_Glint",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Make highlights bloom into stars\n\nDemo: http://youtube.com/watch?v=0Xa8L4fkPwU"
+    },
+    {
+        "name": "Ls_GlueP",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Project an image onto a position pass, to glue it onto a CG render.  Demo video, including how to render the P pass: http://youtube.com/watch?v=YkgHAMwtmpw\n\nConnect the front and optional matte images to project, and a world Position pass.  Then set up the position, rotation and FOV of the projection, usually by copying the values from an Action camera node at the frame you want to project on.  On that frame you should see your projection image as-is.  It should then be glued onto the CG for all other frames."
+    },
+    {
+        "name": "Ls_Lumps",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Frequency separation - split image into colour, lumps and detail, A.K.A. low, mid and high frequencies.  You can gain, filter and colour correct each band, or for more complex work use three copies of this shader to split out the three bands, then rebuild the image using a fourth shader with 'Recombine inputs' on and the three bands in inputs 2/3/4.\n\nWhen recombining inputs make sure all three Colour/Lumps/Detail buttons on the right are enabled so you see the full image!"
+    },
+    {
+        "name": "Ls_NaNfix",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Fixes pixels which are stuck at NaN, like those from broken CG renders.  The detected pixels are also output in the matte for further treatment with PixelSpread."
+    },
+    {
+        "name": "Ls_Nail",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Warp an area of the Front and Matte to follow a track, for nailing down floaty CG.  Paste XY tracks from the FG and the BG on the From and To channels, and input a matte for the area to affect.\n\nDemo: http://youtube.com/watch?v=GOQAAb9NqAM"
+    },
+    {
+        "name": "Ls_Poly",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Create Voronoi diagrams and Deluanay triangulations from seed points in the image.  This uses a lot of GPU memory - 3072x2048 uses 6Gb, and 4K may even hang the GPU, so keep an eye on the VRAM Used column in Flame's Resource Manager!\n\nDemo: https://www.youtube.com/watch?v=lCFGFt7k3Jg"
+    },
+    {
+        "name": "Ls_Posmatte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Pull a spherical matte from an XYZ position pass.  Make sure to pick from the Position input with the picker set to 16fp!  The matte will even stick to animated meshes if you ask your CG peeps for a 'rest position' P pass, or a 'P at frame 1' pass\n\nDemo: http://youtube.com/watch?v=11Q4RHJz230"
+    },
+    {
+        "name": "Ls_Relax",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Relax your colours towards a common shade, to bed things in to mist, smoke, banks of fog, delicous hazes, sweet gentle vapours... pick the target colours from the background you're comping into."
+    },
+    {
+        "name": "Ls_RndmGrade",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Generates random grades.  Works best on log footage or low-contrast ungraded video.\n\nDemo: http://www.youtube.com/watch?v=joeSPsaVwOE"
+    },
+    {
+        "name": "Ls_Shadowplate",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Experiment in removing direct sun from an image to make a completely shady plate for comping in new shadows, based on https://www.youtube.com/watch?v=Yb3Cn3JnkUI (the part from 5:25)\n\nSuper rapid demo: https://www.youtube.com/watch?v=LfNX3SdyqkQ\n\nIt converts to a perceptual colourspace to seperate brightness from colour, then pulls a key for the highlights and gains them down, repeating the process many times.  Then the colour channels are replaced from the original and optionally blurred\n\nThe matte output can help to set the key protect controls, and to grade further downstream."
+    },
+    {
+        "name": "Ls_Splineblur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Directional blur along the edges of a shape. Image on front input, shape with a big soft edge on map input. Make sure all inputs are 16-bit fp!\n\nGreat for smoothing out cross hairs on complex hair jobs. This tool requires placement of either end of a line that covers the area to be blurred PERPENDICLUAR to the line drawn.\n\nDemo: http://youtube.com/watch?v=CRUa3zv1t1M"
+    },
+    {
+        "name": "Ls_Stickon",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Recursively warp an image by motion vectors, to stick it to something.  Make sure bit depth is 16-bit fp! Supply backward motion vectors to the vector input, i.e. the second output of Motion Analysis, or even better the backward channel from Nuke 9's VectorGenerator.  The front and matte inputs should normally be a still lined up on the Accumulate From frame.\n\nDemo: https://www.youtube.com/watch?v=m27XZX7dtJU"
+    },
+    {
+        "name": "Ls_Sweat",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Makes drips :)  Turn adaptive degradation off to view downstream...\n\nDemo: https://www.youtube.com/watch?v=xcPzPV_623U"
+    },
+    {
+        "name": "Ls_Tinyplanet",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Stereographic reprojection of 360 panoramas.  Tried to work this into title sequences a couple times but so far no takers :)  Input a latlong 360x180 image, or use Map Convert to make a Cartesian map.\n\nFor examples see:\nhttp://images.google.com/images?q=tiny+planets+photography\nhttp://youtube.com/watch?v=mYlk0oeYjds"
+    },
+    {
+        "name": "Ls_UVewa",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "UVewa - UV mapping with EWA filtering, which is a little soft but copes well with extreme distortions like mapping an image to a floor plane.  Fellow shader nerds can borrow the EWA function for other things which need strong filtering.\n\nComparison video, sadly not done justice by compression: http://youtube.com/watch?v=iEVb7tVxaP0"
+    },
+    {
+        "name": "Ls_Vignette",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Models the illumination falloff of simple primes lenses mounted near to the film back.  It's perfectly smooth unlike what you get from Colour Source, Gradient, Gmask, the stock Vignetting shader etc."
+    },
+    {
+        "name": "Ls_Vops",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Vector operations - normalize, scale, rotate, translate, compute lengths of and combine vector passes.  Default is to add all inputs.\n\nThis tool can add up to five mattes and create a quick output of them all as one. You also get control over individual strengths of each matte."
+    },
+    {
+        "name": "Ls_Wireless",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders",
+        "description": "Removes wires, or other straight-ish things.  Be aware it doesn't behave in proxy mode!\n\nDemo: http://youtube.com/watch?v=vlzvr23rJkU\n\nJohn Geehreng made a nice setup which links this shader to axes and controls inside Action to make tracking faster - get it via the Logik Portal from https://www.pyflame.com"
+    },
+    {
+        "name": "PageCurl_3vis",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Eric Pouliot",
+        "description": "PageCurl between 1 and 2, uses 3 for back page."
+    },
+    {
+        "name": "Reframe",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "This Matchbox shader reframes a shot with respect to perspective distortion.\n\nThe concept of this shader is to simulate a different focal length alongside a different camera orientation (while maintaining the camera position).\nOptionally the resulting image can be rotated via the Rotation field. By default, the resulting image will have the same horizontal orientation as the source.\nThe height of the photosensitive surface (image sensor, photograpic film, etc.) and the the relative lens aperture (in terms of brightness and bokeh) are conserved.\nThe resulting image format can be customized to any canvas resolution, the width of the virtual image will be matched proportional to the height (which will always be conserved) via the aspect ratio.\nIf the the image parameters are set to use a field of view angle rather than a focal length, the image height can be omitted. Note that the shader will still use the image height if the scaling mode is set to Focal Length.\n\nThe source image must be free of lens distortion for the process to function properly. Therefore this shader features a basic image rectification.\n\nAdditionally this shader provides the option of outputting (continuous) UV coordinates.\n\nAdaptive Degradation is supported by this shader and will bypass antialiasing if enabled.\n\nWhile this shader works quite well when downscaling (using antialiasing), its unsuited for upressing.\nNote that this shader uses GL_NEAREST texture filtering, so that heavy aliasing might occur. This may require a high number of antialiasing samples (even 64 in extreme cases) to correct.\n\nWarning: The matte (where present) is assumed to be of the same format as the source image. Otherwise the shader will produce incorrect results.\n\nThis shader is licensed under the terms of the MIT license."
+    },
+    {
+        "name": "Sebquismoke_MultiADD",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Sebastien Delecour",
+        "description": "With Multi_Add, you can add several alpha. You can adjust transparency. The output is clamped."
+    },
+    {
+        "name": "Sebquismoke_MultiADD_Blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Sebastien Delecour",
+        "description": "With Multi_Add_Blur, you can add several alpha. You can adjust transparency and blur for eatch layers. The output is clamped."
+    },
+    {
+        "name": "ShapeGrid",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Make Shapes."
+    },
+    {
+        "name": "TDF_summary",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Showcase some entries for '7x79 GLSL compo' at Tokyo Demo Fest 2014.\n\nincluded are:\n\n    [TDF2014] Glitch07\n    [TDF2014] caress\n    [TDF2014]_7-lins\n    [TDF2014]_geom_shapes\n    [TDF2014]_Lemonade\n    [TDF2014]_TDF4\n    [TDF2014]_glow_art\n    [TDF2014]_flash!"
+    },
+    {
+        "name": "TM_DenoisingKNN",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "TM_DenoisingNLM",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "Threshold",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "This Matchbox shader applies a threshold filter to an image.\n\nNote that this shader does not perform any image scaling or reformatting, so that the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as Same As Input 1."
+    },
+    {
+        "name": "blend_3vis",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Eric Pouliot",
+        "description": "Photoshop Blending Modes Select the mode you want. Be careful they are additive."
+    },
+    {
+        "name": "chromatic_adaptation",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Performs a chromatic adaptation.\nIt also takes care of any necessary color space conversions.\n\nNote that this shader does not perform any image scaling or reformatting, so that the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as Same As Input 1."
+    },
+    {
+        "name": "chromawarp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "cr2_HEX",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "cr2_LED",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "cr2_pixelate",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "None"
+    },
+    {
+        "name": "crok_2color",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a 2 color look.\n\nSetup:\n\n    - Amount: adjust amount of the effect\n    - Tint: apply the colour to the low and highlights\n    - High / Low: adjust the thresold for the Highs and Lows\n    - Saturation: adjust the saturation\n    - Brightness: adjust the brightness\n    - Contrast: adjust the contrast\n    - Exposure: adjust the exposure\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_3d_grid",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a 3D Grid.\n\nSetup:\n\n    Fractal\n\n        - Itterations: how much itterations\n        - Resolution: grid resolution\n        - Thickness: adjust Thickness of the grid lines\n        - Seed: seed value\n        - Variance: add a bit of variation to the grid\n\n    Timing\n\n        - Overall: Speed: animation speed\n        - Offset: offsets the grid in time\n        - Speed x: horizontal speed adjustments\n        - Speed y: vertical speed adjustments\n        - Speed z: depth speed adjustments\n\n    Position / Size\n\n        - Center: adjust the center of the grid\n        - Zoom: zoom in/out of the grid"
+    },
+    {
+        "name": "crok_6567",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates the color palette of a VIC-2 or better known as one of the famous C64 chips.\n\nSetup:\n\n    - Pixelsize: size of a single pixel\n    - Saturation: adjust the input saturation\n    - Noise: how much noise gets applied"
+    },
+    {
+        "name": "crok_acid",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates some funky ACID patterns\n\nIMPORTANT: This is a volumetric shader. Please add a large sphere to the scene, to be able to see something."
+    },
+    {
+        "name": "crok_additive_key",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Erwan Leroy, Joel Osis and Ivar Beer",
+        "description": "This is an Additive Keyer.\n\nInput:\n\n    - FG original: original fg\n    - FG Despilled: despilled fg\n    - Back: background\n    - Matte: matte clip (needed for default Additive Key processing)\n    - Matte Holdout: garbage matte input to define the region of interest (optional)\n    - FG Clean: despilled clean green / blue sceen clip (optional)\n\n    - Enable Joels Version: Enables a differnt kind of additive processing\n    - Blend BG: Blends in the BG\n    - BG Gamma: adjusts the gamma of the BG\n    - BG Offset: offsets the BG\n\n    - Global Restore: adjust the overall detail level\n    - Restore Darks: dials in darker parts of the fg footage\n    - Restore Highlight: dials in lighter parts of the fg footage\n    - Desaturate Dark: desaturate the dark parts of the fg footage\n    - Desaturate High: desaturate the light parts of the fg footage\n\n    - Show Pixel Spread: shows the pixel spread image only\n    - Size: adjust the size of the pixelspread\n\n    - Enable Matte Denoise: denoise the incomming matte for cleaner edge details\n    - Amount: amount of denoise applied to the matte\n    - Radius: radius of the applied denoise effect\n\n    - Output Background: just output the processed background for further comping\n    - Clamp Output: clamp the output to values between 0 and 1"
+    },
+    {
+        "name": "crok_ancient_symbols",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates random ancient symbols."
+    },
+    {
+        "name": "crok_anime_CFX",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a cartoon style shading on 3D Action geometry.\n\nInput:\n\n    - Front: source clip\n    - Normals: normal map to create tehe outlines\n\nSetup:\n\n    - Direction: light direction\n\n    - Softness: amount of blur applied to the outline\n    - Postion: outline position\n\n    - Specular: amount of specular highlite\n    - Shades: amount of shading steps"
+    },
+    {
+        "name": "crok_ascii_art",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies ASCII art look to image.\n\nInput:\n\n    - Source: original image\n    - Matte: where the effect should be applied\n\nSetup:\n\n    - Enable Black and White: enables Black and white ;)\n    - Look: defines the size of the font\n    - Brightness: adjust the brightness the created image"
+    },
+    {
+        "name": "crok_auto_histo",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a photoshop style auto histogram effect.\n\n  Input:\n\n    - Front: source clip\n\n    - Clamp negatives: cuts all the negative values on the incoming clip\n    - Clamp Highlites: cuts the highlite values of the incoming clip\n\n    - Min Threshold: adjust the minimum threshold of the negative values\n    - Max Threshold: adjust the maximum threshold of the highlites"
+    },
+    {
+        "name": "crok_beauty",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis, Greg-Paul and Ivar Beer",
+        "description": "Applies some freshness to the skin ;)\n\nInput:\n\n    - Front: original fg\n    - Matte: external skin key\n\nSkin:\n\n    - Color: pick the skin color of the talent\n    - Weights: adjust the tollerance values for the build in keyer\n    - Enable External Matte: enable the use of the optional external skin matte\n    - Soften: blurs the skin matte\n\nCleanup:\n\n    - Amount: amount of softening applied to the image\n    - Preserve Edges: amount of edge detection applied\n    - Dark spots: cleanup dark areas of the skin\n    - Highlights: clean up highlights on the skin\n\nRestore Detail | Shine:\n\n    - Amount: restore highfrequency details\n    - Soften: soften the highpass filer\n    - Shine amount: applied a little bit of shine to the skin\n    - Blur Shine: soften the shine key\n\nColor:\n\n    - Saturation: amount of saturation applied to the shine\n    - Hue Shift: amount of Hue shift applied to the image"
+    },
+    {
+        "name": "crok_beer",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a beer like structure.\n\nGreat tool to create randomish motion when used as a source for other nodes… feed into a 2d Histo to create greyscale matte, then into a glint to generate natural feeling sparkles.\n\nInput:\n\n    - Noise Texture: additional noise texture\n\nSetup:\n\n    - Iterations: fractal iterations\n    - Flow Noise: noise pattern\n    - Distortion: fractal distortion\n    - Sphere Size: size of the fractal sphere\n    - Step Size: fractal steps\n    - Speed: how fast the fractal is moving in x / y /z direction\n    - Center: sphere center\n    - Zoom: zoom in / out of the fractal\n    - Colour: fractal colour\n    - Brightness: adjust brightness\n    - Glow: adjust glow\n    - Fade: fade fractal in / out"
+    },
+    {
+        "name": "crok_binoculars",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a binoculars effect\n\nInput:\n\n    - Front: source clip"
+    },
+    {
+        "name": "crok_bleachbypas",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a bleachbypass process.\n\nSetup:\n\n    - Exposure: adjust exposure of the image\n    - Amount: adjust amount of the bleachbypass process\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_blend_if",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_blobs",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates blob like sturctures.\n\nSetup:\n\n    - Layer: how much layer of blobs\n    - Shape: shape of the blobs\n    - Smoothness: smoothnessof the generated stucture\n    - Zoom: zoom in and out\n    - Speed: speed of the blobs\n    - Offset: offsets the blobs\n    - Position: virutal camera postion\n    - Blobs: colour of the blobs\n    - Depth: depth colour"
+    },
+    {
+        "name": "crok_block_noise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates blocky textures.\n\nSetup:\n\n    - Detail: texture detail\n    - Seed: seed value\n    - Speed: how fast the bubbles are moving\n    - Offset: offset the animation in time\n    - Size: size of the blocks\n    - Aspect: aspect in x / y\n    - Colour: block colour\n    - Gain: adjust colour gain"
+    },
+    {
+        "name": "crok_bloom",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates blooming.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Offset: offsets the glow to gives a streak like effect\n    - Size: glow size\n    - Strenght: glow strength\n\nUpdates:\n\n    - Modified defeult input to be Front."
+    },
+    {
+        "name": "crok_blue_noise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies a lightwrap to the image.\n\nInput:\n\n    - Front: source image\n\nSetup:\n\n    - Bit Depth: amount of bit depth reduction\n    - Noise Only: outputs just the blue noise\n    - Animated Noise: enable animated blue noise\n    - Speed: speed of animated noise\n    - Dither in Linear:c enable dithering in linear colour space"
+    },
+    {
+        "name": "crok_blush",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_bokeh3d",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates random defocused lights."
+    },
+    {
+        "name": "crok_bokeh_comp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_box",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Christian",
+        "description": "Creates an Antialiased square with rounded corners.\n\nSetup:\n\n    - Roundness: roundness of the corner\n    - Blur:; amount of blur applied to the shape\n    - Square: adjust the shape to be square\n\n    - Scale: scales the shape\n    - Offset: offset the shape in x and y"
+    },
+    {
+        "name": "crok_bubbles",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates bubbles.\n\nSetup:\n\n    - Density: amount of bubbles\n    - Sharpness: edge sharpness\n    - Seed: seed value\n    - Speed: how fast the bubbles are moving\n    - Offset: offset the animation in time\n    - Size: size of the bubbles\n    - Size Offset: offseting the size to a min and max value\n    - Horizontal Offset: offset the bubbles horizontaly\n    - Vertical Offset: offset the bubbles verticaly\n    - Colour: bubbles colour"
+    },
+    {
+        "name": "crok_burn_mark",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_bw",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates black and white images with adjustable RGB values.\n\nSetup:\n\n    - Exposure: adjust exposure of the image\n    - Amount: adjust the power of the back and white effect\n    - Red, Green, Blue: adjust the individual color channels, to get the typical BW look"
+    },
+    {
+        "name": "crok_cam_shaker",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates handheld camera shakes.\n\nInput:\n\n    - Front: source clip\n    - Matte: matte clip\n\nSetup:\n\n    - Seed: adjust that slider to get different results\n    - Amplitude: overall amplitude of all the effects\n    - Frequency: overall frequncy of all the effect\n    - Zoom: overall zoom in / out\n    - Rotation: overall rotation\n\n    - Amplitude X/Y: adjust the postion amplitude\n    - Frequency: adjust the position frequency\n    - Amplitude Zoom: adjust the zoom amplitude\n    - Frequency: adjust the zoom frequency\n    - Amplitude Rotation: adjust the rotation amplitude\n    - Frequency: adjust the rotation frequency\n    - Samples: how many motionblur samples\n    - Shutter: adjust shutter speed"
+    },
+    {
+        "name": "crok_cameraflash",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates simple camera flashs.\n\nSetup:\n\n    - Flickering: amount of flickering\n    - Density: amount of flashes\n    - Size: size of the flashes\n    - Seed: change seed value"
+    },
+    {
+        "name": "crok_cel_shading",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates Cel shading.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Threshold : threshold for the filter\n    - Color Levels: numbers of shades\n    - Filter Size: blur level\n    - Edge Size: size of the outline"
+    },
+    {
+        "name": "crok_cells",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a cell pattern.\n\nSetup:\n\n    - Itterations: Itterations\n    - Zoom: zoom in / out of the pattern\n    - Speed: how fast the cells are moving\n    - Offset: offset the time\n    - Colour: color of the cells"
+    },
+    {
+        "name": "crok_cellular",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates tons of cellular like looking patterns.\n\nSetup:\n\n    - Iterations: fractal iterations\n    - Noise: noise pattern\n    - Scale: noise scale\n    - Blend: blend between multiple noise layer\n    - Speed: speed of the pattern animation\n    - Offset: offset the an animation in time\n    - Center: pattern center\n    - Zoom: zoom in / out of the fractal\n    - Depth: ajust the depth of the pattern\n    - Colour: fractal colour\n    - Brightness: adjust brightness\n    - Gain: adjust gain\n\nUpdates:\n\n    - Change smooth() to smoother() to make 2025 shader_builder happy. Updated shader source URL."
+    },
+    {
+        "name": "crok_checkerboard",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a checkerboard pattern.\n\nSetup:\n\n    - Zoom: zoom in / out\n    - Rotation: rotates the checkerboard\n    - Aspect: aspect of the pattern\n    - Colour: colour for the 2 tiles\n    - Antialiasing: applies an AA filter to the rotated checkboard"
+    },
+    {
+        "name": "crok_chroma_warp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Kyle Obley and Ivar Beer",
+        "description": "Creates chromatic aberrations and a barrel distortion.\n\nInput:\n\n    - Front: source clip\n    - Chromatic Aberration Strength: Chromatic Aberration Strength matte\n    - Distortion Strength: Distortion Strength matte\n\nOutput:\n\n    - Result: result clip\n    - Matte: alpha channel\n\nSetup:\n\n    - Amount: blur amount\n    - Iterations: number of steps to create the blur\n    - Saturation: Blend in/out the chroma offset\n    - Center: center of the effect\n    - Add Distortion: enable additional distortion\n    - Amount: amount of applied distortion"
+    },
+    {
+        "name": "crok_chromakey",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Does a fast chroma key.\n\nInput:\n\n    - Front : greenscreen clip\n    - Back : background clip"
+    },
+    {
+        "name": "crok_circuits",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates circuits style patterns.\n\nSetup:\n\n    - Width: width of the lines\n    - Zoom: zomin in / out of the fractal\n    - Speed: speed of the conductive strips animation\n    - Offset: offset animation in time\n    - Position: position of the fractal"
+    },
+    {
+        "name": "crok_circular_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies a circular blur to the image.\n\nSetup:\n\n    - Amount: amount of blur applied to the image"
+    },
+    {
+        "name": "crok_clamp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders and Ivar Beer",
+        "description": "Use this shader to get broadcast safe colors\n\nInput:\n\n    - Front: source clip\n\nClamp:\n\n    - Chroma: max chrominance\n    - Luma: max luminance"
+    },
+    {
+        "name": "crok_client",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Hypnotize your clients."
+    },
+    {
+        "name": "crok_cmyk_halftone",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates CMYK Halftone patterns.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Minimum : minimum pattern\n    - Maximum : maximum pattern\n    - Gain : brightness of the pattern\n    - Scale: scale pattern\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_contour",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a handdrawn style edge detect.\n\nInput:\n\n    - Source Image: source image\n\nSetup:\n\n    - Resolution: resolution of the effect\n    - Radius: radius of the created edges\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_convolve",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a Convolve Blur.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Quality: Blur Quality\n    - Radius: Blur Radius\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_crazy_noise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a crazy 3D Noise texture.\n\nTime:\n\n    - Speed : speed of the texture animation\n    - Offset : offset the texture in time\n\nTexture:\n\n    - Detail : detail of the generated texture\n    - Density : density of the genrated texture\n    - Morph : morph between different texture patterns\n    - Steps: how many texture iterations will be generated\n\nResolution:\n\n    - Zoom : zoom in and out of the texture\n    - Resolution: resolution of the texture in x / y\n\nColour:\n\n    - Contrast: adjust the contrast of the generated texture"
+    },
+    {
+        "name": "crok_crosshatch",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a simple pencil sketch.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Density : How close together hatch lines should be placed\n    - Width : How wide hatch lines are drawn\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_crt",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a CRT style scan-line effect with additional shadowmasking.\n\nSetup:\n\n    Scanline:\n\n        - Amount: how many scanlines\n        - Contrast: amount of scanline contrast\n\n    Shadow Mask:\n\n        - Type: select different typeds of shadow masks\n        - Amount: amount of shadowmasking\n\n    Misc:\n\n        - Warp: adjust the amount of warp applied to the image\n        - Blur Input: slightly soften the incoming image"
+    },
+    {
+        "name": "crok_deband",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Reduces banding.\n\nInput:\n\n    - Source: front image\n\nSetup:\n\n    - Amount: amount of debanding applied"
+    },
+    {
+        "name": "crok_defocus",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and some friendly fokes",
+        "description": "Comps front and back and adds a defocus effect.\n\nInput:\n\n    - Front: front clip\n    - Back: background clip\n    - Matte: matte clip\n    - Front Strength: strength clip for defocus amount\n    - Back Strength: strength clip for defocus amount\n\nSetup:\n\n    - Style: select different bokeh styles\n    - Size: blur size\n    - Gain: adjust the gain of the image, to get better highligths\n    - Steps: blur resolution"
+    },
+    {
+        "name": "crok_defocus_SFX",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Comps front and back and adds a defocus effect.\n\nInput:\n\n    - Front: front clip\n    - Matte: matte clip\n    - Strength: strength clip for defocus amount\n\nSetup:\n\n    - Style: select different bokeh styles\n    - Size: blur size\n    - Gain: adjust the gain of the image, to get better highligths\n    - Steps: blur resolution"
+    },
+    {
+        "name": "crok_denoise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Removes grain / noise\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Amount: how much grain is removed\n    - Detail: blend in detail"
+    },
+    {
+        "name": "crok_denoise3d",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies a denoise to an image."
+    },
+    {
+        "name": "crok_despill",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Combines multiple LogicOps to streamline your keying batch schematic.\n\nInput:\n\n    - Front: greenscreen clips\n    - Back: background clip\n    - Matte: keyed FG matte\n    - Despilled Front: despilled FG clip\n\nSetup:\n\n    - 2D Histogram: adjust max and min input values of the despilled FG"
+    },
+    {
+        "name": "crok_difference",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Miles Essmiller",
+        "description": "Creates a difference matte.\n\nSetup:\n\n    - Red | Green | Blue: adjust the effect of the colour channels\n    - minInput: displays the lower limit of the luminance values (pixels with lower values are mapped to black)\n    - minOutput: displays the lower limit of the luminance values for black pixels\n\n    - maxInput: displays the upper limit of the luminance values (pixels with higher values are mapped to white)\n    - maxOutput: displays the upper limit of the luminance values for white pixels\n\n    - Brightness: adjust the brightness\n    - Contrast: adjust the contrast\n    - Gain: adjust the gain\n    - Gamma: adjust the gamma"
+    },
+    {
+        "name": "crok_diffuse",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a noisy blur.\n\nInput:\n\n    - Front: source clip\n    - Strength: strength matte\n\nSetup:\n\n    - Amount: blur strenth\n    - Steps: blur resolution"
+    },
+    {
+        "name": "crok_digi_noise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates crezy digital noise structures.\n\nIMPORTANT: This shader is TOTALLY random.\nIt will create a different pattern, everytime you copy it or replace it.\n\nTHIS SHADER ONLY WORKS ON A MAC SYSTEM !!!\n\nSetup:\n\n    - Scale: scale in / out of the texture"
+    },
+    {
+        "name": "crok_digital_glitch",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates digital glitches.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Bias: adjust the time between the effect kicks in (0 = never 1 = always)\n    - Size: size of the applied effects (green lines and bw blocks)\n    - RGB Offset: adjust thr RGB offset\n    - Blend: adjust the opacity of the effect\n    - Lines Threshold: threshold for the green lines\n    - BW Threshold: black and white threshold\n    - Enable: enable Drunk Vision mode\n    - Bias: adjust the time between the effect kicks in (0 = never 1 = always)"
+    },
+    {
+        "name": "crok_dir_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a directional blur.\n\nVersion: 1.1a\n\nInput:\n\n    - Front: source clip\n\nOutput:\n\n    - Result: result clip\n\nSetup:\n\n    - Horizontal: blur amount\n    - Vertical: blur amount\n    - Iterations: number of steps to create the blur\n    - Gain: gain applied to image"
+    },
+    {
+        "name": "crok_distort",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Lewis Saunders",
+        "description": "Adds a lens distortion effect. For all your glassy/watery/refrationy needs.\n\nInput:\n\n    - Front: source clip\n    - Lens: distortion clip\n    - Matte: region of interest\n    - Strength: strength clip\n\nSetup:\n\n    - Amount: overall distortion\n    - Displace: the displacement amount\n    - Softness: amount of softness applied to the distortion\n    - Rotate: offset the distortion\n\nFiltering:\n\n    - Blur Lens: softens incoming lens clip\n    - Blur Strength: softens incoming strength clip\n    - Strength Amount: blends in / out strength clip\n    - FXAA Amount: amount of Antialiasing applied"
+    },
+    {
+        "name": "crok_distort_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Lewis Saunders",
+        "description": "Adds a blured lens distortion effect.\n\nInput:\n\n    - Front: source clip\n    - Matte: region of interest\n    - Displace: distortion clip\n    - Strength: strength clip\n\nSetup:\n\n    - Distortion: overall distortion\n    - Blur Distortion: softens the incoming displace matte\n    - Blur: amount of blur applied to the Matte to get the directional blur effect\n    - Samples: how many samples are used for the directional blur\n\nAntiAliasing:\n\n    - Enable FXAA: enables AntiAliasing"
+    },
+    {
+        "name": "crok_dithering",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a dithering effect.\n\nInput:\n\n    - Front: source image"
+    },
+    {
+        "name": "crok_dof_CFX",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Lewis Saunders",
+        "description": "Simulates depth of field with bokeh.\n\nInput:\n\n    - Front: source clip\n    - Depth Map: depth map\n\nSetup:\n\n    - Amount: how much blur is applied\n    - Gain: highlight gain\n    - Chromatic Abe.: highlight chromatic aberration\n    - Pentagon Shape: use pentagon as bokeh shape\n    - Feather Shape: pentagon shape feather\n    - Focal Depth: adjust the field of view"
+    },
+    {
+        "name": "crok_dof_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates depth of field with bokeh.\n\nInput:\n\n    - Front: source clip\n    - Depth Map: depth map\n\nSetup:\n\n    - Amount : how much blur is applied\n    - Threshold : highlight threshold\n    - Gain : highlight gain\n    - Chromatic Abe. : highlight chromatic aberration\n    - Dither : sample dithering amount\n    - Rings : ring amount\n    - Samples : how many samples are used for the bokeh\n    - Noise : use noise instead of pattern for sample dithering\n    - Pentagon Shape : use pentagon as bokeh shape\n    - Feather Shape : pentagon shape feather\n    - Range : focal range\n    - Focal Depth : focal depth, if you use an external matte\n    - Autofocus : use autofocus in shader\n    - Depth Map Blur : blurs the depth buffer\n    - Bias: bokeh edge bias"
+    },
+    {
+        "name": "crok_edge_matte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a simple edge matte.\n\nSetup:\n\n    - Offset: offset amount applied to the matte edge\n    - Gain: amount of gain\n    - Gamma: amount of gamma"
+    },
+    {
+        "name": "crok_emboss",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates an emboss effect.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Height: bump height\n    - Specular: adjust the glossiness\n    - Light Height: height of the lightsource\n    - Position: light position in x / y"
+    },
+    {
+        "name": "crok_equalizer",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_erode",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Gives you a max / min - erosion / dilation type of effect simmilar to the nuke one.\n\n  Setup:\n\n    - Type: select the desired filter effect\n    - Shape: select the preferred look\n    - Amount: adjust the overal amount applied to the shader\n    - Look: adjust the overal look\n    - Blend: blend between original image and applied preset"
+    },
+    {
+        "name": "crok_explosion_CFX",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "CameraFX shader will create volumetric explosions inside Action."
+    },
+    {
+        "name": "crok_expon_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer, Miles Essmiller, and Lewis Saunders",
+        "description": "Blurs an image with an exponential falloff.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Amount: amount of blur applied\n    - Blend: mix between the original image and the blurred one\n\nOutput Options:\n\n    - Clamp output: clamps the result to 0.0 - 1.0"
+    },
+    {
+        "name": "crok_exposure",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates an exposure node, which isn't THAT precise ;)\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Overall: overall exposure adjustment\n    - Saturation: adjust the saturation for different exposure levels\n    - RGB: single RGB exposure adjustment\n    - Input Data Type: Linear | Video/Rec709 | Logarithmic"
+    },
+    {
+        "name": "crok_extrude",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates an extrusion effect.\n\n  Input:\n\n    - Front: original image\n    - Matte: matte input\n    - Heigt Map: height map to define the strength of the extrusion"
+    },
+    {
+        "name": "crok_fast_grain",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a film like grain.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Amount : how much grain is applied\n    - Size : grain size\n    - Coloured Grain : enables coloured grain\n    - Colour : colour saturation of the grain\n    - Luma : brightness of the grain\n\nUpdates:\n\n    - Modified default input to be Front.\n\n    - Fixed a half-pixel offset causing an image shift and interpolation softness + edge artifacts"
+    },
+    {
+        "name": "crok_fbm-pixels",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a fbm style pattern.\n\nSetup:\n\n    - Scale: adjust scale of the pattern\n    - Detail: adjust pattern detail\n    - Speed: adjust pattern animation speed\n    - Offset: offset pattern in time"
+    },
+    {
+        "name": "crok_fieldmerge",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_filmlook",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Gives you different FilmLook presets.\n\nSetup:\n\n    - Look: select the desired filmlook preset\n    - Saturation: adjust overall saturation\n    - Contrast: adjust overall contrast\n    - Gamma: adjust overall gamma\n    - Blend: blend between original image and applied preset"
+    },
+    {
+        "name": "crok_fire",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a noise texture similar to the popular Genarts Texture (start with a white frame).\n\nSetup:\n\n    - Noise : noise detail\n    - Offset : offset noise pattern\n    - Speed : speed of fire\n    - Zoom : zoom in and out of fire\n    - Amplitude : amplitude of fire"
+    },
+    {
+        "name": "crok_fireworks",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates Fireworks."
+    },
+    {
+        "name": "crok_fisheye",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a fisheye effect.\n\nSetup:\n\n    - Distortion: adjust the amount of barrel distortion applied"
+    },
+    {
+        "name": "crok_flame",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "This Matchbox shader creates a simple torch like flame.\n\nSetup:\n\n    - Detail: adjust the noise detail of the flame\n    - Speed: adjust the speed of the flame animation\n    - Offset: offset the animation in time"
+    },
+    {
+        "name": "crok_flames",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates flames."
+    },
+    {
+        "name": "crok_flames_CFX",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "CameraFX shader will create volumetric flame and fluid like structures inside Action."
+    },
+    {
+        "name": "crok_flash_frames",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Create flash frames at desired frames."
+    },
+    {
+        "name": "crok_flicker",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a flickering effect.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Amplitude: amplitude of the flickering\n    - Frequency: speed of the flickering\n    - Seed: offset the random generator"
+    },
+    {
+        "name": "crok_flow",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a perlin noise pattern.\n\nSetup:\n\n    - Itterations: how much itterations\n    - Amplitude: noise amplitude\n    - Noise: adjust noise\n    - Warp: warp the texture\n    - Speed: animation speed\n    - Offset: offsets the noise pattern\n    - Horizontal: horizontal speed adjustments\n    - Vertical: vertical speed adjustments\n    - Center: move the texture center\n    - Zoom: zoom in/out of the texture\n    - Tint: define the tint colour\n    - Brightness: adjust brightnesss\n    - Contrast: adjust contrast\n    - Gain: adjusst gain"
+    },
+    {
+        "name": "crok_fluidify",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a 2D fluid system.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Detail: amount of detail in the simulation\n    - Resolution: amount of resolution used for the simulation\n    - Noise: amount of noise added to the simulation"
+    },
+    {
+        "name": "crok_folding",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a folding texture, which you can use as a reflection map.\n\nSetup:\n\n    - Speed : speed of the texture changes\n    - Offset : offset the texture pattern\n    - Zoom : zoom in/out of the texture\n    - Detail : level of detail\n    - Iterations : iterations steps\n    - Aspect : aspect ratio of the generated texture\n    - Duration : choose speed to create loop"
+    },
+    {
+        "name": "crok_fractal",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a fractal pattern.\n\nSetup:\n\n    - Zoom : zoom in and out\n    - Resolution : fractal detail\n    - Offset : offset fractal pattern\n    - Speed : speed of building the fractal\n    - Zoom : zoom in and out\n    - Gain : brightness of the fractal texture"
+    },
+    {
+        "name": "crok_fractal_soup",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a mandelbrot pattern.\n\nSetup:\n\n    - Speed : speed of building the fractal\n    - Offset : creates different fractal\n    - Gain : changes the brightness of the fractal\n    - Colour: fractal base colour\n    - Detail: fractal resolution"
+    },
+    {
+        "name": "crok_frameguides",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Kyle Obley, Miles Essmiller, Lewis Saunders, Ivar Beer",
+        "description": "Creates frameguides a letterbox and framecounter.\n\nSetup:\n\n    Letterbox\n\n        - Colour: colour of the letterbox\n        - Aspect Ratio: dial in the letterbox aspec ratio\n        - Blend: opacity for the letterbox\n\n    Letterbox Line\n\n        - Colour: colour of the letterbox line\n        - Aspect Ratio: dial in the letterbox line aspec ratio\n        - Blend: opacity for the letterbox line\n\n    Guides\n\n        - Colour: colour of the guidelines\n        - Blend: opacity of the guidelines\n        - Enable Relative: adjust the guidelines in relation to the Letterbox\n        - Relative to Lines: switch to relative to Letterbox Lines\n\n    Center\n\n        - Colour: colour of the center cross\n        - Blend: opacity of the center cross\n\n    Counter\n\n        - Position: adjust the position of the framecounter\n        - Size: adjust the size of the framecounter\n        - Offset: offsets the framecounter"
+    },
+    {
+        "name": "crok_glitch",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates glitch effects."
+    },
+    {
+        "name": "crok_gradient",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "A simple gradient effect which works nice in Action and on the Timeline.\n\nSetup:\n\n    - Gardient Type: select Linear, Radial or Line Dist\n    - Bias: adjust the ramp of the gradient\n\n    - Start: adjust the start position of the gradient\n    - Stop: adjust the stop position of the gradient\n\n    - Color: colors being used for the gradient"
+    },
+    {
+        "name": "crok_grid",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a grid.\n\nSetup:\n\n    - Grid Colour: grid colour\n    - Back Colour: bg colour\n    - Grid Size : size of the main box\n    - Line Width : width of the outline\n    - Rotation Center: center of rotation\n    - Rotation Value: how much rotation gets applied\n    - Blur: apply blur to the grid"
+    },
+    {
+        "name": "crok_grunge",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates rough edges. Great for mattes."
+    },
+    {
+        "name": "crok_heathaze",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Lewis Saunders",
+        "description": "Creates a heat haze effect.\n\nInput:\n\n    - Front: source clip\n    - Matte: masken input\n    - Displace: external Displacement matte\n    - Strength: external Strength matte\n\nSetup:\n\n    - Amount: strength of the distortion\n    - Smoothness: blur the incomming distortion matte (works on internal and external matte)\n\n    - Amount: strengt of applied hmotion blur\n    - Samples: motion blur samples\n\n    - Speed: speed of noise\n    - Detail: detail of the noise structure\n    - Direction: noise animation direction\n\n    - Use External Matte: use an external matte instead of the internal matte for the displacement\n\n    - Oversampling: number of pixel samples\n    - Softness: spacing between pixel samples"
+    },
+    {
+        "name": "crok_hexagon",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates an exposure node, which isn't THAT precise ;)\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Size: size of the hexagon tile\n    - Edge: thickness of the black edge"
+    },
+    {
+        "name": "crok_highpass",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a HighPass filter effect.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Strength: adjust contrast of the generated HighPass\n    - Clamp Output: clamps the output of the highpass filter between 0 and 1\n    - Overlay on BG: this comps the HighPass in overlay mode ontop of the source image"
+    },
+    {
+        "name": "crok_ibk",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "IBK Keyer."
+    },
+    {
+        "name": "crok_ice",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Create ice structures."
+    },
+    {
+        "name": "crok_instagram",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Gives you the typical Instagram looks.\n\nSetup:\n\n    - Look: select the desired Instagram preset\n    - Saturation: adjust overall saturation\n    - Contrast: adjust overall contrast\n    - Gamma: adjust overall gamma\n    - Blend: blend between original image and applied preset"
+    },
+    {
+        "name": "crok_jpeg",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders and Ivar Beer",
+        "description": "Simulates JPEG compression.\n\nIMPORTANT! This shader does only work correctly, if the output is set to 16fp.\n\nSetup:\n\n    - Resolution: overall image resolution\n    - Amount: amount of applied compression"
+    },
+    {
+        "name": "crok_jt_key",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_kaleido_CFX",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates kaleidoscope patterns.\n\nInput:\n\n    - Strength: use that input to get the shader react to your music\n    - Depth: only used, if the shader is used as a CameraFX shader\n\nLook:\n\n    - Detail: amount of detail\n    - Seed: scrub throughh to get different looks"
+    },
+    {
+        "name": "crok_kuwahara",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates anisotropic kuwahara filtering.\n\nSetup:\n\n    - Radius: adjust filter radius"
+    },
+    {
+        "name": "crok_lava",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates flame / fluid like patterns.\n\nSetup:\n\n    - Detail: fractal detail\n    - Volume Steps: volume steps\n    - Step Size: size of the steps\n    - Density: density of the different layer\n    - Speed: speed of the pattern animation\n    - Offset: offset the an animation in time\n    - Zoom: zoom in / out of the fractal\n    - Aspect: change aspect ratio for x and y\n    - Amount: amount of noise\n    - Frequence: noise frequence\n    - Amplitude: noise amplitude\n    - Direction: direction of noise animation\n    - Contrast: contrast of the image\n    - Saturation: saturation of the image\n    - Tint Colour: tint colour\n    - Tint: how much tint is applied"
+    },
+    {
+        "name": "crok_lens_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a Lens Blur effect.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Amount: how much lens Blur is applied\n    - Aspect: aspect ratio\n    - Chroma Offset: how much chromatic abberation\n    - Gain: boost the incomming gain\n    - Threshold: threshold amount for the gain"
+    },
+    {
+        "name": "crok_lightleak",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "This Matchbox creates Light Leaks style effects.\n\nInput:\n\n    - Front: front clip\n    - Matte: matte clip which will add to the luma key\n    - Strength: will drive the Chromatic abberation amount\n\nSetup:\n\n    - Amount: amount of light leak applied\n    - Softness: blur the lightleaks in x / y\n    - Tint: tint colour for the light leaks\n    - Saturation: dial in original saturation for the light leaks\n\n    - Density: adjust the denisity of the flicker noise\n    - Speed: adjust the speed of the flicker\n    - Offset: offset the flicker in time\n\n    - Min Input: min input of the luma key\n    - Max Input: max input of the luma key\n\n    - Light Leak Only: outputs the light leak only\n\n    - Enable: Enable chromatic abberations\n    - Amount: amount of chromatic abberations applied\n    - Itterations: itterations steps for the abberations\n    - Center: adjust the center of the chromatic abberations\n\n    - Amount: adjust the noise amount of the atmosphere\n    - Scale: adjust the scale of the noise\n    - Speed: adjust the speed of the noise\n\n    - Brightness: adjust noise brightness\n    - Contrast: adjust contrast of the brightness"
+    },
+    {
+        "name": "crok_lightning",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates lightning bolts.\n\nSetup:\n\n    - Bias: how often the lighning will appear\n    - Branches: how many branches the lightning will have\n    - Noise: adde or remove noise from the bolts\n    - Smooth Motion: reduce or increase randmness between frame to frame\n    - Speed: adjust the speed of the lighning changes\n\n    - Postition: position the center of the lightning\n    - Rotation: rotate around the center of the lightning\n    - Size: adjust the size of the lighning strike\n\n    - Thickness: glow amount\n    - Intensity: glow intensity"
+    },
+    {
+        "name": "crok_lightwrap",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies a lightwrap to the image.\n\nInput:\n\n    - Comp: composed FG + BG without LightWrap\n    - Back: BG only\n    - Matte: FG matte\n\nSetup:\n\n    - Logic Op: blend mode applied\n    - Size: amount of lightwrap\n    - Blend: blend in / out lightwrap\n    - Blur BG: amount of blur applied to the incomming BG plate\n\n    - Gain: adjust gain of the lighwrap matte\n    - Threshold: adjust lightwrap matte threshold\n\n    - Gain: adjust gain of the edge matte\n    - Threshold: adjust edge matte threshold\n    - Size: size of the edge blur\n    - Blur: blur the generated edge matte\n\n    - Blur Amount: amount of edgeblur applied\n    - Grain Amount: amount of grain applied\n\n    - Output: Comp / Lightwrap"
+    },
+    {
+        "name": "crok_lightwrap_CFX",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies a lightwrap to the image.\n\nInput:\n\n    - Comp: composed FG + BG without LightWrap\n    - Back: BG only\n    - Matte: FG matte\n\nSetup:\n\n    - Logic Op: blend mode applied\n    - Size: amount of lightwrap\n    - Blend: blend in / out lightwrap\n    - Blur BG: amount of blur applied to the incomming BG plate\n\n    - Gain: adjust gain of the lighwrap matte\n    - Threshold: adjust lightwrap matte threshold\n\n    - Gain: adjust gain of the edge matte\n    - Threshold: adjust edge matte threshold\n    - Size: size of the edge blur\n    - Blur: blur the generated edge matte\n\n    - Blur Amount: amount of edgeblur applied\n    - Grain Amount: amount of grain applied"
+    },
+    {
+        "name": "crok_lines",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates lines.\n\nSetup:\n\n    - Density: amount of lines\n    - Sharpness: edge sharpness\n    - Itterations: Itterations\n    - Speed: how fast the lines are moving\n    - Offset: offset the time\n    - Colour: color of the lines"
+    },
+    {
+        "name": "crok_lips",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_logicop",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Recreates the Photoshop blending modes.\n\nInput:\n\n    - Front: front image\n    - Back: background image\n    - Matte: matte being used to apply effect\n\nOutput:\n\n    - Clamp Color: clamps the color between 0.0 and 1.0\n\nSetup:\n\n    - Selection: select the logic operator to use\n    - Blend: dissolve between bg and result\n\nFunction:\n\n    - None: doesn't apply any function\n    - Sinus: applies a sinus function to the blend\n    - Smooth Saw: applies a smooth saw to the blend\n    - Step Random: jumps randomly between diffeend blend values"
+    },
+    {
+        "name": "crok_lowfi",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates NES, EGA and Gameboy video out.\n\nSetup:\n\n    - Brightness: adjust brightness of the image\n    - NES: apply NES look\n    - EGA: apply EGA colour palette\n    - GAMEBOY: apply a gameboy type colour pallete"
+    },
+    {
+        "name": "crok_magma",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a lava like structure."
+    },
+    {
+        "name": "crok_mandelbox",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates MandelBox Fractals."
+    },
+    {
+        "name": "crok_mandelbox_CFX",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates MandelBox Fractals inside Action."
+    },
+    {
+        "name": "crok_mandelbulb",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates MandelBulb Fractals."
+    },
+    {
+        "name": "crok_mandelbulb_CFX",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates Mandelbulb Fractals inside Action."
+    },
+    {
+        "name": "crok_matte_edge",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Modifies your mattes like the Matte Edge Node and has the additional feature of being able to pixelspread the forground.\n\nSetup:\n\n    - Gamma: adjust the gamma of the matte\n    - Erode: erodes the matte\n    - Blur: soften the matte\n\n    - Width: adjust the expand or shrink amount\n    - Soften: soften the shrinked or expanded matte\n\n    - Spread Type: select between parallax, stretch and smear mode\n    - Amount: amount of pixel pushing\n    - Width: width of the edge affected by the stretch pixelstretch\n\n    - Aspect: adjust the aspect of the selected operation"
+    },
+    {
+        "name": "crok_matte_edge_SFX",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Modifies your mattes like the Matte Edge Node and has the additional feature of being able to pixelspread the forground.\n\nSetup:\n\n    - Gamma: adjust the gamma of the matte\n    - Erode: erodes the matte\n    - Blur: soften the matte\n\n    - Width: adjust the expand or shrink amount\n    - Soften: soften the shrinked or expanded matte\n\n    - Spread Type: select between parallax, stretch and smear mode\n    - Amount: amount of pixel pushing\n    - Width: width of the edge affected by the stretch pixelstretch\n\n    - Aspect: adjust the aspect of the selected operation"
+    },
+    {
+        "name": "crok_maze",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a maze like structure.\n\nSetup:\n\n    - Width: wall width\n    - Zoom: zoom in | out of the maze\n    - Rotation: rotates the maze\n    - Position: offset the maze position"
+    },
+    {
+        "name": "crok_median",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates digital glitches.\n\nInput:\n\n    Front: source clip\n    Matte: Matte clip"
+    },
+    {
+        "name": "crok_menger_system",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Flies through a menger system.\n\nFractal:\n\n    - MaxSteps : MaxSteps\n    - MinimumDistance : minimum Distance\n    - normalDistance : normal Distance\n    - Iterations : number of iterations to be processed\n    - Scale : size of the menger\n\nCamera:\n\n    - FieldOfView: FieldOfView of the camera\n    - FudgeFactor: randomness\n    - Twirl: twirl factor\n\nColour:\n\n    - Light Color : colour of the 2 avaialble lights\n    - Ambient : ambient brightness\n    - Diffuse : diffuse amount"
+    },
+    {
+        "name": "crok_negative",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Inverts the front and / or the matte.\n\n  Input:\n\n    - Front: front clip\n    - Matte: matte clip"
+    },
+    {
+        "name": "crok_new_balance",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Miles Essmiller",
+        "description": "Applies the gray world assumption model to the source image.\n\nSetup:\n\n    - Level: adjust effect applied to the source image\n    - Method: select the gray world assumption model\n    - Colourspace: select the source image colour space (most of the time the best result will be archived, if you translate your image to Scene Linear and select Method 1)"
+    },
+    {
+        "name": "crok_nightvision",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "This Matchbox creates a nightvision effect.\n\nInput:\n\n    - Source: front image\n\nSetup:\n\n    - Amount: amount of nighvision effect applied\n    - Glow: amount of glow applied to the image\n    - Blur: amount of blur appliedto the incoming image\n    - Noise: amount of noise applied to the image\n    - Scnaline: scale the scanlines\n\n    - RGB Offset: adjust the RGB offset to define the black and white look\n\n    - Tint: define the colour of the tint\n    - Exposure: adjust the exposure\n    - Brightness: adjust the brightness\n    - Contrast: adjust the contrast\n    - Saturation: adjust the saturation of the effect\n\n    - Size: adjust the vignette size\n    - Softness: adjust the softness of the vignette\n    - Abberations: amount of chromatic abberations applied to the image\n    - Distortion: amount of chromatic distortion abblied to the image"
+    },
+    {
+        "name": "crok_noise_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a noise texture similar to the popular Genarts Texture (start with a white frame).\n\nInputs:\n\n    - Front : source clip\n\nSetup:\n\n    - Zoom : zoom in and out of the texture\n    - Rotation: direction of the blur\n    - Offset: offsets the texture"
+    },
+    {
+        "name": "crok_noise_wipe",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Miles Essmiller",
+        "description": "Creates a noise wipe / dissolve.\n\nSetup:\n\n    - Noise: noise detail\n    - Amplitude: noise amplitude\n    - Softness: softness value for the wipe / dissolve area\n    - Rotation: direction of the wipe\n    - Scale: zoom in / out of the Noise\n    - Mix: amount of wipe applied to the images\n    - Dissolve: switch from wipe to dissolve\n    - Horizontal: switch from vertical to horizontal wipe\n    - Invert: invert the transition\n\nOutput:\n\n    - RGB Beauty pass\n    - Alpha channel"
+    },
+    {
+        "name": "crok_ocean_noise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates an ocean / water like noise pattern.\n\nSetup:\n\n    - Zoom: zoom in / out of the noise\n    - Speed: speed of the pattern animation\n    - Offset: offset the an animation in time\n    - Saturation: saturation of the image\n    - Brightness: brightness of the image\n    - Contrast: contrast of the image\n    - Tint Colour: tint colour\n    - Amount: how much tint is applied\n\n\nOutput:\n\n    - RGB seperated noise"
+    },
+    {
+        "name": "crok_oil_paint",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies a painterly effet to the image.\n\nSetup:\n\n    - Radius: how strong the image is filtered\n    - Velocity: how fast the painterly effect is moving\n    - Distortion: postion of the distortion"
+    },
+    {
+        "name": "crok_old_tv",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates an old tube tv.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Slowscan: slow moving scanlines\n    - Scanlines: tiny scanlines\n    - Lines: rgb coloured lines\n    - Vignette softness: softness of the vignette\n    - Vignette scale: scale of the vignette\n    - TV Tube Vignette: add TV boarder around image\n    - Noise Strenght: opacity of the noise\n    - Noise Saturation: color saturation of the noise\n    - Distort: distort the incoming image\n    - Frequency: frequency of the distort effect\n    - Speed: how fast the distortion is running through the image\n    - Stripes: add VHS stripes\n    - Bars: add VHS Bars\n    - TV Tube Dots: add CRT style pattern\n    - Moire: add moire style noise\n    - VCR Distortion: add a vcr distortion like effect"
+    },
+    {
+        "name": "crok_parallax",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Lewis Saunders",
+        "description": "Simulates a typical Amiga style parallax effect.\n\nInput:\n\n    - Texture: clip defining the look of the texture\n\nSetup:\n\n    - Intensity: how much texture is applied\n    - Spacing: adjust the spacing between the diffeent parallax layers\n    - Layers: how many layer are used for the parallax effect\n    - Center: move the effect around in x /y\n    - Rotation: rotate the texture around the center\n    - Speed: adjust the animation speed"
+    },
+    {
+        "name": "crok_particle_trans",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a particle type transition between 2 clips."
+    },
+    {
+        "name": "crok_particles2D",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates circles moving in random patterns.\n\nSetup:\n\n    - Radius: global size of the circles\n    - Seed: seed value\n    - Zoom: zoom in and out of the created pattern\n\n    - Speed: how fast the pattern is moving\n    - Offset: offset the timing\n\n    - Gain: adjust gain\n    - Saturation: adjust saturation"
+    },
+    {
+        "name": "crok_patterns",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates diffferent patterns."
+    },
+    {
+        "name": "crok_perlin",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a perlin noise like pattern.\n\nSetup:\n\n    - Frequency: Zoom in / out\n    - Gain: brightness of the patter\n    - Speed: animation speed\n    - Offset: offsets the noise pattern\n    - Colour: colour of the patters"
+    },
+    {
+        "name": "crok_pixelate",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Pixelates the image.\n\nInput:\n\n    - Front: source clip\n    - Matte: matte to define the affected area\n\nSetup:\n\n    - Detail: detail of the pattern\n    - Dissolve: blend between original and pixelated image"
+    },
+    {
+        "name": "crok_pixelsort",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a pixel sort type effect.\n\n  Input:\n\n    - Front: source clip\n    - Matte: matte clip\n\n  Setup:\n\n    - Amount: amount of effect applied\n    - Invert Direction: invert the direction of the effect\n    - Switch Direction: switch between horizontal and vertical\n    - Switch to Shadow: switch between highlights and shadows\n\n  Rotation:\n\n    - Enable: enable rotation options\n    - Angle: amount of rotation applied to the effect"
+    },
+    {
+        "name": "crok_pixelspread",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Applies a pixelspread to the edges of an image."
+    },
+    {
+        "name": "crok_pixelstretch",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a Pixelspread type stretch effect.\n\nSetup:\n\n    - Amount: stretch amount\n    - Edges Width: amount of softening the incoming matte\n    - MidPoint: adjust the midpoint for the stretch matte"
+    },
+    {
+        "name": "crok_plasnoid",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates tons of different plasma patterns.\n\nSetup:\n\n    - Detail: detail of the pattern\n    - Itterations: Itterations\n    - Fractal, Noise, Random: play with those parameters to get crazy results\n    - Speed: how fast the plasma is moving\n    - Offset: offset the time\n    - Colour: color of the plasma"
+    },
+    {
+        "name": "crok_puffy_clouds",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates puffy clouds.\n\nSetup:\n\n    - Rotation : the clouds rotation on X/Y axis\n    - Speed : the speed for the auto-movement\n\n    - Detail : noise detail of the cloud\n    - Density: density of the clouds\n    - Volume : volum of a single cloud\n    - Steps: far clipping plane\n\n    - Use Action Camera: enable linking to action camera\n    - Camera Position: action camera postion\n    - Camera Interest: action camera point of interest\n    - FOV: action camera fov\n    - Roll: action camera roll"
+    },
+    {
+        "name": "crok_puffy_noise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates puffy noise.\n\nSetup:\n\n    - Rotation : camera rotation around the puffy clouds\n    - Speed : speed of the noise animation (use negative values for backward playback)"
+    },
+    {
+        "name": "crok_radial_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "This Matchbox shader creates radial blur.\n\nInput:\n\n    - Front : source clip\n\nSetup:\n\n    - Amount : blur strenth\n    - Center : center of the blur\n    - Gain : brightness of the picture\n    - Steps : blur resolution\n\nUpdates:\n\n    - Fixed a half-pixel offset causing an image shift and interpolation softness, changed the Center to an X/Y axis widget on-screen for easier manipulation"
+    },
+    {
+        "name": "crok_radial_blur_CFX",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a volumetric radial blur inside action.\n\nSetup:\n\n    - Amount : blur strenth\n    - Samples: blur resolution\n    - Gain : adjust gain\n    - Decay: blur decay\n\n    - Position: light position\n\n    - Softness: soften the result"
+    },
+    {
+        "name": "crok_regrain",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates film grain.\n\nInput:\n\n    - Front: source clip\n    - Matte: external matte input\n\nSetup:\n\n    - Stock: Select your film grain presets\n    - Amount: how much grain is applied\n    - Softness: grain softness size\n    - Size: grain size\n    - Red | Green | Blue: adjust the different colour channels independently\n    - Levels: adjust the low, mid and high values for your grain (its only avaiable if the Custom Stock Preset is selected)"
+    },
+    {
+        "name": "crok_renoise",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Adds camera noise / grain to your clip. 2017 ONLY!\n\nInput:\n\n    - Front: source clip\n    - Matte: external matte input\n\nSetup:\n\n    - Type: Select your camera noise presets\n    - Size: grain size\n    - Gain: adjust the gain value for the noise / grain\n\n    - Luma Curve: adjust the distribution of the noise/grain depending of the luma in the source image\n\n    - Sharpness: adjust the sharpness of the grain\n    - Softness: adjust the softness of the grain"
+    },
+    {
+        "name": "crok_reskin",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates skin type textures.\n\nInput:\n\n    - Texture: cleaned up skin or new textures\n    - Source: original image\n    - Matte: area where the texture should be applied to\n\nSetup:\n\n    - Threshold Org: amount of softening applied\n    - Threshold Clean: amount of texture applied"
+    },
+    {
+        "name": "crok_rift",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Lewis Saunders and Ivar Beer",
+        "description": "Distorts side-by-side stereo images to be useable with the Oculus Rift.\n\nInput:\n\n    - Front: source clip\n\nHow to use:\n\n    Just pipe in a side by side Stereo 3D clip and the shader will convert it to a Oculus Riftenabled clip."
+    },
+    {
+        "name": "crok_sat_vs_sat",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Gives you Resolve style 'Sat vs Sat' curve controls.\n\nInput:\n\n    - Front: front image\n\nSetup:\n\n    - Sat Multiplier: multiplies the saturation of the curves to give you the possibility to go over 1.0 Saturation."
+    },
+    {
+        "name": "crok_scanlines",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates CRT phosphor / shadow mask arrangements.\n\nSetup:\n\n    - RGB Bar\n    - MG Bar\n    - RGB Triad\n\nUpdates:\n\n    - Modified default input to be Front.\n    - Small fix to make 2025 shader_builder happy."
+    },
+    {
+        "name": "crok_scribble",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates scribble stlye images."
+    },
+    {
+        "name": "crok_seamless",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "This Matchbox shader creates seamless textures.\n\nSetup:\n\n    - Shuffle: rotate the incoming image to create new patterns\n    - Detail: Zoom in / out of the pattern\n    - Smoothness: smooth the overlapping parts"
+    },
+    {
+        "name": "crok_separation",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a low pass and high pass filter sometimes calles frequency separation\n\nHINT: You need to combine both passes with a PS_LinearLight\n\nInput:\n\n    - Front: source clip\n\nOutput:\n\n    - RGB: LowPass filter\n    - Matte: HighPass filter\n\nSetup:\n\n    - Blur: adjust the softness of the LowPass Filter\n    - Output HighPass as RGB: outputs the Higpass filter as an RGB image instead of a BW in the Matte output"
+    },
+    {
+        "name": "crok_sharpen",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Sharpen your image."
+    },
+    {
+        "name": "crok_sharpen_LX",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Sharpen your image."
+    },
+    {
+        "name": "crok_simple_dof",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates depth of field with bokeh.\n\nInput:\n\n    - Front: source clip\n    - Depth Map: depth map\n\nSetup:\n\n    - Amount : how much blur is applied\n    - Gain : highlight gain\n    - Chromatic Abe. : highlight chromatic aberration\n    - Pentagon Shape : use pentagon as bokeh shape\n    - Feather Shape : pentagon shape feather"
+    },
+    {
+        "name": "crok_sketch",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a sketch type look.\n\nSetup:\n\n    - Fill / Outline: select what mode you would like to use\n    - Blend Outline: blend outline and and out\n    - Blend Fill: blend fill in and out\n\n    - Strokes: amount of strokes\n    - Steps: precision amount\n    - Amount: offsetting the strokes\n\n    - Blend Modes: selec the diffferent blending modes"
+    },
+    {
+        "name": "crok_skin",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_snow",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates snow.\n\nSetup:\n\n    - Layers: number of snow layers\n    - Depth: depth of field\n    - Wind : amplitude of the wind\n    - Detail: add aditional noise\n    - Speed: animation speed\n    - Size: snowflake size\n\nUpdates:\n\n    - Boosted speed to 100 max instead of 10. Abuse the effect things besides snow!"
+    },
+    {
+        "name": "crok_snow3d",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates volumetric snow like particles."
+    },
+    {
+        "name": "crok_snow_texture",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a snow like texture."
+    },
+    {
+        "name": "crok_soften",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "This is a Flame sub pixel blur meant for creating natural looking edges.\n\nInput:\n\n    - Front: original front\n    - Matte: original matte\n\nSoften:\n\n    - Size: amount of gaussian blur applied to the image\n    - Strength: mix amount between original image and blurred one\n\nSmoothness:\n\n    - Amount: how much AA is applied to the image before it runs through the soften process"
+    },
+    {
+        "name": "crok_ssao",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a SSAO look with just a Normal Map input.\n\nInput:\n\n    - Front: RGB Beauty pass\n    - Back: background\n    - Matte: matte\n    - Normal Map: normal map pass\n\nSetup:\n\n    - Radius: radius of the ao effect\n    - Blur: apply a post blur to the AO pass\n    - Gamma: adjust the gamma of the AO only\n\nOutput:\n\n    - SSAO only: output just the AO pass not the comped image\n    - Alpha channel"
+    },
+    {
+        "name": "crok_starfield",
+        "shader_type": "Lightbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a Starfield.\n\nNOTE: This shader works only, if you have a large sphere surrounding your scene"
+    },
+    {
+        "name": "crok_stars",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates Stars.\n\nSetup:\n\n    - Density : density of the stars\n    - Seed: seed value for stars pattern\n    - Speed: flickering speed\n    - Brightness : brightness of the stars"
+    },
+    {
+        "name": "crok_stars_nebulae",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates a universe with stars and nebulae.\n\nSetup:\n\n    - Iterations : the density of the starfield\n    - Vol Steps : how many stars\n    - Offset : offset the pattern (if you go extreme you can get interesting effect which look like fractal patterns)\n    - Zoom : zoom in/out of the starfiled\n    - Position : pic the postion of the starfield (its more like an offset)\n    - Tile : similar to offset\n    - Brightness : brightness of the whole universe\n    - Saturation : color saturation of the universe\n    - Contrast : contrast of the whole universe"
+    },
+    {
+        "name": "crok_technicolor",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates the 2-Striped and 3-Stripes look of old technicolor films.\n\nSetup:\n\n    - Exposure: adjust exposure of the image\n    - Amount: adjust amount of the bleachbypass process\n    - Desaturate: adjust the saturation of the effect\n    - Red, Green, Blue: adjust the individual color channels to finetune your look\n    - Technicolor Look: 2-Strip and 3-Strip\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_tesla",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer, Travis, and Flamemark Shaders",
+        "description": "Creates tesla lightning bolts.\n\nSetup:\n\n    - Bolts: how much lightning bolts\n    - Amplitude: noise amplitude\n    - Width High: width of the bolt\n    - Width Low: width of the outer glow\n\n    - Speed: speed of the animation\n    - Offset: offset the animation in time\n\n    - Lock Bolts: source and target will be merged\n    - Scale: scales the Y position for the bolts\n\n    - Brightness: adjust brightness\n    - Contrast: adjust contrast\n    - Gamma: adjust gamma\n    - Tint Colour: tint colour\n    - Tint Intensity: how much tint is applied\n\n    - Left: change the Y postion for the source\n    - Center: change the Y postion for for the center\n    - Right: change the Y postion for for the target"
+    },
+    {
+        "name": "crok_tile",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates seamless textures."
+    },
+    {
+        "name": "crok_transitions",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates different dissolves.\n\nInput:\n\n    - From: incomming clip\n    - To: outgoing clip\n\nSetup:\n\nSimple Fade:\n\nFade to Gray:\n\n    - Phase: defines the kickin of the effect\n\nFade to Color:\n\n    - Phase: defines the kickin of the effect\n    - Fade to: defines the fade to color\n\nFade to GP:\n\n    - Saturation Bias: defines the kickin of the saturation effect\n    - Exposure Bias: defines the kickin of the exposure effect\n\nBlur:\n\n    - Size: defines the blur size\n    - Quality: defines the blur quality\n\nWipe:\n\n    - Smoothness: defines the wipe-gradient\n    - Direction: defines the direction of the wipe\n\nCircle:\n\n    - Smoothness: defines the wipe-gradient\n    - Invert: dissolves the other way around\n\nFlash:\n\n    - Phase: defines the kickin of the effect\n    - Intensity: defines gain of the flash\n    - Zoom Effect: defines some vignette type zoom effect\n    - Velocity: velocity of the flash\n\nSquares:\n\n    - Smoothness: defines the wipe-gradient\n    - Size: defines the square size\n\nMorph:\n\n    - Strength: how much distortion is applied\n\nCross Zoom:\n\n    - Strength: how long the streaks are\n\nSlide:\n\n    - Direction: in which direction the images are moving (up, down, left, right )\n\nRadial:\n\n    - Smoothness: defines the wipe-gradient\n    - Center: center of the circle wipe\n\nSimple Flip:\n\n    - Direction: defines the axis of the flip (horizontal, vertical)\n\nDreamy:\n\n    - Amount: Wave Amount\n    - Speed: how fast the waves are moving\n    - Distortion: how much wave distortion is applied\n\nBCC Misalignment:\n\n    - RGB Offset: how much the RGB channels are offset\n    - Noise: add an additional horizontal offset\n    - Zoom: how much you zoom into the picture\n    - Tint: add an additional colour tint\n    - Saturation: adjust the saturation of the clips\n    - Brightness: adjust the brightness of the transition effect\n    - Contrast: adjust the contrast of the transition effect\n    - Exposure: adjust the exposure of the transition effect"
+    },
+    {
+        "name": "crok_turbulence",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a water turbulence texture.\n\nSetup:\n\n    - Detail: turbulence steps\n    - Zoom: zoom in and out\n    - Speed: speed of the wave pattern\n    - Offset: offsets wave pattern\n    - Position: wave pattern position\n    - Colour: colour of the generated pattern"
+    },
+    {
+        "name": "crok_tv_rgb_dots",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates the typical RGB dots of old TVs.\n\nInput:\n\n    - Front: source clip\n\nSetup:\n\n    - Cellsize : The size of a single RGB dot\n\nUpdates:\n\n    - Modified default input to be Front."
+    },
+    {
+        "name": "crok_twinkle",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates pulsating stars like pattern\n\nSetup:\n\n    - Amount: how many stars are rendered\n    - Size: stars size\n    - Shape: stars shape\n    - Rotation: rotate stars streaks\n    - Itterations: how many streaks\n\n    - RGB: blur different color channels\n\n    - Stars Gain: adjust gain\n    - Blend: adjust the blend value\n    - Brightness Noise: add brightness variations to the stars\n    - Flash Speed: adjust the Fade In/Out of the stars\n\n    - Blend Function: switch between different fade In / Out functions"
+    },
+    {
+        "name": "crok_uncomp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer and Erwan Leroy",
+        "description": "Uncompose a compositing scene into its original layer.\n\nInput for Undo Blend:\n\n    - Front: wrongly comped element\n    - Back: clean BG without the element on it\n    - Matte: alpha of the composed element\n\nInput for Remove Logo:\n\n    - Front: FG element which you want to remove\n    - Back: original scene with the element on it\n    - Matte: alpha channel of the element\n\nModus:\n\n    - Undo Blend: remove wrongly comped element from BG needs original matte of the element\n    - Remove Logo: removes semitransparent FG element from BG (needs a matte of the element)"
+    },
+    {
+        "name": "crok_vein",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "None"
+    },
+    {
+        "name": "crok_vhs",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates an old VHS player.\n\nSetup:\n\n    - Resolution: input texture resolution\n    - Stripes Amount: amount of horizontal white stripes\n    - Tape Wave: amount of horizontal tape distorion\n    - Tape Crease: amount of horizontal stripes offset\n    - AC Beat: amount of AC interferrences\n    - Color Tint Amount: amount of color tint\n    - Color: tint color\n    - Color Bleeding Amount: amount of color bleeding\n    - Offset: amount of color offset\n    - Speed: how fast the stripes moves\n    - Offset: offset the effect in timeShader"
+    },
+    {
+        "name": "crok_vignette",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a vignette effect.\n\nInput:\n\n    - Front: Source image\n\nSetup:\n\n    - Color: vignette color\n    - Radius: Radius of the vignette\n    - Softness: softness of the vignette\n    - Blend: strenght of the vignette effect\n    - Center: vignette center position\n    - Aspect: Aspect ratio of the vignette"
+    },
+    {
+        "name": "crok_voronoi",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates voronoi noises.\n\nSetup:\n\n    - Octaves: Octaves for the noise\n    - Type: variations of the noise pattern\n    - Zoom : zoom in/out\n    - Detail: add aditional noise\n\n    - Speed: animation speed\n    - Offset: offsets the noise pattern"
+    },
+    {
+        "name": "crok_warning",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates some warning messages, if you need a cup of tea!"
+    },
+    {
+        "name": "crok_watercolor",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Simulates watercolor like textures.\n\nInput:\n\n    - Use External Matte: use an external displacment matte\n\nSetup:\n\n    - Zoom: zoom in / out of the texture\n    - Detail: amount of detail the texture has\n    - Speed: speed of the changing the main structure\n    - Depth: depth of the texture\n    - Seed: offset the texture\n\n    - Blur: blur the painterly effect\n    - Radius: define the radius of the paint fx\n    - Velocity: define the speed of the paint fx\n    - Offset: move the center of the pain fx"
+    },
+    {
+        "name": "crok_wave_lines",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates a wave line pattern.\n\nSetup:\n\n    - Lines: number of waves\n    - Speed: speed of the waves\n    - Offset: offset lines in time\n    - Brightness : brightness of the lines\n    - Glow: overall glow\n    - Colour: colour for the 4 gradient points"
+    },
+    {
+        "name": "crok_wrinkle",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates wrinkled paper like sturctures.\n\nSetup:\n\n    - Seed: seed value\n    - Noise: how much noise gets applied\n    - Detail: texture detail\n    - Speed: speed of the moving texture\n    - Offset: offsets the texture in time\n    - Zoom: zoom in and out\n    - Position: virutal camera postion\n    - Colour: colour of texture"
+    },
+    {
+        "name": "digital_chaos_v01",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates Digital Chaos."
+    },
+    {
+        "name": "digital_chaos_v02",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates Digital Chaos."
+    },
+    {
+        "name": "digital_chaos_v03",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates Digital Chaos."
+    },
+    {
+        "name": "digital_chaos_v04",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates Digital Chaos.\n\nInput:\n\n    - Noise: noise image"
+    },
+    {
+        "name": "digital_chaos_v05",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates Digital Chaos."
+    },
+    {
+        "name": "digital_chaos_v06",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ivar Beer",
+        "description": "Creates Digital Chaos."
+    },
+    {
+        "name": "fur_3vis",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Eric Pouliot",
+        "description": "Input 1: Fur position (colour noise 64x64 works fine) - Input 2: Fur texture."
+    },
+    {
+        "name": "id_CompTrans",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "Yes",
+        "author": "Bob Maple",
+        "description": "Stop building timeline staircases! Use as a Matchbox transition to comp the incoming clip with its alpha over the outgoing clip(or vice-versa with the button)."
+    },
+    {
+        "name": "id_Croptastic",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "A simple image cropper with built-in 2D texture offset and borders. It's Croptastic!"
+    },
+    {
+        "name": "id_Edgy",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Highlights 0.0 pixels revealing blanking issues usually due to shot stabilization."
+    },
+    {
+        "name": "id_Guidance",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Draws simple adjustable horizontal and vertical guides for centering reference, measuring, etc.\n\nUpdates:\n\n    - Make the horizontal/vertical enable buttons accessible from the timeline.\n    - Re-fix thumbnail."
+    },
+    {
+        "name": "id_Illegal",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Highlights pixels that would be over 1.0 or under 0.0 once converted from RGB to YUV and back.\n\nNOTE: This is not calibrated to any sort of standard and is only useful as a rough indication of potential QC rejection issues for SD/HD deliverable material containing out-of-gamut colors."
+    },
+    {
+        "name": "id_Premultiply",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Premultiplies or Unpremultiplies the Front input by the Matte input and outputs the result of both."
+    },
+    {
+        "name": "id_ShowAlpha",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Remaps the matte input to RGB so you can see it on the timeline for instance. That's it."
+    },
+    {
+        "name": "id_SwapRB",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Swaps the Red and Blue channels to fix 12-bit DPX coming from Resolve or other broken apps that write the wrong metadata in their headers."
+    },
+    {
+        "name": "id_Variables",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "A simple null shader intended as an example for you to modify and make your own custom \"Variables\" matchboxes out of. Modify the .xml and call the controls whatever you want, add more or remove some, etc.\n\nAlthough the shader its self does nothing, the Front (red) input is required and just passes through to the output. The Back (green) input is there for convenience allowing you to connect something else to it for use as a viewer toggle (F1/F2) without leaving the node.\n\nUpdates:\n\n    - Remove \" from shader description causing saved batch setups to fail when loading"
+    },
+    {
+        "name": "pixelDisplace",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Julien Brami",
+        "description": "Transforms input1 using input2 rgb values. For questions contact: julienbrami.vfx@gmail.com"
+    },
+    {
+        "name": "the_noise",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Creates diffferent noise patterns. A one stop shop for noise textures."
+    },
+    {
+        "name": "uvmap_3vis",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Eric Pouliot",
+        "description": "Remap a texture via a UV Map."
+    },
+    {
+        "name": "y_aov",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Combine up to 6 matte passes with various useful operations. Passes can be monochrome or 3 Channel RGB\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_bilat",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "A bilateral filter, with a few more options, and the abiltiy to intake a matte.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_blurs",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Blur a thing.\n\nOptions include the abilty to constrain the blur within an optional matte input.\n\nThis shader also provides the means to drive the amount of blur with the optional black and white strength channel.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_bw",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Create black and white images with similar controls as Lightroom.\n\nAlso nice for creating interesting mattes for color correction or whatever down stream.\n\nDemo clip: https://youtu.be/i26vMGuU5Ac\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_checker",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Make a checkerboard pattern. Great for prototyping color combos.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_chromawarp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Demo clip: https://youtu.be/wJJqr6dQZkw\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_colorwheel",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Sample a color from a colorwheel.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_comp",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "  A simple A over B composite that takes in to acount colorspace of the inputs and assures that the comp is done linear.\n  Saves you from having to apply a LUT to get proper edges.\n\n  Demo: https://youtu.be/pl24lQZF8rc\n\nUpdates:\n\n    - Fixed for Flame 2025\n    - Re-fix overloaded MIX uniform variable name."
+    },
+    {
+        "name": "y_dirblur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Apply a directional blur.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_edgeblur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Blur along an edge.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_flicker",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "If Remove: The 2nd input should be a locked frame frome the same clip as  the 1st input.\nThe locked frame should be at levels where you'd like to land the flicker free image.\nThe Result is hopefully a flicker free front.\n\nIf Match: The 2nd input should be a clip you'd like apply the same\nflicker to, that already exists in input 1.\nThe Result is a flickered Input 2\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_glows",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller and Lewis Saunders",
+        "description": "Create a glow effect.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_grid",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Make a grid.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_histo",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "A historgram type shader that updates as you change the settings. Imagine that.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_hue_ops",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Isolate hues, and adjust their color / saturation. Done in YUV not the pesky HSV.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_ixform",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Transform a thing. This is only cool if you input the optional black and white strength channel. The transormation will be multiplied by the value of the strength channel.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_lens_blur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller, Lewis Saunders, and Ivar Beer",
+        "description": "Create a lens blur with custom kernels. Alpha output is a representation of the focal map.\n\nGreat for fast and easy depth of field. Draw your own gmask depth matte or use provided depth matte for cg.\n\nFantastic for screen comps with shallow depth of field, and can also easily create some cool tilt shift lens effects.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_linear",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Convert footage to linear and back with ease.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_linecalc",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "For when the agency producer asks 'How many scanlines is that legal?'. Now it can be fun!\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_lines",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Make a line or multiple lines for some pretty neato designs.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_linex",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Extrapolate the blending of 2 images past the boundaries of 0 and 1. Can do some useful and interesting things. Or not.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_luma_matte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Pull a luma key based on a specific luminance value.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_mult_div",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Another multiply and divide an image by it's matte shader.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_off_switch",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "OFF SWITCH\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_rings",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Use circles for a little look dev.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_sample",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Sample a color from an image and output that color as a solid frame. This shader also has the ability to animate the the sample area.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_scan",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Make Something\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_shape",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Make shapes from triangles.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_sharpen",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller and Lewis Saunders",
+        "description": "Sharpen an image using a guassian blur with linear extrapolation.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_source",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Recreate the most useful parts of action's source nodes. Autodesk now has a similar shader, I prefer this one. Back input is optional.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_splat",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Dissolve between 3 different textures using a 4th texture as the 'matte'. Great for simulating a change in a ground cover texture or other organic textures. The 'matte' texture should be comprised of many different hues because rotating the hue causes the transformation between textures. For optimal results the 'matte' texture should be in the same 'family' as the textures your trying to animate through. Try people's faces for a scare !\n\nDemo: https://youtu.be/uMhyjDT43tU\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "y_vray",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Miles Essmiller",
+        "description": "Do minor relighting or just re-assembling of the most used Vray render passes. (In one node)\n\nGlobal Illumination\nDirect Lighting\nReflection\nSpecular\nRefraction\nSelf Illumination\n\nObviously these can be jacked for whatever passes.\n\nUpdates:\n\n    - Fixed for Flame 2025"
+    },
+    {
+        "name": "tpo_cas",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "This matchbox is based on CAS (Contrast Adaptive Sharpening) v1.0. Is a low overhead adaptive sharpening algorithm. The technique is developed by Timothy Lottes (creator of FXAA) and was created to provide natural sharpness without artifacts. MIT licensed project you can know more here: https://github.com/GPUOpen-Effects/FidelityFX-CAS"
+    },
+    {
+        "name": "id_Solid",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "A dead-simple color solid generator. Useful inside Image effects for tinting with transfer modes."
+    },
+    {
+        "name": "nob_devignetting",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "This Matchbox shader compensates for vignetting.\\n\\nUp to four reference points can be defined as radii and the respective gain compensation, optionally separate for red, green, blue colour channels. The vignetting centre is treated as an implicit fifth point with unchanged gain.\\nThe shader calculates an even polynomial of eighth degree (in the radius from the vignetting centre) to interpolate those points.\\nThis kind of interpolation may lead to undesired oscillations for higher numbers data points. However with sensible spacing of radii and lens vignetting being a rather smooth function, so to say, oscillations or overshoot is hardly an issue.\\n\\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.\\nIt is recommended to leave the canvas resolution as Same As Input 1.",
+        "flame_min_version": "2024.1"
+    },
+    {
+        "name": "ak_colorcompress",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Jan Klier",
+        "description": "Color Compressor through hue rotation around reference point\\n\\t\\n\\tUse to pull hue, sat, and exposure of the entire image closer to the values of the reference\\n\\tcolor. Value of 0 is neutral. At maximum compression whole image will be solid of the reference\\n\\tcolor. It honors an input matte to enable keying and masking of the effect.\\n\\n\\tThe curve can be used to bias the effect strenght closer or further from the target color.\\n\\t\\n\\tMost common use cases are to remove color variations in skin and products. Default target\\n\\tcolor is skintone for that reason.\\n\\t\\n\\tThis should look familiar to anyone who used Resolves Color Compressor.\\n\\t\\n\\tMatchbox shader by Jan Klier https://www.janklier.com",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "ak_vibrance",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Jan Klier",
+        "description": "Vibrance Control\\n\\tbased on code published at https://blog.ruofeidu.com/postprocessing-brightness-contrast-hue-saturation-vibrance/\\n\\n\\tValue of 1.0 is neutral, larger values increase vibrance, lower decrease. 0.0 fully desaturated\\n\\t\\n\\tMatchbox shader by Jan Klier https://www.janklier.com",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "ak_chromablend",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Jan Klier",
+        "description": "Chroma Blend\\n\\n\\tBlend chroma values of front and back, including blur.\\n\\n\\tMatchbox shader by Jan Klier https://www.janklier.com",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "nob_reframe",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "This Matchbox shader reframes a shot with respect to perspective distortion.\\n\\nThe concept of this shader is to simulate a different focal length and camera orientation while maintaining the camera position.\\nImage-wise only transformations are applied to acquire alternate view frames, thus brightness is retained and bokeh is transformed with the image (note that this can lead to deformed bokeh when extremely wide source FoV and strong off-centreing come together).\\n\\nThe Image Height parameter can be omitted if neither the source image nor the Scaling Mode is defined by the focal length.\\n\\nThe resulting image format can be customized to any canvas resolution, including but not limited to Flame Scaling Presets. Downscaling images to smaller formats while applying reframing, rectification and rotation at the same time is a particular strength of this shader, since it performs all operations at the same time. In contrast to a multi-node pipeline, this circumvents multiple introductions of softness or aliasing from intermediate image manipulations.\\nNote that this shader uses GL_NEAREST texture filtering to conserve a maximum level of image detail, thus aliasing might be severe in certain cases if uncorrected. To counteract this, multisampling antialiasing can be activated, and the filter size enlarged (one may want to try to exhaust the number of samples first before using the Softness setting).\\n\\nSince the combined transformations per pixel are well-behaved over the resulting frame (for typical use), an intermediate pass containing the UV coordinates is calculated. The final pass transforming the image itself then uses those UVs, which is where the antialiasing is also applied (for performance reasons). Note that this can cause a loss of information for the very border pixels that would ideally interpolate from antialiasing sample locations outside the frame too.\\nTo eliminate this error, one can specify a canvas resolution exactly 2 pixels wider and higher to then crop it back to the desired format using the Resize and Crop node.\\nTake care to maintain correct pixel- and image aspect ratios between reframing and crop. Use the Force Result PAR selector if necessary.\\n\\nUpressing is best done with other means than this shader. Significant enlargements of small image viewports to a canvas of the same resolution as the input also might result in strong pixelation.\\nIf need be, one can output the intermediate (continuous) UV coordinates and feed them into an external filter better suited towards upressing. Note that when outputting UV coordinates, the Matte result is intentionally black to incentivize running it too through the external filter.\\n\\nThe shader correctly handles conversions between all source and result formats, no matter the image- and pixel aspect ratios. In cases of deviating image aspect ratios, the width of the virtual result is matched according to the relative image height (which is retained from the source).\\n\\nAdaptive Degradation is supported by this shader, which conditionally bypasses antialiasing.",
+        "flame_min_version": "2024.1"
+    },
+    {
+        "name": "KE_GradTrack",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "Generates a gradient between two tracked points by continuously sampling the color underneath them.\n\nFront input required, matte input optional.\n\nGet tracking data from two axis nodes, then link those channels to the Tracking fields.\nUse the Adjustments fields to dial in where the sample should come from.\n\n-Sample Blur will average a larger area under the point.\n-Bias will move the center of the gradient closer or further to the Start or End location.\n\nThere are three Output options:\n    -UI Overlay will show where the samples are coming from, and the direction of the gradient.\n    -Gradient will draw the full frame gradient.\n    -Comp will put the gradient over the Front input, through a matte.\n\nMatte output is a black-and-white version of the gradient, so each color could be adjusted downstream.\n\n4-point gradients can be created differently by changing the Version drop down.\n\nUpdates:\n\n    - Now with a four point gradient!\n    - Added an Icon option to the Adjust field, so you can drag an axis icon in the UI. However, due to Matchbox limitations, the icon is disconnected from the point.",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "id_ZippyZaps",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Makes… well, zippy zaps. See the Shader tab for some presets, or just fiddle with the controls.\n\nUpdates:\n\n    - Maybe made it work right on Mac?",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "KE_SplineBlurMatte",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "This will take the matte you used for LS_Splineblur and create a matte for regraining.",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "id_Splitsville",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Bob Maple",
+        "description": "Takes two inputs and makes a split-screen horizontally or vertically.",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "simple_additive_key",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Performs an additive operation to restore details in a key",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "cb_moBlur",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "CB",
+        "description": "Fast render of Vector based motion blur.",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "cb_basicParticles",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "CB",
+        "description": "Emitter Position: Sets the normalized (0-1) position of the particle emitter on the screen.\nParticle Count: Scales the number of particles (0-2000); 0.5 = 1000 particles.\nSpeed: Base speed multiplier for particle movement.\nSpeed Variation: Random variation in particle speed (0 = uniform, 1 = max variation).\nVelocity: Directional velocity (X, Y) affecting all particles.\nLifetime: Base lifetime of particles in seconds.\nLifetime Variation: Random variation in lifetime (e.g., 0.5 = ±25% of lifeTime).\nSize: Base particle size in pixels.\nSize Variation: Random variation in particle size (0 = uniform, 1 = max variation).\nSpawn Rate: Particles spawned per second.\nGravity: Strength of downward gravity affecting particles.\nParticle Color: RGB color of the particles.\nSpread: Random spread of initial velocity around velocity.\nUse UV Map: Toggle between emitter position (0.0) and UV map (1.0) for spawn points.\nShow Emitter: Show a red dot at the emitter position (1.0) or hide it (0.0).\nWind: Constant wind velocity (X, Y) affecting particle motion.\nTurbulence: Strength of random turbulence applied over time and age.\nFade Out: Toggle fading as particles age (1.0 = fade, 0.0 = no fade).\nFade Variation: Random variation in fade timing (0 = uniform, 1 = max variation).\n\n**ANIMATE spawnRate.\n\n**UV input for Emitter fun.",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "cb_lensCorrect",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "CB",
+        "description": "Advanced lens distortion correction, based off Cooke 21mm S4/i lens, with grid overlay.\nRadial K1: First radial distortion coefficient (barrel/pincushion).\nRadial K2: Second radial distortion coefficient.\nRadial K3: Third radial distortion coefficient.\nTangential P1: First tangential distortion coefficient.\nTangential P2: Second tangential distortion coefficient.\nScale: Output scale adjustment.\nAspect: Aspect ratio\nEdge Blur: Edge fill\nCenter: Optical center of the lens.\nShow Grid: Show grid overlay.\nGrid Spacing: Spacing between grid lines.\nGrid Color: Color of grid lines.\nResolution: Image resolution (width, height).",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "cb_distort",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "CB",
+        "description": "UV pass distortion + Grid Distortion.\n\nfront\nmotion - Motion vector pass (R = X motion, G = Y motion)\nstrength - Strength of motion-based distortion\nblurAmount - Amount of motion blur applied\ncaStrength - Strength of chromatic aberration effect\nshowMarkers - Show red cross markers (0 = off, 1 = on)\nmarkerSize - Size of red cross markers\nmarkerThickness - Thickness of cross arms relative to size\nvertex0-15 - Displacement\nresolution - Image resolution (width, height)\ntime - Animation time\n\nUses Motion Vector UVs (or anything) for distortion, also has vertex based grid distortion. ",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "cb_rec709Check",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "CB",
+        "description": "Validates Rec709 color and luma values with waveform overlay.\n\nfront - Input image\nlumaThreshold - Sensitivity for illegal luma detection\nchromaThreshold - Sensitivity for illegal chroma detection\nhighlightStrength - Strength of illegal value highlighting\nshowWaveform - Toggle waveform display\nwaveformHeight - Height of waveform overlay\nwaveformOpacity - Opacity of waveform overlay\nresolution - Image resolution (width, height)\n\nIllegal Rec709 Value Calculation:\nConversion: RGB to YCbCr using Rec709 coefficients (Y = luma, Cb/Cr = chroma).\nLegal Ranges: Luma: 16/255 to 235/255; Chroma: 16/255 to 240/255.\nCheck: Illegal if Y, Cb, or Cr exceeds range ± threshold.\nIntensity: Measures violation distance beyond range, scaled by threshold, clamped 0-1.\nVisualization: Red for luma, green for chroma, yellow for both; waveform shows luma with illegal in red.\n\nCheck rec709 illegal values.",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "KE_OO",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Ted Kuleshov",
+        "description": "Object Obliterator in a node!\n\nRequires a front and matte input.\nIncrease Blur until the black goes away.\nFor more blurring, use Blur After Divide.\nOptionally, you can grab texture from a different part of the frame to cover the blurred area.\nThe retexturing is a simple subtract/add, similar to a regrain operation.\n\nNote that the matte output is the matte AFTER the blurring.\nSo if you want to regrain, you should use your original matte, not the output of the node.\n\nBased on Renees Object Obliterator:\nhttps://forum.logik.tv/t/renee-tymns-object-obliterator/4049",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "ak_hsv_sat",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Jan Klier",
+        "description": "Sat vs. Sat curve that works in HSV color science. Additional feautre is tapering the change by the distance from the target hue value. When enabled, the further from the selected target hue the lighter the change is. In additionl that falloff curve, which is linear by default can be re-shaped\n\nsat-sat correction in HSV color science.",
+        "flame_min_version": "2017.0"
+    },
+    {
+        "name": "ak_skinoverlay",
+        "shader_type": "Matchbox",
+        "action": "No",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Jan Klier",
+        "description": "Displays a hue difference overlay from the skintone line\n\n\tTo use, add after Mastergrade or other operators, use as context view while adjusting grade.\n\tGoal is to center the skintone in image with the best overlay coverage. Either shift entire\n\timage or use curves and keyers to address only specific ranges.\n\n\tBoundary color are to making over and under more obvious.\n\n\tAdjust tolerance to your needs. Default of 1.5 is a narror range for precision.\n\n\tUtilize the HighPass Filter and the post processes to reduce a noisy mask.\n\n\tHighPass Filter ignors any pixels where either of the HSV values are below threshold, which\n\toften make for unreliable hue readings.\n\n\tPost processes can blur, erode or dialte the mask.\n\n\tThe input gamma has no effect on the math of the mask, it soley influeces the overlay colors.\n\n\tMatchbox shader by Jan Klier https://www.janklier.com\n\n\tBlur filter based on Pyramid blur in ADSK shader samples\n\tErode/Dialte filter based on code from https://github.com/kajott/GIPS",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "ak_texturecontrol",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "No",
+        "transition": "No",
+        "author": "Unknown",
+        "description": "Texture Control\n\n\t5-band sharpening/blur control with range control.\n\n        Negative values sharpen, positive values soften. \n\n\tAll the range values must be in sequence or it may not work properly. Exact range values \n\tmay depend on resolution. Some experimentation may be required.\n\t\n\tMatchbox shader by Jan Klier https://www.janklier.com",
+        "flame_min_version": "2017.0.0"
+    },
+    {
+        "name": "ak_slice",
+        "shader_type": "Matchbox",
+        "action": "Yes",
+        "timeline": "Yes",
+        "transition": "No",
+        "author": "Jan Klier",
+        "description": "Slice Tool - image eval",
+        "flame_min_version": "2018.3.0"
+    }
+]
