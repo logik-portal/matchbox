@@ -1,0 +1,44 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1" Description="Performs an additive operation to restore details in a key" Name="Simple additive keyer">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Back" InputType="Back" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="back">
+      </Uniform>
+      <Uniform Index="2" NoInput="Error" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="matte">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" IconType="Pick" ValueType="Colour" Type="vec3" DisplayName="Color Reference" Name="reference">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="3.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="Reveal details darker than the reference color" Row="0" Col="1" Page="0" Type="float" DisplayName="Add Darks" Name="mix_darks">
+      </Uniform>
+      <Uniform ResDependent="None" Max="3.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="Reveal details brighter than the reference color" Row="1" Col="1" Page="0" Type="float" DisplayName="Add Highlights" Name="mix_highs">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="Desaturate Dark details" Row="0" Col="2" Page="0" Type="float" DisplayName="Desaturate Darks" Name="desat_darks">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="Desaturate Bright details" Row="1" Col="2" Page="0" Type="float" DisplayName="Desaturate Highlights" Name="desat_highs">
+      </Uniform>
+      <Uniform Row="0" Col="3" Page="0" Default="False" Tooltip="Clamp negative values" Type="bool" DisplayName="Clamp Negative Values" Name="neg_clamp">
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="" Row="3" Col="3" Page="0" DisplayName="Output" Type="int" Name="bg_only" ValueType="Popup">
+            <PopupEntry Title="Blend" Value="0">
+            </PopupEntry>
+            <PopupEntry Title="Background Only" Value="1">
+            </PopupEntry>
+      </Uniform>
+   </Shader>
+   <Page Name="Additive Keyer" Page="0">
+      <Col Name="Color Reference" Col="0" Page="0">
+      </Col>
+      <Col Name="Additive details" Col="1" Page="0">
+      </Col>
+      <Col Name="Saturation" Col="2" Page="0">
+      </Col>
+      <Col Name="Options" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

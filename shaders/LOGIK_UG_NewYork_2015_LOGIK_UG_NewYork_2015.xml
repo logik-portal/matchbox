@@ -1,0 +1,91 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="
+The next NY Flame User Group meeting is set for Wednesday, September 30th. It’s going to be an amazing night!
+Flame 2016 Exension 1
+	◦ New York's own Alex Arce will take us through some of the exciting new features in the Flame 2016 Extension 1 release.
+	◦ Greg-Paul Malone
+Flame Artist/Owner and original One Frame of White winner Greg-Paul Malone returns to the NY User Group! Fresh off a Flame Master Class tour in South Korea, Greg-Paul will be sharing a wide variety of work with us, including:
+	◦ A Magical 2-minute Beauty Rig in Batch that requires no tracking and no skin blurring
+	◦ Creating 3D geometry Fluid Simulations in Action
+	◦ Additive Keying for hair, transparencies and motion blur, without needing a clean plate
+	◦ Creative Uses for Lightbox and Matchbox in Action.
+Perspective: Female Flame Artists
+This is going to be a very special night for the NY Flame User Group. We are proud to present our first original production, 'Perspective: Female Flame Artists.' This short film profiles six of New York’s female Flame Artists:
+	◦ Amanda Amalfi, Freelance
+	◦ Pierina Bustamante, Poetica
+	◦ Philana Dias, Spontaneous
+	◦ Mindy Dubin, Freelance
+	◦ Suzanne Dyer, Suspect
+	◦ Anne Trotman, The Mill NY
+Following the screening, Flame Artist Krysten Richardson will moderate a discussion with several of the women profiled in the film.
+As always, there will be fabulous food and drinks, provided by our sponsors - Autodesk and Cinesys/Oceana.
+Registration is required and space is limited! Please RSVP via the following link:
+
+http://cinesysoceana.com/files/ny-flame-user-group-sept.html
+
+Wednesday, September 30th
+Sign in: 6:30pm
+Start time: 7pm
+
+CineSys-Oceana
+50 Eldridge Street, 7th Floor 
+New York, NY 10002
+
+Shader based on: http://www.shadertoy.com/view/XdjGW3
+
+Demo Video: http://vimeo.com/139808005
+
+MatchBox version by ivar@inferno-op.com" Name="LOGIK UG  New York 2015">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Max="256" Min="1" Default="64" Inc="1" Tooltip="" Row="4" Col="3" Page="0" DisplayName="Detail" Type="int" Name="detail">
+      </Uniform>
+      <Uniform Row="3" Col="3" Page="0" Default="False" Tooltip="" DisplayName="Enable Barby Girl" Type="bool" Name="enable_girl_power">
+      </Uniform>
+	  
+	  	  
+      <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="CineSys-Oceana" Type="bool" Name="dummy">
+      </Uniform>
+      <Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" DisplayName="50 Eldridge Street, 7th Floor" Type="bool" Name="dummy">
+      </Uniform>	  
+      <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" DisplayName="New York, NY 10002" Type="bool" Name="dummy">
+      </Uniform>
+
+      <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Wednesday" Type="bool" Name="dummy">
+      </Uniform>
+      <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="September 30th 2015" Type="bool" Name="dummy">
+      </Uniform>
+      <Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Sign in: 6:30pm" Type="bool" Name="dummy">
+      </Uniform>
+      <Uniform Row="3" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Start time: 7:00pm" Type="bool" Name="dummy">
+      </Uniform>
+	  
+      <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Alex Arce" Type="bool" Name="dummy">
+      </Uniform>
+      <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Greg-Paul Malone" Type="bool" Name="dummy">
+      </Uniform>
+      <Uniform Row="2" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Krysten Richardson" Type="bool" Name="dummy">
+      </Uniform>
+  </Shader>
+      <Shader OutputBitDepth="Output" Index="2">
+         <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+         </Uniform>
+     </Shader>
+	 
+     <Shader OutputBitDepth="Output" Index="3">
+        <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+        </Uniform>
+    </Shader>
+
+     <Shader OutputBitDepth="Output" Index="4">
+        <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+        </Uniform>
+     </Shader>
+	 
+   <Page Name="" Page="0">
+       <Col Name="Where" Col="0" Page="0">
+       	</Col>
+ 		<Col Name="When" Col="1" Page="0">
+ 		</Col>
+ 		<Col Name="With" Col="2" Page="0">
+ 		</Col>
+   </Page>
+</ShaderNodePreset>

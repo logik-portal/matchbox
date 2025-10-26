@@ -1,0 +1,43 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1"
+  Description="
+  This Matchbox shader creates scribble stlye images.
+
+  Based on www.shadertoy.com/view/tsV3Rw created by florian berger (flockaroo) - 2018
+  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+  Matchbox version by ivar@inferno-op.com"
+  Name="CROK Scribble">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform Max="10000" Min="1" Default="1500" Inc="1" Tooltip="" Row="0" Col="0" Page="0" Type="int" ChannelName="itterations" DisplayName="Itterations" Name="itterations"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="25.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="line_length" DisplayName="Line Length" Name="line_length"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="density" DisplayName="Distortion" Name="distortion"></Uniform>
+    <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="100.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="contrast" DisplayName="Contrast" Name="contrast"></Uniform>
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputColor="67, 77, 83"
+      Mipmaps="True"
+      GL_TEXTURE_WRAP_T="GL_REPEAT"
+      GL_TEXTURE_WRAP_S="GL_REPEAT"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR_MIPMAP_NEAREST"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR_MIPMAP_NEAREST"
+      Type="sampler2D"
+      Name="front"></Uniform>
+  </Shader>
+  <Page Name="General" Page="0">
+    <Col Name="Look" Col="0" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>

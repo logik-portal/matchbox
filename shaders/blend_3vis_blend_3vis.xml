@@ -1,0 +1,73 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="3vis Blend - Photoshop Blending Modes Select the mode you want - Be careful they are additive - Author: Eric Pouliot - (c) - ~bj.2013" Name="Blend_3vis">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="multiply" Type="bool" Name="imultiply">
+      </Uniform>
+      <Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" DisplayName="darken" Type="bool" Name="idarken">
+      </Uniform>
+      <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" DisplayName="pinLight" Type="bool" Name="ipinLight">
+      </Uniform>
+      <Uniform Row="3" Col="0" Page="0" Default="False" Tooltip="" DisplayName="linearDodge" Type="bool" Name="ilinearDodge">
+      </Uniform>
+      <Uniform Row="4" Col="0" Page="0" Default="False" Tooltip="" DisplayName="lighten" Type="bool" Name="ilighten">
+      </Uniform>
+      <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="colorDodge" Type="bool" Name="icolorDodge">
+      </Uniform>
+      <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="substract" Type="bool" Name="isubstract">
+      </Uniform>
+      <Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="" DisplayName="saturation" Type="bool" Name="isaturation">
+      </Uniform>
+      <Uniform Row="3" Col="1" Page="0" Default="False" Tooltip="" DisplayName="hardLight" Type="bool" Name="ihardLight">
+      </Uniform>
+      <Uniform Row="4" Col="1" Page="0" Default="False" Tooltip="" DisplayName="difference" Type="bool" Name="idifference">
+      </Uniform>
+      <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="exclusion" Type="bool" Name="iexclusion">
+      </Uniform>
+      <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="screen" Type="bool" Name="iscreen">
+      </Uniform>
+      <Uniform Row="2" Col="2" Page="0" Default="False" Tooltip="" DisplayName="softLight" Type="bool" Name="isoftLight">
+      </Uniform>
+      <Uniform Row="3" Col="2" Page="0" Default="False" Tooltip="" DisplayName="linearLight" Type="bool" Name="ilinearLight">
+      </Uniform>
+      <Uniform Row="4" Col="2" Page="0" Default="False" Tooltip="" DisplayName="darkerColor" Type="bool" Name="idarkerColor">
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Type="sampler2D" Name="iChannel0">
+      </Uniform>
+      <Uniform Row="0" Col="3" Page="0" Default="False" Tooltip="" DisplayName="overlay" Type="bool" Name="ioverlay">
+      </Uniform>
+      <Uniform Row="1" Col="3" Page="0" Default="False" Tooltip="" DisplayName="linearBurn" Type="bool" Name="ilinearBurn">
+      </Uniform>
+      <Uniform Row="2" Col="3" Page="0" Default="False" Tooltip="" DisplayName="color" Type="bool" Name="icolor">
+      </Uniform>
+      <Uniform Row="3" Col="3" Page="0" Default="False" Tooltip="" DisplayName="divide" Type="bool" Name="idivide">
+      </Uniform>
+      <Uniform Row="4" Col="3" Page="0" Default="False" Tooltip="" DisplayName="luminosity" Type="bool" Name="iluminosity">
+      </Uniform>
+      <Uniform Row="0" Col="0" Page="1" Default="False" Tooltip="" DisplayName="hue" Type="bool" Name="ihue">
+      </Uniform>
+      <Uniform Row="1" Col="0" Page="1" Default="False" Tooltip="" DisplayName="hardMix" Type="bool" Name="ihardMix">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Back" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Type="sampler2D" Name="iChannel1">
+      </Uniform>
+      <Uniform Row="2" Col="0" Page="1" Default="False" Tooltip="" DisplayName="vividLight" Type="bool" Name="ivividLight">
+      </Uniform>
+      <Uniform Row="3" Col="0" Page="1" Default="False" Tooltip="" DisplayName="lighterColor" Type="bool" Name="ilighterColor">
+      </Uniform>
+      <Uniform Row="4" Col="0" Page="1" Default="False" Tooltip="" DisplayName="colorBurn" Type="bool" Name="icolorBurn">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+      <Col Name="Column 2" Col="1" Page="0">
+      </Col>
+      <Col Name="Column 3" Col="2" Page="0">
+      </Col>
+      <Col Name="Column 4" Col="3" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Page 2" Page="1">
+      <Col Name="Column 5" Col="0" Page="1">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+

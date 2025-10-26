@@ -1,0 +1,61 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1.0" Description="
+This Matchbox shader creates a volumetric radial blur inside action.  Flame 2017 Only
+
+
+Setup:
+
+- Amount : blur strenth
+- Samples: blur resolution
+- Gain : adjust gain
+- Decay: blur decay
+
+- Position: light position
+
+- Softness: soften the result
+
+Based on: https://www.shadertoy.com/view/XsKGRW by Shane
+
+Matchbox version by ivar@inferno-op.com" Name="CROK Radial Blur CFX">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+     <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputColor="67, 77, 83" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+     </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Action3DWidget="True" IconType="Light" ValueType="Position" Type="vec3" ChannelName="light_pos" DisplayName="Position" Name="light_pos">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="amount" DisplayName="Amount" Name="density">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2048.0" Min="1.0" Default="256.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="samples" DisplayName="Samples" Name="SAMPLES">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.001" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="gain" DisplayName="Gain" Name="f_weigth">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.001" Default="9.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="decay" DisplayName="Decay" Name="decay">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+   <Uniform ResDependent="None" Max="10000.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="blur" DisplayName="Softness" Name="blur">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+   <Uniform Type="float" ChannelName="blur" DisplayName="Softness" Name="blur">
+      <Duplicate>
+      </Duplicate>
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+   </Uniform>
+</Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Setup" Col="0" Page="0">
+      </Col>
+      <Col Name="Lighting" Col="1" Page="0">
+      </Col>
+      <Col Name="Post FX" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

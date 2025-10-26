@@ -1,0 +1,231 @@
+<ShaderNodePreset
+    Description="This Matchbox shader applies a threshold filter to an image.
+
+If a threshold for luminance is applied, the blue channel weight is implicitly calculated for normalization.
+
+Note that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.
+It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+
+This shader is licensed under the terms of the MIT license.
+
+For questions contact:
+nobbl211@gmail.com"
+    Name="Threshold"
+    HelpLink=""
+    LimitInputsToTexture="True"
+    MatteProvider="False"
+    SupportsAction="True"
+    SupportsTransition="False"
+    SupportsAdaptiveDegradation="False"
+    CommercialUsePermitted="True"
+    ShaderType="Matchbox"
+    SoftwareVersion="2025.1"
+    TimelineUseBack="False"
+    SupportsTimeline="True"
+    Version="0.1">
+    <Shader
+        Index="1"
+        OutputBitDepth="Output">
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Front"
+            Name="front"
+            Index="0"
+            NoInput="Error"
+            Mipmaps="False"
+            InputType="Front">
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="selector for the threshold type"
+            DisplayName="Type"
+            Name="type"
+            Col="0"
+            Row="0"
+            Page="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="Infimum"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Minimum"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Maximum"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Supremum"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="channel selector"
+            Name="channel"
+            DisplayName="Channel"
+            Col="0"
+            Row="1"
+            Page="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="Red"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Green"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Blue"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Luminance"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="RGB"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="selector for RGB threshold handling"
+            DisplayName="RGB Operation"
+            Name="rgb_op"
+            Col="0"
+            Row="2"
+            Page="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="channel"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <PopupEntry
+                Title="Intersection"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Union"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Individual"
+                Value="2">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="scalar threshold value"
+            DisplayName="Threshold"
+            ChannelName="threshold_s"
+            Name="threshold_s"
+            Col="0"
+            Row="3"
+            Page="0"
+            ResDependant="None"
+            Default="0.5"
+            Inc="0.001"
+            Max="1000000.0"
+            Min="-1000000.0"
+            UIConditionSource="channel"
+            UIConditionValue="4"
+            UIConditionInvert="True"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="colour threshold"
+            DisplayName="Threshold"
+            ChannelName="threshold_v"
+            Name="threshold_v"
+            Page="0"
+            Col="0"
+            Row="3"
+            IconType="None"
+            ValueType="Colour"
+            UIConditionSource="channel"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="0.5">
+            </SubUniform>
+            <SubUniform
+                Default="0.5">
+            </SubUniform>
+            <SubUniform
+                Default="0.5">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="weight of the red channel towards luminance"
+            DisplayName="W_R"
+            ChannelName="w_r"
+            Name="w_r"
+            Col="1"
+            Row="0"
+            Page="0"
+            Default="0.2722287168"
+            Inc="0.001"
+            Max="1.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="channel"
+            UIConditionValue="3"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="weight of the blue channel towards luminance"
+            DisplayName="W_B"
+            ChannelName="w_b"
+            Name="w_b"
+            Col="1"
+            Row="1"
+            Page="0"
+            Default="0.0536895174"
+            Inc="0.001"
+            Max="1.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="channel"
+            UIConditionValue="3"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="outputs a monochrome preview of the luminance"
+            DisplayName="Luminance Preview"
+            ChannelName="luminance_preview"
+            Name="luminance_preview"
+            Page="0"
+            Col="1"
+            Row="3"
+            Default="False"
+            UIConditionSource="channel"
+            UIConditionValue="3"
+            UIConditionType="Disable">
+        </Uniform>
+    </Shader>
+    <Page
+        Name="Controls"
+        Page="0">
+        <Col
+            Name="General"
+            Col="0"
+            Page="0">
+        </Col>
+        <Col
+            Name="Luma Coeff"
+            Col="1"
+            Page="0"
+            >
+        </Col>
+    </Page>
+</ShaderNodePreset>

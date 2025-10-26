@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="True" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="
+
+BW
+
+Create black and white images with similar controls as Lightroom.
+Also nice for creating interesting mattes for color correction or whatever down stream.
+
+Demo clip: https://youtu.be/i26vMGuU5Ac
+
+miles@noesclavo.com" Name="BW">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Index="1" NoInput="White" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Matte">
+     </Uniform>
+
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="red_mix" DisplayName="Red" Name="red_mix">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="orange_mix" DisplayName="Orange" Name="orange_mix">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="yellow_mix" DisplayName="Yellow" Name="yellow_mix">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="green_mix" DisplayName="Green" Name="green_mix">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="cyan_mix" DisplayName="Cyan" Name="cyan_mix">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="blue_mix" DisplayName="Blue" Name="blue_mix">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="purple_mix" DisplayName="Purple" Name="purple_mix">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" Type="float" ChannelName="magenta_mix" DisplayName="Magenta" Name="magenta_mix">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="rt" DisplayName="R Threshold" Name="rt">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="ot" DisplayName="O Threshold" Name="ot">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="yt" DisplayName="Y Threshold" Name="yt">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="1" Page="0" Type="float" ChannelName="gt" DisplayName="G Threshold" Name="gt">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="3" Page="0" Type="float" ChannelName="ct" DisplayName="C Threshold" Name="ct">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="3" Page="0" Type="float" ChannelName="bt" DisplayName="B Threshold" Name="bt">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="3" Page="0" Type="float" ChannelName="pt" DisplayName="P Threshold" Name="pt">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="3" Page="0" Type="float" ChannelName="mt" DisplayName="M Threshold" Name="mt">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="Boost source image's saturation before it is analyzed." Row="4" Col="2" Page="0" Type="float" ChannelName="sat" DisplayName="Saturation Boost" Name="sat">
+      </Uniform>
+
+      <Uniform Max="6" Min="0" Default="0" Inc="1" Tooltip="Toggle on a matte from a given color. Useful for dialing in the matte's threshold." Row="4" Col="3" Page="0" DisplayName="Matte Output" Type="int" Name="matte_out" ValueType="Popup">
+        <PopupEntry Title="Input Matte" Value="0">
+                </PopupEntry>
+        <PopupEntry Title="Red Matte" Value="1">
+                </PopupEntry>
+        <PopupEntry Title="Orange Matte" Value="2">
+                </PopupEntry>
+        <PopupEntry Title="Yellow Matte" Value="3">
+                </PopupEntry>
+        <PopupEntry Title="Green Matte" Value="4">
+                </PopupEntry>
+        <PopupEntry Title="Cyan Matte" Value="5">
+                </PopupEntry>
+        <PopupEntry Title="Blue Matte" Value="6">
+                </PopupEntry>
+        <PopupEntry Title="Purple Matte" Value="7">
+                </PopupEntry>
+        <PopupEntry Title="Magenta Matte" Value="8">
+                </PopupEntry>
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Warm Mix" Col="0" Page="0">
+      </Col>
+      <Col Name="Warm Thresholds" Col="1" Page="0">
+      </Col>
+      <Col Name="Cool Mix" Col="2" Page="0">
+      </Col>
+      <Col Name="Cool Thresholds" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

@@ -1,0 +1,608 @@
+<ShaderNodePreset
+    Description="This Matchbox shader performs a chromatic adaptation.
+It also takes care of primary colour space conversions, assuming that the source- and target colour spaces are scene linear.
+
+Note that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.
+It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+
+This shader is licensed under the terms of the MIT license.
+
+For questions contact:
+nobbl211@gmail.com"
+    Name="Chromatic Adaptation"
+    HelpLink=""
+    LimitInputsToTexture="True"
+    MatteProvider="False"
+    SupportsAction="True"
+    SupportsTransition="False"
+    SupportsAdaptiveDegradation="False"
+    CommercialUsePermitted="True"
+    ShaderType="Matchbox"
+    SoftwareVersion="2025.1"
+    TimelineUseBack="False"
+    SupportsTimeline="True"
+    Version="0.3">
+    <Shader
+        Index="1"
+        OutputBitDepth="Output">
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Front"
+            Name="front"
+            Index="0"
+            NoInput="Error"
+            Mipmaps="False"
+            InputType="Front">
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="adaptation method"
+            DisplayName="Method"
+            Name="method"
+            Col="0"
+            Row="0"
+            Page="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="CAT02"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="CAT02 (simple)"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Bradford"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Von Kries"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="source colour space
+input must be scene linear in all cases"
+            DisplayName="Colour Space"
+            Name="source_cs"
+            Col="1"
+            Row="0"
+            Page="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="ACEScg"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ACES2065-1"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 709/sRGB"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 2020"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="P3D65"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="XYZ"
+                Value="5">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="source white point type"
+            DisplayName="White Type"
+            Name="source_type"
+            Col="1"
+            Row="1"
+            Page="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="Native"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Illuminant"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Colour Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coordinates"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="from Colour"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="source white point illuminant"
+            DisplayName="Illuminant"
+            Name="source_illum"
+            Col="1"
+            Row="2"
+            Page="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="source_type"
+            UIConditionValue="1"
+            UIConditionType="Hide">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Equal Energy"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="correlated colour temperature of the source white point (per Illuminant series D)"
+            DisplayName="Temp"
+            ChannelName="source_cct"
+            Name="source_cct"
+            Col="1"
+            Row="2"
+            Page="0"
+            Default="6000.0"
+            Inc="10.0"
+            Max="25000.0"
+            Min="4000.0"
+            ResDependant="None"
+            UIConditionSource="source_type"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="colour tint of the source white point"
+            DisplayName="Tint"
+            ChannelName="source_tint"
+            Name="source_tint"
+            Col="1"
+            Row="3"
+            Page="0"
+            Default="0.0"
+            Inc="0.0002"
+            Max="1.0"
+            Min="-1.0"
+            ResDependant="None"
+            UIConditionSource="source_type"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="applies a scaling of the colour temperature by a factor of 1.4388/1.438
+to mimic the CIE D-series behavior instead of
+maintaining the physical exact correlated colour temperature"
+            DisplayName="Temperature shift"
+            Name="source_cct_d"
+            Col="1"
+            Row="4"
+            Page="0"
+            Default="False"
+            UIConditionSource="source_type"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="CIE 1931 xy coordinates of the source white point"
+            DisplayName="Colour Coordinates"
+            ChannelName="source_coord"
+            Name="source_coord"
+            Col="1"
+            Row="2"
+            Page="0"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="source_type"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="0.32168"
+                Inc="0.0001"
+                Max="2.0"
+                Min="-1.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                Default="0.33767"
+                Inc="0.0001"
+                Max="2.0"
+                Min="-1.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="colour representation of the source white point"
+            DisplayName="Colour"
+            ChannelName="source_colour"
+            Name="source_colour"
+            Col="1"
+            Row="2"
+            Page="0"
+            IconType="None"
+            ValueType="Colour"
+            UIConditionSource="source_type"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="target colour space
+output is implied scene linear in all cases"
+            DisplayName="colour Space"
+            Name="target_cs"
+            Col="2"
+            Row="0"
+            Page="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="ACEScg"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ACES2065-1"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 709/sRGB"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec. 2020"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="P3D65"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="XYZ"
+                Value="5">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="target white point type"
+            DisplayName="White Type"
+            Name="target_type"
+            Col="2"
+            Row="1"
+            Page="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="Native"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Illuminant"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Colour Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coordinates"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="from Colour"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="target white point illuminant"
+            DisplayName="Illuminant"
+            Name="target_illum"
+            Col="2"
+            Row="2"
+            Page="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="target_type"
+            UIConditionValue="1"
+            UIConditionType="Hide">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Equal Energy"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="correlated colour temperature of the target white point (per Illuminant series D)"
+            DisplayName="Temp"
+            ChannelName="target_cct"
+            Name="target_cct"
+            Col="2"
+            Row="2"
+            Page="0"
+            Default="6000.0"
+            Inc="10.0"
+            Max="25000.0"
+            Min="4000.0"
+            ResDependant="None"
+            UIConditionSource="target_type"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="colour tint of the target white point"
+            DisplayName="Tint"
+            ChannelName="target_tint"
+            Name="target_tint"
+            Col="2"
+            Row="3"
+            Page="0"
+            Default="0.0"
+            Inc="0.0002"
+            Max="1.0"
+            Min="-1.0"
+            ResDependant="None"
+            UIConditionSource="target_type"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="applies a scaling of the colour temperature by a factor of 1.4388/1.438
+to mimic the CIE D-series behavior instead of
+maintaining the physical exact correlated colour temperature"
+            DisplayName="Temperature shift"
+            Name="target_cct_d"
+            Col="2"
+            Row="4"
+            Page="0"
+            Default="False"
+            UIConditionSource="target_type"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="CIE 1931 xy coordinates of the target white point"
+            DisplayName="Colour Coordinates"
+            ChannelName="target_coord"
+            Name="target_coord"
+            Col="2"
+            Row="2"
+            Page="0"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="target_type"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="0.32168"
+                Inc="0.0001"
+                Max="2.0"
+                Min="-1.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                Default="0.33767"
+                Inc="0.0001"
+                Max="2.0"
+                Min="-1.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="colour representation of the target white point"
+            DisplayName="Colour"
+            ChannelName="target_colour"
+            Name="target_colour"
+            Col="2"
+            Row="2"
+            Page="0"
+            IconType="None"
+            ValueType="Colour"
+            UIConditionSource="target_type"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="surrounding source viewing conditions
+smoothly interpolates between average, dim and dark, for values of 0, 1 and 2 respectively"
+            DisplayName="Surround"
+            ChannelName="source_s"
+            Name="source_s"
+            Col="3"
+            Row="0"
+            Page="0"
+            Default="0.0"
+            Inc="0.005"
+            Max="2.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="source field luminance"
+            DisplayName="L_A"
+            ChannelName="source_l_a"
+            Name="source_l_a"
+            Col="3"
+            Row="1"
+            Page="0"
+            Default="20.0"
+            Inc="1"
+            Max="1000000000.0"
+            Min="0.0000001"
+            ResDependant="None"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="relative source background brightness compared to the scene white"
+            DisplayName="n"
+            ChannelName="source_n"
+            Name="source_n"
+            Col="3"
+            Row="2"
+            Page="0"
+            Default="1.0"
+            Inc="0.01"
+            Max="1000000000.0"
+            Min="0.0000001"
+            ResDependant="None"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="surrounding target viewing conditions
+smoothly interpolates between average, dim and dark, for values of 0, 1 and 2 respectively"
+            DisplayName="Surround"
+            ChannelName="target_s"
+            Name="target_s"
+            Col="4"
+            Row="0"
+            Page="0"
+            Default="0.0"
+            Inc="0.005"
+            Max="2.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="target field luminance"
+            DisplayName="L_A"
+            ChannelName="target_l_a"
+            Name="target_l_a"
+            Col="4"
+            Row="1"
+            Page="0"
+            Default="20.0"
+            Inc="1"
+            Max="1000000000.0"
+            Min="0.0000001"
+            ResDependant="None"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="relative target background brightness compared to the scene white"
+            DisplayName="n"
+            ChannelName="target_n"
+            Name="target_n"
+            Col="4"
+            Row="2"
+            Page="0"
+            Default="1.0"
+            Inc="0.01"
+            Max="1000000000.0"
+            Min="0.0000001"
+            ResDependant="None"
+            UIConditionSource="method"
+            UIConditionValue="0"
+            UIConditionType="Disable">
+        </Uniform>
+    </Shader>
+    <Page
+        Name="Controls"
+        ColName0_2="Chromatics"
+        ColName3_5="Conditions"
+        Page="0">
+        <Col
+            Name=" Method"
+            Col="0"
+            Page="0">
+        </Col>
+        <Col
+            Name="Source Colours"
+            Col="1"
+            Page="0">
+        </Col>
+        <Col
+            Name="Target Colours"
+            Col="2"
+            Page="0">
+        </Col>
+        <Col
+            Name="Source Conditions"
+            Col="3"
+            Page="0">
+        </Col>
+        <Col
+            Name="Target Conditions"
+            Col="4"
+            Page="0">
+        </Col>
+    </Page>
+</ShaderNodePreset>

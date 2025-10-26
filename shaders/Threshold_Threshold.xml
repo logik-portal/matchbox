@@ -1,0 +1,326 @@
+<ShaderNodePreset
+    ShaderType="Matchbox"
+    Name="Threshold"
+    Description="This Matchbox shader applies a threshold filter to an image.
+
+Note that this shader does not perform any image scaling or reformatting, so that the operation may be incorrect if the result image format does not match the input image format.
+It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+
+This shader is licensed under the terms of the MIT license.
+
+For questions contact:
+nobbl211@gmail.com"
+    HelpLink=""
+    Version="0.0"
+    CommercialUsePermitted="True"
+    SoftwareVersion="2019.0.0"
+    LimitInputsToTexture="True"
+    TimelineUseBack="False"
+    SupportsAdaptiveDegradation="False"
+    SupportsAction="True"
+    SupportsTransition="False"
+    SupportsTimeline="True"
+    MatteProvider="False">
+    <Shader
+        Index="1"
+        OutputBitDepth="Output">
+        <Uniform
+            Type="sampler2D"
+            Index="0"
+            Name="front"
+            DisplayName="Front"
+            InputType="Front"
+            NoInput="Error"
+            Mipmaps="False"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_MAG_FILTER="GL_NEAREST"
+            GL_TEXTURE_MIN_FILTER="GL_NEAREST">
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="type"
+            ChannelName="type"
+            DisplayName="Type"
+            Tooltip="selector for the threshold type"
+            Page="0"
+            Col="0"
+            Row="0"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="Infimum"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Minimum"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Maximum"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Supremum"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="data_source"
+            ChannelName="data_source"
+            DisplayName="Source"
+            Tooltip="selector for the data source the threshold filter will be applied to"
+            Page="0"
+            Col="0"
+            Row="1"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="Red"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Green"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Blue"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="RGB"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="Luminance"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Name="rgb_mode"
+            ChannelName="rgb_mode"
+            DisplayName="RGB Operation"
+            Tooltip="selector for the boolean operation combining the individual channel thresholds"
+            Page="0"
+            Col="0"
+            Row="2"
+            ValueType="Popup"
+            UIConditionSource="data_source"
+            UIConditionValue="3"
+            UIConditionType="Hide"
+            Default="0">
+            <PopupEntry
+                Title="Intersection"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Union"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Individual"
+                Value="2">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="red_luminance"
+            ChannelName="red_luminance"
+            DisplayName="Red to Lum"
+            Tooltip="linear scaling factor of the red channel for the luminance value
+should add up to 1 with green and blue scaling"
+            Page="0"
+            Col="1"
+            Row="0"
+            UIConditionSource="data_source"
+            UIConditionValue="4"
+            UIConditionType="Hide"
+            ResDependent="None"
+            Default="0.2676"
+            Inc="0.0001"
+            Min="-1000000.0"
+            Max="1000000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="green_luminance"
+            ChannelName="green_luminance"
+            DisplayName="Green to Lum"
+            Tooltip="linear scaling factor of the green channel for the luminance value
+should add up to 1 with red and blue scaling"
+            Page="0"
+            Col="1"
+            Row="1"
+            UIConditionSource="data_source"
+            UIConditionValue="4"
+            UIConditionType="Hide"
+            ResDependent="None"
+            Default="0.6744"
+            Inc="0.0001"
+            Min="-1000000.0"
+            Max="1000000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="blue_luminance"
+            ChannelName="blue_luminance"
+            DisplayName="Blue to Lum"
+            Tooltip="linear scaling factor of the blue channel for the luminance value
+should add up to 1 with red and green scaling"
+            Page="0"
+            Col="1"
+            Row="2"
+            UIConditionSource="data_source"
+            UIConditionValue="4"
+            UIConditionType="Hide"
+            ResDependent="None"
+            Default="0.0580"
+            Inc="0.0001"
+            Min="-1000000.0"
+            Max="1000000.0">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Name="luminance_preview"
+            ChannelName="luminance_preview"
+            DisplayName="Luminance Preview"
+            Tooltip="shows a monochrome image of the luminace"
+            Page="0"
+            Col="1"
+            Row="3"
+            UIConditionSource="data_source"
+            UIConditionValue="4"
+            UIConditionType="Hide"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="red_threshold"
+            ChannelName="red_threshold"
+            DisplayName="Red Threshold"
+            Tooltip="threshold value for the red channel"
+            Page="0"
+            Col="2"
+            Row="0"
+            UIConditionSource="data_source"
+            UIConditionValue="0"
+            UIConditionType="Hide"
+            ResDependent="None"
+            Default="0.5"
+            Inc="0.01"
+            Min="-1000000.0"
+            Max="1000000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="green_threshold"
+            ChannelName="green_threshold"
+            DisplayName="Green Threshold"
+            Tooltip="threshold value for the green channel"
+            Page="0"
+            Col="2"
+            Row="0"
+            UIConditionSource="data_source"
+            UIConditionValue="1"
+            UIConditionType="Hide"
+            ResDependent="None"
+            Default="0.5"
+            Inc="0.01"
+            Min="-1000000.0"
+            Max="1000000.0">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="blue_threshold"
+            ChannelName="blue_threshold"
+            DisplayName="Blue Threshold"
+            Tooltip="threshold value for the blue channel"
+            Page="0"
+            Col="2"
+            Row="0"
+            UIConditionSource="data_source"
+            UIConditionValue="2"
+            UIConditionType="Hide"
+            ResDependent="None"
+            Default="0.5"
+            Inc="0.01"
+            Min="-1000000.0"
+            Max="1000000.0">
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Name="rgb_threshold"
+            ChannelName="rgb_threshold"
+            DisplayName="RGB Threshold"
+            Tooltip="threshold color for the individual red blue and green channels"
+            Page="0"
+            Col="2"
+            Row="0"
+            UIConditionSource="data_source"
+            UIConditionValue="3"
+            UIConditionType="Hide"
+            ValueType="Colour"
+            IconType="None">
+            <SubUniform
+                ResDependent="None"
+                Default="0.5"
+                Inc="0.01"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="0.5"
+                Inc="0.01"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+            <SubUniform
+                ResDependent="None"
+                Default="0.5"
+                Inc="0.01"
+                Min="-1000000.0"
+                Max="1000000.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Name="lum_threshold"
+            ChannelName="lum_threshold"
+            DisplayName="Lum Threshold"
+            Tooltip="threshold value for the luminance"
+            Page="0"
+            Col="2"
+            Row="0"
+            UIConditionSource="data_source"
+            UIConditionValue="4"
+            UIConditionType="Hide"
+            ResDependent="None"
+            Default="0.5"
+            Inc="0.01"
+            Min="-1000000.0"
+            Max="1000000.0">
+        </Uniform>
+    </Shader>
+    <Page
+        Name="Reframe"
+        Page="0">
+        <Col
+            Name="General"
+            Page="0"
+            Col="0">
+        </Col>
+        <Col
+            Name="Parameters"
+            Page="0"
+            Col="1">
+        </Col>
+        <Col
+            Name="Threshold"
+            Page="0"
+            Col="2">
+        </Col>
+    </Page>
+</ShaderNodePreset>

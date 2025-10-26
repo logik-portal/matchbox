@@ -1,0 +1,150 @@
+<ShaderNodePreset
+    Description="This Matchbox shader performs image luminance normalization.
+
+All frames will be individually adjusted to match the same arithmetic mean exposure, optionally weighted via a supplied selective.
+This is especially handy for removing flicker from a disturbed source, especially in combination with isolating a known static area of the image via selective.
+
+Note that the source and target colour spaces are implied to be scene linear.
+
+Note that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result and input image formats don't match.
+It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+
+This shader is licensed under the terms of the MIT license.
+
+For questions contact:
+nobbl211@gmail.com"
+    Name="Normalise"
+    HelpLink=""
+    LimitInputsToTexture="True"
+    MatteProvider="False"
+    SupportsAction="True"
+    SupportsTransition="False"
+    SupportsAdaptiveDegradation="False"
+    CommercialUsePermitted="True"
+    ShaderType="Matchbox"
+    SoftwareVersion="2025.1"
+    TimelineUseBack="False"
+    SupportsTimeline="True"
+    Version="0.3">
+    <Shader
+        Index="1"
+        OutputBitDepth="Float32"
+        OutputWidth="1">
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Front"
+            Name="front"
+            Index="0"
+            NoInput="Error"
+            Mipmaps="False"
+            InputType="Front">
+        </Uniform>
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Selective"
+            Name="selective"
+            Index="1"
+            NoInput="White"
+            Mipmaps="False"
+            InputType="Selective"
+            InputColor="40,100,100">
+        </Uniform>
+    </Shader>
+    <Shader
+        Index="2"
+        OutputBitDepth="Float32"
+        OutputWidth="1"
+        OutputHeight="1">
+        <Uniform
+            Type="sampler2D"
+            Name="adsk_results_pass1"
+            Mipmaps="False">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="weight of the red channel towards luminance"
+            DisplayName="W_R"
+            ChannelName="w_r"
+            Name="w_r"
+            Col="0"
+            Row="0"
+            Page="0"
+            Default="0.2722287168"
+            Inc="0.001"
+            Max="1.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="channel"
+            UIConditionValue="3"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="weight of the blue channel towards luminance"
+            DisplayName="W_B"
+            ChannelName="w_b"
+            Name="w_b"
+            Col="0"
+            Row="1"
+            Page="0"
+            Default="0.0536895174"
+            Inc="0.001"
+            Max="1.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="channel"
+            UIConditionValue="3"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="target luminance"
+            DisplayName="Luma"
+            ChannelName="luma"
+            Name="luma"
+            Col="1"
+            Row="0"
+            Page="0"
+            Default="0.18"
+            Inc="0.0002"
+            Max="1000000.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="channel"
+            UIConditionValue="3"
+            UIConditionType="Disable">
+        </Uniform>
+    </Shader>
+    <Shader
+        Index="3"
+        OutputBitDepth="Output">
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Front"
+            Name="front"
+            Index="0"
+            NoInput="Error"
+            Mipmaps="False"
+            InputType="Front">
+        </Uniform>
+        <Uniform
+            Type="sampler2D"
+            Name="adsk_results_pass2"
+            Mipmaps="False">
+        </Uniform>
+    </Shader>
+    <Page
+        Name="Controls"
+        Page="0">
+        <Col
+            Name="Luma Coeff"
+            Col="0"
+            Page="0">
+        </Col>
+        <Col
+            Name="Target Luma"
+            Col="1"
+            Page="0">
+        </Col>
+    </Page>
+</ShaderNodePreset>

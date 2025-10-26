@@ -1,0 +1,60 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="True"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  LimitInputsToTexture="True"
+  Version="1"
+  Description="
+  This Matchbox shader creates Glitch Effects
+
+  based on www.shadertoy.com/view/ttBSDR by 104
+  and Ls_Advect by Lewis Saunders
+  Matchbox version by ivar@inferno-op.com"
+  Name="CROK Glitch">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.1" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="density" DisplayName="Density" Name="density"></Uniform>
+    <Uniform ResDependent="None" Max="50.0" Min="1.0" Default="5.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="complexity" DisplayName="Complexity" Name="complexity"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="speed" DisplayName="Speed" Name="speed"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="offset" DisplayName="Offset" Name="offset"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="3">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Source"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="50.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="blength" DisplayName="Length" Name="blength"></Uniform>
+    <Uniform Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" IconType="None" Type="vec2" ChannelName="offset" DisplayName="Offset" Name="offset">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0"></SubUniform>
+    </Uniform>
+    <Uniform Max="100" Min="0" Default="3" Inc="1" Tooltip="" Row="2" Col="0" Page="0" Type="int" ChannelName="samples" DisplayName="Samples" Name="samples"></Uniform>
+    <Uniform Row="2" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="fadein" DisplayName="Fade In" Name="fadein"></Uniform>
+    <Uniform Row="3" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="fadeout" DisplayName="Fade Out" Name="fadeout"></Uniform>
+
+    <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="4" Col="2" Page="0" Type="float" ChannelName="maxlength" DisplayName="Max Fade Length" Name="maxlength"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="sidestep" DisplayName="Sidestep" Name="sidestep"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+  </Shader>
+  <Page Name="General" Page="0">
+    <Col Name="Look" Col="0" Page="0"></Col>
+    <Col Name="Time" Col="1" Page="0"></Col>
+    <Col Name="Vectors" Col="2" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>

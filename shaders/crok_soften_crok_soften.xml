@@ -1,0 +1,85 @@
+<ShaderNodePreset
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description="
+This is a Flame sub pixel blur meant for creating natural looking edges.
+
+Input:
+- Front: original front
+- Matte: original matte
+
+Soften:
+- Size: amount of gaussian blur applied to the image
+- Strength: mix amount between original image and blurred one
+
+Smoothness:
+- Amount: how much AA is applied to the image before it runs through the soften process
+
+
+Matchbox by John and ivar@inferno-op.com
+"
+  Name="CROK Soften">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      InputType="Front"
+      DisplayName="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="front"></Uniform>
+    <Uniform
+      Index="1"
+      NoInput="White"
+      Tooltip=""
+      InputType="Matte"
+      DisplayName="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="aa_amount" DisplayName="Amount" Name="aa_mix"></Uniform>
+  </Shader>
+
+    <Shader OutputBitDepth="Output" Index="3">
+      <Uniform Index="1" Tooltip="" DisplayName="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="matte">
+        <Duplicate></Duplicate>
+      </Uniform>
+      <Uniform Type="float" ChannelName="aa_mix" DisplayName="aa_mix" Name="aa_mix">
+        <Duplicate></Duplicate>
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    </Shader>
+
+    <Shader OutputBitDepth="Output" Index="4">
+      <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="0.5" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="size" DisplayName="Size" Name="size"></Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+    </Shader>
+    <Shader OutputBitDepth="Output" Index="5">
+      <Uniform Type="float" ChannelName="size" DisplayName="size" Name="size">
+        <Duplicate></Duplicate>
+      </Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+    </Shader>
+    <Shader OutputBitDepth="Output" Index="6">
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.8" Inc="0.001" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="strength_amount" DisplayName="Strength" Name="amount"></Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5"></Uniform>
+    </Shader>
+    <Page Name="General" Page="0">
+      <Col Name="Soften" Col="0" Page="0"></Col>
+      <Col Name="Smoothness" Col="1" Page="0"></Col>
+
+    </Page>
+  </ShaderNodePreset>

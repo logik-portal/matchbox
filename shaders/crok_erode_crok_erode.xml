@@ -1,0 +1,82 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="False" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1.0"
+  Description="
+  This Matchbox shader gives you a max / min - erosion / dilation type of effect simmilar to the nuke one.
+
+
+  Setup:
+
+  - Type: select the desired filter effect
+  - Shape: select the preferred look
+  - Amount: adjust the overal amount applied to the shader
+  - Look: adjust the overal look
+  - Blend: blend between original image and applied preset
+
+  Based on https://www.shadertoy.com/view/XscXRl by FabriceNeyret2
+  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+  Matchbox version by ivar@inferno-op.com" Name="CROK Erode">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+     <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+     </Uniform>
+      <Uniform Index="1" NoInput="White" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="matte">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+      <Uniform ResDependent="None" Max="1000000.0" Min="1.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="amount" DisplayName="Amount" Name="amount">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="look" DisplayName="Look" Name="look">
+</Uniform>
+      <Uniform ValueType="Popup" Name="erosion_dilation" Type="int" DisplayName="Type" Page="0" Col="0" Row="0" Tooltip="" Inc="1" Default="1" Min="0" Max="1000000">
+         <PopupEntry Value="1" Title="Erosion">
+         </PopupEntry>
+         <PopupEntry Value="2" Title="Dilation">
+         </PopupEntry>
+      </Uniform>
+      <Uniform ValueType="Popup" Name="B" Type="int" DisplayName="Shape" Page="0" Col="0" Row="1" Tooltip="" Inc="1" Default="0" Min="0" Max="1000000">
+         <PopupEntry Value="0" Title="Disk">
+         </PopupEntry>
+         <PopupEntry Value="1" Title="Brush">
+         </PopupEntry>
+         <PopupEntry Value="2" Title="Star">
+         </PopupEntry>
+         <PopupEntry Value="3" Title="Hexagon">
+         </PopupEntry>
+         <PopupEntry Value="4" Title="Square">
+         </PopupEntry>
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+      <Uniform Type="float" ChannelName="amount" DisplayName="amount" Name="amount">
+   <Duplicate>
+   </Duplicate>
+   </Uniform>
+   <Uniform Type="int" ChannelName="erosion_dilation" DisplayName="erosion_dilation" Name="erosion_dilation">
+   <Duplicate>
+   </Duplicate>
+</Uniform>
+<Uniform Type="float" ChannelName="look" DisplayName="Look" Name="look">
+   <Duplicate>
+   </Duplicate>
+</Uniform>
+<Uniform Type="int" ChannelName="B" DisplayName="B" Name="B">
+   <Duplicate>
+   </Duplicate>
+</Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+     <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.001" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="blend" DisplayName="Blend" Name="blend">
+     </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+   </Uniform>
+</Shader>
+   <Page Name="" Page="0">
+      <Col Name="Filter" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

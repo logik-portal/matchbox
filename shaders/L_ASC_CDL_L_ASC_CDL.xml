@@ -1,0 +1,40 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="Apply slope, offset and power transfer functions to the input pixels as defined by the ASC CDL standard" Name="L_ASC_CDL">
+   <Shader OutputBitDepth="Output" Index="1">
+       <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="slope" ValueType="Colour" Type="vec3" Name="slope">
+         <SubUniform ResDependent="None" Max="10000.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="10000.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="10000.0" Min="0.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" DisplayName="offset" ValueType="Colour" Type="vec3" Name="offset">
+         <SubUniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="sceneBuffer" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Type="sampler2D" Name="sceneBuf
+er">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" DisplayName="power" ValueType="Colour" Type="vec3" Name="power">
+         <SubUniform ResDependent="None" Max="10000.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="10000.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="10000.0" Min="0.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+   </Shader>
+   <Page Name="ASC CDL" Page="0">
+      <Col Name="Slope" Col="0" Page="0">
+      </Col>
+      <Col Name="Offset" Col="1" Page="0">
+      </Col>
+      <Col Name="Power" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+

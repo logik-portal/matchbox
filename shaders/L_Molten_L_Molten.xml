@@ -1,0 +1,25 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="Molten Metal Texture Gradient shader" Name="L_Molten">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Inc="0.01" Tooltip="Color of the Gradients." Row="0" Col="0" Page="0" DisplayName="Color" ValueType="Colour" Type="vec3" Name="color">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.05" Inc="0.005" Tooltip="Speed of the blades." Row="1" Col="0" Page="0" DisplayName="Speed" Type="float" Name="speed">
+      </Uniform>
+   <Uniform ResDependent="None" Max="1000000.0" Min="0.0001" Default="5.0" Inc="0.1" Tooltip="Scale of effect." Row="4" Col="0" Page="0" DisplayName="Scale" Type="float" Name="scale">
+      </Uniform>
+   <Uniform ResDependent="None" Max="1000000.0" Min="0.0001" Default="0.25" Inc="0.001" Tooltip="Gradient Length per blade." Row="3" Col="0" Page="0" DisplayName="Gradient Length" Type="float" Name="disp">
+      </Uniform>
+   <Uniform ResDependent="None" Max="1000000.0" Min="-10000000.0" Default="0" Inc="0.001" Tooltip="Use this to offset relative to the current speed." Row="2" Col="0" Page="0" DisplayName="Time offset." Type="float" Name="offset">
+      </Uniform>
+   </Shader>
+   <Page Name="L_Molten" Page="0">
+      <Col Name="Controls" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderNodePreset 
+    Name="AFX Ripple Distort"
+    Description="Great for water reflection effect with simplex noise distortion and dispersion. Creates realistic water surfaces effects.
+
+Multi-pass shader system:
+Pass 1: Noise generation and distortion
+Pass 2: Dispersion/refraction effects  
+
+Made By John Ashby"
+    ShaderType="Matchbox"
+    SoftwareVersion="2025.0.0"
+    Version="1.5"
+    
+    SupportsAction="False"
+    SupportsTransition="False"
+    SupportsTimeline="True"
+    MatteProvider="False"
+    TimelineUseBack="False"
+    DefaultIsNoOp="False"
+    
+    LimitInputsToTexture="True"
+    SupportsAdaptiveDegradation="False"
+    CommercialUsePermitted="True">
+    
+    <!-- PASS 1: Noise Generation -->
+    <Shader 
+        Index="1"
+        OutputBitDepth="Float16">
+        
+        <!-- Input texture -->
+        <Uniform 
+            Index="0"
+            Name="front"
+            DisplayName="Front"
+            Type="sampler2D"
+            InputType="Front"
+            NoInput="Error"
+            
+            Mipmaps="True"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+            GL_TEXTURE_MIN_FILTER="GL_LINEAR_MIPMAP_LINEAR"
+            
+            Tooltip="Input image">
+        </Uniform>
+        
+        <!-- Column 0: Basic Noise Controls -->
+        <Uniform 
+            Name="noiseFrequency"
+            Type="float"
+            DisplayName="Noise Frequency"
+            Default="4.0"
+            Min="0.1"
+            Max="100.0"
+            Inc="0.1"
+            ResDependent="None"
+            Page="0" Col="0" Row="0"
+            Tooltip="Controls the complexity of the noise pattern. Higher values create finer details.">
+        </Uniform>
+        
+        <Uniform 
+            Name="noiseAmplitude"
+            Type="float"
+            DisplayName="Noise Amplitude"
+            Default="1.0"
+            Min="0.0"
+            Max="5.0"
+            Inc="0.01"
+            ResDependent="None"
+            Page="0" Col="0" Row="1"
+            Tooltip="Controls the strength of the noise effect. 0 = no noise, 1 = full noise.">
+        </Uniform>
+        
+        <Uniform 
+            Name="noiseScaleX"
+            Type="float"
+            DisplayName="Noise Scale X"
+            Default="1.0"
+            Min="0.1"
+            Max="5.0"
+            Inc="0.1"
+            ResDependent="None"
+            Page="0" Col="0" Row="2"
+            Tooltip="Controls the horizontal scale of the noise pattern. 1.0 = normal, higher values = stretched horizontally.">
+        </Uniform>
+        
+        <Uniform 
+            Name="noiseScaleY"
+            Type="float"
+            DisplayName="Noise Scale Y"
+            Default="1.0"
+            Min="0.1"
+            Max="5.0"
+            Inc="0.1"
+            ResDependent="None"
+            Page="0" Col="0" Row="3"
+            Tooltip="Controls the vertical scale of the noise pattern. 1.0 = normal, higher values = stretched vertically.">
+        </Uniform>
+        
+        
+        <Uniform 
+        Name="previewNoise"
+        Type="bool"
+        DisplayName="Noise Preview"
+        Default="False"
+        Page="0" Col="0" Row="4"
+        Tooltip="Toggle to preview the noise pattern instead of the final effect. Useful for tweaking noise parameters.">
+    </Uniform>
+    
+    <!-- Column 1: Flow Controls -->
+    <Uniform 
+    Name="flowDirection"
+    Type="float"
+    DisplayName="Flow Direction"
+    Default="60.0"
+    Min="0.0"
+    Max="360.0"
+    Inc="1.0"
+    ResDependent="None"
+    Page="0" Col="1" Row="0"
+    Tooltip="Direction of noise flow in degrees. 0 = right, 90 = up, 180 = left, 270 = down.">
+</Uniform>
+
+<Uniform 
+Name="flowSpeed"
+Type="float"
+DisplayName="Flow Speed"
+Default="0.1"
+Min="0.0"
+Max="5.0"
+Inc="0.01"
+ResDependent="None"
+Page="0" Col="1" Row="1"
+Tooltip="Speed of directional flow. 0 = no flow, higher values = faster movement.">
+</Uniform>
+
+<Uniform 
+    Name="noiseEvolution"
+    Type="float"
+    DisplayName="Evolution Speed"
+    Default="0.1"
+    Min="0.0"
+    Max="1.0"
+    Inc="0.01"
+    ResDependent="None"
+    Page="0" Col="1" Row="2"
+    Tooltip="Controls how fast the noise pattern evolves over time. 0 = static, 1 = fast evolution.">
+</Uniform>
+
+
+
+<!-- Column 2: Fractal Noise Controls -->
+<Uniform 
+            Name="noiseOctaves"
+            Type="int"
+            DisplayName="Noise Octaves"
+            Default="3"
+            Min="1"
+            Max="8"
+            Inc="1"
+            ResDependent="None"
+            Page="0" Col="2" Row="0"
+            Tooltip="Number of octaves for fractal noise. More octaves = more detail but slower performance.">
+        </Uniform>
+        
+        <Uniform 
+            Name="noiseLacunarity"
+            Type="float"
+            DisplayName="Noise Lacunarity"
+            Default="1.5"
+            Min="1.0"
+            Max="4.0"
+            Inc="0.1"
+            ResDependent="None"
+            Page="0" Col="2" Row="1"
+            Tooltip="Frequency multiplier per octave. Higher values create more frequency variation between octaves.">
+        </Uniform>
+        
+        <Uniform 
+            Name="noiseGain"
+            Type="float"
+            DisplayName="Noise Gain"
+            Default="0.5"
+            Min="0.1"
+            Max="1.0"
+            Inc="0.01"
+            ResDependent="None"
+            Page="0" Col="2" Row="2"
+            Tooltip="Amplitude multiplier per octave. Lower values make higher octaves quieter.">
+        </Uniform>
+        
+
+        <!-- Column 3: Dispersion Controls -->
+        <Uniform 
+            Name="enableDispersion"
+            Type="bool"
+            DisplayName="Enable Dispersion"
+            Default="True"
+            Page="0" Col="3" Row="0"
+            Tooltip="Toggle wavelength dispersion effect on/off.">
+        </Uniform>
+        
+        <Uniform 
+            Name="dispersionStrength"
+            Type="float"
+            DisplayName="Dispersion Strength"
+            Default="0.25"
+            Min="0.0"
+            Max="2.0"
+            Inc="0.01"
+            ResDependent="None"
+            Page="0" Col="3" Row="1"
+            Tooltip="Controls the strength of wavelength separation. Higher values create more color separation.">
+        </Uniform>
+        
+        <Uniform 
+            Name="dispersionAngle"
+            Type="float"
+            DisplayName="Dispersion Angle"
+            Default="0.0"
+            Min="0.0"
+            Max="360.0"
+            Inc="1.0"
+            ResDependent="None"
+            Page="0" Col="3" Row="2"
+            Tooltip="Direction of dispersion in degrees. Controls the angle of color separation.">
+        </Uniform>
+        
+            <!-- End Column : Global Controls -->
+            <Uniform 
+                Name="distortionStrength"
+                Type="float"
+                DisplayName="Distortion"
+                Default="0.05"
+                Min="0.0"
+                Max="0.5"
+                Inc="0.001"
+                ResDependent="None"
+                Page="0" Col="4" Row="0"
+                Tooltip="Global multiplier for the amount of distortion applied to the image. Higher values create more warping.">
+            </Uniform>
+
+            <Uniform 
+                Name="speedMultiplier"
+                Type="float"
+                DisplayName="Speed"
+                Default="1.0"
+                Min="0.0"
+                Max="5.0"
+                Inc="0.01"
+                ResDependent="None"
+                Page="0" Col="4" Row="1"
+                Tooltip="Global multiplier for both flow speed and evolution speed.">
+        </Uniform>
+            
+            <Uniform 
+                Name="globalScale"
+                Type="float"
+                DisplayName="Scale"
+                Default="1.0"
+                Min="0.1"
+                Max="5.0"
+                Inc="0.1"
+                ResDependent="None"
+                Page="0" Col="4" Row="2"
+                Tooltip="Global multiplier for the x and y scales of the noise pattern.">
+            </Uniform>
+            
+            <Uniform 
+                Name="distortionDamping"
+                Type="float"
+                DisplayName="Edge Damping"
+                Default="0.2"
+                Min="0.0"
+                Max="10.0"
+                Inc="0.1"
+                ResDependent="None"
+                Page="0" Col="4" Row="3"
+                Tooltip="Controls how much distortion is reduced towards the edges. 0 = no damping, 10 = maximum damping.">
+            </Uniform>
+    
+            
+        
+    </Shader>
+    
+    <!-- PASS 2: Dispersion/Refraction -->
+    <Shader 
+        Index="2"
+        OutputBitDepth="Output">
+        
+        <!-- Result from pass 1 -->
+        <Uniform 
+            Name="adsk_results_pass1"
+            Type="sampler2D"
+            
+            Mipmaps="False"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+            GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+            
+            Tooltip="Result from noise generation pass">
+        </Uniform>
+        
+        <!-- Duplicate all uniforms from pass 1 -->
+        <Uniform Name="noiseFrequency" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="noiseAmplitude" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="noiseScaleX" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="noiseScaleY" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="noiseEvolution" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="speedMultiplier" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="globalScale" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="flowDirection" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="flowSpeed" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="previewNoise" Type="bool"><Duplicate /></Uniform>
+        <Uniform Name="noiseOctaves" Type="int"><Duplicate /></Uniform>
+        <Uniform Name="noiseLacunarity" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="noiseGain" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="distortionStrength" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="distortionDamping" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="enableDispersion" Type="bool"><Duplicate /></Uniform>
+        <Uniform Name="dispersionStrength" Type="float"><Duplicate /></Uniform>
+        <Uniform Name="dispersionAngle" Type="float"><Duplicate /></Uniform>
+        
+    </Shader>
+    
+    
+    <!-- Page Layout -->
+    <Page Name="Ripple Distort" Page="0">
+        <Col Name="Basic Noise" Col="0" Page="0" />
+        <Col Name="Flow Controls" Col="1" Page="0" />
+        <Col Name="Fractal Noise" Col="2" Page="0" />
+        <Col Name="Dispersion" Col="3" Page="0" />
+        <Col Name="Global Controls" Col="4" Page="0" />
+    </Page>
+    
+</ShaderNodePreset>

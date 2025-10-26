@@ -1,0 +1,146 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description=""
+  Name="CROK If Blend">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform Index="0" NoInput="Error" InputType="Front" DisplayName="Front" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front"></Uniform>
+    <Uniform Index="2" NoInput="White" InputType="Matte" DisplayName="Matte" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="matte"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform Index="1" NoInput="Error" InputType="Back" DisplayName="Back" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="back"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform ResDependent="None" Max="2.00" Min="0.00001" Default="0.00001" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="this_layer_low" DisplayName="Low" Name="this_layer_low"></Uniform>
+    <Uniform ResDependent="None" Max="1.0005" Min="0.0" Default="1.0005" Inc="0.001" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="this_layer_high" DisplayName="High" Name="this_layer_high"></Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="0.001" Default="0.001" Inc="0.001" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="this_layer_threshold_low" DisplayName="Softness Low" Name="this_layer_threshold_low"></Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="0.001" Default="0.001" Inc="0.001" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="this_layer_threshold_high" DisplayName="Softness High" Name="this_layer_threshold_high"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="3">
+    <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.0" Inc="0.001" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="underlying_layer_low" DisplayName="Low" Name="underlying_layer_low"></Uniform>
+    <Uniform ResDependent="None" Max="1.0005.0" Min="0.0" Default="1.0005" Inc="0.001" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="underlying_layer_high" DisplayName="High" Name="underlying_layer_high"></Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="0.001" Default="0.001" Inc="0.001" Tooltip="" Row="3" Col="1" Page="0" Type="float" ChannelName="underlying_threshold" DisplayName="Softness Low" Name="underlying_threshold_low"></Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="0.001" Default="0.001" Inc="0.001" Tooltip="" Row="4" Col="1" Page="0" Type="float" ChannelName="underlying_threshold" DisplayName="Softness High" Name="underlying_threshold_high"></Uniform>
+    <Uniform Index="3" Tooltip="" DisplayName="back" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="back">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+
+    <Uniform Default="0" ValueType="Popup" Tooltip="Blend Type" Row="0" Col="2" Page="0" Type="int" DisplayName="Type" Name="logic_op_sel">
+      <PopupEntry Title="Photoshop" Value="0"></PopupEntry>
+      <PopupEntry Title="Flame" Value="1"></PopupEntry>
+    </Uniform>
+
+    <Uniform Default="-1" ValueType="Popup" Tooltip="Blend Modes" Row="1" Col="2" Page="0" Type="int" DisplayName="Mode" Name="blend_modes" UIConditionSource="logic_op_sel" UIConditionValue="1" UIConditionInvert="False" UIConditionType="Hide">
+
+      <PopupEntry Title="No Blending" Value="-1"></PopupEntry>
+      <PopupEntry Title="Min/Darken" Value="30"></PopupEntry>
+      <PopupEntry Title="Mutliply" Value="2"></PopupEntry>
+      <PopupEntry Title="Max/Lighten" Value="29"></PopupEntry>
+      <PopupEntry Title="Screen" Value="17"></PopupEntry>
+      <PopupEntry Title="Add" Value="0"></PopupEntry>
+      <PopupEntry Title="Overlay" Value="18"></PopupEntry>
+      <PopupEntry Title="Soft Light" Value="13"></PopupEntry>
+      <PopupEntry Title="Hard Light" Value="14"></PopupEntry>
+      <PopupEntry Title="Spotlight" Value="11"></PopupEntry>
+      <PopupEntry Title="Difference" Value="19"></PopupEntry>
+      <PopupEntry Title="Exclusion" Value="20"></PopupEntry>
+      <PopupEntry Title="Subtract" Value="1"></PopupEntry>
+      <PopupEntry Title="Linear Burn" Value="10"></PopupEntry>
+      <PopupEntry Title="Lighter Color" Value="33"></PopupEntry>
+      <PopupEntry Title="Linear Light" Value="32"></PopupEntry>
+      <PopupEntry Title="Pin Light" Value="15"></PopupEntry>
+    </Uniform>
+
+    <Uniform Name="LogicOp" Type="int" ValueType="Popup" DisplayName="Mode" Page="0" Col="2" Row="1" Tooltip="Blend Modes" Default="27" >
+  <PopupEntry Title="No Blending" Value="27">
+  </PopupEntry>
+  <PopupEntry Title="___________" Value="5">
+  </PopupEntry>
+  <PopupEntry Title="Darken" Value="0">
+  </PopupEntry>
+  <PopupEntry Title="Multiply" Value="1">
+  </PopupEntry>
+  <PopupEntry Title="Color Burn" Value="2">
+  </PopupEntry>
+  <PopupEntry Title="Linear Burn" Value="3">
+  </PopupEntry>
+  <PopupEntry Title="Darker Color" Value="4">
+  </PopupEntry>
+  <PopupEntry Title="___________" Value="5">
+  </PopupEntry>
+  <PopupEntry Title="Lighten" Value="6">
+  </PopupEntry>
+  <PopupEntry Title="Screen" Value="7">
+  </PopupEntry>
+  <PopupEntry Title="Color Dodge" Value="8">
+  </PopupEntry>
+  <PopupEntry Title="Linear Dodge (Add)" Value="9">
+  </PopupEntry>
+  <PopupEntry Title="Lighter Color" Value="10">
+  </PopupEntry>
+  <PopupEntry Title="___________" Value="5">
+  </PopupEntry>
+  <PopupEntry Title="Overlay" Value="11">
+  </PopupEntry>
+  <PopupEntry Title="Soft Light" Value="12">
+  </PopupEntry>
+  <PopupEntry Title="Hard Light" Value="13">
+  </PopupEntry>
+  <PopupEntry Title="Vivid Light" Value="14">
+  </PopupEntry>
+  <PopupEntry Title="Linear Light" Value="15">
+  </PopupEntry>
+  <PopupEntry Title="Pin Light" Value="16">
+  </PopupEntry>
+  <PopupEntry Title="Hard Mix" Value="17">
+  </PopupEntry>
+  <PopupEntry Title="___________" Value="5">
+  </PopupEntry>
+  <PopupEntry Title="Difference" Value="18">
+  </PopupEntry>
+  <PopupEntry Title="Exclusion" Value="19">
+  </PopupEntry>
+  <PopupEntry Title="Subtract" Value="20">
+  </PopupEntry>
+  <PopupEntry Title="Divide" Value="21">
+  </PopupEntry>
+  <PopupEntry Title="___________" Value="5">
+  </PopupEntry>
+  <PopupEntry Title="Hue" Value="22">
+  </PopupEntry>
+  <PopupEntry Title="Saturation" Value="23">
+  </PopupEntry>
+  <PopupEntry Title="Color" Value="24">
+  </PopupEntry>
+  <PopupEntry Title="Luminosity" Value="25">
+  </PopupEntry>
+  <PopupEntry Title="___________" Value="99">
+  </PopupEntry>
+  <PopupEntry Title="SpotlightBlend" Value="26">
+  </PopupEntry>
+  <PopupEntry Title="___________" Value="5">
+  </PopupEntry>
+  <PopupEntry Title="Nukes Over" Value="28">
+  </PopupEntry>
+</Uniform>
+    <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="amount" DisplayName="Amount" Name="amount">
+</Uniform>
+  </Shader>
+
+  <Page Name="General" Page="0">
+    <Col Name="Front | This Layer" Col="0" Page="0"></Col>
+    <Col Name="Back | Underlying Layer" Col="1" Page="0"></Col>
+    <Col Name="Blending" Col="2" Page="0"></Col>
+
+  </Page>
+</ShaderNodePreset>

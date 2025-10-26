@@ -1,0 +1,27 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="Clamp selected pixels to user defined minimum and maximum values" Name="L_Clamp">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Maximum" ValueType="Colour" Type="vec3" Name="high">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Minimum" ValueType="Colour" Type="vec3" Name="low">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="sceneBuffer" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Type="sampler2D" Name="sceneBuffer">
+      </Uniform>
+   </Shader>
+   <Page Name="L_CLamp" Page="0">
+      <Col Name="" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+

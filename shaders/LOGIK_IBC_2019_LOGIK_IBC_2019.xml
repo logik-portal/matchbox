@@ -1,0 +1,41 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  LimitInputsToTexture="True"
+  Version="1"
+  Description="
+  Logik Event IBC 2019
+  September 13, 2019
+  7:00 PM - 10:00 PM
+  Central Time
+  DoubleTree by Hilton Amsterdam Centraal Station – Skylounge Bar
+  Oosterdoksstraat 4
+  Amsterdam 1011
+  Netherlands
+
+  Demo clip: https://vimeo.com/357394586
+  Shader based on: https://www.shadertoy.com/view/tljXWy by leon
+
+  MatchBox version by ivar@inferno-op.com" Name="LOGIK IBC 2019">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform Row="1" Col="0" Page="0" Default="True" Tooltip="" DisplayName="LOGIK IBC Party" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Skylounge" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Doubletree by Hilton" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="3" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Oosterdoksstraat 4, 1011DK" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="September 13, 2019" Type="bool" Name="dummy"></Uniform>
+    <Uniform Row="2" Col="2" Page="0" Default="False" Tooltip="" DisplayName="7:00 pm - 11:00 pm" Type="bool" Name="dummy"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+    <Page Name="LOGIK_IBC_2019" Page="0">
+      <Col Name="What ?" Col="0" Page="0"></Col>
+      <Col Name="Where ?" Col="1" Page="0"></Col>
+      <Col Name="When ?" Col="2" Page="0"></Col>
+    </Page>
+  </ShaderNodePreset>

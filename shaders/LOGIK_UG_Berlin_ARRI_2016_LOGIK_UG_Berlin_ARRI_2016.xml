@@ -1,0 +1,70 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="
+Hey Gang,
+this year we invite you to our place in Berlin. Germany's one and only Flame with a Flame.
+Saturday, December 17 at 7 PM
+ARRI Berlin Mitte | Auguststr. 48, 10119 Berlin, Germany
+Come and enjoy the the new hot upcoming stuff from Ivar Beer and have a chat about all that matters...
+And drink beer and more.
+Let's end this year relaxed together
+
+Demo clip: https://vimeo.com/195146573
+
+Based on https://www.shadertoy.com/view/XtcXWM by zackpudil
+MatchBox version by ivar@inferno-op.com" Name="ARRI Berlin UG Meeting 2016">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="White" Tooltip="" DisplayName="front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+
+			<Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="ARRI Berlin Mitte" Type="bool" Name="dummy">
+			</Uniform>
+			<Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Auguststr. 48" Type="bool" Name="dummy">
+			</Uniform>
+			<Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" DisplayName="10119 Berlin" Type="bool" Name="dummy">
+			</Uniform>
+			<Uniform Row="3" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Germany" Type="bool" Name="dummy">
+			</Uniform>
+
+			<Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Saturday" Type="bool" Name="dummy">
+			</Uniform>
+			<Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="December 17th" Type="bool" Name="dummy">
+			</Uniform>
+			<Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="" DisplayName="7pm to 11pm" Type="bool" Name="dummy">
+			</Uniform>
+
+
+			<Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Ivar Beer  Unreleased MX/LX" Type="bool" Name="dummy">
+			</Uniform>
+			<Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Surprise Guest" Type="bool" Name="dummy">
+			</Uniform>
+
+
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="2">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="3">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="4">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="5">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="6">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5">
+      </Uniform>
+   </Shader>
+	 <Page Name="" Page="0">
+       <Col Name="Where" Col="0" Page="0">
+       	</Col>
+ 		<Col Name="When" Col="1" Page="0">
+ 		</Col>
+ 		<Col Name="With" Col="2" Page="0">
+ 		</Col>
+   </Page>
+</ShaderNodePreset>

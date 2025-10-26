@@ -1,0 +1,225 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="
+
+CHROMAWARP
+
+Demo clip: https://youtu.be/wJJqr6dQZkw
+
+miles@noesclavo.com" Name="CHROMAWARP">
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="1" NoInput="White" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Matte">
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+
+      <Uniform Index="2" NoInput="White" Tooltip="" DisplayName="Strength" InputType="3D Motion" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Strength">
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+      <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="strength_are_vectors" DisplayName="Strength is a Motion Vector" Name="strength_are_vectors">
+      </Uniform>
+
+      <!--
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="angle" DisplayName="angle" Name="angle">
+      </Uniform>
+
+      <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="use_angle" DisplayName="use_angle" Name="use_angle">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Action3DWidget="False" IconType="None" Type="vec2" ChannelName="direction" DisplayName="direction" Name="direction">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="bidirectional" DisplayName="bidirectional" Name="bidirectional">
+      </Uniform>
+
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="2" Col="1" Page="0" Type="int" ChannelName="blur_type" DisplayName="blur_type" Name="blur_type">
+      </Uniform>
+    -->
+
+      <Uniform ResDependent="None" Max="1000.0" Min="000000.0" Default="30.0" Inc="0.5" Tooltip="" Row="1" Col="3" Page="0" Type="float" ChannelName="vector_blur" DisplayName="Vector Blur" Name="blur_amount" UIConditionSource="strength_are_vectors" UIConditionValue="True" UIConditionType="Disable">
+      </Uniform>
+
+
+      <Uniform Row="0" Col="3" Page="0" Default="True" Tooltip="" Type="bool" ChannelName="blur_vectors" DisplayName="Blur_Vectors" Name="blur_vectors" UIConditionSource="strength_are_vectors" UIConditionValue="True" UIConditionType="Disable">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="3" Page="0" Type="float" ChannelName="horizontal_bias" DisplayName="Horizontal Bias" Name="h_bias" UIConditionSource="strength_are_vectors" UIConditionValue="True" UIConditionType="Disable">
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+      <Uniform Type="bool" ChannelName="strength_are_vectors" DisplayName="Strength is a Motion Vector" Name="strength_are_vectors">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <!--
+      <Uniform Type="float" ChannelName="angle" DisplayName="angle" Name="angle">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform Type="bool" ChannelName="use_angle" DisplayName="use_angle" Name="use_angle">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform Type="vec2" ChannelName="direction" DisplayName="direction" Name="direction">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform Type="bool" ChannelName="bidirectional" DisplayName="bidirectional" Name="bidirectional">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform Type="int" ChannelName="blur_type" DisplayName="blur_type" Name="blur_type">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+    -->
+
+      <Uniform Type="float" ChannelName="blur_amount" DisplayName="blur_amount" Name="blur_amount">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="3" Page="0" Type="float" ChannelName="vertical_bias" DisplayName="Vertical Bias" Name="v_bias" UIConditionSource="strength_are_vectors" UIConditionValue="True" UIConditionType="Disable">
+      </Uniform>
+
+
+      <Uniform Type="bool" ChannelName="blur_vectors" DisplayName="blur_vectors" Name="blur_vectors">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="5">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Max="6" Min="0" Default="0" Inc="1" Tooltip="Working colorspace. Set this to the current working colorspace. This insures a linear blur (no dark edges)." Row="0" Col="2" Page="0" DisplayName="Colorspace" Type="int" Name="i_colorspace" ValueType="Popup">
+  			<PopupEntry Title="Rec 709" Value="0">
+                </PopupEntry>
+  			<PopupEntry Title="sRGB" Value="1">
+                </PopupEntry>
+  			<PopupEntry Title="Linear" Value="2">
+                </PopupEntry>
+  			<PopupEntry Title="2.2 Gamma" Value="3">
+                </PopupEntry>
+  			<PopupEntry Title="1.8 Gamma" Value="4">
+                </PopupEntry>
+  			<PopupEntry Title="LogC V3" Value="5">
+                </PopupEntry>
+  		</Uniform>
+
+
+      <Uniform Row="4" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="invert_matte" DisplayName="Invert Matte" Name="invert_matte">
+      </Uniform>
+
+      <!--
+      <Uniform Row="3" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="keep_inside" DisplayName="keep_inside" Name="keep_inside">
+      </Uniform>
+    -->
+
+      <Uniform Index="3" Tooltip="" DisplayName="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Matte">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="6">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5">
+      </Uniform>
+
+      <Uniform Type="bool" ChannelName="strength_are_vectors" DisplayName="strength_are_vectors" Name="strength_are_vectors">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.5" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="y_translation" DisplayName="Y Translation" Name="pos_y">
+      </Uniform>
+
+      <Uniform Max="500" Min="000000" Default="30" Inc="1" Tooltip="" Row="0" Col="0" Page="0" Type="int" ChannelName="samples" DisplayName="Samples" Name="samples">
+      </Uniform>
+
+      <Uniform Row="2" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="warped_only" DisplayName="Warped Only" Name="warped_only">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="3" Col="1" Page="0" Action3DWidget="False" IconType="Light" Type="vec2" ChannelName="center" DisplayName="Center" Name="center">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Row="3" Col="2" Page="0" Default="True" Tooltip="" Type="bool" ChannelName="warp_matte" DisplayName="Warp Matte" Name="warp_matte">
+      </Uniform>
+
+      <!--
+      <Uniform Row="0" Col="0" Page="2" Default="False" Tooltip="" Type="bool" ChannelName="matte_is_strength" DisplayName="Matte is Strength" Name="matte_is_strength">
+      </Uniform>
+    -->
+
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.5" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="scale_y" DisplayName="Y Scale" Name="scale_y">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.5" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="scale" DisplayName="Scale" Name="scale">
+      </Uniform>
+
+      <Uniform Row="4" Col="3" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="show_vectors" DisplayName="Show Vectors" Name="show_vectors">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.5" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="scale_x" DisplayName="X Scale" Name="scale_x">
+      </Uniform>
+
+      <Uniform Row="4" Col="3" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="motion_only" DisplayName="Use Motion not Direction" Name="motion_only">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.5" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="x_translation" DisplayName="X Translation" Name="pos_x">
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.5" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="z_translation" DisplayName="Z Translation" Name="pos_z">
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="7">
+      <Uniform Type="int" ChannelName="i_colorspace" DisplayName="i_colorspace" Name="i_colorspace">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6">
+      </Uniform>
+   </Shader>
+
+   <Page Name="CHROMAWARP" Page="0">
+      <Col Name="Samples / Translation" Col="0" Page="0">
+      </Col>
+      <Col Name="Scale" Col="1" Page="0">
+      </Col>
+      <Col Name="I/O" Col="2" Page="0">
+      </Col>
+      <Col Name="Motion Vectors" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

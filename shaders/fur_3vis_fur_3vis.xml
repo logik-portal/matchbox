@@ -1,0 +1,50 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="Fur - Input 1: Fur position (colour noise 64x64 works fine) - Input 2: Fur texture - Author: Eric Pouliot - (c) simon green 2013" Name="fur_3vis">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="3" Page="0" DisplayName="Ball Position" ValueType="Position" Type="vec3" Name="centre">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="2.5">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Rotation X" Type="float" Name="rotation_x">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Rotation Y" Type="float" Name="rotation_y">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" DisplayName="Fur Curl X" Type="float" Name="direction_x">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" DisplayName="Fur Curl Y" Type="float" Name="direction_y">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" DisplayName="UV Scale" Type="float" Name="uvScale">
+      </Uniform>
+       <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.1" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" DisplayName="Color UvScale" Type="float" Name="colorUvScale">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.2" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" DisplayName="Fur Depth" Type="float" Name="furDepth">
+      </Uniform>
+      <Uniform Max="1000000" Min="-1000000" Default="256" Inc="1" Tooltip="" Row="3" Col="1" Page="0" DisplayName="Fur Layers" Type="int" Name="furLayers">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.4" Inc="0.01" Tooltip="" Row="4" Col="1" Page="0" DisplayName="Fur Threshold" Type="float" Name="furThreshold">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="50.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" DisplayName="Shininess" Type="float" Name="shininess">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" DisplayName="Light" ValueType="Position" Type="vec3" Name="L">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+     <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Fur Position" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="iChannel0">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Fur Texture" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="iChannel1">
+      </Uniform>
+   </Shader>
+   <Page Name="Controls" Page="0">
+      <Col Name="Positions" Col="0" Page="0">
+      </Col>
+      <Col Name="Fur Parameters" Col="1" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

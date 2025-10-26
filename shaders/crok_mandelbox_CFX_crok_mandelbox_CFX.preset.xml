@@ -1,0 +1,626 @@
+<Presets>
+  <Preset Name="Mandel Box 01">
+     <Shader Index="1">
+        <Uniform Value="-3.3" Type="float" DisplayName="Scale" Name="scale">
+        </Uniform>
+        <Uniform Value="0.2" Type="float" DisplayName="Detail" Name="surfaceDetail">
+        </Uniform>
+        <Uniform Value="0.7" Type="float" DisplayName="Smoothness" Name="surfaceSmoothness">
+        </Uniform>
+        <Uniform Value="25" Type="float" DisplayName="Bounding Radius" Name="boundingRadius">
+        </Uniform>
+        <Uniform Value="0.26" Type="float" DisplayName="Sphere Scale" Name="sphereScale">
+        </Uniform>
+        <Uniform Value="0.4" Type="float" DisplayName="Box Scale" Name="boxScale">
+        </Uniform>
+        <Uniform Value="1" Type="float" DisplayName="Box Fold" Name="boxFold">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Fudge Factor" Name="fudgeFactor">
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Offset" Name="offset">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Rotation" Name="objRotation">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Frac Rotation1" Name="fracRotation1">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Frac Rotation2" Name="fracRotation2">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Position" Name="light">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="3296">
+           </SubUniform>
+           <SubUniform Value="3656.9">
+           </SubUniform>
+        </Uniform>
+        <Uniform Value="1" Type="float" DisplayName="Specularity" Name="specularity">
+        </Uniform>
+        <Uniform Value="5" Type="float" DisplayName="Exponent" Name="specularExponent">
+        </Uniform>
+        <Uniform Value="0.25" Type="float" DisplayName="Intensity" Name="aoIntensity">
+        </Uniform>
+        <Uniform Value="16" Type="float" DisplayName="Spread" Name="aoSpread">
+        </Uniform>
+        <Uniform Value="4" Type="int" DisplayName="Iterations" Name="aoIterations">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Intensity" Name="fog">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Falloff" Name="fogFalloff">
+        </Uniform>
+        <Uniform Value="3" Type="int" DisplayName="Iterations" Name="colorIterations">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Ambient Color" Name="ambientColor">
+        </Uniform>
+        <Uniform Value="0.41" Type="float" DisplayName="AmbientIntensity" Name="ambientIntensity">
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Background Top" Name="background1Color">
+           <SubUniform Value="0.02">
+           </SubUniform>
+           <SubUniform Value="0.325">
+           </SubUniform>
+           <SubUniform Value="0.309">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="background2Color" Name="background2Color">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Color 1" Name="color1">
+           <SubUniform Value="0.1">
+           </SubUniform>
+           <SubUniform Value="0.25">
+           </SubUniform>
+           <SubUniform Value="0.4">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Color 2" Name="color2">
+           <SubUniform Value="0.41">
+           </SubUniform>
+           <SubUniform Value="0.26">
+           </SubUniform>
+           <SubUniform Value="0.04">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Color 3" Name="color3">
+           <SubUniform Value="0.5">
+           </SubUniform>
+           <SubUniform Value="0.5">
+           </SubUniform>
+           <SubUniform Value="0.5">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Inner Glow" Name="innerGlowColor">
+           <SubUniform Value="0.3">
+           </SubUniform>
+           <SubUniform Value="0.33">
+           </SubUniform>
+           <SubUniform Value="0.53">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Outer Glow" Name="outerGlowColor">
+           <SubUniform Value="1">
+           </SubUniform>
+           <SubUniform Value="1">
+           </SubUniform>
+           <SubUniform Value="1">
+           </SubUniform>
+        </Uniform>
+        <Uniform Value="0.54" Type="float" DisplayName="Color 1" Name="color1Intensity">
+        </Uniform>
+        <Uniform Value="1" Type="float" DisplayName="Color 2" Name="color2Intensity">
+        </Uniform>
+        <Uniform Value="0.61" Type="float" DisplayName="Color 3" Name="color3Intensity">
+        </Uniform>
+        <Uniform Value="0.17" Type="float" DisplayName="Inner Glow" Name="innerGlowIntensity">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Outer Glow" Name="outerGlowIntensity">
+        </Uniform>
+        <Uniform Value="12" Type="int" DisplayName="Iterations" Name="maxIterations">
+        </Uniform>
+        <Uniform Value="256" Type="int" DisplayName="Max Steps" Name="stepLimit">
+        </Uniform>
+        <Uniform Value="0" Type="bool" DisplayName="Enable" Name="antialiasing">
+        </Uniform>
+        <Uniform Value="8" Type="int" DisplayName="Steps" Name="aa_strength">
+        </Uniform>
+        <Uniform Value="2" Type="float" DisplayName="Softness" Name="aa_softness">
+        </Uniform>
+     </Shader>
+  </Preset>
+  <Preset Name="Mandel Box 02">
+     <Shader Index="1">
+        <Uniform Value="-3.3" Type="float" DisplayName="Scale" Name="scale">
+        </Uniform>
+        <Uniform Value="0.2" Type="float" DisplayName="Detail" Name="surfaceDetail">
+        </Uniform>
+        <Uniform Value="0.7" Type="float" DisplayName="Smoothness" Name="surfaceSmoothness">
+        </Uniform>
+        <Uniform Value="25" Type="float" DisplayName="Bounding Radius" Name="boundingRadius">
+        </Uniform>
+        <Uniform Value="0.26" Type="float" DisplayName="Sphere Scale" Name="sphereScale">
+        </Uniform>
+        <Uniform Value="0.02" Type="float" DisplayName="Box Scale" Name="boxScale">
+        </Uniform>
+        <Uniform Value="0.98" Type="float" DisplayName="Box Fold" Name="boxFold">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Fudge Factor" Name="fudgeFactor">
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Offset" Name="offset">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="-1.16">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Rotation" Name="objRotation">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Frac Rotation1" Name="fracRotation1">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Frac Rotation2" Name="fracRotation2">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Position" Name="light">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="3296">
+           </SubUniform>
+           <SubUniform Value="3656.9">
+           </SubUniform>
+        </Uniform>
+        <Uniform Value="1" Type="float" DisplayName="Specularity" Name="specularity">
+        </Uniform>
+        <Uniform Value="5" Type="float" DisplayName="Exponent" Name="specularExponent">
+        </Uniform>
+        <Uniform Value="0.25" Type="float" DisplayName="Intensity" Name="aoIntensity">
+        </Uniform>
+        <Uniform Value="16" Type="float" DisplayName="Spread" Name="aoSpread">
+        </Uniform>
+        <Uniform Value="4" Type="int" DisplayName="Iterations" Name="aoIterations">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Intensity" Name="fog">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Falloff" Name="fogFalloff">
+        </Uniform>
+        <Uniform Value="3" Type="int" DisplayName="Iterations" Name="colorIterations">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Ambient Color" Name="ambientColor">
+        </Uniform>
+        <Uniform Value="0.41" Type="float" DisplayName="AmbientIntensity" Name="ambientIntensity">
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Background Top" Name="background1Color">
+           <SubUniform Value="0.02">
+           </SubUniform>
+           <SubUniform Value="0.325">
+           </SubUniform>
+           <SubUniform Value="0.309">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="background2Color" Name="background2Color">
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+           <SubUniform Value="0">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Color 1" Name="color1">
+           <SubUniform Value="0.1">
+           </SubUniform>
+           <SubUniform Value="0.25">
+           </SubUniform>
+           <SubUniform Value="0.4">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Color 2" Name="color2">
+           <SubUniform Value="0.41">
+           </SubUniform>
+           <SubUniform Value="0.26">
+           </SubUniform>
+           <SubUniform Value="0.04">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Color 3" Name="color3">
+           <SubUniform Value="0.5">
+           </SubUniform>
+           <SubUniform Value="0.5">
+           </SubUniform>
+           <SubUniform Value="0.5">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Inner Glow" Name="innerGlowColor">
+           <SubUniform Value="0.3">
+           </SubUniform>
+           <SubUniform Value="0.33">
+           </SubUniform>
+           <SubUniform Value="0.53">
+           </SubUniform>
+        </Uniform>
+        <Uniform Type="vec3" DisplayName="Outer Glow" Name="outerGlowColor">
+           <SubUniform Value="1">
+           </SubUniform>
+           <SubUniform Value="1">
+           </SubUniform>
+           <SubUniform Value="1">
+           </SubUniform>
+        </Uniform>
+        <Uniform Value="0.54" Type="float" DisplayName="Color 1" Name="color1Intensity">
+        </Uniform>
+        <Uniform Value="1" Type="float" DisplayName="Color 2" Name="color2Intensity">
+        </Uniform>
+        <Uniform Value="0.61" Type="float" DisplayName="Color 3" Name="color3Intensity">
+        </Uniform>
+        <Uniform Value="0.17" Type="float" DisplayName="Inner Glow" Name="innerGlowIntensity">
+        </Uniform>
+        <Uniform Value="0" Type="float" DisplayName="Outer Glow" Name="outerGlowIntensity">
+        </Uniform>
+        <Uniform Value="12" Type="int" DisplayName="Iterations" Name="maxIterations">
+        </Uniform>
+        <Uniform Value="256" Type="int" DisplayName="Max Steps" Name="stepLimit">
+        </Uniform>
+        <Uniform Value="0" Type="bool" DisplayName="Enable" Name="antialiasing">
+        </Uniform>
+        <Uniform Value="8" Type="int" DisplayName="Steps" Name="aa_strength">
+        </Uniform>
+        <Uniform Value="2" Type="float" DisplayName="Softness" Name="aa_softness">
+        </Uniform>
+     </Shader>
+  </Preset>
+  <Preset Name="Mandel Box 03">
+    <Shader Index="1">
+       <Uniform Value="2.81" Type="float" DisplayName="Scale" Name="scale">
+       </Uniform>
+       <Uniform Value="0.2" Type="float" DisplayName="Detail" Name="surfaceDetail">
+       </Uniform>
+       <Uniform Value="0.8" Type="float" DisplayName="Smoothness" Name="surfaceSmoothness">
+       </Uniform>
+       <Uniform Value="25" Type="float" DisplayName="Bounding Radius" Name="boundingRadius">
+       </Uniform>
+       <Uniform Value="0.85" Type="float" DisplayName="Sphere Scale" Name="sphereScale">
+       </Uniform>
+       <Uniform Value="0.41" Type="float" DisplayName="Box Scale" Name="boxScale">
+       </Uniform>
+       <Uniform Value="1.05" Type="float" DisplayName="Box Fold" Name="boxFold">
+       </Uniform>
+       <Uniform Value="245.64" Type="float" DisplayName="Fudge Factor" Name="fudgeFactor">
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Offset" Name="offset">
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="-6.66">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Rotation" Name="objRotation">
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Frac Rotation1" Name="fracRotation1">
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="180">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Frac Rotation2" Name="fracRotation2">
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Position" Name="light">
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="8000">
+          </SubUniform>
+          <SubUniform Value="15015">
+          </SubUniform>
+       </Uniform>
+       <Uniform Value="1" Type="float" DisplayName="Specularity" Name="specularity">
+       </Uniform>
+       <Uniform Value="5" Type="float" DisplayName="Exponent" Name="specularExponent">
+       </Uniform>
+       <Uniform Value="0.25" Type="float" DisplayName="Intensity" Name="aoIntensity">
+       </Uniform>
+       <Uniform Value="16" Type="float" DisplayName="Spread" Name="aoSpread">
+       </Uniform>
+       <Uniform Value="4" Type="int" DisplayName="Iterations" Name="aoIterations">
+       </Uniform>
+       <Uniform Value="0" Type="float" DisplayName="Intensity" Name="fog">
+       </Uniform>
+       <Uniform Value="0" Type="float" DisplayName="Falloff" Name="fogFalloff">
+       </Uniform>
+       <Uniform Value="1" Type="int" DisplayName="Iterations" Name="colorIterations">
+       </Uniform>
+       <Uniform Value="0" Type="float" DisplayName="Ambient Color" Name="ambientColor">
+       </Uniform>
+       <Uniform Value="2.44" Type="float" DisplayName="AmbientIntensity" Name="ambientIntensity">
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Background Top" Name="background1Color">
+          <SubUniform Value="1">
+          </SubUniform>
+          <SubUniform Value="1">
+          </SubUniform>
+          <SubUniform Value="1">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="background2Color" Name="background2Color">
+          <SubUniform Value="1">
+          </SubUniform>
+          <SubUniform Value="1">
+          </SubUniform>
+          <SubUniform Value="1">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Color 1" Name="color1">
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Color 2" Name="color2">
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+          <SubUniform Value="0">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Color 3" Name="color3">
+          <SubUniform Value="0.5">
+          </SubUniform>
+          <SubUniform Value="0.5">
+          </SubUniform>
+          <SubUniform Value="0.5">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Inner Glow" Name="innerGlowColor">
+          <SubUniform Value="0.5">
+          </SubUniform>
+          <SubUniform Value="0.5">
+          </SubUniform>
+          <SubUniform Value="0.5">
+          </SubUniform>
+       </Uniform>
+       <Uniform Type="vec3" DisplayName="Outer Glow" Name="outerGlowColor">
+          <SubUniform Value="1">
+          </SubUniform>
+          <SubUniform Value="1">
+          </SubUniform>
+          <SubUniform Value="1">
+          </SubUniform>
+       </Uniform>
+       <Uniform Value="0.5" Type="float" DisplayName="Color 1" Name="color1Intensity">
+       </Uniform>
+       <Uniform Value="2" Type="float" DisplayName="Color 2" Name="color2Intensity">
+       </Uniform>
+       <Uniform Value="0.61" Type="float" DisplayName="Color 3" Name="color3Intensity">
+       </Uniform>
+       <Uniform Value="0.17" Type="float" DisplayName="Inner Glow" Name="innerGlowIntensity">
+       </Uniform>
+       <Uniform Value="0" Type="float" DisplayName="Outer Glow" Name="outerGlowIntensity">
+       </Uniform>
+       <Uniform Value="12" Type="int" DisplayName="Iterations" Name="maxIterations">
+       </Uniform>
+       <Uniform Value="256" Type="int" DisplayName="Max Steps" Name="stepLimit">
+       </Uniform>
+       <Uniform Value="0" Type="bool" DisplayName="Enable" Name="antialiasing">
+       </Uniform>
+       <Uniform Value="8" Type="int" DisplayName="Steps" Name="aa_strength">
+       </Uniform>
+       <Uniform Value="1" Type="float" DisplayName="Softness" Name="aa_softness">
+       </Uniform>
+    </Shader>
+ </Preset>
+   <Preset Name="Deep Sea">
+      <Shader Index="1">
+         <Uniform Value="1.84" Type="float" DisplayName="Scale" Name="scale">
+         </Uniform>
+         <Uniform Value="0.36" Type="float" DisplayName="Detail" Name="surfaceDetail">
+         </Uniform>
+         <Uniform Value="0.7" Type="float" DisplayName="Smoothness" Name="surfaceSmoothness">
+         </Uniform>
+         <Uniform Value="25" Type="float" DisplayName="Bounding Radius" Name="boundingRadius">
+         </Uniform>
+         <Uniform Value="0.8" Type="float" DisplayName="Sphere Scale" Name="sphereScale">
+         </Uniform>
+         <Uniform Value="0.01" Type="float" DisplayName="Box Scale" Name="boxScale">
+         </Uniform>
+         <Uniform Value="1.0" Type="float" DisplayName="Box Fold" Name="boxFold">
+         </Uniform>
+         <Uniform Value="0" Type="float" DisplayName="Fudge Factor" Name="fudgeFactor">
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Offset" Name="offset">
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="-0.16">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Rotation" Name="objRotation">
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Frac Rotation1" Name="fracRotation1">
+            <SubUniform Value="-130">
+            </SubUniform>
+            <SubUniform Value="220">
+            </SubUniform>
+            <SubUniform Value="-20">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Frac Rotation2" Name="fracRotation2">
+            <SubUniform Value="-40">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Position" Name="light">
+            <SubUniform Value="-3000">
+            </SubUniform>
+            <SubUniform Value="5000">
+            </SubUniform>
+            <SubUniform Value="-2000">
+            </SubUniform>
+         </Uniform>
+         <Uniform Value="1.79" Type="float" DisplayName="Specularity" Name="specularity">
+         </Uniform>
+         <Uniform Value="6.5" Type="float" DisplayName="Exponent" Name="specularExponent">
+         </Uniform>
+         <Uniform Value="0.25" Type="float" DisplayName="Intensity" Name="aoIntensity">
+         </Uniform>
+         <Uniform Value="16" Type="float" DisplayName="Spread" Name="aoSpread">
+         </Uniform>
+         <Uniform Value="4" Type="int" DisplayName="Iterations" Name="aoIterations">
+         </Uniform>
+         <Uniform Value="5" Type="float" DisplayName="Intensity" Name="fog">
+         </Uniform>
+         <Uniform Value="2.5" Type="float" DisplayName="Falloff" Name="fogFalloff">
+         </Uniform>
+         <Uniform Value="3" Type="int" DisplayName="Iterations" Name="colorIterations">
+         </Uniform>
+         <Uniform Value="0" Type="float" DisplayName="Ambient Color" Name="ambientColor">
+         </Uniform>
+         <Uniform Value="0.41" Type="float" DisplayName="AmbientIntensity" Name="ambientIntensity">
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Background Top" Name="background1Color">
+            <SubUniform Value="0.02">
+            </SubUniform>
+            <SubUniform Value="0.325">
+            </SubUniform>
+            <SubUniform Value="0.309">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="background2Color" Name="background2Color">
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+            <SubUniform Value="0">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Color 1" Name="color1">
+            <SubUniform Value="0.1">
+            </SubUniform>
+            <SubUniform Value="0.25">
+            </SubUniform>
+            <SubUniform Value="0.4">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Color 2" Name="color2">
+            <SubUniform Value="0.41">
+            </SubUniform>
+            <SubUniform Value="0.26">
+            </SubUniform>
+            <SubUniform Value="0.04">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Color 3" Name="color3">
+            <SubUniform Value="0.5">
+            </SubUniform>
+            <SubUniform Value="0.5">
+            </SubUniform>
+            <SubUniform Value="0.5">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Inner Glow" Name="innerGlowColor">
+            <SubUniform Value="0.3">
+            </SubUniform>
+            <SubUniform Value="0.33">
+            </SubUniform>
+            <SubUniform Value="0.53">
+            </SubUniform>
+         </Uniform>
+         <Uniform Type="vec3" DisplayName="Outer Glow" Name="outerGlowColor">
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+            <SubUniform Value="1">
+            </SubUniform>
+         </Uniform>
+         <Uniform Value="0.54" Type="float" DisplayName="Color 1" Name="color1Intensity">
+         </Uniform>
+         <Uniform Value="1" Type="float" DisplayName="Color 2" Name="color2Intensity">
+         </Uniform>
+         <Uniform Value="0.61" Type="float" DisplayName="Color 3" Name="color3Intensity">
+         </Uniform>
+         <Uniform Value="0.17" Type="float" DisplayName="Inner Glow" Name="innerGlowIntensity">
+         </Uniform>
+         <Uniform Value="0" Type="float" DisplayName="Outer Glow" Name="outerGlowIntensity">
+         </Uniform>
+         <Uniform Value="16" Type="int" DisplayName="Iterations" Name="maxIterations">
+         </Uniform>
+         <Uniform Value="256" Type="int" DisplayName="Max Steps" Name="stepLimit">
+         </Uniform>
+         <Uniform Value="0" Type="bool" DisplayName="Enable" Name="antialiasing">
+         </Uniform>
+         <Uniform Value="8" Type="int" DisplayName="Steps" Name="aa_strength">
+         </Uniform>
+         <Uniform Value="2" Type="float" DisplayName="Softness" Name="aa_softness">
+         </Uniform>
+      </Shader>
+   </Preset>
+</Presets>

@@ -1,0 +1,14 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" OverrideNormals="False" CommercialUsePermitted="True" ShaderType="Lightbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1.0" Description="
+This LightBox shader applies a pixelspread to the edges of an image.
+
+
+Lightbox version by ivar@inferno-op.com" Name="CROK Pixelspread">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" DisplayName="Amount" Name="adskUID_amount">
+      </Uniform>
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Setup" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

@@ -1,0 +1,116 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1"
+  Description="
+  Join us on Thursday, August 8 at Framestore Chicago for the summer 2019 Flame User Group featuring:
+
+  Will Harris
+  Frédéric Warren
+  Andy Milkis
+  Brian Higgins
+  Ross Shain
+
+  Eventbrite link to sign up:
+  https://bit.ly/2IXutwq
+
+  In addition to the 12-month Sapphire OFX and Mocha OFX subscriptions being raffled off courtesy of Boris FX, we will also be raffling off a 12-month subscription to FXPHD courtesy of John Montgomery.
+
+  Video Demo: https://vimeo.com/345293160
+
+  Based on https://www.shadertoy.com/view/Xd2GW3 by srtuss, 2014
+
+  MatchBox shader by ivar@inferno-op.com" Name="LOGIK Chicago 2019" HelpLink="https://bit.ly/2IXutwq">
+  <Shader OutputBitDepth="Float16" OutputWidth="1920" OutputHeight="540" Index="1">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_texture_grid"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Float16" OutputWidth="1920" OutputHeight="540" Index="2">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_texture_grid"></Uniform>
+  </Shader>
+  <Shader  OutputBitDepth="Output" Index="3">
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_REPEAT" GL_TEXTURE_WRAP_S="GL_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <!-- <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="p1" DisplayName="p1" Name="p1">
+    </Uniform> -->
+    <!-- <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="p2" DisplayName="p2" Name="p2">
+    </Uniform> -->
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="5">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="6"></Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="7">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="8">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="9">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass8"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="10">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9"></Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="11">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass10"></Uniform>
+
+  <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Framestore" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" DisplayName="820 W Jackson Blvd" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Suite 750" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="3" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Chicago, IL 60607" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="4" Col="0" Page="0" Default="False" Tooltip="" DisplayName="United States" Type="bool" Name="dummy">
+  </Uniform>
+
+
+  <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Thursday   August 8th 2019" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Check in     6:30 PM" Type="bool" Name="dummy">
+  </Uniform>
+
+  <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Will Harris" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Frederic Warren" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="2" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Andy Milkis" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="3" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Brian Higgins" Type="bool" Name="dummy">
+  </Uniform>
+  <Uniform Row="4" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Ross Shain" Type="bool" Name="dummy">
+  </Uniform>
+
+    <Uniform Row="0" Col="3" Page="0" Default="False" Tooltip="" DisplayName="Sapphire OFX" Type="bool" Name="dummy">
+    </Uniform>
+    <Uniform Row="1" Col="3" Page="0" Default="False" Tooltip="" DisplayName="Mocha Pro OFX" Type="bool" Name="dummy">
+    </Uniform>
+    <Uniform Row="2" Col="3" Page="0" Default="False" Tooltip="" DisplayName="Courtesy of Boris FX" Type="bool" Name="dummy">
+    </Uniform>
+
+  </Shader>
+  <Page Name="" Page="0">
+    <Col Name="Where" Col="0" Page="0">
+    </Col>
+    <Col Name="When" Col="1" Page="0">
+    </Col>
+    <Col Name="With" Col="2" Page="0">
+    </Col>
+    <Col Name="Raffle" Col="3" Page="0">
+    </Col>
+
+  </Page>
+</ShaderNodePreset>

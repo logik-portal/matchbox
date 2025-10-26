@@ -1,0 +1,79 @@
+<ShaderNodePreset LimitInputsToTexture="True" Version="1.0" Description="
+LOGIK @ NAB 2018
+
+MARK YOUR CALENDARS!
+
+Registration is now OPEN for the 2018 NAB Logik Party!
+
+Monday April 9th @ 7pm
+Alibi Ultra Bar _ Lounge in the ARIA Hotel
+
+Please note: Registration is REQUIRED, and you will need to show a valid photo ID to enter.
+Non-US residents will need to show their passports as ID.
+
+Space is limited, so register today!
+
+Thanks, as always to Autodesk for their support.
+See you in Vegas!!
+
+http://gems.autodesk.com/d/ktqh11
+
+Video Demo: https://vimeo.com/260622477
+
+MatchBox shader by ivar@inferno-op.com" Name="LOGIK NAB 2018">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_texture_grid">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="2">
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="3">
+      <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="4">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="5">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+      </Uniform>
+   </Shader>
+   <Shader  OutputBitDepth="Output" Index="6">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="7">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6">
+      </Uniform>
+   </Shader>
+   <Shader OutputBitDepth="Output" Index="8">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7">
+      </Uniform>
+      <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" DisplayName="Alibi Ultra Bar" Type="bool" Name="dummy">
+</Uniform>
+<Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" DisplayName="ARIA Hotel" Type="bool" Name="dummy">
+</Uniform>
+<Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Monday           April 9th" Type="bool" Name="dummy">
+</Uniform>
+<Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Check in:         7:00PM" Type="bool" Name="dummy">
+</Uniform>
+
+<Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" DisplayName="Drinks" Type="bool" Name="dummy">
+</Uniform>
+<Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" DisplayName="YOU, YOU and YOU! " Type="bool" Name="dummy">
+</Uniform>
+   </Shader>
+   <Page Name="" Page="0">
+     <Col Name="Where" Col="0" Page="0">
+     </Col>
+     <Col Name="When" Col="1" Page="0">
+     </Col>
+     <Col Name="With" Col="2" Page="0">
+     </Col>
+   </Page>
+</ShaderNodePreset>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="True"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="True"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="2.0"
+  Description="
+    This Matchbox shader modifies your mattes like the Matte Edge Node and has the additional feature of being able to pixelspread the forground.
+
+    Setup:
+
+    - Gamma: adjust the gamma of the matte
+    - Erode: erodes the matte
+    - Blur: soften the matte
+
+    - Width: adjust the expand or shrink amount
+    - Soften: soften the shrinked or expanded matte
+
+    - Spread Type: select between parallax, stretch and smear mode
+    - Amount: amount of pixel pushing
+    - Width: width of the edge affected by the stretch pixelstretch
+
+    - Aspect: adjust the aspect of the selected operation
+
+    Stretch pixelspread is based on Ls_Advect by Lewis
+
+    Matchbox version by ivar@inferno-op.com"
+  Name="CROK Matte Edge">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="source"></Uniform>
+    <Uniform
+      Index="1"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Matte"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="matte"></Uniform>
+    <Uniform Default="0" Inc="1" Tooltip="" Row="0" Col="2" Page="2" DisplayName="Spread Type" Type="int" ValueType="Popup" Name="spread_type">
+      <PopupEntry Title="Parallax" Value="0"></PopupEntry>
+      <PopupEntry Title="Stretch" Value="1"></PopupEntry>
+      <PopupEntry Title="Smear" Value="2"></PopupEntry>
+    </Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="10.0"
+      Min="0.00001"
+      Default="0.00001"
+      Inc="0.01"
+      Tooltip=""
+      Row="3"
+      Col="2"
+      Page="0"
+      Type="float"
+      ChannelName="matte_gamma"
+      DisplayName="Matte Gamma"
+      Name="matte_gamma"
+      UIConditionSource="spread_type"
+      UIConditionValue="2"
+      UIConditionType="Hide"></Uniform>
+    <Uniform Max="10" Min="0" Default="1" Inc="1" Tooltip="" Row="4" Col="2" Page="2" Type="int" ChannelName="soften" DisplayName="Soften" Name="soften" UIConditionSource="spread_type" UIConditionValue="2" UIConditionType="Hide"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+    <Uniform
+      ResDependent="None"
+      Max="100.0"
+      Min="0.5"
+      Default="3.0"
+      Inc="0.01"
+      Tooltip=""
+      Row="2"
+      Col="2"
+      Page="2"
+      Type="float"
+      ChannelName="ksize"
+      DisplayName="Width"
+      Name="ksize"
+      UIConditionSource="spread_type"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="3">
+    <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" DisplayName="Erode" Name="blur_matte"></Uniform>
+    <Uniform ResDependent="None" Max="2.0" Min="0.1" Default="1.0" Inc="0.001" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="eblur_aspect" DisplayName="Erode Aspect" Name="eblur_aspect"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="4">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3"></Uniform>
+    <Uniform Type="float" DisplayName="blur_matte" Name="blur_matte">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform Type="float" ChannelName="eblur_aspect" DisplayName="Erode Aspect" Name="eblur_aspect">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="5">
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2"></Uniform>
+    <Uniform Type="int" ChannelName="spread_type" DisplayName="spread_type" Name="spread_type">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="1000"
+      Min="1"
+      Default="1"
+      Inc="1"
+      Tooltip=""
+      Row="1"
+      Col="2"
+      Page="2"
+      Type="int"
+      ChannelName="stretch_amount"
+      DisplayName="Amount"
+      Name="stretch_amount"
+      UIConditionSource="spread_type"
+      UIConditionValue="2"
+      UIConditionType="Hide"></Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="1000000.0"
+      Min="-1000000.0"
+      Default="0.0"
+      Inc="0.01"
+      Tooltip=""
+      Row="1"
+      Col="2"
+      Page="2"
+      Type="float"
+      ChannelName="pixelspread_amount"
+      DisplayName="Amount"
+      Name="pixelspread_amount"
+      UIConditionSource="spread_type"
+      UIConditionValue="0"
+      UIConditionType="Hide"></Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="100.0"
+      Min="-100.0"
+      Default="0.0"
+      Inc="0.01"
+      Tooltip=""
+      Row="1"
+      Col="2"
+      Page="2"
+      Type="float"
+      ChannelName="blur_front"
+      DisplayName="Amount"
+      Name="blur_front"
+      UIConditionSource="spread_type"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="6">
+    <Uniform ResDependent="None" Max="10.0" Min="-0.9999" Default="1.0" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" DisplayName="Gamma" Name="gamma_amount"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5"></Uniform>
+    <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="0" Col="0" Page="1" Type="int" DisplayName="Luma Curve" Name="lumaCurve" CurveBackground="2" ValueType="Curve"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="7">
+    <Uniform
+      ResDependent="None"
+      Max="256.0"
+      Min="0.0"
+      Default="3.0"
+      Inc="0.001"
+      Tooltip=""
+      Row="2"
+      Col="1"
+      Page="0"
+      Type="float"
+      ChannelName="blur_matte_shrink"
+      DisplayName="Soften"
+      Name="blur_matte_shrink"
+      UIConditionSource="enable_shrink"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="2.000"
+      Min="0.1"
+      Default="1.0"
+      Inc="0.001"
+      Tooltip=""
+      Row="3"
+      Col="1"
+      Page="0"
+      Type="float"
+      ChannelName="blur_aspect"
+      DisplayName="Aspect"
+      Name="blur_aspect"
+      UIConditionSource="enable_shrink"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="8">
+    <Uniform Type="float" ChannelName="blur_matte_shrink" DisplayName="Soften" Name="blur_matte_shrink">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform Type="float" ChannelName="blur_aspect" DisplayName="blur_aspect" Name="blur_aspect">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="9">
+    <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="enable_shrink" DisplayName="Enable Shrink" Name="enable_shrink"></Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="0.99"
+      Min="-0.99"
+      Default="0.0"
+      Inc="0.001"
+      Tooltip=""
+      Row="1"
+      Col="1"
+      Page="0"
+      Type="float"
+      ChannelName="shrink"
+      DisplayName="Width"
+      Name="shrink"
+      UIConditionSource="enable_shrink"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass8"></Uniform>
+    <Uniform Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="10">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9"></Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="2.0"
+      Min="0.1"
+      Default="1.0"
+      Inc="0.001"
+      Tooltip=""
+      Row="3"
+      Col="2"
+      Page="0"
+      Type="float"
+      ChannelName="edge_blur_aspect"
+      DisplayName="Aspect"
+      Name="edge_blur_aspect"
+      UIConditionSource="edge_detect_enable"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+    <Uniform
+      ResDependent="None"
+      Max="256.0"
+      Min="0.0"
+      Default="0.0"
+      Inc="0.01"
+      Tooltip=""
+      Row="2"
+      Col="2"
+      Page="0"
+      Type="float"
+      ChannelName="blur_edge_detect"
+      DisplayName="Soften"
+      Name="blur_edge_detect"
+      UIConditionSource="edge_detect_enable"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="11">
+    <Uniform Type="float" ChannelName="edge_blur_aspect" DisplayName="edge_blur_aspect" Name="edge_blur_aspect">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass10"></Uniform>
+    <Uniform Type="float" ChannelName="blur_edge_detect" DisplayName="blur_edge_detect" Name="blur_edge_detect">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="12">
+    <Uniform
+      ResDependent="None"
+      Max="1000.0"
+      Min="0.0"
+      Default="1.0"
+      Inc="0.01"
+      Tooltip=""
+      Row="1"
+      Col="2"
+      Page="0"
+      Type="float"
+      ChannelName="edge"
+      DisplayName="Width"
+      Name="edge"
+      UIConditionSource="edge_detect_enable"
+      UIConditionValue="1"
+      UIConditionType="Hide"></Uniform>
+    <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="edge_detect_enable" DisplayName="Enable Edge Detect" Name="edge_detect_enable"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass11"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="13">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass12"></Uniform>
+    <Uniform ResDependent="None" Max="256.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="blur_matte_all" DisplayName="Blur" Name="blur_matte_all"></Uniform>
+    <Uniform ResDependent="None" Max="2.0" Min="0.1" Default="1.0" Inc="0.001" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="oblur_aspect" DisplayName="Blur Aspect" Name="oblur_aspect"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="14">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass13"></Uniform>
+    <Uniform Type="float" ChannelName="blur_matte_all" DisplayName="blur_matte_all" Name="blur_matte_all">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform Type="float" ChannelName="oblur_aspect" DisplayName="Blur Aspect" Name="oblur_aspect">
+      <Duplicate></Duplicate>
+    </Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="15">
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="2" Type="float" ChannelName="blur_edge_matte" DisplayName="Soften" Name="blur_edge_matte"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="16">
+    <Uniform Type="float" ChannelName="blur_edge_matte" DisplayName="blur_edge_matte" Name="blur_edge_matte">
+      <Duplicate></Duplicate>
+    </Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass15"></Uniform>
+  </Shader>
+
+  <Shader OutputBitDepth="Output" Index="17">
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass14"></Uniform>
+    <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass16"></Uniform>
+    <!-- <Uniform Row="4" Col="1" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="show_matte" DisplayName="Enable Show Matte" Name="show_matte"></Uniform> -->
+    <Uniform Row="0" Col="0" Page="3" Default="True" Tooltip="" Type="bool" ChannelName="enable_clamp" DisplayName="Clamp Matte" Name="enable_clamp"></Uniform>
+    <Uniform Row="1" Col="0" Page="3" Default="False" Tooltip="" Type="bool" ChannelName="enable_invert_m" DisplayName="Invert Matte" Name="enable_invert_m"></Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="0.0001" Default="1.0" Inc="0.001" Tooltip="" Row="1" Col="0" Page="2" Type="float" ChannelName="edge_gamma" DisplayName="Gamma" Name="edge_gamma"></Uniform>
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="100.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="2" Type="float" ChannelName="edge_gain" DisplayName="Gain" Name="edge_gain"></Uniform>
+    <Uniform Inc="0.1" Tooltip="" Row="0" Col="1" Page="2" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour Wheel" Name="hue_shift" HueShift="False" AngleName="Hue" IntensityName1="Gain" IntensityName2="Sat">
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000.0" Min="0.0" Default="0.0"></SubUniform>
+      <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0"></SubUniform>
+    </Uniform>
+  </Shader>
+
+  <Page Name="Matte" Page="0">
+    <Col Name="Matte Adjustment" Col="0" Page="0"></Col>
+    <Col Name="Matte Adjustment" Col="1" Page="0"></Col>
+    <Col Name="Matte Adjustment" Col="2" Page="0"></Col>
+  </Page>
+  <Page Name="Luma Curve" Page="1">
+    <Col Name="Output Options" Col="0" Page="1"></Col>
+  </Page>
+  <Page Name="Forground" Page="2">
+    <Col Name="Edge Matte" Col="0" Page="2"></Col>
+    <Col Name="Edge Colour" Col="1" Page="2"></Col>
+    <Col Name="Pixel Spread" Col="2" Page="2"></Col>
+
+  </Page>
+  <Page Name="Misc" Page="3">
+    <Col Name="Output Options" Col="0" Page="3"></Col>
+  </Page>
+</ShaderNodePreset>

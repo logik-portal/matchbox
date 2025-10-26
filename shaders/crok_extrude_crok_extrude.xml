@@ -1,0 +1,107 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="False"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1"
+  Description="
+  This Matchbox shader creates an extrusion effect.
+
+  Input:
+  - Front: original image
+  - Matte: matte input
+  - Heigt Map: height map to define the strength of the extrusion
+
+  Based on shadertoy.com/view/tsdXDB by shane
+  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+
+  Matchbox version by ivar@inferno-op.com"
+  Name="CROK Extrude">
+  <Shader OutputBitDepth="Output" Index="1">
+
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="25.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="sc" DisplayName="Dot Scale" Name="sc"></Uniform>
+    <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="shade" DisplayName="Enable Shading" Name="shade"></Uniform>
+    <Uniform Row="3" Col="0 " Page="0" Default="False" Tooltip="" Type="bool" ChannelName="bw" DisplayName="Enable Black and White" Name="bw"></Uniform>
+    <Uniform Row="4" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="ext_h" DisplayName="Enable External Height Map" Name="ext_h">
+    </Uniform>
+
+    <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Action3DWidget="False" IconType="Light" ValueType="Position" Type="vec3" ChannelName="lp" DisplayName="Light Position" Name="lp">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.5"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="2.0"></SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="-1.0"></SubUniform>
+    </Uniform>
+    <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="shadow_amount" DisplayName="Shadow" Name="shadow_amount"></Uniform>
+    <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="2.0" Inc="0.01" Tooltip="" Row="3" Col="1" Page="0" Type="float" ChannelName="spec_amount" DisplayName="Highlite" Name="spec_amount"></Uniform>
+
+
+    <Uniform
+      Index="0"
+      NoInput="Error"
+      Tooltip=""
+      DisplayName="Front"
+      InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="iChannel0"></Uniform>
+    <Uniform
+      Index="1"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Matte"
+      InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="iChannel1"></Uniform>
+    <Uniform
+      Index="2"
+      NoInput="White"
+      Tooltip=""
+      DisplayName="Height Map"
+      InputType="Strength"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+      GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D"
+      Name="iChannel2"></Uniform>
+
+      <Uniform Inc="0.001" Tooltip="" Row="0" Col="2" Page="0" Action3DWidget="False" IconType="None" ValueType="Position" Type="vec3" ChannelName="cam_pos" DisplayName="Camera Position" Name="cam_pos">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="-2.0">
+         </SubUniform>
+      </Uniform>
+    <Uniform ResDependent="None" Max="1.0" Min="0.1" Default="1.0" Inc="0.001" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="FOV" DisplayName="FOV" Name="FOV"></Uniform>
+
+  </Shader>
+  <Shader OutputBitDepth="Output" Index="2">
+   <Uniform Row="0" Col="3" Page="0" Default="True" Tooltip="" Type="bool" ChannelName="enable_fxaa" DisplayName="Enable FXAA" Name="enable_fxaa">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+   </Uniform>
+</Shader>
+  <Page Name="General" Page="0">
+    <Col Name="Look" Col="0" Page="0"></Col>
+    <Col Name="Lighting" Col="1" Page="0"></Col>
+    <Col Name="Camera" Col="2" Page="0"></Col>
+    <Col Name="Misc" Col="3" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>

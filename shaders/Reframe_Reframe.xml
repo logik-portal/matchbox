@@ -1,0 +1,539 @@
+<ShaderNodePreset
+    Description="This Matchbox shader reframes a shot with respect to perspective distortion.
+
+The concept of this shader is to simulate a different focal length alongside a different camera orientation (while maintaining the camera position).
+Image-wise only trasformations are applied in order to acquire alternate viewframes, thus brightness is conserved and bokeh is transformed with the image (note that this can lead to defomrmed bokeh when extremely wide source FoV, and strong off-centering come together).
+The resulting image format can be customized to any canvas resolution, the width of the virtual image is matched according to the relative image height (which is conserved).
+If the the image parameters are set to use a field of view angle rather than a focal length, the image height can be omitted. Note that the shader still uses the image height if the scaling mode is set to &lt;Focal Length&gt;.
+
+The source image must be free of lens distortion for the process to function properly. Therefore this shader features a basic image rectification.
+
+Additionally this shader provides the option of outputting (continuous) UV coordinates.
+
+Adaptive Degradation is supported by this shader which conditionally bypasses antialiasing.
+
+While this shader works quite well when downscaling (using antialiasing), its unsuited for upressing.
+Note that this shader uses &lt;GL_NEAREST&gt; texture filtering, and prone to aliasing. To counteract this, multisampling antialiasing can be activated from the Settings Page.
+
+This shader is licensed under the terms of the MIT license.
+
+For questions contact:
+nobbl211@gmail.com"
+    Name="Reframe"
+    HelpLink=""
+    LimitInputsToTexture="True"
+    MatteProvider="True"
+    SupportsAction="True"
+    SupportsTransition="False"
+    SupportsAdaptiveDegradation="True"
+    CommercialUsePermitted="True"
+    ShaderType="Matchbox"
+    SoftwareVersion="2024.1"
+    TimelineUseBack="False"
+    SupportsTimeline="True"
+    Version="0.1">
+    <Shader
+        Index="1"
+        OutputBitDepth="Float32"
+        OutputWidth="2"
+        OutputHeight="2">
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Front"
+            Name="front"
+            Index="0"
+            GL_TEXTURE_MIN_FILTER="GL_NEAREST"
+            GL_TEXTURE_MAG_FILTER="GL_NEAREST"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            NoInput="Error"
+            Mipmaps="False"
+            InputType="Front">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="use fields of view angle instead of focal length"
+            DisplayName="Use Field of View"
+            ChannelName="use_fov"
+            Name="use_fov"
+            Col="0"
+            Row="0"
+            Page="0"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="height of the potosensitive surface in mm"
+            DisplayName="Image Height"
+            ChannelName="image_height_0"
+            Name="image_height_0"
+            Col="0"
+            Row="1"
+            Page="0"
+            Default="18.6"
+            Inc="0.1"
+            Max="1000000.0"
+            Min="0.000001"
+            ResDependant="None"
+            UIConditionSource="use_fov"
+            UIConditionValue="False"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="focal length of the original image in mm"
+            DisplayName="Focal Length"
+            ChannelName="focal_length_0"
+            Name="focal_length_0"
+            Col="0"
+            Row="2"
+            Page="0"
+            Default="35.0"
+            Inc="1.0"
+            Max="1000000000000.0"
+            Min="0.000001"
+            ResDependant="None"
+            UIConditionSource="use_fov"
+            UIConditionValue="False"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="angle of the vertical field of view of the original image in degrees"
+            DisplayName="Field of View"
+            ChannelName="fov_angle_0"
+            Name="fov_angle_0"
+            Col="0"
+            Row="2"
+            Page="0"
+            Default="30.0"
+            Inc="0.5"
+            Max="180.0"
+            Min="0.000001"
+            ResDependant="None"
+            UIConditionSource="use_absolute_position"
+            UIConditionValue="False"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="use the absolute position measured in pixels of the source image for repositioning"
+            DisplayName="Use Absolute Position"
+            ChannelName="use_abs_position"
+            Name="use_abs_position"
+            Col="1"
+            Row="0"
+            Page="0"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="repositioning of the center relative to the undistorted source image"
+            DisplayName="Position"
+            ChannelName="rel_position"
+            Name="rel_position"
+            Col="1"
+            Row="1"
+            Page="0"
+            IconType="Axis"
+            IconDefaultState="True"
+            Action3DWidgets="False"
+            ValueType="Position"
+            UIConditionSource="use_abs_position"
+            UIConditionValue="False"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="0.5"
+                Inc="0.01"
+                Max="1000000.0"
+                Min="-1000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                Default="0.5"
+                Inc="0.01"
+                Max="1000000.0"
+                Min="-1000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="repositioning of the center in pixels of the source image"
+            DisplayName="Position"
+            ChannelName="abs_position"
+            Name="abs_position"
+            Col="1"
+            Row="1"
+            Page="0"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="use_abs_position"
+            UIConditionValue="True"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="0.0"
+                Inc="1.0"
+                Max="1000000.0"
+                Min="-1000000.0"
+                ResDependant="Height">
+            </SubUniform>
+            <SubUniform
+                Default="0.0"
+                Inc="1.0"
+                Max="1000000.0"
+                Min="-1000000.0"
+                ResDependant="Height">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="int"
+            Tooltip="selector for the scaling view mode"
+            DisplayName="Scaling Mode"
+            ChannelName="scaling_mode"
+            Name="scaling_mode"
+            Col="1"
+            Row="3"
+            Page="0"
+            ValueType="Popup"
+            Default="0">
+            <PopupEntry
+                Title="Factor"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Focal Length"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="FoV"
+                Value="2">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="scaling of the image as percentage of the original"
+            DisplayName="Scale"
+            ChannelName="scale_1"
+            Name="scale_1"
+            Col="1"
+            Row="4"
+            Page="0"
+            Default="100.0"
+            Inc="1.0"
+            Max="100000000000.0"
+            Min="0.0000001"
+            ResDependant="None"
+            UIConditionSource="scaling_mode"
+            UIConditionValue="0"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="focal length of the reframed image in mm, assumig same the image height as the source"
+            DisplayName="Focal Length"
+            ChannelName="focal_length_1"
+            Name="focal_length_1"
+            Col="1"
+            Row="4"
+            Page="0"
+            Default="35.0"
+            Inc="1.0"
+            Max="1000000000000.0"
+            Min="0.000001"
+            ResDependant="None"
+            UIConditionSource="scaling_mode"
+            UIConditionValue="1"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="angle of the vertical field of view of the reframed image in degrees"
+            Name="fov_angle_1"
+            ChannelName="fov_angle_1"
+            DisplayName="Field of View"
+            Col="1"
+            Row="4"
+            Page="0"
+            Default="30.0"
+            Inc="0.5"
+            Max="180.0"
+            Min="0.000001"
+            ResDependant="None"
+            UIConditionSource="scaling_mode"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="angle to rotate the picture by in degrees"
+            DisplayName="Rotation"
+            ChannelName="rotation"
+            Name="rotation"
+            Col="2"
+            Row="0"
+            Page="0"
+            Default="0.0"
+            Inc="1.0"
+            Max="1000000.0"
+            Min="-1000000.0"
+            ResDependant="None">
+        </Uniform>
+    </Shader>
+    <Shader
+        Index="2"
+        OutputBitDepth="Output">
+        <Uniform
+            Type="sampler2D"
+            Name="adsk_results_pass1"
+            GL_TEXTURE_MIN_FILTER="GL_NEAREST"
+            GL_TEXTURE_MAG_FILTER="GL_NEAREST"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            Mipmaps="False">
+        </Uniform>
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Front"
+            Name="front"
+            Index="0"
+            GL_TEXTURE_MIN_FILTER="GL_NEAREST"
+            GL_TEXTURE_MAG_FILTER="GL_NEAREST"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            NoInput="Error"
+            Mipmaps="False"
+            InputType="Front">
+        </Uniform>
+        <Uniform
+            Type="sampler2D"
+            DisplayName="Matte"
+            Name="matte"
+            Index="1"
+            GL_TEXTURE_MIN_FILTER="GL_NEAREST"
+            GL_TEXTURE_MAG_FILTER="GL_NEAREST"
+            GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+            NoInput="White"
+            Mipmaps="False"
+            InputType="Matte">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="enables the rectification of the source image"
+            DisplayName="Distortion Correction"
+            ChannelName="distortion_correction"
+            Name="distortion_correction"
+            Col="0"
+            Row="0"
+            Page="1"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="position of the distortion image center relative to the projected source image"
+            DisplayName="Center Position"
+            ChannelName="distortion_shift"
+            Name="distortion_shift"
+            Col="1"
+            Row="0"
+            Page="1"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="distortion_correction"
+            UIConditionValue="True"
+            UIConditionType="Disable">
+            <SubUniform
+                Default="0.0"
+                Inc="0.0001"
+                Max="1000000.0"
+                Min="-1000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                Default="0.0"
+                Inc="0.0001"
+                Max="1000000.0"
+                Min="-1000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="second order of radial distortion"
+            DisplayName="a"
+            ChannelName="distortion_a"
+            Name="distortion_a"
+            Col="2"
+            Row="0"
+            Page="1"
+            Default="0.0"
+            Inc="0.001"
+            Max="1000000.0"
+            Min="-1000000.0"
+            ResDependant="None"
+            UIConditionSource="distortion_correction"
+            UIConditionValue="True"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="fourth order of radial distortion"
+            DisplayName="b"
+            ChannelName="distortion_b"
+            Name="distortion_b"
+            Col="2"
+            Row="1"
+            Page="1"
+            Default="0.0"
+            Inc="0.001"
+            Max="1000000.0"
+            Min="-1000000.0"
+            ResDependant="None"
+            UIConditionSource="distortion_correction"
+            UIConditionValue="True"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="sixth order of radial distortion"
+            DisplayName="c"
+            ChannelName="distortion_c"
+            Name="distortion_c"
+            Col="2"
+            Row="2"
+            Page="1"
+            Default="0.0"
+            Inc="0.001"
+            Max="1000000.0"
+            Min="-1000000.0"
+            ResDependant="None"
+            UIConditionSource="distortion_correction"
+            UIConditionValue="True"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="strech factor of the horizontal projection"
+            DisplayName="Anamorphic"
+            ChannelName="distortion_anamorphic"
+            Name="distortion_anamorphic"
+            Col="2"
+            Row="3"
+            Page="1"
+            Default="1.0"
+            Inc="0.01"
+            Max="1000000.0"
+            Min="0.0"
+            ResDependant="None"
+            UIConditionSource="distortion_correction"
+            UIConditionValue="True"
+            UIConditionType="Disable">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="enables the output of uv coordinates representing the reframing in place of the reframed image
+Note that when outputting uv coordinates, antialiasing will only be applied to the matte"
+            DisplayName="Output UVs"
+            ChannelName="uv_output"
+            Name="uv_output"
+            Col="0"
+            Row="0"
+            Page="2"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="int"
+            Tooltip="selector for the number of antialiasing samples
+(falls back to 1 Sample if Adaptive Degradation is enabled)"
+            DisplayName="Samples"
+            ChannelName="antialias_samples"
+            Name="antialias_samples"
+            Col="1"
+            Row="0"
+            Page="2"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="1"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="4"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="16"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="64"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="256"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="1024"
+                Value="5">
+            </PopupEntry>
+            <PopupEntry
+                Title="4096"
+                Value="6">
+            </PopupEntry>
+        </Uniform>
+    </Shader>
+    <Page
+        Name="Reframe"
+        Page="0">
+        <Col
+            Name="Image Parameters"
+            Col="0"
+            Page="0">
+        </Col>
+        <Col
+            Name="Reframing"
+            Col="1"
+            Page="0">
+        </Col>
+        <Col
+            Name="Rotation"
+            Col="2"
+            Page="0">
+        </Col>
+    </Page>
+    <Page
+        Name="Distortion"
+        Page="1">
+        <Col
+            Name="Gereral"
+            Col="0"
+            Page="1">
+        </Col>
+        <Col
+            Name="Center Shift"
+            Col="1"
+            Page="1">
+        </Col>
+        <Col
+            Name="Parameters"
+            Col="2"
+            Page="1">
+        </Col>
+    </Page>
+    <Page
+        Name="Settings"
+        Page="2">
+        <Col
+            Name="UV Output"
+            Col="0"
+            Page="2">
+        </Col>
+        <Col
+            Name="Antialiasing"
+            Col="1"
+            Page="2">
+        </Col>
+    </Page>
+</ShaderNodePreset>

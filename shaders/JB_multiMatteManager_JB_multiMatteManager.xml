@@ -1,0 +1,42 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1" Description="Manages up to three inputs RGB to output one combined mulitmatte with alpha. For more informations contact: julienbrami.vfx@gmail.com" Name="MultiMatteManager_V01">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Row="2" Col="0" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Blue" Name="blueChannel1">
+      </Uniform>
+      <Uniform Row="2" Col="1" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Blue" Name="blueChannel2">
+      </Uniform>
+      <Uniform Row="2" Col="2" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Blue" Name="blueChannel3">
+      </Uniform>
+      <Uniform Row="1" Col="0" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Green" Name="greenChannel1">
+      </Uniform>
+      <Uniform Row="1" Col="1" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Green" Name="greenChannel2">
+      </Uniform>
+      <Uniform Row="1" Col="2" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Green" Name="greenChannel3">
+      </Uniform>
+      <Uniform Index="0" NoInput="White" Tooltip="" DisplayName="input1" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="input1">
+      </Uniform>
+      <Uniform Index="1" NoInput="Black" Tooltip="" DisplayName="input2" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="input2">
+      </Uniform>
+      <Uniform Index="2" NoInput="Black" Tooltip="" DisplayName="input3" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="input3">
+      </Uniform>
+      <Uniform Row="0" Col="1" Page="1" Default="False" Tooltip="" Type="bool" DisplayName="Invert Alpha" Name="invertAlpha">
+      </Uniform>
+      <Uniform Row="0" Col="0" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Red" Name="redChannel1">
+      </Uniform>
+      <Uniform Row="0" Col="1" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Red" Name="redChannel2">
+      </Uniform>
+      <Uniform Row="0" Col="2" Page="0" Default="True" Tooltip="" Type="bool" DisplayName="Red" Name="redChannel3">
+      </Uniform>
+   </Shader>
+   <Page Name="Channels manager" Page="0">
+      <Col Name="Channels input 1" Col="0" Page="0">
+      </Col>
+      <Col Name="Channels input 2" Col="1" Page="0">
+      </Col>
+      <Col Name="Channels input 3" Col="2" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Options" Page="1">
+     <Col Name="Alpha" Col="1" Page="1">
+     </Col>
+   </Page>
+</ShaderNodePreset>

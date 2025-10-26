@@ -1,0 +1,123 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1" Description="
+Version 1.2 - Created by Eduardo Pricinato.
+
+This Matchbox tries to create a cleaner background for keying.
+It creates a matte from the channels differences and use it to apply the reference color.
+
+If the created matte is affecting something that shouldn't be, use the input matte as a cutout.
+
+For questions contact: edupricinato@gmail.com
+" Name="EPC Key Cleaner">
+
+   <Shader OutputBitDepth="Output" Index="1">
+
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="matte">
+      </Uniform>
+
+      <Uniform Default="0" Inc="1" Tooltip="Toggle the type of keying." Row="1" Col="0" Page="0" DisplayName="Screen Type" Type="int" Name="screenType" ValueType="Popup">
+            <PopupEntry Title="Green Screen" Value="0">
+            </PopupEntry>
+            <PopupEntry Title="Blue Screen" Value="1">
+            </PopupEntry>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="5.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="Pre Saturate the front to separate better the colors" Row="0" Col="0" Page="0" Type="float" DisplayName="Saturation" Name="preSaturation">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="5.0" Min="-5.0" Default="1.0" Inc="0.01" Tooltip="Contrast on the Red Channel" Row="0" Col="1" Page="0" Type="float" DisplayName="Red Contrast" Name="contrastRed">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="5.0" Min="-5.0" Default="1.0" Inc="0.01" Tooltip="Contrast on the Green Channel" Row="1" Col="1" Page="0" Type="float" DisplayName="Green Contrast" Name="contrastGreen">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="5.0" Min="-5.0" Default="1.0" Inc="0.01" Tooltip="Contrast on the Blue Channel" Row="2" Col="1" Page="0" Type="float" DisplayName="Blue Contrast" Name="contrastBlue">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Matte Gain" Row="0" Col="2" Page="0" Type="float" DisplayName="Gain" Name="matteGain">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Matte Offset" Row="1" Col="2" Page="0" Type="float" DisplayName="Offset" Name="matteOffset">
+      </Uniform>
+
+       <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.01" Tooltip="Matte Constrast" Row="2" Col="2" Page="0" Type="float" DisplayName="Constrast" Name="matteContrast">
+      </Uniform>
+
+       <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.01" Tooltip="Matte Gamma" Row="3" Col="2" Page="0" Type="float" DisplayName="Gamma" Name="matteGamma">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="Color to apply on front." Row="3" Col="0" Page="0" IconType="Pick" ValueType="Colour" Type="vec3" DisplayName="Color Reference" Name="referenceColor">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Default="1" Inc="1" Tooltip="Multiply the warping by the matte or not." Row="0" Col="3" Page="0" DisplayName="Color Masking" Type="int" Name="multiplyMatte" ValueType="Popup">
+            <PopupEntry Title="Don't Mask" Value="0">
+            </PopupEntry>
+            <PopupEntry Title="Masking" Value="1">
+            </PopupEntry>
+      </Uniform>
+
+      <Uniform Default="0" Inc="1" Tooltip="Use the input matte as holdout" Row="2" Col="0" Page="0" DisplayName="Cutout Matte" Type="int" Name="cutoutMatte" ValueType="Popup">
+            <PopupEntry Title="Pass Through" Value="0">
+            </PopupEntry>
+            <PopupEntry Title="Cutout" Value="1">
+            </PopupEntry>
+      </Uniform>
+
+
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Red Gain" Row="0" Col="0" Page="1" Type="float" DisplayName="Gain" Name="gainRed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Red Offset" Row="1" Col="0" Page="1" Type="float" DisplayName="Offset" Name="offsetRed">
+      </Uniform>
+       <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.01" Tooltip="Red Gamma" Row="2" Col="0" Page="1" Type="float" DisplayName="Gamma" Name="gammaRed">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Green Gain" Row="0" Col="1" Page="1" Type="float" DisplayName="Gain" Name="gainGreen">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Green Offset" Row="1" Col="1" Page="1" Type="float" DisplayName="Offset" Name="offsetGreen">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.01" Tooltip="Green Gamma" Row="2" Col="1" Page="1" Type="float" DisplayName="Gamma" Name="gammaGreen">
+      </Uniform>
+
+       <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Blue Gain" Row="0" Col="2" Page="1" Type="float" DisplayName="Gain" Name="gainBlue">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.01" Tooltip="Blue Offset" Row="1" Col="2" Page="1" Type="float" DisplayName="Offset" Name="offsetBlue">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.01" Tooltip="Blue Gamma" Row="2" Col="2" Page="1" Type="float" DisplayName="Gamma" Name="gammaBlue">
+      </Uniform>
+
+   </Shader>
+
+	<Page Name="Clean Calculation" Page="0">
+
+		<Col Name="Pre Processing" Col="0" Page="0">
+		</Col>
+
+	 	<Col Name="Channel Manipulation" Col="1" Page="0">
+		</Col>
+
+		<Col Name="Matte Correction" Col="2" Page="0">
+		</Col>
+
+		<Col Name="Color Correction" Col="3" Page="0">
+		</Col>
+	</Page>
+
+	<Page  Name="Advanced Channel Manipulation" Page="1">
+		<Col Name="Red Channel" Col="0" Page="1">
+		</Col>
+
+	 	<Col Name="Green Channel" Col="1" Page="1">
+		</Col>
+
+		<Col Name="Blue Channel" Col="2" Page="1">
+		</Col>
+	</Page>
+</ShaderNodePreset>

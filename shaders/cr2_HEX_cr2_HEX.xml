@@ -1,0 +1,52 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" LimitInputsToTexture="True" Version="1" Description="" Name="Preset Name">
+   <Shader OutputBitDepth="Output" Index="1">
+    <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="X" Type="float" Name="posx">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Y" Type="float" Name="posy">
+      </Uniform>
+      <Uniform ResDependent="None" Max="500.0" Min="5.0" Default="20.0" Inc="1.00" Tooltip="" Row="0" Col="1" Page="0" DisplayName="scale" Type="float" Name="scale">
+      </Uniform>
+       <Uniform ResDependent="None" Max="0.80" Min="0.02" Default="0.15" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" DisplayName="lineThick" Type="float" Name="lineThick">
+      </Uniform>
+       <Uniform ResDependent="None" Max="10.80" Min="0.00" Default="1.1547" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" DisplayName="shape width" Type="float" Name="shapew">
+      </Uniform>
+       <Uniform ResDependent="None" Max="10.80" Min="0.00" Default="1.49999" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" DisplayName="shape height" Type="float" Name="shapeh">
+      </Uniform>
+
+
+    <Uniform Inc="0.01" Tooltip="" DisplayName="Line Color" IconType="None" ValueType="Colour" Row="0" Col="3" Page="0" Type="vec3" Name="linecolor">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+
+        <Uniform Inc="0.01" Tooltip="" DisplayName="Back Color" IconType="None" ValueType="Colour" Row="1" Col="3" Page="0" Type="vec3" Name="backcolor">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Row="2" Col="3" Page="0" Default="False" Tooltip="" DisplayName="Not Pre-Multiplied" Type="bool" Name="hardedge">
+      </Uniform>
+      <Uniform Row="3" Col="3" Page="0" Default="False" Tooltip="" DisplayName="Invert Matte" Type="bool" Name="invertmatte">
+      </Uniform>
+       
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Position" Col="0" Page="0">
+      </Col>
+       <Col Name="Scale" Col="1" Page="0">
+      </Col>
+       <Col Name="Line Thickness" Col="2" Page="0">
+      </Col>
+      <Col Name="Colors" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
+
+

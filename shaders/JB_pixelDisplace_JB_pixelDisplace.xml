@@ -1,0 +1,48 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1" Description="Transforms input1 using input2 rgb values. For questions contact: julienbrami.vfx@gmail.com" Name="JB_PixelDisplace">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform ResDependent="None" Max="1" Min="0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" DisplayName="blend" Name="blender">
+      </Uniform>
+      <Uniform Row="3" Col="1" Page="0" Default="False" Tooltip="" Type="bool" DisplayName="use matte" Name="useMattebool">
+      </Uniform>
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="input1" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="input1">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="input2" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="input2">
+      </Uniform>
+      <Uniform Index="2" NoInput="Black" Tooltip="" DisplayName="Matte" InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="input3">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" DisplayName="offset X" Name="offsetX">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0" Inc="0.01" Tooltip="" Row="4" Col="0" Page="0" Type="float" DisplayName="offset Y" Name="offsetY">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" DisplayName="intensity X" Name="scanlineX">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" DisplayName="intensity Y" Name="scanlineY">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="1.0" Inc="0.01" Row="0" Col="0" Page="1" Tooltip="" Type="float" DisplayName=" intensity X" Name="rx">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0" Inc="0.01" Row="1" Col="0" Page="1" Tooltip="" Type="float" DisplayName="intensity Y" Name="ry">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0" Inc="0.01" Row="0" Col="1" Page="1" Tooltip="" Type="float" DisplayName="intensity X" Name="gx">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="1.0" Inc="0.01" Row="1" Col="1" Page="1" Tooltip="" Type="float" DisplayName="intensity Y" Name="gy">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="-1.0" Inc="0.01" Row="0" Col="2" Page="1" Tooltip="" Type="float" DisplayName="intensity X" Name="bx">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000.0" Min="-10000.0" Default="0.0" Inc="0.01" Row="1" Col="2" Page="1" Tooltip="" Type="float" DisplayName="intensity Y" Name="by">
+      </Uniform>
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Attributes" Col="0" Page="0">
+      </Col>
+       <Col Name="Source" Col="1" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Channels" Page="1">
+      <Col Name="Red" Col="0" Page="1">
+      </Col>
+      <Col Name="Green" Col="1" Page="1">
+      </Col>
+      <Col Name="Blue" Col="2" Page="1">
+      </Col>
+   </Page>
+</ShaderNodePreset>

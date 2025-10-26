@@ -1,0 +1,38 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="
+This Matchbox shader simulates an exposure node, which isn't THAT precise ;)
+
+Input:
+- Front: source clip
+
+Setup:
+- Size: size of the hexagon tile
+- Edge: thickness of the black edge
+
+-
+
+
+Based on https://www.shadertoy.com/view/ls23Dc by pyalot
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+Matchbox version by ivar@inferno-op.com" LimitInputsToTexture="True" Name="CROK Hexagon">
+ <Shader OutputBitDepth="Output" Index="1">
+    <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="source">
+    </Uniform>
+    <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="100.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Size" Type="float" Name="size">
+    </Uniform>
+    <Uniform ResDependent="None" Max="100.0" Min="-100.9" Default="1.0" Inc="0.001" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Edge" Type="float" Name="edge">
+    </Uniform>
+    <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" DisplayName="Offset" IconType="none" Type="vec2" Name="offset">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+    </Uniform>
+ </Shader>
+ <Page Name="General" Page="0">
+    <Col Name="Setup" Col="0" Page="0">
+    </Col>
+    <Col Name="Translation" Col="1" Page="0">
+    </Col>
+ </Page>
+</ShaderNodePreset>
