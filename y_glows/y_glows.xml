@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="
+
+GLOWS
+
+miles@noesclavo.com   Blur by Lewis Saunders" Name="GLOWS">
+	<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+		<Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+		<Uniform Index="1" NoInput="White" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Matte">
+      </Uniform>
+		<Uniform Max="6" Min="0" Default="0" Inc="1" Tooltip="Working colorspace. Set this to the current working colorspace. This insures a linear blur (no dark edges)." Row="0" Col="3" Page="0" DisplayName="Colorspace" Type="int" Name="i_colorspace" ValueType="Popup">
+			<PopupEntry Title="Rec 709" Value="0">
+            </PopupEntry>
+			<PopupEntry Title="sRGB" Value="1">
+            </PopupEntry>
+			<PopupEntry Title="Linear" Value="2">
+            </PopupEntry>
+			<PopupEntry Title="2.2 Gamma" Value="3">
+            </PopupEntry>
+			<PopupEntry Title="1.8 Gamma" Value="4">
+            </PopupEntry>
+			<PopupEntry Title="LogC V3" Value="5">
+            </PopupEntry>
+		</Uniform>
+		<Uniform Row="4" Col="3" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="invert_threshold" DisplayName="Invert Threshold" Name="invert_threshold">
+     </Uniform>
+		<!--
+      <Uniform ResDependent="None" Max="10.0" Min="-10.0" Default="2.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="brightness" DisplayName="Brightness" Name="brightness">
+      </Uniform>
+    -->
+		<Uniform Inc="0.1" Tooltip="Background Color. Adjust Hue / Gain / Saturation to liking." Row="0" Col="1" Page="0" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Tint" Name="tint" HueShift="False" AngleName="Hue" IntensityName1="Gain" IntensityName2="Sat">
+			<SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0" Inc="1.0">
+  			</SubUniform>
+			<SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="50.0" Inc="1.0">
+  			</SubUniform>
+			<SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="0.0" Inc="10.0">
+  			</SubUniform>
+		</Uniform>
+		<Uniform ResDependent="None" Max="2.0" Min="-2.0" Default="0.5" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="threshold" DisplayName="Threshold" Name="threshold">
+      </Uniform>
+		<Uniform ResDependent="None" Max="10.0" Min="-1.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="saturation" DisplayName="Saturation" Name="saturation">
+      </Uniform>
+		<Uniform ResDependent="None" Max="2.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="gamma" DisplayName="Gamma" Name="gamma">
+      </Uniform>
+	</Shader>
+	<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+		<Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+		<Uniform ResDependent="None" Max="500.0" Min="00.0" Default="10.0" Inc="0.5" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="width" DisplayName="Width" Name="blur_amount">
+      </Uniform>
+		<Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="blur_red" DisplayName="Red" Name="blur_red">
+      </Uniform>
+		<Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.2" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="blur_green" DisplayName="Green" Name="blur_green">
+      </Uniform>
+		<Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.4" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="blur_blue" DisplayName="Blue" Name="blur_blue">
+      </Uniform>
+		<Uniform ResDependent="None" Max="1000000.0" Min="000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" Type="float" ChannelName="horizontal_bias" DisplayName="Horizontal Bias" Name="h_bias">
+      </Uniform>
+	</Shader>
+	<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+		<Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+		<Uniform ResDependent="None" Max="1000000.0" Min="000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="4" Col="2" Page="0" Type="float" ChannelName="vertical_bias" DisplayName="Vertical Bias" Name="v_bias">
+      </Uniform>
+		<Uniform Type="float" ChannelName="blur_red" DisplayName="blur_red" Name="blur_red">
+			<Duplicate>
+         </Duplicate>
+		</Uniform>
+		<Uniform Type="float" ChannelName="blur_green" DisplayName="blur_green" Name="blur_green">
+			<Duplicate>
+         </Duplicate>
+		</Uniform>
+		<Uniform Type="float" ChannelName="blur_blue" DisplayName="blur_blue" Name="blur_blue">
+			<Duplicate>
+         </Duplicate>
+		</Uniform>
+		<Uniform Type="float" ChannelName="blur_amount" DisplayName="blur_amount" Name="blur_amount">
+			<Duplicate>
+         </Duplicate>
+		</Uniform>
+	</Shader>
+	<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+		<Uniform Index="2" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+			<Duplicate>
+				<Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+			</Duplicate>
+		</Uniform>
+		<Uniform Type="int" ChannelName="i_colorspace" DisplayName="i_colorspace" Name="i_colorspace">
+			<Duplicate>
+         </Duplicate>
+		</Uniform>
+		<!--
+      <Uniform ResDependent="None" Max="2.0" Min="-2.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="mix" DisplayName="Mix" Name="blend">
+      </Uniform>
+    -->
+		<Uniform ResDependent="None" Max="2.0" Min="-2.0" Default="0.0" Inc="0.01" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="noise" DisplayName="Noise" Name="noise">
+      </Uniform>
+		<Uniform Row="3" Col="3" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="show_threshold" DisplayName="Show Threshold" Name="show_threshold">
+     </Uniform>
+		<Uniform Max="6" Min="0" Default="17" Inc="1" Tooltip="Blend mode." Row="1" Col="3" Page="0" DisplayName="Blendmode" Type="int" Name="blend_mode" ValueType="Popup">
+			<PopupEntry Title="Screen" Value="17">
+            </PopupEntry>
+			<PopupEntry Title="Add" Value="0">
+            </PopupEntry>
+			<PopupEntry Title="Softlight" Value="13">
+            </PopupEntry>
+			<PopupEntry Title="Spotlight" Value="11">
+            </PopupEntry>
+		</Uniform>
+	</Shader>
+	<Page Name="Page 1" Page="0">
+		<Col Name="General" Col="0" Page="0">
+      </Col>
+		<Col Name="Tint / Brightness" Col="1" Page="0">
+      </Col>
+		<Col Name="Blur Options" Col="2" Page="0">
+      </Col>
+		<Col Name="I/O Options" Col="3" Page="0">
+      </Col>
+	</Page>
+</ShaderNodePreset>

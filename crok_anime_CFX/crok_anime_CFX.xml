@@ -1,0 +1,147 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1.0" Description="
+  This Matchbox shader creates a cartoon style shading on 3D Action geometry.
+
+  Input:
+
+  - Front: source clip
+  - Normals: normal map to create tehe outlines
+
+  Setup:
+
+  - Direction: light direction
+
+  - Softness: amount of blur applied to the outline
+  - Postion: outline position
+
+  - Specular: amount of specular highlite
+  - Shades: amount of shading steps
+
+  Demo clip: https://vimeo.com/172227922
+
+  Shader developer: hughsk
+
+  Based on www.shadertoy.com/view/4dVGRW
+  This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+  Matchbox version by ivar@inferno-op.com" Name="CROK Anime">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Normals" InputType="Normals" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="normal">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="3.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="softness" DisplayName="Softness" Name="blur">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+      <Uniform Type="float" ChannelName="blur" DisplayName="blur" Name="blur">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="5">
+     <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="1" Type="float" ChannelName="Noise" DisplayName="Detail" Name="Noise">
+     </Uniform>
+       <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="1" Type="float" ChannelName="overall_speed" DisplayName="Overall Speed" Name="Speed">
+       </Uniform>
+       <Uniform Inc="0.01" Tooltip="" Row="2" Col="1" Page="1" Action3DWidget="False" IconType="None" ValueType="Position" Type="vec3" ChannelName="noise_anim" DisplayName="Noise Animation" Name="NoiseAnim">
+          <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+          </SubUniform>
+          <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+          </SubUniform>
+          <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+          </SubUniform>
+       </Uniform>
+     </Shader>
+    <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="6">
+   <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="24.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="1" Type="float" ChannelName="blur_low" DisplayName="Smoothness" Name="blur_low">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5">
+   </Uniform>
+  </Shader>
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="7">
+   <Uniform Type="float" ChannelName="blur_low" DisplayName="Smoothness" Name="blur_low">
+      <Duplicate>
+      </Duplicate>
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass6">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="8">
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass7">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="9">
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass8">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+   </Uniform>
+   <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="8.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="1" Type="float" ChannelName="blength" DisplayName="Amount" Name="blength">
+   </Uniform>
+   <Uniform Max="64" Min="1" Default="2" Inc="1" Tooltip="" Row="0" Col="2" Page="1" Type="int" ChannelName="oversamples" DisplayName="Samples" Name="oversamples">
+   </Uniform>
+   <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="16.0" Inc="0.01" Tooltip="" Row="1" Col="2" Page="1" Type="float" ChannelName="spacing" DisplayName="Softness" Name="spacing">
+   </Uniform>
+</Shader>
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="10">
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass9">
+   </Uniform>
+   <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass8">
+   </Uniform>
+   <Uniform ResDependent="None" Max="512.0" Min="0.0" Default="24.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="1" Type="float" ChannelName="blur_length" DisplayName="Amount" Name="blur_length">
+   </Uniform>
+   <Uniform Max="32" Min="2" Default="16" Inc="1" Tooltip="" Row="4" Col="0" Page="1" Type="int" ChannelName="samples" DisplayName="Smoothness" Name="samples">
+   </Uniform>
+</Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="11">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="True" IconType="Light" ValueType="Position" Type="vec3" ChannelName="light_dir" DisplayName="Direction" Name="lightDir">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="500.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass10">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Action3DWidget="True" IconType="None" ValueType="Position" Type="vec3" ChannelName="position" DisplayName="Position" Name="pole">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="3.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="5.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.001" Default="0.25" Inc="0.001" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="cel_specular" DisplayName="Specular" Name="lightint">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="0.001" Default="0.6" Inc="0.001" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="Shades" DisplayName="Shades" Name="Shades">
+      </Uniform>
+   </Shader>
+   <Page Name="General" Page="0">
+      <Col Name="Light" Col="0" Page="0">
+      </Col>
+      <Col Name="Outline" Col="1" Page="0">
+      </Col>
+      <Col Name="Shading" Col="2" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Distortion" Page="1">
+      <Col Name="Distortion / Bleeding" Col="0" Page="1">
+      </Col>
+      <Col Name="Noise" Col="1" Page="1">
+      </Col>
+      <Col Name="Oversampling" Col="2" Page="1">
+      </Col>
+   </Page>
+</ShaderNodePreset>

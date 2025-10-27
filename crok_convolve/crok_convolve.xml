@@ -1,0 +1,30 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" LimitInputsToTexture="True" Description="This Matchbox shader simulates a Convolve Blur.
+
+Version 1.2a
+
+Input:
+- Front: source clip
+
+Setup:
+- Quality: Blur Quality
+- Radius: Blur Radius
+ 
+Shader developer: Pitzik4
+Based on https://www.shadertoy.com/view/Xds3W8
+
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+Matchbox version by ivar@inferno-op.com" Name="crok convolve">
+   <Shader OutputBitDepth="Output" Index="1">
+       <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Source" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="source">
+       </Uniform>
+      <Uniform ResDependent="None" Max="1000.0" Min="0.0" Default="2.5" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Radius" Type="float" Name="pCv">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="0.05" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Quality" Type="float" Name="quality">
+      </Uniform>
+   </Shader>
+   <Page Name="Controls" Page="0">
+      <Col Name="Setup" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

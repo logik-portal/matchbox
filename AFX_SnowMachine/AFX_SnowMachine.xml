@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderNodePreset 
+    Name="AFX Snow Machine" 
+    Description="Generator for a variety of snow, dust and ash type effects.
+    
+Made by John Ashby"
+    ShaderType="Matchbox"
+    SoftwareVersion="2025"
+    SupportsTimeline="True" 
+    TimelineUseBack="False"
+    SupportsAction="False"
+    DefaultIsNoOp="False" 
+    LimitInputsToTexture="True" 
+    SupportsAdaptiveDegradation="True" 
+    CommercialUsePermitted="True" 
+    Version="1.1">
+    <Shader Index="1" OutputBitDepth="Float16">
+            <!-- Flake Appearance -->
+            <Uniform Name="flakeSize" Type="float" DisplayName="Flake Size" Default="0.4" Min="0.1" Max="1.0" Inc="0.01" Tooltip="Controls flake diameter." Page="0" Col="0" Row="0" />
+            <Uniform Name="flakeSoftness" Type="float" DisplayName="Flake Softness" Default="0.5" Min="0.1" Max="1.0" Inc="0.01" Tooltip="Edge softness of flakes." Page="0" Col="0" Row="1" />
+            <Uniform Name="clumpDistance" Type="float" DisplayName="Clump Distance" Default="0.4" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Spread between sub-flakes within a flake (0=compact, 1=spread)." Page="0" Col="0" Row="2" />
+            <Uniform Name="brightnessVar" Type="float" DisplayName="Value Var" Default="0.5" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Per-flake brightness variation (attenuation only)." Page="0" Col="0" Row="3" />
+            <Uniform Name="rotationSpeed" Type="float" DisplayName="Rotation Speed" Default="1.0" Min="0.0" Max="5.0" Inc="0.01" Tooltip="Flake spin rate." Page="0" Col="0" Row="4" />
+            
+            <!-- Density -->
+            <Uniform Name="layers" Type="int" DisplayName="Depth Layers" Default="30" Min="1" Max="50" Inc="1" Tooltip="Number of depth layers (higher = denser)." Page="0" Col="1" Row="0" />
+            <Uniform Name="depthParallax" Type="float" DisplayName="Depth Parallax" Default="0.2" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Depth scaling between layers (0=flat, 1=strong)." Page="0" Col="1" Row="1" />
+            <Uniform Name="depthFade" Type="float" DisplayName="Depth Fade" Default="0.8" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Opacity falloff with depth (farther layers fade)." Page="0" Col="1" Row="2" />
+            <Uniform Name="foregroundCull" Type="float" DisplayName="Foreground Cull" Default="0.0" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Cull near layers (0=none, 1=only deepest layers)." Page="0" Col="1" Row="3" />
+            
+            <!-- Physics -->
+            <Uniform Name="gravity" Type="float" DisplayName="Gravity Multiplier" Default="1.0" Min="0.0" Max="10.0" Inc="0.1" Tooltip="Downward acceleration." Page="0" Col="2" Row="0" />
+            <Uniform Name="windDirDeg" Type="float" DisplayName="Wind Direction" Default="135.0" Min="0.0" Max="360.0" Inc="1.0" Tooltip="0° up, 90° left, 180° down, 270° right." Page="0" Col="2" Row="1" />
+            <Uniform Name="windStrength" Type="float" DisplayName="Wind Strength" Default="0.25" Min="0.0" Max="5.0" Inc="0.01" Tooltip="Base wind speed magnitude." Page="0" Col="2" Row="2" />
+            <Uniform Name="particleSpeedVar" Type="float" DisplayName="Wind Drag" Default="0.5" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Random per-flake wind drag." Page="0" Col="2" Row="3" />
+            
+            <!-- Randomization -->
+            <Uniform Name="windNoise" Type="float" DisplayName="Wind Dir Noise" Default="0.1" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Variation added to wind direction." Page="0" Col="3" Row="0" />
+            <Uniform Name="windNoiseFreq" Type="float" DisplayName="Wind Noise Freq" Default="0.3" Min="0.0" Max="5.0" Inc="0.01" Tooltip="Frequency for wind direction/speed noise." Page="0" Col="3" Row="1" />
+            <Uniform Name="windSpeedNoise" Type="float" DisplayName="Wind Strength Var" Default="0.2" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Per-layer gusts: modulates wind strength over time." Page="0" Col="3" Row="2" />
+            <Uniform Name="turbulence" Type="float" DisplayName="Turbulence" Default="1.0" Min="0.0" Max="1.0" Inc="0.01" Tooltip="Per-flake flutter strength." Page="0" Col="3" Row="3" />
+            <Uniform Name="turbulenceFreq" Type="float" DisplayName="Turbulence Frequency" Default="1.0" Min="0.0" Max="5.0" Inc="0.01" Tooltip="Flutter frequency; higher = faster direction changes." Page="0" Col="3" Row="4" />
+            <Uniform Name="seed" Type="int" DisplayName="Seed" Default="0" Min="0" Max="10000" Inc="1" Page="0" Col="3" Row="5" />
+    </Shader>
+    <Page Name="Snow" Page="0">
+        <Col Name="Flake Appearance" Col="0" Page="0" />
+        <Col Name="Density" Col="1" Page="0" />
+        <Col Name="Physics" Col="2" Page="0" />
+        <Col Name="Randomization" Col="3" Page="0" />
+    </Page>
+    
+</ShaderNodePreset>

@@ -1,0 +1,63 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="True"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2015.0.0"
+  LimitInputsToTexture="True"
+  Version="2.0"
+  HelpLink="https://vimeo.com/128683471"
+  Description="
+This Matchbox shader creates a CRT style scan-line effect with additional shadowmasking.
+
+Setup:
+
+Scanline:
+- Amount: how many scanlines
+- Contrast: amount of scanline contrast
+
+Shadow Mask:
+- Type: select different typeds of shadow masks
+- Amount: amount of shadowmasking
+
+Misc:
+- Warp: adjust the amount of warp applied to the image
+- Blur Input: slightly soften the incoming image
+
+Demo clip: https://vimeo.com/128683471
+
+Original shader by Timothy Lottes
+www.shadertoy.com/view/MtSfRK
+
+Matchbox version by ivar@inferno-op.com"
+  Name="CROK CRT">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="source"></Uniform>
+    <Uniform ResDependent="None" Max="100.0" Min="1.0" Default="3.0" Inc="0.001" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="reso" DisplayName="Amount" Name="reso"></Uniform>
+    <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.7" Inc="0.001" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="INPUT_THIN" DisplayName="Contrast" Name="INPUT_THIN"></Uniform>
+
+    <Uniform Max="1000000" Min="0" Default="1" Inc="1" Tooltip="" Row="0" Col="1" Page="0" DisplayName="Type" Type="int" Name="mask_grille" ValueType="Popup">
+      <PopupEntry Title="No Mask" Value="0"></PopupEntry>
+      <PopupEntry Title="TV 1" Value="1"></PopupEntry>
+      <PopupEntry Title="TV 2" Value="2"></PopupEntry>
+      <PopupEntry Title="VGA" Value="3"></PopupEntry>
+    </Uniform>
+    <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.001" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="INPUT_MASK" DisplayName="Amount" Name="INPUT_MASK"></Uniform>
+
+    <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="0.0" Inc="0.001" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="warp" DisplayName="Warp" Name="warp"></Uniform>
+    <!-- <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="vignette_amount" DisplayName="Vignette" Name="vignette_amount"></Uniform> -->
+    <Uniform Row="1" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="vignette_enable" DisplayName="Enable Vignette" Name="vignette_enable">
+    </Uniform>
+    <Uniform Max="5.0" Min="0.0" Default="3.0" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" Type="float" ChannelName="INPUT_BLUR" DisplayName="Blur Input" Name="INPUT_BLUR"></Uniform>
+  </Shader>
+
+  <Page Name="General" Page="0">
+    <Col Name="Scanline" Col="0" Page="0"></Col>
+    <Col Name="Shadow Mask" Col="1" Page="0"></Col>
+    <Col Name="Misc" Col="2" Page="0"></Col>
+  </Page>
+</ShaderNodePreset>
