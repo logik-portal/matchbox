@@ -4,11 +4,9 @@
 
 Make boxes with rounded corners - handy for use as a matte.
 
-Matchbox by Bob Maple
-
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
