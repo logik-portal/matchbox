@@ -1,0 +1,93 @@
+<ShaderNodePreset 
+   SupportsAdaptiveDegradation="False" 
+   SupportsAction="True" 
+   SupportsTransition="False" 
+   SupportsTimeline="False" 
+   TimelineUseBack="False" 
+   MatteProvider="False" 
+   CommercialUsePermitted="True" 
+   LimitInputsToTexture="True" 
+   Version="2" 
+   Description="ddp_polygon - Polygon line animation.
+   You can generate a regular icosagon from a regular triangle and control the line animation of the perimeter.
+   The line width does not change even with XY scaling.
+   Fill is also an option.
+   
+   Matchbox version by dodoppo(https://www.instagram.com/nbmk1985/)" 
+   
+   Name="ddp_polygon">
+
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" InputType="Front" NoInput="Black" Tooltip="" DisplayName="front" Mipmaps="False" 
+         GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" 
+         GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+      
+      <Uniform Row="0" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="overlay" DisplayName="overlay" Name="overlay">
+      </Uniform>
+      <Uniform Row="1" Col="0" Page="0" Default="True" Tooltip="" Type="bool" ChannelName="lineVisible" DisplayName="lineVisible" Name="lineVisible">
+      </Uniform>
+      <Uniform Name="Line_Color" Type="vec3" DisplayName="Line_Color" Page="0" Col="0" Row="2" Tooltip="" Inc="0.01" ValueType="Colour">
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform Row="3" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="fillVisible" DisplayName="fillVisible" Name="fillVisible">
+      </Uniform>
+      <Uniform Name="Fill_Color" Type="vec3" DisplayName="Fill_Color" Page="0" Col="0" Row="4" Tooltip="" Inc="0.01" ValueType="Colour">
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      
+      
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="0.3" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="Radius" DisplayName="Radius" Name="Radius">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Action3DWidget="False" IconType="None" Type="vec2" ChannelName="Center" DisplayName="Center" Name="Center">
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="3" Col="1" Page="0" Action3DWidget="False" IconType="None" Type="vec2" ChannelName="ScaleXY" DisplayName="ScaleXY" Name="ScaleXY">
+         <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      
+      
+      <Uniform Max="20" Min="3" Default="3" Inc="1" Tooltip="" Row="0" Col="2" Page="0" Type="int" ChannelName="Sides" DisplayName="Sides" Name="Sides">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.75" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="ProgressStart" DisplayName="ProgressStart" Name="ProgressStart">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.00" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="ProgressEnd" DisplayName="ProgressEnd" Name="ProgressEnd">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.005" Inc="0.001" Tooltip="" Row="3" Col="2" Page="0" Type="float" ChannelName="LineWidth" DisplayName="LineWidth" Name="LineWidth">
+      </Uniform>
+
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="0.001" Inc="0.001" Tooltip="" Row="0" Col="3" Page="0" Type="float" ChannelName="lineAA" DisplayName="lineAA" Name="lineAA">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="0.001" Inc="0.001" Tooltip="" Row="1" Col="3" Page="0" Type="float" ChannelName="fillAA" DisplayName="fillAA" Name="fillAA">
+      </Uniform>
+      
+      
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Visible+color" Col="0" Page="0">
+      </Col>
+      <Col Name="transform" Col="1" Page="0">
+      </Col>
+      <Col Name="line" Col="2" Page="0">
+      </Col>
+      <Col Name="AA" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

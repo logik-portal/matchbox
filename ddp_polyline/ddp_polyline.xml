@@ -1,0 +1,153 @@
+<ShaderNodePreset 
+   SupportsAdaptiveDegradation="False" 
+   SupportsAction="True" 
+   SupportsTransition="False" 
+   SupportsTimeline="False" 
+   TimelineUseBack="False" 
+   MatteProvider="False" 
+   CommercialUsePermitted="True" 
+   LimitInputsToTexture="True" 
+   Version="2" 
+   Description="ddp_polyline - Animated line segments between two points. 
+   Optionally, there are also three and four point broken line segments.
+
+   When creating this matchbox, I used Lewis's Ls_Wireless as inspiration.
+   Matchbox version by dodoppo(https://www.instagram.com/nbmk1985/)" 
+   
+   Name="ddp_polyline">
+      
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+   <Uniform Index="0" InputType="Front" NoInput="Black" Tooltip="" DisplayName="front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+   </Uniform>
+
+   <Uniform Max="1000000" Min="0" Default="0" Inc="1" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Transition" Type="int" Name="transition" ValueType="Popup">
+      <PopupEntry Title="2point" Value="0">
+      </PopupEntry>
+      <PopupEntry Title="3point" Value="1">
+      </PopupEntry>
+      <PopupEntry Title="4point" Value="2">
+      </PopupEntry>
+   </Uniform>
+
+   <Uniform Row="1" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="overlay" DisplayName="overlay" Name="overlay">
+   </Uniform>
+   <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="2.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="Anti_aliasing" DisplayName="Anti_aliasing" Name="Anti_aliasing">
+   </Uniform>
+   <Uniform Name="colorRGB" Type="vec3" DisplayName="colorRGB" Page="0" Col="0" Row="3" Tooltip="" Inc="0.01" ValueType="Colour">
+      <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+      </SubUniform>
+   </Uniform>
+
+   <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="5.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="lineRadius" DisplayName="lineRadius" Name="lineRadius">
+   </Uniform> 
+   <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="ABline_start" DisplayName="ABline_start" Name="ABline_start"
+      UIConditionSource="transition" UIConditionValue="0" UIConditionInvert="False" UIConditionType="Hide">
+   </Uniform>
+   <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="ABline_end" DisplayName="ABline_end" Name="ABline_end"
+      UIConditionSource="transition" UIConditionValue="0" UIConditionInvert="False" UIConditionType="Hide">
+   </Uniform>    
+   <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="ABCline_start" DisplayName="ABCline_start" Name="ABCline_start"
+      UIConditionSource="transition" UIConditionValue="1" UIConditionInvert="False" UIConditionType="Hide">
+   </Uniform>
+   <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="ABCline_end" DisplayName="ABCline_end" Name="ABCline_end"
+      UIConditionSource="transition" UIConditionValue="1" UIConditionInvert="False" UIConditionType="Hide">
+   </Uniform> 
+   <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="ABCDline_start" DisplayName="ABCDline_start" Name="ABCDline_start"
+      UIConditionSource="transition" UIConditionValue="2" UIConditionInvert="False" UIConditionType="Hide">
+   </Uniform>
+   <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="ABCDline_end" DisplayName="ABCDline_end" Name="ABCDline_end"
+      UIConditionSource="transition" UIConditionValue="2" UIConditionInvert="False" UIConditionType="Hide">
+   </Uniform>
+
+   <Uniform ResDependent="None" Max="1000.0" Min="0" Default="25.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="circleRadiusA" DisplayName="circleRadiusA" Name="circleRadiusA">
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Aoffset" DisplayName="Aoffset" Name="Aoffset">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.25">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.25">
+      </SubUniform>
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Atrack" DisplayName="Atrack" Name="Atrack">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+   </Uniform>
+
+   <Uniform ResDependent="None" Max="1000.0" Min="0" Default="25.0" Inc="0.01" Tooltip="" Row="0" Col="3" Page="0" Type="float" ChannelName="circleRadiusB" DisplayName="circleRadiusB" Name="circleRadiusB">
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="1" Col="3" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Boffset" DisplayName="Boffset" Name="Boffset">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.75">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.75">
+      </SubUniform>
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="3" Col="3" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Btrack" DisplayName="Btrack" Name="Btrack">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+   </Uniform>
+
+   <Uniform ResDependent="None" Max="1000.0" Min="0" Default="25.0" Inc="0.01" Tooltip="" Row="0" Col="4" Page="0" Type="float" ChannelName="circleRadiusC" DisplayName="circleRadiusC" Name="circleRadiusC"
+      UIConditionSource="transition" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Hide">
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="1" Col="4" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Coffset" DisplayName="Coffset" Name="Coffset"
+      UIConditionSource="transition" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Hide">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.75">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.25">
+      </SubUniform>
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="3" Col="4" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Ctrack" DisplayName="Ctrack" Name="Ctrack"
+      UIConditionSource="transition" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Hide">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+   </Uniform>
+
+   <Uniform ResDependent="None" Max="1000.0" Min="0" Default="25.0" Inc="0.01" Tooltip="" Row="0" Col="5" Page="0" Type="float" ChannelName="circleRadiusD" DisplayName="circleRadiusD" Name="circleRadiusD"
+      UIConditionSource="transition" UIConditionValue="2" UIConditionInvert="False" UIConditionType="Hide">
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="1" Col="5" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Doffset" DisplayName="Doffset" Name="Doffset"
+      UIConditionSource="transition" UIConditionValue="2" UIConditionInvert="False" UIConditionType="Hide">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.25">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.75">
+      </SubUniform>
+   </Uniform>
+   <Uniform Inc="0.01" Tooltip="" Row="3" Col="5" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="Dtrack" DisplayName="Dtrack" Name="Dtrack"
+      UIConditionSource="transition" UIConditionValue="2" UIConditionInvert="False" UIConditionType="Hide">
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+      <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+      </SubUniform>
+   </Uniform>
+
+   
+      
+   </Shader>
+
+   <Page Name="Page 1" Page="0">
+      <Col Name="menu" Col="0" Page="0">
+      </Col>
+      <Col Name="line" Col="1" Page="0">
+      </Col>
+      <Col Name="pointA" Col="2" Page="0">
+      </Col>
+      <Col Name="pointB" Col="3" Page="0">
+      </Col>
+      <Col Name="pointC" Col="4" Page="0">
+      </Col>
+      <Col Name="pointD" Col="5" Page="0">
+      </Col>
+   </Page>
+   
+
+   
+</ShaderNodePreset>
