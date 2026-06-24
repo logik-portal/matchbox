@@ -2,33 +2,28 @@
 
 ## Description
 
-Recreates the Photoshop blending modes.
-
+This Matchbox recreates the Photoshop blending modes.
 Input:
-
-    - Front: front image
-    - Back: background image
-    - Matte: matte being used to apply effect
-
+- Front: front image
+- Back: background image
+- Matte: matte being used to apply effect
 Output:
-
-    - Clamp Color: clamps the color between 0.0 and 1.0
-
+- Clamp Color: clamps the color between 0.0 and 1.0
 Setup:
-
-    - Selection: select the logic operator to use
-    - Blend: dissolve between bg and result
-
+- Selection: select the logic operator to use
+- Blend: dissolve between bg and result
 Function:
-
-    - None: doesn't apply any function
-    - Sinus: applies a sinus function to the blend
-    - Smooth Saw: applies a smooth saw to the blend
-    - Step Random: jumps randomly between diffeend blend values
+- None: doesn't apply any function
+- Sinus: applies a sinus function to the blend
+- Smooth Saw: applies a smooth saw to the blend
+- Step Random: jumps randomly between diffeend blend values
+Demo clip: http://vimeo.com/93495707
+Based on http://logik-matchbook.org/shader/blend_3vis
+Matchbox additions
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -42,4 +37,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

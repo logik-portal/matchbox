@@ -2,24 +2,21 @@
 
 ## Description
 
-Creates a vignette effect.
-
+This Matchbox creates a vignette effect.
 Input:
-
-    - Front: Source image
-
+- Front: Source image 
 Setup:
-
-    - Color: vignette color
-    - Radius: Radius of the vignette
-    - Softness: softness of the vignette
-    - Blend: strenght of the vignette effect
-    - Center: vignette center position
-    - Aspect: Aspect ratio of the vignette
+- Color: vignette color
+- Radius: Radius of the vignette
+- Softness: softness of the vignette
+- Blend: strenght of the vignette effect
+- Center: vignette center position
+- Aspect: Aspect ratio of the vignette
+Demo clip: http://vimeo.com/110702478
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -33,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

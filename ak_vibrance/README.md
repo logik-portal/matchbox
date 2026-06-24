@@ -3,21 +3,19 @@
 ## Description
 
 Vibrance Control
-	based on code published at https://blog.ruofeidu.com/postprocessing-brightness-contrast-hue-saturation-vibrance/
-
-	Value of 1.0 is neutral, larger values increase vibrance, lower decrease. 0.0 fully desaturated
-	
-	Matchbox shader by Jan Klier https://www.janklier.com
+based on code published at https://blog.ruofeidu.com/postprocessing-brightness-contrast-hue-saturation-vibrance/
+Value of 1.0 is neutral, larger values increase vibrance, lower decrease. 0.0 fully desaturated
+Matchbox shader
 
 ## Flame Requirements
 
-2017.0
+2018.3.0
 
 ## Supported Modes
 
-- ❌ **Action**: Not supported
+- ✅ **Action**: Supported
 - ❌ **Transition**: Not supported
-- ❌ **Timeline**: Not supported
+- ✅ **Timeline**: Supported
 
 ## Shader Type
 
@@ -25,4 +23,4 @@ Matchbox
 
 ## Author
 
-Jan Klier
+Jan Klier https://www.janklier.com

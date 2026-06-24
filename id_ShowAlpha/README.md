@@ -2,11 +2,11 @@
 
 ## Description
 
-Remaps the matte input to RGB so you can see it on the timeline for instance. That's it.
+Remaps the matte input to RGB so you can see it from the timeline, for instance. That's it.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Bob Maple
+

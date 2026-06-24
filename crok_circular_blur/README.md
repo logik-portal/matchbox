@@ -2,15 +2,15 @@
 
 ## Description
 
-Applies a circular blur to the image.
-
+This Matchbox shader applies a circular blur to the image.
 Setup:
-
-    - Amount: amount of blur applied to the image
+- Amount: amount of blur applied to the image
+Based on https://www.shadertoy.com/view/4df3R7 by hornet
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -24,4 +24,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -6,7 +6,7 @@ Inverts the green (V) channel values of the input to make motion vector passes f
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 

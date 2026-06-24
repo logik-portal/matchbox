@@ -2,20 +2,22 @@
 
 ## Description
 
-Creates a fractal pattern.
-
+This Matchbox shader creates a fractal pattern.
 Setup:
-
-    - Zoom : zoom in and out
-    - Resolution : fractal detail
-    - Offset : offset fractal pattern
-    - Speed : speed of building the fractal
-    - Zoom : zoom in and out
-    - Gain : brightness of the fractal texture
+- Zoom : zoom in and out
+- Resolution : fractal detail
+- Offset : offset fractal pattern
+- Speed : speed of building the fractal
+- Zoom : zoom in and out
+- Gain : brightness of the fractal texture
+Demo clip: https://vimeo.com/82187477
+Shader developer: JoshP
+Based on https://www.shadertoy.com/view/lslGWr
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -29,4 +31,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

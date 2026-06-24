@@ -1,0 +1,84 @@
+<ShaderNodePreset
+  SupportsAdaptiveDegradation="False"
+  SupportsAction="False"
+  SupportsTransition="False"
+  SupportsTimeline="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  ShaderType="Matchbox"
+  SoftwareVersion="2017.0.0"
+  LimitInputsToTexture="True"
+  Version="1.0"
+  Description="Film halation with Low and High quality modes. Low = fast 8-tap kernel for interactive work. High = smooth 48-tap kernel for finals."
+  Name="AB_Halation">
+
+  <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+
+    <Uniform
+      Index="0" NoInput="Error" DisplayName="Front" InputType="Front"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D" Name="front">
+    </Uniform>
+
+    <Uniform
+      Index="1" NoInput="White" DisplayName="Matte" InputType="Matte"
+      Mipmaps="False"
+      GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+      GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+      Type="sampler2D" Name="matte">
+    </Uniform>
+
+    <!-- Quality toggle: 0=Low (fast), 1=High (final) -->
+    <Uniform
+      ResDependent="None"
+      Max="1"
+      Min="0"
+      Default="0"
+      Inc="1"
+      Tooltip="0 = Low quality, fast. 1 = High quality, smooth. No values in between."
+      Row="0" Col="0" Page="0"
+      Type="float"
+      ChannelName="Quality"
+      DisplayName="Quality 0:Lo 1:Hi"
+      Name="quality">
+    </Uniform>
+
+    <Uniform
+      ResDependent="None" Max="10.0" Min="0.0" Default="3.0" Inc="0.1"
+      Tooltip="Blur radius for the red channel in pixels."
+      Row="1" Col="0" Page="0"
+      Type="float" ChannelName="RedRadius" DisplayName="Red Radius" Name="red_radius">
+    </Uniform>
+
+    <Uniform
+      ResDependent="None" Max="1.0" Min="0.0" Default="0.15" Inc="0.01"
+      Tooltip="Green channel influence. Green radius = red_radius x influence. Intensity attenuated by influence^3."
+      Row="2" Col="0" Page="0"
+      Type="float" ChannelName="GreenInfluence" DisplayName="Green Influence" Name="green_influence">
+    </Uniform>
+
+    <Uniform
+      ResDependent="None" Max="20.0" Min="0.0" Default="1.0" Inc="0.05"
+      Tooltip="Overall halo intensity."
+      Row="3" Col="0" Page="0"
+      Type="float" ChannelName="Strength" DisplayName="Strength" Name="strength">
+    </Uniform>
+
+    <Uniform
+      ResDependent="None" Max="1.0" Min="0.0" Default="0.75" Inc="0.005"
+      Tooltip="Highlight threshold. Only pixels brighter than this contribute to the halation glow."
+      Row="4" Col="0" Page="0"
+      Type="float" ChannelName="Threshold" DisplayName="Threshold" Name="threshold">
+    </Uniform>
+
+  </Shader>
+
+  <Page Name="Halation" Page="0">
+    <Col Name="Controls" Col="0" Page="0">
+    </Col>
+  </Page>
+
+</ShaderNodePreset>

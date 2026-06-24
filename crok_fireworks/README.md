@@ -2,11 +2,15 @@
 
 ## Description
 
-Simulates Fireworks.
+This Matchbox shader simulates Fireworks.
+Demo clip: https://vimeo.com/83036063
+Shader developer: Qqwy
+Based on https://www.shadertoy.com/view/4dBGRw
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +24,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,11 +2,12 @@
 
 ## Description
 
-Applies a pixelspread to the edges of an image.
+This LightBox shader applies a pixelspread to the edges of an image.
+Lightbox version
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

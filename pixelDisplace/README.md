@@ -6,7 +6,7 @@ Transforms input1 using input2 rgb values. For questions contact: julienbrami.vf
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Julien Brami
+

@@ -2,15 +2,13 @@
 
 ## Description
 
-For when the agency producer asks 'How many scanlines is that legal?'. Now it can be fun!
-
-Updates:
-
-    - Fixed for Flame 2025
+miles@noesclavo.com
+LINECALC
+For when the agency producer asks 'How many scanlines is that legal ?'. Now it can be fun !
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

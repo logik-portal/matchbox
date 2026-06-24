@@ -2,15 +2,17 @@
 
 ## Description
 
-Blurs an isolated region based on the matte input. v1.2
+K_BlurMask 1.2
+Blurs an isolated region based on the matte input.
+Shader written by:   Kyle Obley (kyle.obley@gmail.com)
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
-- ❌ **Action**: Not supported
+- ✅ **Action**: Supported
 - ❌ **Transition**: Not supported
 - ❌ **Timeline**: Not supported
 
@@ -20,4 +22,4 @@ Matchbox
 
 ## Author
 
-Kyle Obley
+

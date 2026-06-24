@@ -2,11 +2,15 @@
 
 ## Description
 
-Creates volumetric snow like particles.
+This LightBox shader creates volumetric snow like particles.
+Based on https://www.shadertoy.com/view/4tSSzt 
+Bias code 
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+Lightbox version
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +24,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+FabriceNeyret2 using the base ray-marcher of Trisomie21: https://www.shadertoy.com/view/4tfGRB#

@@ -2,11 +2,15 @@
 
 ## Description
 
-Make Shapes.
+Latest binaries here: https://github.com/noesclavo/Matchbox/releases/
+2015 Only
+Make Shapes
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+miles@noesclavo.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +24,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

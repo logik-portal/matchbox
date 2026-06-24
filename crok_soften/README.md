@@ -3,24 +3,18 @@
 ## Description
 
 This is a Flame sub pixel blur meant for creating natural looking edges.
-
 Input:
-
-    - Front: original front
-    - Matte: original matte
-
+- Front: original front
+- Matte: original matte
 Soften:
-
-    - Size: amount of gaussian blur applied to the image
-    - Strength: mix amount between original image and blurred one
-
+- Size: amount of gaussian blur applied to the image
+- Strength: mix amount between original image and blurred one
 Smoothness:
-
-    - Amount: how much AA is applied to the image before it runs through the soften process
+- Amount: how much AA is applied to the image before it runs through the soften process
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -34,4 +28,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+John and ivar@inferno-op.com

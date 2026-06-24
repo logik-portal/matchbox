@@ -2,19 +2,17 @@
 
 ## Description
 
-Distorts side-by-side stereo images to be useable with the Oculus Rift.
-
+Distorts side-by-side stereo images to be useable with the Oculus Rift
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 How to use:
-
-    Just pipe in a side by side Stereo 3D clip and the shader will convert it to a Oculus Riftenabled clip.
+- just pipe in a side by side Stereo 3D clip and the shader will convert it to a Oculus Riftenabled clip
+Based on:
+http://lubosz.wordpress.com/2013/08/28/view-side-by-side-stereoscopic-video-with-gstreamer-and-oculus-rift/
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -28,4 +26,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders and Ivar Beer
+Lewis Saunders and ivar@inferno-op.com

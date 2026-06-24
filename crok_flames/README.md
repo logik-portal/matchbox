@@ -2,11 +2,13 @@
 
 ## Description
 
-Creates flames.
+This LightBox shader will create flames.
+Based on http://glslsandbox.com/e#17361.0
+Ligtbox version
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,11 +2,11 @@
 
 ## Description
 
-Linearise the SLog encoded input using the Sony S-Log function.
+Linearise the SLog encoded input using the Sony S-Log function
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

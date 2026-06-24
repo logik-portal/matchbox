@@ -3,19 +3,16 @@
 ## Description
 
 Use this shader to get broadcast safe colors
-
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Clamp:
-
-    - Chroma: max chrominance
-    - Luma: max luminance
+- Chroma: max chrominance
+- Luma: max luminance 
+Demo clip: http://vimeo.com/117628260
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -29,4 +26,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders and Ivar Beer
+lewis@lewissaunders.com and ivar@inferno-op.com

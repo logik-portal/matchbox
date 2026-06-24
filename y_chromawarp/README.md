@@ -2,15 +2,13 @@
 
 ## Description
 
+CHROMAWARP
 Demo clip: https://youtu.be/wJJqr6dQZkw
-
-Updates:
-
-    - Fixed for Flame 2025
+miles@noesclavo.com
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

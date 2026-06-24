@@ -2,11 +2,12 @@
 
 ## Description
 
-Creates a particle type transition between 2 clips.
+This Matchbox shader creates a particle type transition between 2 clips.
+Based on shadertoy.com/view/tlsyW7 by zhilichen
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,20 +2,20 @@
 
 ## Description
 
-Creates lines.
-
+This Matchbox shader creates lines.
 Setup:
-
-    - Density: amount of lines
-    - Sharpness: edge sharpness
-    - Itterations: Itterations
-    - Speed: how fast the lines are moving
-    - Offset: offset the time
-    - Colour: color of the lines
+- Density: amount of lines
+- Sharpness: edge sharpness
+- Itterations: Itterations
+- Speed: how fast the lines are moving
+- Offset: offset the time
+- Colour: color of the lines
+Demo clip: https://vimeo.com/87981384
+Based on: http://glsl.heroku.com/e#14703.0
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -29,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

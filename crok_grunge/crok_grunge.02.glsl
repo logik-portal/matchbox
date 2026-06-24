@@ -9,7 +9,7 @@ void main()
    float s = texture2D(strength, coords).r;
    float am = blur_m * s;
    int f0int = int(am);
-   vec4 accu = vec4(0);
+   vec4 accu = vec4(0.0);
    float energy = 0.0;
    vec4 blur_bgy = vec4(0.0);
 

@@ -2,11 +2,11 @@
 
 ## Description
 
-PageCurl between 1 and 2, uses 3 for back page.
+- 3vis - PageCurl between 1 and 2, uses 3 for back page - Author: Eric Pouliot
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Eric Pouliot
+

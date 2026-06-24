@@ -2,19 +2,15 @@
 
 ## Description
 
-Gives you Resolve style 'Sat vs Sat' curve controls.
-
+This Matchbox gives you Resolve style 'Sat vs Sat' curve controls.
 Input:
-
-    - Front: front image
-
+- Front: front image
 Setup:
-
-    - Sat Multiplier: multiplies the saturation of the curves to give you the possibility to go over 1.0 Saturation.
+- Sat Multiplier: multiplies the saturation of the curves to give you the possibility to go over 1.0 Saturation
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -28,4 +24,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

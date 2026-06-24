@@ -2,11 +2,11 @@
 
 ## Description
 
-Creates a realistic-ish ocean system, with wave height/freq/speed as well as camera control.
+Creates a realistic-ish ocean system, with wave height/freq/speed as well as camera control. based on the shader made
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Julien Brami
+Alexander Alekseev. For more info contact: julienbrami.vfx@gmail.com

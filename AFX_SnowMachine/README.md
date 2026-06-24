@@ -3,8 +3,7 @@
 ## Description
 
 Generator for a variety of snow, dust and ash type effects.
-    
-Made by John Ashby
+Made
 
 ## Flame Requirements
 

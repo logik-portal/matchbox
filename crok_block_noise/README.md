@@ -2,22 +2,22 @@
 
 ## Description
 
-Creates blocky textures.
-
+This Matchbox shader creates blocky textures.
 Setup:
-
-    - Detail: texture detail
-    - Seed: seed value
-    - Speed: how fast the bubbles are moving
-    - Offset: offset the animation in time
-    - Size: size of the blocks
-    - Aspect: aspect in x / y
-    - Colour: block colour
-    - Gain: adjust colour gain
+- Detail: texture detail
+- Seed: seed value
+- Speed: how fast the bubbles are moving
+- Offset: offset the animation in time
+- Size: size of the blocks
+- Aspect: aspect in x / y
+- Colour: block colour
+- Gain: adjust colour gain
+Demo clip: http://vimeo.com/92192671
+Based on http://glsl.heroku.com/e#16104.0
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -31,4 +31,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

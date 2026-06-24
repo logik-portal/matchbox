@@ -2,19 +2,15 @@
 
 ## Description
 
-Reduces banding.
-
+This Matchbox shader reduces banding.
 Input:
-
-    - Source: front image
-
+- Source: front image 
 Setup:
-
-    - Amount: amount of debanding applied
+- Amount: amount of debanding applied
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -28,4 +24,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

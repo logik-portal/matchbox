@@ -2,20 +2,19 @@
 
 ## Description
 
-Creates a cheap lens flare.
+This Matchbox shader creates a cheap lens flare.
 Inputs:
-
-    - Front Noise: a noise texture
-
+- Front Noise: a noise texture
 Params:
-
-    - Direction : the direction of lens flare
-    - Move: Use automated movement
-    - Speed: the speed for movement
+- Direction : the direction of lens flare
+- Move: Use automated movement 
+- Speed: the speed for movement
+Based on https://www.shadertoy.com/view/4sX3Rs
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -29,4 +28,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+

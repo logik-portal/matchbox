@@ -3,12 +3,11 @@
 ## Description
 
 Vector operations - normalize, scale, rotate, translate, compute lengths of and combine vector passes.  Default is to add all inputs.
-
-This tool can add up to five mattes and create a quick output of them all as one. You also get control over individual strengths of each matte.
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -22,4 +21,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

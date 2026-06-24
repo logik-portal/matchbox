@@ -2,27 +2,24 @@
 
 ## Description
 
-Creates an ocean / water like noise pattern.
-
+This Matchbox shader creates an ocean / water like noise pattern.
 Setup:
-
-    - Zoom: zoom in / out of the noise
-    - Speed: speed of the pattern animation
-    - Offset: offset the an animation in time
-    - Saturation: saturation of the image
-    - Brightness: brightness of the image
-    - Contrast: contrast of the image
-    - Tint Colour: tint colour
-    - Amount: how much tint is applied
-
-
+- Zoom: zoom in / out of the noise
+- Speed: speed of the pattern animation
+- Offset: offset the an animation in time
+- Saturation: saturation of the image
+- Brightness: brightness of the image
+- Contrast: contrast of the image
+- Tint Colour: tint colour 
+- Amount: how much tint is applied
 Output:
-
-    - RGB seperated noise
+- RGB seperated noise
+Demo clip: http://vimeo.com/99410999
+Based on http://pixelshaders.com/examples/noise.html
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -36,4 +33,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

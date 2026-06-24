@@ -2,11 +2,12 @@
 
 ## Description
 
-Models the illumination falloff of simple primes lenses mounted near to the film back.  It's perfectly smooth unlike what you get from Colour Source, Gradient, Gmask, the stock Vignetting shader etc.
+Vignette - models the illumination falloff of simple primes lenses mounted near to the film back.  It's perfectly smooth unlike what you get from Colour Source, Gradient, Gmask, the stock Vignetting shader etc
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

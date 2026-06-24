@@ -2,11 +2,11 @@
 
 ## Description
 
-Clamp selected pixels to user defined minimum and maximum values.
+Clamp selected pixels to user defined minimum and maximum values
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

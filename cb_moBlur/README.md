@@ -6,7 +6,7 @@ Fast render of Vector based motion blur.
 
 ## Flame Requirements
 
-2017.0
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-CB
+

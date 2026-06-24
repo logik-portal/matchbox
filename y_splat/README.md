@@ -2,17 +2,14 @@
 
 ## Description
 
+SPLAT !
 Dissolve between 3 different textures using a 4th texture as the 'matte'. Great for simulating a change in a ground cover texture or other organic textures. The 'matte' texture should be comprised of many different hues because rotating the hue causes the transformation between textures. For optimal results the 'matte' texture should be in the same 'family' as the textures your trying to animate through. Try people's faces for a scare !
-
 Demo: https://youtu.be/uMhyjDT43tU
-
-Updates:
-
-    - Fixed for Flame 2025
+miles@noesclavo.com
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -26,4 +23,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

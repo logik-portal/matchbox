@@ -3,25 +3,19 @@
 ## Description
 
 This Matchbox shader creates radial blur.
-
+Version: 1.2
 Input:
-
-    - Front : source clip
-
+- Front : source clip
 Setup:
-
-    - Amount : blur strenth
-    - Center : center of the blur
-    - Gain : brightness of the picture
-    - Steps : blur resolution
-
-Updates:
-
-    - Fixed a half-pixel offset causing an image shift and interpolation softness, changed the Center to an X/Y axis widget on-screen for easier manipulation
+- Amount: blur strenth
+- Center: center of the blur
+- Gain  : brightness of the picture
+- Steps : blur resolution
+Based on http://wiki.delphigl.com/index.php/shader_radial_blur
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -35,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

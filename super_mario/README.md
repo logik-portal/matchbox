@@ -2,7 +2,7 @@
 
 ## Description
 
-based on by https://www.shadertoy.com/view/XtlSD7 by  knarkowicz
+based on
 
 ## Flame Requirements
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Knarkowicz
+https://www.shadertoy.com/view/XtlSD7 by  knarkowicz

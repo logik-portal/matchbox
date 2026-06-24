@@ -2,24 +2,20 @@
 
 ## Description
 
-Simulates a Convolve Blur.
-
+This Matchbox shader simulates a Convolve Blur.
+Version 1.2a
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Setup:
-
-    - Quality: Blur Quality
-    - Radius: Blur Radius
-
-Updates:
-
-    - Modified default input to be Front.
+- Quality: Blur Quality
+- Radius: Blur Radius
+Shader developer: Pitzik4
+Based on https://www.shadertoy.com/view/Xds3W8
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -33,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

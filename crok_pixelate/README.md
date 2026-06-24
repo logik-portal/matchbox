@@ -2,21 +2,19 @@
 
 ## Description
 
-Pixelates the image.
-
+This Matchbox shader pixelates the image.
+Version: 1.1
 Input:
-
-    - Front: source clip
-    - Matte: matte to define the affected area
-
+- Front: source clip
+- Matte: matte to define the affected area
 Setup:
-
-    - Detail: detail of the pattern
-    - Dissolve: blend between original and pixelated image
+- Detail: detail of the pattern
+- Dissolve: blend between original and pixelated image
+Demo clip: http://vimeo.com/89225434
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -30,4 +28,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

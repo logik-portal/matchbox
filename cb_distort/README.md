@@ -3,7 +3,6 @@
 ## Description
 
 UV pass distortion + Grid Distortion.
-
 front
 motion - Motion vector pass (R = X motion, G = Y motion)
 strength - Strength of motion-based distortion
@@ -16,11 +15,9 @@ vertex0-15 - Displacement
 resolution - Image resolution (width, height)
 time - Animation time
 
-Uses Motion Vector UVs (or anything) for distortion, also has vertex based grid distortion. 
-
 ## Flame Requirements
 
-2017.0
+2025.0.0
 
 ## Supported Modes
 
@@ -34,4 +31,4 @@ Matchbox
 
 ## Author
 
-CB
+

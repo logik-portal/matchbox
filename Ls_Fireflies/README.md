@@ -3,12 +3,12 @@
 ## Description
 
 Attempts to remove the hot firefly pixel noise that appears in CG renders with bright lights hidden behind other objects
-
 Quick demo: https://www.youtube.com/watch?v=GuvRoN5WfM4
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

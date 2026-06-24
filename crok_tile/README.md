@@ -2,11 +2,14 @@
 
 ## Description
 
-Creates seamless textures.
+This Matchbox shader creates seamless textures.
+Based on shadertoy.com/view/tsVGRd by Suslik
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+Credits for hex tiling goes to Shane
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +23,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

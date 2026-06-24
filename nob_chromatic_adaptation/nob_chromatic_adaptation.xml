@@ -1,9 +1,58 @@
 <ShaderNodePreset
-    Description="This Matchbox shader performs a chromatic adaptation.
-It also takes care of primary colour space conversions, assuming that the source- and target colour spaces are scene linear.
+    Description="This Matchbox shader performs chromatic adaptation alongside linear colour-space conversion, optionally utilizing the perceptual CAM16.
+
+The core method can be chosen via [CA Method], the following ones are implemented:
+    [Disable]: no chromatic adaptation, instead only transforms between input &amp; output colour-spaces, also sometimes called absolute colourimetric;
+    [XYZ Scaling]: scales the source to the target white using a diagonal matrix applied in linear CIE XYZ colours;
+    [Bradford]: the traditional Bradford Transform (Luo et al., 1998), notably with its nonlinearity in the blue intermediate channel;
+    [Lin. Bradford]: a linear variant of the Bradford transformation; used, among other, for most of Flame's own internal transformation matrices;
+    [Lin. CAT02]: the full chromatic adaptation as described by the CAM02/CAT02, for equal source &amp; target viewing conditions;
+    [CAM16]: implements the nonlinear CAM16 (extended to support negative achromatic responses symmetrically), with respect to individual source &amp; target viewing conditions; and
+    [Lin. CAT16]: the full chromatic adaptation as described by the CAM16/CAT16, for equal source &amp; target viewing conditions.
+
+This shader's pipeline identifies input- &amp; output colour-spaces (assumed scene-, or display-referred linear) by their primaries &amp; white point.
+The former can be chosen as a preset in [Colour Primaries], or selected [Custom], in which case the user is to define the coordinates for red green &amp; blue primaries via [Primaries x] &amp; [Primaries y] in the CIE xy chromaticity space.
+Note that by nature, [CIE XYZ] always uses the E white point (and the controls for which are disabled). To convert from and/or to XYZ spaces with different virtual white points, use the overrides on the [CA Override] page. This is consistent with for example Flame's own CIE XYZ-D65 colour-space when setting the override to [HD D65].
+In all other cases, choosing the white point is done by one of several methods, determined by the respective setting of [Illuminant Type]:
+    [Native]: automatically chooses the white point corresponding to the primaries; note that this might be ambiguous or unintended for certain cases such as P3, for which one best selects another setting;
+    [Standard]: provides a selection of common white points in their usual (rounded) forms:
+        [ACES]: (0.32168, 0.33767) in CIE xy chromaticity space, as per ACES specification,
+        [ICC D50]: (0.9642, 1, 0.8249) in CIE XYZ, as per the ICC profile specification,
+        [HD D65]: (0.3127, 0.329) in CIE xy chromaticity space,
+        [DCI]: (0.314, 0.351) in CIE xy chromaticity space, as per SMPTE specification, and
+        [E]: equal energy white (1, 1, 1) in CIE XYZ;
+    [Temperature]: implements the Illuminant series D white, defined by:
+        [Temp]: the correlated colour temperature in Kelvin,
+        [Tint]: orthogonal tint to the daylight locus in CIE 1976 UCS, in units thereof, and
+        [Temperature shift]: since the definition of this illuminant series predates the fixing of the second radiation constant c₂, and by design, this method models the exact illuminant; the original illuminants correlate to now shifted temperatures - activating this toggle mimics the traditional behavior by multiplying [Temp] with c₂/(0.01438 m×K); and
+    [xy Coords]: CIE xy chromaticity space coordinates of the white point.
+Note: for [Native], ACES primaries default to ACES white, [CIE XYZ] to E, and all others (including [Custom]) to [HD D65].
+These controls are identical for the source &amp; target colour-space.
+
+Further, for using a white point different from the colour-space's innate one to adapt from and/or to, the [CA Override] page provides controls for such overrides. Those utilize the same methods and settings as the in- &amp; output colour-space controls, except for [Native]; but additionally implement:
+    [Disable]: doesn't override the white point; and
+    [From Colour]: provides a colour selector to set the scene white to a colour with respect to the in, or output colour-space; the selected colour is internally normalized to CIE Y=1.
+These controls are identical for the source &amp; target white point override.
+
+When using the CAM16, the following additional controls become available in the [Viewing Conditions] column (on page 1: [Controls] for 6 a column view, and page 2: [Target+Con] otherwise):
+    [Force Full CA]: by default, CAM16 does a partial chromatic adaptation to the internal working E white point (and back), the exact degree of which depending on the viewing conditions; this setting allows for instead forcing to use a full adaptation, for forward &amp; backward transformation, respectively; as well as 
+    controls for the parametric source &amp; target viewing conditions ([Source] &amp; [Target]):
+        [S]: encodes the surround parameters, as linearly interpolated between the CAM16 values for Dark, Dim &amp; Average corresponding to entries of -1, 0 and 1, respectively,
+        [L_W]: the luminance of the reference white in nits, and
+        [L_A]: the luminance of the adapting field in nits.
+Generally, L_A×Y_W=L_W×Y_b, where Y_b is the luminance factor of the background and Y_W is the luminance factor of the reference white. This relation can be used to derive either L_W or L_A if the other and Y_b (as well as Y_W) are fixed instead.
+
+For enhanced accuracy, intermediate matrices and values are always processed in double precision arithmetic; yet since instead of performing these computations for each pixel, an interposed data sampler is generated, the computational overhead is constant and insignificant.
+If even higher accuracy is needed, [Double Precision Processing] can be enabled, at the cost of performance.
+
+The CAM16 implementation used behaves as if forward-transforming to the triplet of hue angle h, correlate lightness J, and correlate colorfulness M; and back.
+Mirroring the set of quantities from which CAM16-UCS is derived.
 
 Note that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.
-It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+It is recommended to leave the [Output Resolution] as [Same As Input 1] - however, for tagging the [Result] with different colour-space, [User Defined] must be chosen. Still, in such cases, the format (in pixels and aspect ratio) must match the [Front]'s.
+Colour-spaces themselves are neither inferred from [Front] nor automatically tagged for [Result], the user shall take care to maintain a consistent colour-space journey either through the aforementioned Matchbox setting, or Colour Mgmt nodes.
+
+Adaptive Degradation is supported by this shader, which if active disables double precision processing.
 
 This shader is licensed under the terms of the MIT license.
 
@@ -15,15 +64,1118 @@ nobbl211@gmail.com"
     MatteProvider="False"
     SupportsAction="True"
     SupportsTransition="False"
-    SupportsAdaptiveDegradation="False"
+    SupportsAdaptiveDegradation="True"
     CommercialUsePermitted="True"
     ShaderType="Matchbox"
-    SoftwareVersion="2025.1"
+    SoftwareVersion="2026.2.1"
     TimelineUseBack="False"
     SupportsTimeline="True"
-    Version="0.3">
+    Version="0.6">
     <Shader
         Index="1"
+        OutputBitDepth="Float32"
+        OutputWidth="6"
+        OutputHeight="2">
+        <Uniform
+            Type="uint"
+            Tooltip="chromatic adaptation method"
+            DisplayName="CA Method"
+            Name="mtd"
+            Page="0"
+            Col="0"
+            Row="0"
+            Default="3"
+            ValueType="Popup">
+            <PopupEntry
+                Title="Disable"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="XYZ Scaling"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Bradford"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Lin. Bradford"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="Lin. CAT02"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="CAM16"
+                Value="5">
+            </PopupEntry>
+            <PopupEntry
+                Title="Lin. CAT16"
+                Value="6">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="toggles double-precision processing for applying the transformation"
+            DisplayName="Double Precision Processing"
+            Name="dbl"
+            Page="0"
+            Col="0"
+            Row="4"
+            Default="False">
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="source colour-space primaries"
+            DisplayName="Colour Primaries"
+            Name="spr"
+            Page="0"
+            Col="1"
+            Row="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="ACEScg"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ACES2065-1"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec.709"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec.2020"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="P3"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="AWG4"
+                Value="5">
+            </PopupEntry>
+            <PopupEntry
+                Title="RWG"
+                Value="6">
+            </PopupEntry>
+            <PopupEntry
+                Title="mRGB"
+                Value="7">
+            </PopupEntry>
+            <PopupEntry
+                Title="CIE XYZ"
+                Value="8">
+            </PopupEntry>
+            <PopupEntry
+                Title="Custom"
+                Value="9">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="CIE chromaticity space x coordinates of the source colour-space primaries"
+            DisplayName="Primaries x"
+            ChannelName="source_primaries_x"
+            Name="spx"
+            Page="0"
+            Col="1"
+            Row="1"
+            IconType="None"
+            ValueType="Proportional"
+            UIConditionSource="spr"
+            UIConditionValue="9"
+            UIConditionType="Disable">
+            <SubUniform
+                DisplayName="R"
+                ChannelName="r"
+                Default="0.713"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="G"
+                ChannelName="g"
+                Default="0.165"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="B"
+                ChannelName="b"
+                Default="0.128"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="CIE chromaticity space y coordinates of the source colour-space primaries"
+            DisplayName="Primaries y"
+            ChannelName="source_primaries_y"
+            Name="spy"
+            Page="0"
+            Col="1"
+            Row="3"
+            IconType="None"
+            ValueType="Proportional"
+            UIConditionSource="spr"
+            UIConditionValue="9"
+            UIConditionType="Disable">
+            <SubUniform
+                DisplayName="R"
+                ChannelName="r"
+                Default="0.293"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="G"
+                ChannelName="g"
+                Default="0.830"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="B"
+                ChannelName="b"
+                Default="0.044"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="source illuminant type"
+            DisplayName="Illuminant Type"
+            Name="sil"
+            Page="0"
+            Col="2"
+            Row="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="spr"
+            UIConditionValue="8"
+            UIConditionInvert="True"
+            UIConditionType="Disable">
+            <PopupEntry
+                Title="Native"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Standard"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coords"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="source white point illuminant"
+            DisplayName="Illuminant"
+            Name="sis"
+            Page="0"
+            Col="2"
+            Row="1"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="sil"
+            UIConditionValue="1"
+            UIConditionType="Hide">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ICC D50"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="E"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="correlated colour temperature of the source white point
+(per Illuminant series D), in Kelvin"
+            DisplayName="Temp"
+            ChannelName="source_cct"
+            Name="sit"
+            Page="0"
+            Col="2"
+            Row="1"
+            Default="5999.7140588661176"
+            Inc="2.0"
+            Max="25000.0"
+            Min="3997.84"
+            ResDependant="None"
+            UIConditionSource="sil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="colour tint of the source white point"
+            DisplayName="Tint"
+            ChannelName="source_tint"
+            Name="sitt"
+            Page="0"
+            Col="2"
+            Row="2"
+            Default="0.000067359866247373435"
+            Inc="0.0001"
+            Max="1.0"
+            Min="-1.0"
+            ResDependant="None"
+            UIConditionSource="sil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="scales the colour temperature by a correctional factor
+to mimic the CIE D-series behavior instead of maintaining
+the physically exact correlated colour temperature"
+            DisplayName="Temperature shift"
+            Name="sitd"
+            Page="0"
+            Col="2"
+            Row="3"
+            Default="True"
+            UIConditionSource="sil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="CIE xy chromaticity space coordinates of the source white point"
+            DisplayName="xy Coordinates"
+            ChannelName="source_xy"
+            Name="sixy"
+            Page="0"
+            Col="2"
+            Row="1"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="sil"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                DisplayName="X"
+                ChannelName="x"
+                Default="0.32168"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="Y"
+                ChannelName="y"
+                Default="0.33767"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="target colour-space primaries"
+            DisplayName="Colour Primaries"
+            Name="tpr"
+            Page="0"
+            Col="3"
+            Row="0"
+            Default="0"
+            ValueType="Popup">
+            <PopupEntry
+                Title="ACEScg"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ACES2065-1"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec.709"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Rec.2020"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="P3"
+                Value="4">
+            </PopupEntry>
+            <PopupEntry
+                Title="AWG4"
+                Value="5">
+            </PopupEntry>
+            <PopupEntry
+                Title="RWG"
+                Value="6">
+            </PopupEntry>
+            <PopupEntry
+                Title="mRGB"
+                Value="7">
+            </PopupEntry>
+            <PopupEntry
+                Title="CIE XYZ"
+                Value="8">
+            </PopupEntry>
+            <PopupEntry
+                Title="Custom"
+                Value="9">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="CIE chromaticity space x coordinates of the target colour-space primaries"
+            DisplayName="Primaries x"
+            ChannelName="target_primaries_x"
+            Name="tpx"
+            Page="0"
+            Col="3"
+            Row="1"
+            IconType="None"
+            ValueType="Proportional"
+            UIConditionSource="tpr"
+            UIConditionValue="9"
+            UIConditionType="Disable">
+            <SubUniform
+                DisplayName="R"
+                ChannelName="r"
+                Default="0.713"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="G"
+                ChannelName="g"
+                Default="0.165"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="B"
+                ChannelName="b"
+                Default="0.128"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="CIE chromaticity space y coordinates of the target colour-space primaries"
+            DisplayName="Primaries y"
+            ChannelName="target_primaries_y"
+            Name="tpy"
+            Page="0"
+            Col="3"
+            Row="3"
+            IconType="None"
+            ValueType="Proportional"
+            UIConditionSource="tpr"
+            UIConditionValue="9"
+            UIConditionType="Disable">
+            <SubUniform
+                DisplayName="R"
+                ChannelName="r"
+                Default="0.293"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="G"
+                ChannelName="g"
+                Default="0.830"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="B"
+                ChannelName="b"
+                Default="0.044"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="target illuminant type"
+            DisplayName="Illuminant Type"
+            Name="til"
+            Page="0"
+            Col="4"
+            Row="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="tpr"
+            UIConditionValue="8"
+            UIConditionInvert="True"
+            UIConditionType="Disable">
+            <PopupEntry
+                Title="Native"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Standard"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coords"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="target white point illuminant"
+            DisplayName="Illuminant"
+            Name="tis"
+            Page="0"
+            Col="4"
+            Row="1"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="til"
+            UIConditionValue="1"
+            UIConditionType="Hide">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ICC D50"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="E"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="correlated colour temperature of the target white point
+(per Illuminant series D), in Kelvin"
+            DisplayName="Temp"
+            ChannelName="target_cct"
+            Name="tit"
+            Page="0"
+            Col="4"
+            Row="1"
+            Default="5999.7140588661176"
+            Inc="2.0"
+            Max="25000.0"
+            Min="3997.84"
+            ResDependant="None"
+            UIConditionSource="til"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="colour tint of the target white point"
+            DisplayName="Tint"
+            ChannelName="target_tint"
+            Name="titt"
+            Page="0"
+            Col="4"
+            Row="2"
+            Default="0.000067359866247373435"
+            Inc="0.0001"
+            Max="1.0"
+            Min="-1.0"
+            ResDependant="None"
+            UIConditionSource="til"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="scales the colour temperature by a correctional factor
+to mimic the CIE D-series behavior instead of maintaining
+the physically exact correlated colour temperature"
+            DisplayName="Temperature shift"
+            Name="titd"
+            Page="0"
+            Col="4"
+            Row="3"
+            Default="True"
+            UIConditionSource="til"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="CIE xy chromaticity space coordinates of the target white point"
+            DisplayName="xy Coordinates"
+            ChannelName="target_xy"
+            Name="tixy"
+            Page="0"
+            Col="4"
+            Row="1"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="til"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                DisplayName="X"
+                ChannelName="x"
+                Default="0.32168"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="Y"
+                ChannelName="y"
+                Default="0.33767"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="determines the use of full chromatic adaptation
+for the forward and/or backwards transformation,
+instead of viewing-conditions-dependent partial adaptation"
+            DisplayName="Force Full CA"
+            Name="fca"
+            Page="0"
+            Col="5"
+            Row="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="mtd"
+            UIConditionValue="5"
+            UIConditionType="Disable">
+            <PopupEntry
+                Title="None"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Forward"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Backward"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="Fwd+Bwd"
+                Value="3">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="source viewing conditions:
+S (surround): encodes dark, dim and average, for values of -1, 0 and 1,
+L_W: luminance of the reference white in nits, and
+L_A: luminance of the adapting field in nits"
+            DisplayName="Source"
+            ChannelName="source_viewing_conditions"
+            Name="svc"
+            Page="0"
+            Col="5"
+            Row="1"
+            IconType="None"
+            ValueType="Proportional"
+            UIConditionSource="mtd"
+            UIConditionValue="5"
+            UIConditionType="Disable">
+            <SubUniform
+                DisplayName="S"
+                ChannelName="surround"
+                Default="0.0"
+                Inc="0.001"
+                Max="1.0"
+                Min="-1.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="L_W"
+                ChannelName="L_W"
+                Default="100.0"
+                Inc="1.0"
+                Max="1000000000.0"
+                Min="0.0000004"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="L_A"
+                ChannelName="L_A"
+                Default="18.0"
+                Inc="1.0"
+                Max="1000000000.0"
+                Min="0.0000004"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="target viewing conditions:
+S (surround): encodes dark, dim and average, for values of -1, 0 and 1,
+L_W: luminance of the reference white in nits, and
+L_A: luminance of the adapting field in nits"
+            DisplayName="Target"
+            ChannelName="target_viewing_conditions"
+            Name="tvc"
+            Page="0"
+            Col="5"
+            Row="3"
+            IconType="None"
+            ValueType="Proportional"
+            UIConditionSource="mtd"
+            UIConditionValue="5"
+            UIConditionType="Disable">
+            <SubUniform
+                DisplayName="S"
+                ChannelName="surround"
+                Default="0.0"
+                Inc="0.001"
+                Max="1.0"
+                Min="-1.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="L_W"
+                ChannelName="L_W"
+                Default="100.0"
+                Inc="1.0"
+                Max="1000000000.0"
+                Min="0.0000004"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="L_A"
+                ChannelName="L_A"
+                Default="18.0"
+                Inc="1.0"
+                Max="1000000000.0"
+                Min="0.0000004"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="overrides the source illuminant used for chromatic adaptation"
+            DisplayName="Override White"
+            Name="osil"
+            Page="1"
+            Col="0"
+            Row="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="mtd"
+            UIConditionValue="0"
+            UIConditionInvert="True"
+            UIConditionType="Disable">
+            <PopupEntry
+                Title="Disable"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Standard"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coords"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="From Colour"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="source white point illuminant to use for chromatic adaptation"
+            DisplayName="Illuminant"
+            Name="osis"
+            Page="1"
+            Col="0"
+            Row="1"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="osil"
+            UIConditionValue="1"
+            UIConditionType="Hide">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ICC D50"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="E"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="correlated colour temperature of the source white point
+(per Illuminant series D) to use for chromatic adaptation"
+            DisplayName="Temp"
+            ChannelName="source_ca_cct"
+            Name="osit"
+            Page="1"
+            Col="0"
+            Row="1"
+            Default="5999.7140588661176"
+            Inc="2.0"
+            Max="25000.0"
+            Min="3997.84"
+            ResDependant="None"
+            UIConditionSource="osil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="colour tint of the source white point to use for chromatic adaptation"
+            DisplayName="Tint"
+            ChannelName="source_ca_tint"
+            Name="ositt"
+            Page="1"
+            Col="0"
+            Row="2"
+            Default="0.000067359866247373435"
+            Inc="0.0001"
+            Max="1.0"
+            Min="-1.0"
+            ResDependant="None"
+            UIConditionSource="osil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="scales the colour temperature by a correctional factor
+to mimic the CIE D-series behavior instead of maintaining
+the physically exact correlated colour temperature"
+            DisplayName="Temperature shift"
+            Name="ositd"
+            Page="1"
+            Col="0"
+            Row="3"
+            Default="True"
+            UIConditionSource="osil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="CIE xy chromaticity space coordinates of the source white point to use for chromatic adaptation"
+            DisplayName="xy Coordinates"
+            ChannelName="source_ca_xy"
+            Name="osixy"
+            Page="1"
+            Col="0"
+            Row="1"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="osil"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                DisplayName="X"
+                ChannelName="x"
+                Default="0.32168"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="Y"
+                ChannelName="y"
+                Default="0.33767"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="colour of the source white point with respect to the source colour space"
+            DisplayName="White Point"
+            ChannelName="source_ca_white"
+            Name="osic"
+            Page="1"
+            Col="0"
+            Row="1"
+            IconType="None"
+            ValueType="Colour"
+            UIConditionSource="osil"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="overrides the target illuminant used for chromatic adaptation"
+            DisplayName="Override White"
+            Name="otil"
+            Page="1"
+            Col="1"
+            Row="0"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="mtd"
+            UIConditionValue="0"
+            UIConditionInvert="True"
+            UIConditionType="Disable">
+            <PopupEntry
+                Title="Disable"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="Standard"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="Temperature"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="xy Coords"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="From Colour"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="uint"
+            Tooltip="target white point illuminant to use for chromatic adaptation"
+            DisplayName="Illuminant"
+            Name="otis"
+            Page="1"
+            Col="1"
+            Row="1"
+            Default="0"
+            ValueType="Popup"
+            UIConditionSource="otil"
+            UIConditionValue="1"
+            UIConditionType="Hide">
+            <PopupEntry
+                Title="ACES"
+                Value="0">
+            </PopupEntry>
+            <PopupEntry
+                Title="ICC D50"
+                Value="1">
+            </PopupEntry>
+            <PopupEntry
+                Title="HD D65"
+                Value="2">
+            </PopupEntry>
+            <PopupEntry
+                Title="DCI"
+                Value="3">
+            </PopupEntry>
+            <PopupEntry
+                Title="E"
+                Value="4">
+            </PopupEntry>
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="correlated colour temperature of the target white point
+(per Illuminant series D) to use for chromatic adaptation"
+            DisplayName="Temp"
+            ChannelName="target_ca_cct"
+            Name="otit"
+            Page="1"
+            Col="1"
+            Row="1"
+            Default="5999.7140588661176"
+            Inc="2.0"
+            Max="25000.0"
+            Min="3997.84"
+            ResDependant="None"
+            UIConditionSource="otil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="float"
+            Tooltip="colour tint of the target white point to use for chromatic adaptation"
+            DisplayName="Tint"
+            ChannelName="target_ca_tint"
+            Name="otitt"
+            Page="1"
+            Col="1"
+            Row="2"
+            Default="0.000067359866247373435"
+            Inc="0.0001"
+            Max="1.0"
+            Min="-1.0"
+            ResDependant="None"
+            UIConditionSource="otil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="bool"
+            Tooltip="scales the colour temperature by a correctional factor
+to mimic the CIE D-series behavior instead of maintaining
+the physically exact correlated colour temperature"
+            DisplayName="Temperature shift"
+            Name="otitd"
+            Page="1"
+            Col="1"
+            Row="3"
+            Default="True"
+            UIConditionSource="otil"
+            UIConditionValue="2"
+            UIConditionType="Hide">
+        </Uniform>
+        <Uniform
+            Type="vec2"
+            Tooltip="CIE xy chromaticity space coordinates of the target white point to use for chromatic adaptation"
+            DisplayName="xy Coordinates"
+            ChannelName="target_ca_xy"
+            Name="otixy"
+            Page="1"
+            Col="1"
+            Row="1"
+            IconType="None"
+            ValueType="Position"
+            UIConditionSource="otil"
+            UIConditionValue="3"
+            UIConditionType="Hide">
+            <SubUniform
+                DisplayName="X"
+                ChannelName="x"
+                Default="0.32168"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+            <SubUniform
+                DisplayName="Y"
+                ChannelName="y"
+                Default="0.33767"
+                Inc="0.0001"
+                Max="10000000.0"
+                Min="-10000000.0"
+                ResDependant="None">
+            </SubUniform>
+        </Uniform>
+        <Uniform
+            Type="vec3"
+            Tooltip="colour of the target white point with respect to the target colour space"
+            DisplayName="White Point"
+            ChannelName="target_ca_white"
+            Name="otic"
+            Page="1"
+            Col="1"
+            Row="1"
+            IconType="None"
+            ValueType="Colour"
+            UIConditionSource="otil"
+            UIConditionValue="4"
+            UIConditionType="Hide">
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+            <SubUniform
+                Default="1.0">
+            </SubUniform>
+        </Uniform>
+    </Shader>
+    <Shader
+        Index="2"
         OutputBitDepth="Output">
         <Uniform
             Type="sampler2D"
@@ -35,574 +1187,72 @@ nobbl211@gmail.com"
             InputType="Front">
         </Uniform>
         <Uniform
-            Type="uint"
-            Tooltip="adaptation method"
-            DisplayName="Method"
-            Name="method"
-            Col="0"
-            Row="0"
-            Page="0"
-            Default="0"
-            ValueType="Popup">
-            <PopupEntry
-                Title="CAT02"
-                Value="0">
-            </PopupEntry>
-            <PopupEntry
-                Title="CAT02 (simple)"
-                Value="1">
-            </PopupEntry>
-            <PopupEntry
-                Title="Bradford"
-                Value="2">
-            </PopupEntry>
-            <PopupEntry
-                Title="Von Kries"
-                Value="3">
-            </PopupEntry>
+            Type="sampler2D"
+            Name="adsk_results_pass1"
+            Mipmaps="False">
         </Uniform>
         <Uniform
             Type="uint"
-            Tooltip="source colour space
-input must be scene linear in all cases"
-            DisplayName="Colour Space"
-            Name="source_cs"
-            Col="1"
-            Row="0"
-            Page="0"
-            Default="0"
-            ValueType="Popup">
-            <PopupEntry
-                Title="ACEScg"
-                Value="0">
-            </PopupEntry>
-            <PopupEntry
-                Title="ACES2065-1"
-                Value="1">
-            </PopupEntry>
-            <PopupEntry
-                Title="Rec. 709/sRGB"
-                Value="2">
-            </PopupEntry>
-            <PopupEntry
-                Title="Rec. 2020"
-                Value="3">
-            </PopupEntry>
-            <PopupEntry
-                Title="P3D65"
-                Value="4">
-            </PopupEntry>
-            <PopupEntry
-                Title="XYZ"
-                Value="5">
-            </PopupEntry>
-        </Uniform>
-        <Uniform
-            Type="uint"
-            Tooltip="source white point type"
-            DisplayName="White Type"
-            Name="source_type"
-            Col="1"
-            Row="1"
-            Page="0"
-            Default="0"
-            ValueType="Popup">
-            <PopupEntry
-                Title="Native"
-                Value="0">
-            </PopupEntry>
-            <PopupEntry
-                Title="Illuminant"
-                Value="1">
-            </PopupEntry>
-            <PopupEntry
-                Title="Colour Temperature"
-                Value="2">
-            </PopupEntry>
-            <PopupEntry
-                Title="xy Coordinates"
-                Value="3">
-            </PopupEntry>
-            <PopupEntry
-                Title="from Colour"
-                Value="4">
-            </PopupEntry>
-        </Uniform>
-        <Uniform
-            Type="uint"
-            Tooltip="source white point illuminant"
-            DisplayName="Illuminant"
-            Name="source_illum"
-            Col="1"
-            Row="2"
-            Page="0"
-            Default="0"
-            ValueType="Popup"
-            UIConditionSource="source_type"
-            UIConditionValue="1"
-            UIConditionType="Hide">
-            <PopupEntry
-                Title="ACES"
-                Value="0">
-            </PopupEntry>
-            <PopupEntry
-                Title="HD D65"
-                Value="1">
-            </PopupEntry>
-            <PopupEntry
-                Title="DCI"
-                Value="2">
-            </PopupEntry>
-            <PopupEntry
-                Title="Equal Energy"
-                Value="3">
-            </PopupEntry>
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="correlated colour temperature of the source white point (per Illuminant series D)"
-            DisplayName="Temp"
-            ChannelName="source_cct"
-            Name="source_cct"
-            Col="1"
-            Row="2"
-            Page="0"
-            Default="6000.0"
-            Inc="10.0"
-            Max="25000.0"
-            Min="4000.0"
-            ResDependant="None"
-            UIConditionSource="source_type"
-            UIConditionValue="2"
-            UIConditionType="Hide">
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="colour tint of the source white point"
-            DisplayName="Tint"
-            ChannelName="source_tint"
-            Name="source_tint"
-            Col="1"
-            Row="3"
-            Page="0"
-            Default="0.0"
-            Inc="0.0002"
-            Max="1.0"
-            Min="-1.0"
-            ResDependant="None"
-            UIConditionSource="source_type"
-            UIConditionValue="2"
-            UIConditionType="Hide">
+            Name="mtd">
+            <Duplicate>
+            </Duplicate>
         </Uniform>
         <Uniform
             Type="bool"
-            Tooltip="applies a scaling of the colour temperature by a factor of 1.4388/1.438
-to mimic the CIE D-series behavior instead of
-maintaining the physical exact correlated colour temperature"
-            DisplayName="Temperature shift"
-            Name="source_cct_d"
-            Col="1"
-            Row="4"
-            Page="0"
-            Default="False"
-            UIConditionSource="source_type"
-            UIConditionValue="2"
-            UIConditionType="Hide">
-        </Uniform>
-        <Uniform
-            Type="vec2"
-            Tooltip="CIE 1931 xy coordinates of the source white point"
-            DisplayName="Colour Coordinates"
-            ChannelName="source_coord"
-            Name="source_coord"
-            Col="1"
-            Row="2"
-            Page="0"
-            IconType="None"
-            ValueType="Position"
-            UIConditionSource="source_type"
-            UIConditionValue="3"
-            UIConditionType="Hide">
-            <SubUniform
-                Default="0.32168"
-                Inc="0.0001"
-                Max="2.0"
-                Min="-1.0"
-                ResDependant="None">
-            </SubUniform>
-            <SubUniform
-                Default="0.33767"
-                Inc="0.0001"
-                Max="2.0"
-                Min="-1.0"
-                ResDependant="None">
-            </SubUniform>
-        </Uniform>
-        <Uniform
-            Type="vec3"
-            Tooltip="colour representation of the source white point"
-            DisplayName="Colour"
-            ChannelName="source_colour"
-            Name="source_colour"
-            Col="1"
-            Row="2"
-            Page="0"
-            IconType="None"
-            ValueType="Colour"
-            UIConditionSource="source_type"
-            UIConditionValue="4"
-            UIConditionType="Hide">
-            <SubUniform
-                Default="1.0">
-            </SubUniform>
-            <SubUniform
-                Default="1.0">
-            </SubUniform>
-            <SubUniform
-                Default="1.0">
-            </SubUniform>
-        </Uniform>
-        <Uniform
-            Type="uint"
-            Tooltip="target colour space
-output is implied scene linear in all cases"
-            DisplayName="colour Space"
-            Name="target_cs"
-            Col="2"
-            Row="0"
-            Page="0"
-            Default="0"
-            ValueType="Popup">
-            <PopupEntry
-                Title="ACEScg"
-                Value="0">
-            </PopupEntry>
-            <PopupEntry
-                Title="ACES2065-1"
-                Value="1">
-            </PopupEntry>
-            <PopupEntry
-                Title="Rec. 709/sRGB"
-                Value="2">
-            </PopupEntry>
-            <PopupEntry
-                Title="Rec. 2020"
-                Value="3">
-            </PopupEntry>
-            <PopupEntry
-                Title="P3D65"
-                Value="4">
-            </PopupEntry>
-            <PopupEntry
-                Title="XYZ"
-                Value="5">
-            </PopupEntry>
-        </Uniform>
-        <Uniform
-            Type="uint"
-            Tooltip="target white point type"
-            DisplayName="White Type"
-            Name="target_type"
-            Col="2"
-            Row="1"
-            Page="0"
-            Default="0"
-            ValueType="Popup">
-            <PopupEntry
-                Title="Native"
-                Value="0">
-            </PopupEntry>
-            <PopupEntry
-                Title="Illuminant"
-                Value="1">
-            </PopupEntry>
-            <PopupEntry
-                Title="Colour Temperature"
-                Value="2">
-            </PopupEntry>
-            <PopupEntry
-                Title="xy Coordinates"
-                Value="3">
-            </PopupEntry>
-            <PopupEntry
-                Title="from Colour"
-                Value="4">
-            </PopupEntry>
-        </Uniform>
-        <Uniform
-            Type="uint"
-            Tooltip="target white point illuminant"
-            DisplayName="Illuminant"
-            Name="target_illum"
-            Col="2"
-            Row="2"
-            Page="0"
-            Default="0"
-            ValueType="Popup"
-            UIConditionSource="target_type"
-            UIConditionValue="1"
-            UIConditionType="Hide">
-            <PopupEntry
-                Title="ACES"
-                Value="0">
-            </PopupEntry>
-            <PopupEntry
-                Title="HD D65"
-                Value="1">
-            </PopupEntry>
-            <PopupEntry
-                Title="DCI"
-                Value="2">
-            </PopupEntry>
-            <PopupEntry
-                Title="Equal Energy"
-                Value="3">
-            </PopupEntry>
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="correlated colour temperature of the target white point (per Illuminant series D)"
-            DisplayName="Temp"
-            ChannelName="target_cct"
-            Name="target_cct"
-            Col="2"
-            Row="2"
-            Page="0"
-            Default="6000.0"
-            Inc="10.0"
-            Max="25000.0"
-            Min="4000.0"
-            ResDependant="None"
-            UIConditionSource="target_type"
-            UIConditionValue="2"
-            UIConditionType="Hide">
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="colour tint of the target white point"
-            DisplayName="Tint"
-            ChannelName="target_tint"
-            Name="target_tint"
-            Col="2"
-            Row="3"
-            Page="0"
-            Default="0.0"
-            Inc="0.0002"
-            Max="1.0"
-            Min="-1.0"
-            ResDependant="None"
-            UIConditionSource="target_type"
-            UIConditionValue="2"
-            UIConditionType="Hide">
-        </Uniform>
-        <Uniform
-            Type="bool"
-            Tooltip="applies a scaling of the colour temperature by a factor of 1.4388/1.438
-to mimic the CIE D-series behavior instead of
-maintaining the physical exact correlated colour temperature"
-            DisplayName="Temperature shift"
-            Name="target_cct_d"
-            Col="2"
-            Row="4"
-            Page="0"
-            Default="False"
-            UIConditionSource="target_type"
-            UIConditionValue="2"
-            UIConditionType="Hide">
-        </Uniform>
-        <Uniform
-            Type="vec2"
-            Tooltip="CIE 1931 xy coordinates of the target white point"
-            DisplayName="Colour Coordinates"
-            ChannelName="target_coord"
-            Name="target_coord"
-            Col="2"
-            Row="2"
-            Page="0"
-            IconType="None"
-            ValueType="Position"
-            UIConditionSource="target_type"
-            UIConditionValue="3"
-            UIConditionType="Hide">
-            <SubUniform
-                Default="0.32168"
-                Inc="0.0001"
-                Max="2.0"
-                Min="-1.0"
-                ResDependant="None">
-            </SubUniform>
-            <SubUniform
-                Default="0.33767"
-                Inc="0.0001"
-                Max="2.0"
-                Min="-1.0"
-                ResDependant="None">
-            </SubUniform>
-        </Uniform>
-        <Uniform
-            Type="vec3"
-            Tooltip="colour representation of the target white point"
-            DisplayName="Colour"
-            ChannelName="target_colour"
-            Name="target_colour"
-            Col="2"
-            Row="2"
-            Page="0"
-            IconType="None"
-            ValueType="Colour"
-            UIConditionSource="target_type"
-            UIConditionValue="4"
-            UIConditionType="Hide">
-            <SubUniform
-                Default="1.0">
-            </SubUniform>
-            <SubUniform
-                Default="1.0">
-            </SubUniform>
-            <SubUniform
-                Default="1.0">
-            </SubUniform>
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="surrounding source viewing conditions
-smoothly interpolates between average, dim and dark, for values of 0, 1 and 2 respectively"
-            DisplayName="Surround"
-            ChannelName="source_s"
-            Name="source_s"
-            Col="3"
-            Row="0"
-            Page="0"
-            Default="0.0"
-            Inc="0.005"
-            Max="2.0"
-            Min="0.0"
-            ResDependant="None"
-            UIConditionSource="method"
-            UIConditionValue="0"
-            UIConditionType="Disable">
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="source field luminance"
-            DisplayName="L_A"
-            ChannelName="source_l_a"
-            Name="source_l_a"
-            Col="3"
-            Row="1"
-            Page="0"
-            Default="20.0"
-            Inc="1"
-            Max="1000000000.0"
-            Min="0.0000001"
-            ResDependant="None"
-            UIConditionSource="method"
-            UIConditionValue="0"
-            UIConditionType="Disable">
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="relative source background brightness compared to the scene white"
-            DisplayName="n"
-            ChannelName="source_n"
-            Name="source_n"
-            Col="3"
-            Row="2"
-            Page="0"
-            Default="1.0"
-            Inc="0.01"
-            Max="1000000000.0"
-            Min="0.0000001"
-            ResDependant="None"
-            UIConditionSource="method"
-            UIConditionValue="0"
-            UIConditionType="Disable">
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="surrounding target viewing conditions
-smoothly interpolates between average, dim and dark, for values of 0, 1 and 2 respectively"
-            DisplayName="Surround"
-            ChannelName="target_s"
-            Name="target_s"
-            Col="4"
-            Row="0"
-            Page="0"
-            Default="0.0"
-            Inc="0.005"
-            Max="2.0"
-            Min="0.0"
-            ResDependant="None"
-            UIConditionSource="method"
-            UIConditionValue="0"
-            UIConditionType="Disable">
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="target field luminance"
-            DisplayName="L_A"
-            ChannelName="target_l_a"
-            Name="target_l_a"
-            Col="4"
-            Row="1"
-            Page="0"
-            Default="20.0"
-            Inc="1"
-            Max="1000000000.0"
-            Min="0.0000001"
-            ResDependant="None"
-            UIConditionSource="method"
-            UIConditionValue="0"
-            UIConditionType="Disable">
-        </Uniform>
-        <Uniform
-            Type="float"
-            Tooltip="relative target background brightness compared to the scene white"
-            DisplayName="n"
-            ChannelName="target_n"
-            Name="target_n"
-            Col="4"
-            Row="2"
-            Page="0"
-            Default="1.0"
-            Inc="0.01"
-            Max="1000000000.0"
-            Min="0.0000001"
-            ResDependant="None"
-            UIConditionSource="method"
-            UIConditionValue="0"
-            UIConditionType="Disable">
+            Name="dbl">
+            <Duplicate>
+            </Duplicate>
         </Uniform>
     </Shader>
     <Page
         Name="Controls"
-        ColName0_2="Chromatics"
-        ColName3_5="Conditions"
+        ColName0_2="Set+Source"
+        ColName3_5="Target+Con"
         Page="0">
         <Col
-            Name=" Method"
-            Col="0"
-            Page="0">
+            Name="Settings"
+            Page="0"
+            Col="0">
         </Col>
         <Col
-            Name="Source Colours"
-            Col="1"
-            Page="0">
+            Name="Source Primaries"
+            Page="0"
+            Col="1">
         </Col>
         <Col
-            Name="Target Colours"
-            Col="2"
-            Page="0">
+            Name="Source White Point"
+            Page="0"
+            Col="2">
         </Col>
         <Col
-            Name="Source Conditions"
-            Col="3"
-            Page="0">
+            Name="Target Primaries"
+            Page="0"
+            Col="3">
         </Col>
         <Col
-            Name="Target Conditions"
-            Col="4"
-            Page="0">
+            Name="Target White Point"
+            Page="0"
+            Col="4">
+        </Col>
+        <Col
+            Name="Viewing Conditions"
+            Page="0"
+            Col="5">
+        </Col>
+    </Page>
+    <Page
+        Name="CA Override"
+        ColName0_2="CA Override"
+        Page="1">
+        <Col
+            Name="Source White Point"
+            Page="1"
+            Col="0">
+        </Col>
+        <Col
+            Name="Target White Point"
+            Page="1"
+            Col="1">
         </Col>
     </Page>
 </ShaderNodePreset>

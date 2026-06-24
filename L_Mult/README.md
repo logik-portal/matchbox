@@ -2,11 +2,11 @@
 
 ## Description
 
-Multiplies the pixel values in the image.
+Multiplies the pixel values in the image
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

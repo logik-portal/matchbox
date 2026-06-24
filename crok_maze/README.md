@@ -2,18 +2,18 @@
 
 ## Description
 
-Creates a maze like structure.
-
+This Matchbox shader creates a maze like structure.
 Setup:
-
-    - Width: wall width
-    - Zoom: zoom in | out of the maze
-    - Rotation: rotates the maze
-    - Position: offset the maze position
+- Width: wall width
+- Zoom: zoom in | out of the maze
+- Rotation: rotates the maze
+- Position: offset the maze position
+Demo clip: http://vimeo.com/112577354
+Based on: http://glslsandbox.com/e#21316.0
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -27,4 +27,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

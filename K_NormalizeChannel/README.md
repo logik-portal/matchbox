@@ -3,10 +3,11 @@
 ## Description
 
 Normalize an input based on a single channel. Useful when you need to normalize a 32-bit image so to avoid banding when creating mattes from position passes.
+Shader written by:   Kyle Obley (kyle.obley@gmail.com)
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Kyle Obley
+

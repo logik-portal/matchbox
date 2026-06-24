@@ -2,22 +2,17 @@
 
 ## Description
 
-Simulates CRT phosphor / shadow mask arrangements.
-
+Matchbox shader simulates CRT phosphor / shadow mask arrangements.
 Setup:
-
-    - RGB Bar
-    - MG Bar
-    - RGB Triad
-
-Updates:
-
-    - Modified default input to be Front.
-    - Small fix to make 2025 shader_builder happy.
+- RGB Bar
+- MG Bar
+- RGB Triad
+Based on Phosphor21x / http://filthypants.blogspot.de/2011/05/more-emulator-pixel-shaders-crt-updated.html
+Shader developer: Caligari
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -31,4 +26,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

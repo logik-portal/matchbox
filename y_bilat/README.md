@@ -2,15 +2,15 @@
 
 ## Description
 
+miles@noesclavo.com
+BILAT
 A bilateral filter, with a few more options, and the abiltiy to intake a matte.
-
-Updates:
-
-    - Fixed for Flame 2025
+https://www.shadertoy.com/view/4dfGDH
+https://github.com/SableRaf/Filters4Processing/blob/master/sketches/Bilateral/data/bilateral.glsl
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -24,4 +24,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

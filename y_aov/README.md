@@ -2,15 +2,13 @@
 
 ## Description
 
+AOV
 Combine up to 6 matte passes with various useful operations. Passes can be monochrome or 3 Channel RGB
-
-Updates:
-
-    - Fixed for Flame 2025
+miles&noesclavo.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

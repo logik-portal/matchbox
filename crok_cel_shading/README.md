@@ -2,22 +2,22 @@
 
 ## Description
 
-Simulates Cel shading.
-
+This Matchbox shader simulates Cel shading.
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Setup:
-
-    - Threshold : threshold for the filter
-    - Color Levels: numbers of shades
-    - Filter Size: blur level
-    - Edge Size: size of the outline
+- Threshold : threshold for the filter
+- Color Levels: numbers of shades
+- Filter Size: blur level
+- Edge Size: size of the outline
+Demo clip: http://vimeo.com/82193157
+Shader developer: Glass
+Based on https://www.shadertoy.com/view/lss3R8
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -31,4 +31,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

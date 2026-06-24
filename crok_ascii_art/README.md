@@ -2,22 +2,20 @@
 
 ## Description
 
-Applies ASCII art look to image.
-
+This Matchbox shader simulates JPEG compression.
 Input:
-
-    - Source: original image
-    - Matte: where the effect should be applied
-
+- Source: original image
+- Matte: where the effect should be applied
 Setup:
-
-    - Enable Black and White: enables Black and white ;)
-    - Look: defines the size of the font
-    - Brightness: adjust the brightness the created image
+- Enable Black and White: enables Black and white ;)
+- Look: defines the size of the font
+- Brightness: adjust the brightness the created image
+Based on www.shadertoy.com/view/lsBXzD by CeeJayDK
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -31,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,11 +2,10 @@
 
 ## Description
 
-Happy 2016!
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +19,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

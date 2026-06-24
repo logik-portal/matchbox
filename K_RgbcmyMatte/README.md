@@ -2,11 +2,12 @@
 
 ## Description
 
+K_RgbcmyMatte v 1.0
 Seperates Red, Green, Blue, Cyan, Magenta, Yellow and White from a matte pass.
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Kyle Obley
+

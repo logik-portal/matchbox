@@ -2,15 +2,14 @@
 
 ## Description
 
-Creates Digital Chaos.
-
+This Matchbox shader creates Digital Chaos
 Input:
-
-    - Noise: noise image
+- Noise: noise image 
+Based on: https://www.shadertoy.com/view/4lfGWl
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -24,4 +23,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

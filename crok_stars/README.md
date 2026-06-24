@@ -2,18 +2,20 @@
 
 ## Description
 
-Simulates Stars.
-
+This Matchbox shader simulates Stars.
 Setup:
-
-    - Density : density of the stars
-    - Seed: seed value for stars pattern
-    - Speed: flickering speed
-    - Brightness : brightness of the stars
+- Density : density of the stars
+- Seed: seed value for stars pattern
+- Speed: flickering speed
+- Brightness : brightness of the stars
+Demo clip: http://vimeo.com/82460176
+Shader developer: Kali
+Based on https://www.shadertoy.com/view/MssGzM
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -27,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,15 +2,16 @@
 
 ## Description
 
-Simulates anisotropic kuwahara filtering.
-
+This Matchbox shader simulates anisotropic kuwahara filtering.
 Setup:
-
-    - Radius: adjust filter radius
+- Radius: adjust filter radius
+Demo clip: http://vimeo.com/92362155
+Based on: https://code.google.com/p/gpuakf/
+GLSL shader: by Jan Eric Kyprianidis
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -24,4 +25,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

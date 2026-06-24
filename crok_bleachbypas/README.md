@@ -2,20 +2,14 @@
 
 ## Description
 
-Simulates a bleachbypass process.
-
+This Matchbox shader simulates a bleachbypass process.
 Setup:
-
-    - Exposure: adjust exposure of the image
-    - Amount: adjust amount of the bleachbypass process
-
-Updates:
-
-    - Modified default input to be Front.
+- Exposure: adjust exposure of the image
+- Amount: adjust amount of the bleachbypass process
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -29,4 +23,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

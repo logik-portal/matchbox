@@ -2,11 +2,11 @@
 
 ## Description
 
-Distorts the back plate (Input 1) according to movement in the front plate (Input 2).
+Distorts the back plate (Input 1) according to movement in the front plate (Input 2)
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Ted Kuleshov
+

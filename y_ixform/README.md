@@ -2,15 +2,13 @@
 
 ## Description
 
-Transform a thing. This is only cool if you input the optional black and white strength channel. The transormation will be multiplied by the value of the strength channel.
-
-Updates:
-
-    - Fixed for Flame 2025
+miles@noesclavo.com
+IXFORM
+Transform a thing. This is only cool if you input the optional black and white strength channel. The transormation will be multiplied
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+the value of the strength channel.

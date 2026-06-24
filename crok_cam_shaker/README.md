@@ -2,33 +2,29 @@
 
 ## Description
 
-Creates handheld camera shakes.
-
+This Matchbox shader creates handheld camera shakes.
 Input:
-
-    - Front: source clip
-    - Matte: matte clip
-
+- Front: source clip
+- Matte: matte clip
 Setup:
-
-    - Seed: adjust that slider to get different results
-    - Amplitude: overall amplitude of all the effects
-    - Frequency: overall frequncy of all the effect
-    - Zoom: overall zoom in / out
-    - Rotation: overall rotation
-
-    - Amplitude X/Y: adjust the postion amplitude
-    - Frequency: adjust the position frequency
-    - Amplitude Zoom: adjust the zoom amplitude
-    - Frequency: adjust the zoom frequency
-    - Amplitude Rotation: adjust the rotation amplitude
-    - Frequency: adjust the rotation frequency
-    - Samples: how many motionblur samples
-    - Shutter: adjust shutter speed
+- Seed: adjust that slider to get different results
+- Amplitude: overall amplitude of all the effects
+- Frequency: overall frequncy of all the effect
+- Zoom: overall zoom in / out
+- Rotation: overall rotation
+- Amplitude X/Y: adjust the postion amplitude
+- Frequency: adjust the position frequency
+- Amplitude Zoom: adjust the zoom amplitude
+- Frequency: adjust the zoom frequency
+- Amplitude Rotation: adjust the rotation amplitude
+- Frequency: adjust the rotation frequency
+- Samples: how many motionblur samples
+- Shutter: adjust shutter speed
+Demo clip: http://vimeo.com/114378228
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -42,4 +38,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

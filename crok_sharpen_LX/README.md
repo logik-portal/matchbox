@@ -2,11 +2,12 @@
 
 ## Description
 
-Sharpen your image.
+This LightBox shader will sharpen your image
+Ligtbox version
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

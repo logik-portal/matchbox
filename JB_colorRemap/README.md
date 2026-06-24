@@ -2,11 +2,11 @@
 
 ## Description
 
-Remaps RGB of input1 using RGB of input 2.
+Remaps RGB of input1 using RGB of input 2. For more informations contact: julienbrami.vfx@gmail.com
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Julien Brami
+

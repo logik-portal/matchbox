@@ -2,11 +2,13 @@
 
 ## Description
 
-Creates Mandelbulb Fractals inside Action.
+This shader creates Mandelbulb Fractals inside Action.
+Demo clip: http://vimeo.com/117717079
+Based on: http://hirnsohle.de/test/fractalLab/
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

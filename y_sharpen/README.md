@@ -2,15 +2,14 @@
 
 ## Description
 
+miles@noesclavo.com
+SHARPEN
 Sharpen an image using a guassian blur with linear extrapolation.
-
-Updates:
-
-    - Fixed for Flame 2025
+The blur algorithm is the artistry of Lewis Saunders.
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -24,4 +23,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller and Lewis Saunders
+

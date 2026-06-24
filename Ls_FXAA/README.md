@@ -2,11 +2,12 @@
 
 ## Description
 
-Fast cheap antialiasing, soften those crunchy edges.
+FXAA 3.11 - fast cheap antialiasing, soften those crunchy edges
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

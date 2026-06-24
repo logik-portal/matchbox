@@ -2,11 +2,11 @@
 
 ## Description
 
-Adjust the linear encoded front input exposure in Stops.
+Adjust the linear encoded front input exposure in Stops
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

@@ -6,7 +6,7 @@ This will take the matte you used for LS_Splineblur and create a matte for regra
 
 ## Flame Requirements
 
-2017.0
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Ted Kuleshov
+

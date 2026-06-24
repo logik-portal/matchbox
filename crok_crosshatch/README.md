@@ -2,24 +2,19 @@
 
 ## Description
 
-Simulates a simple pencil sketch.
-
+This Matchbox shader simulates a simple pencil sketch.
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Setup:
-
-    - Density : How close together hatch lines should be placed
-    - Width : How wide hatch lines are drawn
-
-Updates:
-
-    - Modified default input to be Front.
+- Density : How close together hatch lines should be placed 
+- Width : How wide hatch lines are drawn
+Shader developer: doomedbunnies
+Based on https://www.shadertoy.com/view/MdX3Dr
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -33,4 +28,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,24 +2,21 @@
 
 ## Description
 
-Creates snow.
-
+This Matchbox shader creates snow.
 Setup:
-
-    - Layers: number of snow layers
-    - Depth: depth of field
-    - Wind : amplitude of the wind
-    - Detail: add aditional noise
-    - Speed: animation speed
-    - Size: snowflake size
-
-Updates:
-
-    - Boosted speed to 100 max instead of 10. Abuse the effect things besides snow!
+- Layers: number of snow layers
+- Depth: depth of field
+- Wind : amplitude of the wind
+- Detail: add aditional noise
+- Speed: animation speed
+- Size: snowflake size
+Shader developer: baldand
+Based on https://www.shadertoy.com/view/ldsGDn
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -33,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

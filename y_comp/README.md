@@ -2,19 +2,14 @@
 
 ## Description
 
-  A simple A over B composite that takes in to acount colorspace of the inputs and assures that the comp is done linear.
-  Saves you from having to apply a LUT to get proper edges.
-
-  Demo: https://youtu.be/pl24lQZF8rc
-
-Updates:
-
-    - Fixed for Flame 2025
-    - Re-fix overloaded MIX uniform variable name.
+COMP
+A simple A over B composite that takes in to acount colorspace of the inputs and assures that the comp is done linear.
+Saves you from having to apply a LUT to get proper edges.
+miles@noesclavo.com
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -28,4 +23,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

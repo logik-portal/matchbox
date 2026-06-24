@@ -3,12 +3,10 @@
 ## Description
 
 Great for water reflection effect with simplex noise distortion and dispersion. Creates realistic water surfaces effects.
-
 Multi-pass shader system:
 Pass 1: Noise generation and distortion
 Pass 2: Dispersion/refraction effects  
-
-Made By John Ashby
+Made
 
 ## Flame Requirements
 

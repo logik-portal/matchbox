@@ -2,11 +2,13 @@
 
 ## Description
 
-Applies a denoise to an image.
+This LightBox shader applies a denoise to an image.
+Based on https://www.shadertoy.com/view/4tfSDr by gongenhao
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

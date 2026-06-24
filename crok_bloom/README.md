@@ -2,25 +2,18 @@
 
 ## Description
 
-Simulates blooming.
-
+This Matchbox shader simulates blooming.
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Setup:
-
-    - Offset: offsets the glow to gives a streak like effect
-    - Size: glow size
-    - Strenght: glow strength
-
-Updates:
-
-    - Modified defeult input to be Front.
+- Offset: offsets the glow to gives a streak like effect
+- Size: glow size
+- Strength: glow strength 
+Based on http://myheroics.wordpress.com/2008/09/04/glsl-bloom-shader/
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -34,4 +27,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

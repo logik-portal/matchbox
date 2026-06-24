@@ -1,13 +1,9 @@
-<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1" Description="
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0" LimitInputsToTexture="True" Version="1" Description="COMP
 
-  COMP
+A simple A over B composite that takes in to acount colorspace of the inputs and assures that the comp is done linear.
+Saves you from having to apply a LUT to get proper edges.
 
-  A simple A over B composite that takes in to acount colorspace of the inputs and assures that the comp is done linear.
-  Saves you from having to apply a LUT to get proper edges.
-
-  Demo: https://youtu.be/pl24lQZF8rc
-
-  miles@noesclavo.com" Name="COMP">
+miles@noesclavo.com" Name="COMP">
    <Shader OutputBitDepth="Output" Index="1">
       <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
       </Uniform>
@@ -51,7 +47,7 @@
            </PopupEntry>
         </Uniform>
 
-      <Uniform ResDependent="None" Max="100.0" Min="000000.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="0" Type="float" DisplayName="Transparency" Name="mix">
+      <Uniform ResDependent="None" Max="100.0" Min="000000.0" Default="0.0" Inc="1.0" Tooltip="" Row="0" Col="1" Page="0" Type="float" DisplayName="Transparency" Name="mixamt">
       </Uniform>
 
       <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" Type="bool" DisplayName="Invert Matte" Name="invert">

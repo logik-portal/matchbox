@@ -2,33 +2,30 @@
 
 ## Description
 
-Generates a gradient between two tracked points by continuously sampling the color underneath them.
-
+Generates a gradient between two or four tracked points 
 Front input required, matte input optional.
-
-Get tracking data from two axis nodes, then link those channels to the Tracking fields.
+Get tracking data from Action axis nodes, then link those channels to the Tracking fields.
 Use the Adjustments fields to dial in where the sample should come from.
-
--Sample Blur will average a larger area under the point.
--Bias will move the center of the gradient closer or further to the Start or End location.
-
+•Sample Blur will average a larger area under the point.
+•Bias will move the center of the gradient closer or further to the Start or End location.
+(Bias only works for a 2-point gradient)
 There are three Output options:
-    -UI Overlay will show where the samples are coming from, and the direction of the gradient.
-    -Gradient will draw the full frame gradient.
-    -Comp will put the gradient over the Front input, through a matte.
-
+-UI Overlay will show where the samples are coming from, and the direction of the gradient.
+-Gradient will draw the full frame gradient.
+-Comp will put the gradient over the Front input, through a matte.
 Matte output is a black-and-white version of the gradient, so each color could be adjusted downstream.
-
-4-point gradients can be created differently by changing the Version drop down.
-
-Updates:
-
-    - Now with a four point gradient!
-    - Added an Icon option to the Adjust field, so you can drag an axis icon in the UI. However, due to Matchbox limitations, the icon is disconnected from the point.
+(Matte output only works for a 2-point gradient)
+4-point gradients can be created differently 
+Demo:
+https://vimeo.com/953262222
+Live Demo:
+https://www.youtube.com/watch?v=O7nElwMPi48
+Begins six minutes in.
+Based on Ivar's crok_gradient: https://logik-matchbook.org/shader/crok_gradient
 
 ## Flame Requirements
 
-2017.0
+2017.0.0
 
 ## Supported Modes
 
@@ -42,4 +39,4 @@ Matchbox
 
 ## Author
 
-Ted Kuleshov
+continuously sampling the color underneath them.

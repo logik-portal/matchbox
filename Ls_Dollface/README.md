@@ -2,11 +2,12 @@
 
 ## Description
 
-Blend similar colours with a bilateral filter whilst preserving edges, to remove grain or wrinkles.
+Dollface - blend similar colours with a bilateral filter whilst preserving edges, to remove grain or wrinkles
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

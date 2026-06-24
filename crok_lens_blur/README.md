@@ -2,23 +2,22 @@
 
 ## Description
 
-Creates a Lens Blur effect.
-
+This Matchbox shader creates a Lens Blur effect.
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Setup:
-
-    - Amount: how much lens Blur is applied
-    - Aspect: aspect ratio
-    - Chroma Offset: how much chromatic abberation
-    - Gain: boost the incomming gain
-    - Threshold: threshold amount for the gain
+- Amount: how much lens Blur is applied
+- Aspect: aspect ratio
+- Chroma Offset: how much chromatic abberation
+- Gain: boost the incomming gain
+- Threshold: threshold amount for the gain
+Demo clip: https://vimeo.com/228570303
+Based on https://www.shadertoy.com/view/ldXBzB by luluco250
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -32,4 +31,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

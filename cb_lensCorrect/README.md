@@ -19,7 +19,7 @@ Resolution: Image resolution (width, height).
 
 ## Flame Requirements
 
-2017.0
+2025.0.0
 
 ## Supported Modes
 
@@ -33,4 +33,4 @@ Matchbox
 
 ## Author
 
-CB
+

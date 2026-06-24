@@ -2,20 +2,18 @@
 
 ## Description
 
-Creates an Antialiased square with rounded corners.
-
+This Matchbox shader creates an Antialiased square with rounded corners.
 Setup:
-
-    - Roundness: roundness of the corner
-    - Blur:; amount of blur applied to the shape
-    - Square: adjust the shape to be square
-
-    - Scale: scales the shape
-    - Offset: offset the shape in x and y
+- Roundness: roundness of the corner
+- Blur:; amount of blur applied to the shape 
+- Square: adjust the shape to be square
+- Scale: scales the shape
+- Offset: offset the shape in x and y
+Demo clip: http://vimeo.com/157906000
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -29,4 +27,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer and Christian
+ivar@inferno-op.com and Christian

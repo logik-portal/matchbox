@@ -2,15 +2,13 @@
 
 ## Description
 
+miles@noesclavo.com
+EDGEBLUR
 Blur along an edge.
-
-Updates:
-
-    - Fixed for Flame 2025
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

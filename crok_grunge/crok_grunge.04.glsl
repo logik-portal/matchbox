@@ -1357,7 +1357,7 @@ void main()
 		float r;
 	    r = fbm5(uv* 0.3);
 	    r = 4.5*r-1.;
-		col.rgb = clamp(vec3(r*r),0.,1.);
+		col.rgb = clamp(vec3(r*r),0.05, 1.0);
 	}
 
 	else if ( noise_type == 11 )

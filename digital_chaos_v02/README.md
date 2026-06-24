@@ -2,11 +2,11 @@
 
 ## Description
 
-Creates Digital Chaos.
+This Matchbox shader creates Digital Chaos
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

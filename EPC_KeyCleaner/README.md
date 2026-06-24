@@ -2,15 +2,15 @@
 
 ## Description
 
-Tries to create a cleaner background for keying.
-
+Version 1.2 - Created 
+This Matchbox tries to create a cleaner background for keying.
 It creates a matte from the channels differences and use it to apply the reference color.
-
 If the created matte is affecting something that shouldn't be, use the input matte as a cutout.
+For questions contact: edupricinato@gmail.com
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -24,4 +24,4 @@ Matchbox
 
 ## Author
 
-Eduardo Pricinato
+Eduardo Pricinato.

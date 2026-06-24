@@ -2,11 +2,13 @@
 
 ## Description
 
-Creates random ancient symbols.
+This shader will create random ancient symbols
+Based on shadertoy.com/view/wl2yDc by BackwardsCap
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

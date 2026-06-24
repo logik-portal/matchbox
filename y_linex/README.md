@@ -2,15 +2,14 @@
 
 ## Description
 
+miles@noesclavo.com
+LINEX
 Extrapolate the blending of 2 images past the boundaries of 0 and 1. Can do some useful and interesting things. Or not.
-
-Updates:
-
-    - Fixed for Flame 2025
+See: http://www.graficaobscura.com/interp/index.html
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -24,4 +23,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

@@ -2,11 +2,11 @@
 
 ## Description
 
-Plug noise or color noise into Input 1, and your image into Input 2.
+Plug noise or color noise into Input 1, and your image into Input 2
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Ted Kuleshov
+

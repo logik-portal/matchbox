@@ -7,7 +7,7 @@ This is especially handy for removing flicker from a disturbed source, especiall
 Note that the source and target colour spaces are implied to be scene linear.
 
 Note that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result and input image formats don't match.
-It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+It is recommended to leave the [Output Resolution] as [Same As Input 1].
 
 This shader is licensed under the terms of the MIT license.
 
@@ -22,10 +22,10 @@ nobbl211@gmail.com"
     SupportsAdaptiveDegradation="False"
     CommercialUsePermitted="True"
     ShaderType="Matchbox"
-    SoftwareVersion="2025.1"
+    SoftwareVersion="2026.2.1"
     TimelineUseBack="False"
     SupportsTimeline="True"
-    Version="0.3">
+    Version="0.4">
     <Shader
         Index="1"
         OutputBitDepth="Float32"
@@ -71,8 +71,8 @@ nobbl211@gmail.com"
             Page="0"
             Default="0.2722287168"
             Inc="0.001"
-            Max="1.0"
-            Min="0.0"
+            Max="10000000.0"
+            Min="-10000000.0"
             ResDependant="None"
             UIConditionSource="channel"
             UIConditionValue="3"
@@ -89,8 +89,8 @@ nobbl211@gmail.com"
             Page="0"
             Default="0.0536895174"
             Inc="0.001"
-            Max="1.0"
-            Min="0.0"
+            Max="10000000.0"
+            Min="-10000000.0"
             ResDependant="None"
             UIConditionSource="channel"
             UIConditionValue="3"

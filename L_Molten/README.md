@@ -2,11 +2,11 @@
 
 ## Description
 
-Molten Metal Texture Gradient shader.
+Molten Metal Texture Gradient shader
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

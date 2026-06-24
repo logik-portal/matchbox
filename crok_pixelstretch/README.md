@@ -2,17 +2,18 @@
 
 ## Description
 
-Creates a Pixelspread type stretch effect.
-
+This Matchbox shader creates a Pixelspread type stretch effect.
 Setup:
-
-    - Amount: stretch amount
-    - Edges Width: amount of softening the incoming matte
-    - MidPoint: adjust the midpoint for the stretch matte
+- Amount: stretch amount
+- Edges Width: amount of softening the incoming matte
+- MidPoint: adjust the midpoint for the stretch matte
+Shader developer: FabriceNeyret2
+Based on www.shadertoy.com/view/XdX3zj
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -26,4 +27,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

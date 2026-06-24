@@ -2,15 +2,14 @@
 
 ## Description
 
-Manage generative particules based on Kleinian Fractals.
-
+This Matchbox shader manage generative particules based on Kleinian Fractals
 Parameter:
-
-    - Particules Speed : the global speed of particules
+- Particules Speed : the global speed of particules
+Based on https://www.shadertoy.com/view/MssGD8
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -24,4 +23,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+

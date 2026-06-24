@@ -2,19 +2,21 @@
 
 ## Description
 
-Creates a mandelbrot pattern.
-
+This Matchbox shader creates a mandelbrot pattern.
 Setup:
-
-    - Speed : speed of building the fractal
-    - Offset : creates different fractal
-    - Gain : changes the brightness of the fractal
-    - Colour: fractal base colour
-    - Detail: fractal resolution
+- Speed : speed of building the fractal
+- Offset : creates different fractal
+- Gain : changes the brightness of the fractal
+- Colour: fractal base colour
+- Detail: fractal resolution
+Demo clip: http://vimeo.com/82553863
+Shader developer: P_Malin
+Based on https://www.shadertoy.com/view/lsB3zR
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -28,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

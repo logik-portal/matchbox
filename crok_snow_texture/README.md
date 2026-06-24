@@ -2,11 +2,13 @@
 
 ## Description
 
-Creates a snow like texture.
+This Matchbox shader creates a snow like texture
+based on https://www.shadertoy.com/view/4dGczd by ssell
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

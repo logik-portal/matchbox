@@ -3,7 +3,7 @@
 /*
 **MIT License
 **
-**Copyright (c) 2025
+**Copyright (c) 2026
 **
 **Permission is hereby granted, free of charge, to any person obtaining a copy
 **of this software and associated documentation files (the "Software"), to deal
@@ -31,5 +31,5 @@ layout (binding = 2) uniform sampler2D adsk_results_pass2;
 
 void main() {
     float c = texelFetch(adsk_results_pass2, ivec2(0), 0).r;
-    fragColor = vec4(c * texelFetch(front, ivec2(gl_FragCoord.xy), 0).rgb, 0.);
+    fragColor = vec4(c * texelFetch(front, ivec2(gl_FragCoord.xy), 0).rgb, 1.);
 }

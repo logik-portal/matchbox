@@ -2,11 +2,13 @@
 
 ## Description
 
-Creates scribble stlye images.
+This Matchbox shader creates scribble stlye images.
+Based on www.shadertoy.com/view/tsV3Rw created by florian berger (flockaroo) - 2018
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,28 +2,24 @@
 
 ## Description
 
-Simulates watercolor like textures.
-
+This Matchbox shader simulates watercolor like textures.
 Input:
-
-    - Use External Matte: use an external displacment matte
-
+- Use External Matte: use an external displacment matte
 Setup:
-
-    - Zoom: zoom in / out of the texture
-    - Detail: amount of detail the texture has
-    - Speed: speed of the changing the main structure
-    - Depth: depth of the texture
-    - Seed: offset the texture
-
-    - Blur: blur the painterly effect
-    - Radius: define the radius of the paint fx
-    - Velocity: define the speed of the paint fx
-    - Offset: move the center of the pain fx
+- Zoom: zoom in / out of the texture
+- Detail: amount of detail the texture has 
+- Speed: speed of the changing the main structure
+- Depth: depth of the texture
+- Seed: offset the texture
+- Blur: blur the painterly effect
+- Radius: define the radius of the paint fx
+- Velocity: define the speed of the paint fx
+- Offset: move the center of the pain fx
+Demo clip: http://vimeo.com/116442578
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -37,4 +33,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

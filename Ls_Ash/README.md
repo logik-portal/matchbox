@@ -2,11 +2,12 @@
 
 ## Description
 
-Adaptive sharpening - sharpen without ringing edges, or sharpen edges without increasing texture.
+Adaptive sharpening - sharpen without ringing edges, or sharpen edges without increasing texture
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

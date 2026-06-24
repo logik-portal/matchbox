@@ -3,12 +3,12 @@
 ## Description
 
 Straightens and distorts footage according to the Syntheyes lens distortion model. Send a mail to me@julik.nl if you have questions.
-  See this tutorial video made by Joel Osis for instructions
-  https://www.youtube.com/watch?v=S_mfdIyCSWE
+See this tutorial video made 
+https://www.youtube.com/watch?v=S_mfdIyCSWE
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-Julik
+Joel Osis for instructions

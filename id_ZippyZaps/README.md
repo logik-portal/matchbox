@@ -2,15 +2,12 @@
 
 ## Description
 
-Makes… well, zippy zaps. See the Shader tab for some presets, or just fiddle with the controls.
-
-Updates:
-
-    - Maybe made it work right on Mac?
+Makes... well, zippy zaps. See the Shader tab for some presets, or just fiddle with the controls.
+Shader by SnoopethDuckDuck on Shadertoy.com adapted to
 
 ## Flame Requirements
 
-2017.0
+2015.0.0
 
 ## Supported Modes
 

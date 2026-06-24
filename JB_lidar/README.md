@@ -2,11 +2,11 @@
 
 ## Description
 
-Tries to emulate a fake point cloud data provided by a lidar.
+This node tries to emulate a fake point cloud data provided
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Julien Brami
+a lidar. For more informations contact: julienbrami.vfx@gmail.com

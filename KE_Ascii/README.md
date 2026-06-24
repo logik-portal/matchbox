@@ -2,11 +2,10 @@
 
 ## Description
 
-None
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +19,4 @@ Matchbox
 
 ## Author
 
-Ted Kuleshov
+

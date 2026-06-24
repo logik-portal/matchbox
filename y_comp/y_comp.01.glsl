@@ -1,5 +1,3 @@
-
-
 #define ratio adsk_result_frameratio
 #define luma(col) dot(col, vec3(0.2126, 0.7152, 0.0722))
 #define PI 3.141592653589793238462643383279502884197969
@@ -18,7 +16,7 @@ uniform sampler2D INPUT3;
 
 uniform int i_colorspace;
 uniform int i_colorspace2;
-uniform float mix;
+uniform float mixamt;
 uniform bool premult;
 uniform bool invert;
 uniform bool backdif;
@@ -247,11 +245,10 @@ void main(void)
       matte = 1.0 - matte;
     }
 
-    float alpha = (100.0 - mix) / 100.0 * matte;
+    float alpha = (100.0 - mixamt) / 100.0 * matte;
 
     comp = mix(comp, front, alpha);
-
-    comp =do_colorspace(comp, i_colorspace, 1);
+    comp = do_colorspace(comp, i_colorspace, 1);
 
     gl_FragColor = vec4(comp, matte);
 }

@@ -2,11 +2,11 @@
 
 ## Description
 
-Highlights 0.0 pixels revealing blanking issues usually due to shot stabilization.
+Highlights RGB 0/0/0 pixels, helpful for revealing blanking issues usually caused by shot stabilization.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 

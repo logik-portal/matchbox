@@ -2,24 +2,21 @@
 
 ## Description
 
-Simulates a typical Amiga style parallax effect.
-
+This Matchbox shader simulates a typical Amiga style parallax effect.
 Input:
-
-    - Texture: clip defining the look of the texture
-
+- Texture: clip defining the look of the texture	
 Setup:
-
-    - Intensity: how much texture is applied
-    - Spacing: adjust the spacing between the diffeent parallax layers
-    - Layers: how many layer are used for the parallax effect
-    - Center: move the effect around in x /y
-    - Rotation: rotate the texture around the center
-    - Speed: adjust the animation speed
+- Intensity: how much texture is applied 
+- Spacing: adjust the spacing between the diffeent parallax layers
+- Layers: how many layer are used for the parallax effect
+- Center: move the effect around in x /y 
+- Rotation: rotate the texture around the center
+- Speed: adjust the animation speed
+Demo clip: http://vimeo.com/112809911
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -33,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer and Lewis Saunders
+ivar@inferno-op.com with some HUGE help from Lewis

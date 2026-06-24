@@ -2,19 +2,19 @@
 
 ## Description
 
-Creates a cell pattern.
-
+This Matchbox shader creates a cell pattern.
 Setup:
-
-    - Itterations: Itterations
-    - Zoom: zoom in / out of the pattern
-    - Speed: how fast the cells are moving
-    - Offset: offset the time
-    - Colour: color of the cells
+- Itterations: Itterations
+- Zoom: zoom in / out of the pattern
+- Speed: how fast the cells are moving
+- Offset: offset the time
+- Colour: color of the cells
+Demo clip: http://vimeo.com/88092343
+Based on: http://glsl.heroku.com/e#14776.1
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -28,4 +28,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

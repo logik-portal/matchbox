@@ -2,19 +2,15 @@
 
 ## Description
 
+BW
 Create black and white images with similar controls as Lightroom.
-
 Also nice for creating interesting mattes for color correction or whatever down stream.
-
 Demo clip: https://youtu.be/i26vMGuU5Ac
-
-Updates:
-
-    - Fixed for Flame 2025
+miles@noesclavo.com
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -28,4 +24,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

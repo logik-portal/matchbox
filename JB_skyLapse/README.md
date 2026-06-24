@@ -2,11 +2,11 @@
 
 ## Description
 
-Generates a sky system suitable for timelapse effects.
+generates a sky system suitable for timelapse effects. For more informations contact: juilenbrami.vfx@gmail.com
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Julien Brami
+

@@ -2,13 +2,13 @@
 
 ## Description
 
-Creates a Starfield.
-
+Lightbox shader which creates a Starfield
 NOTE: This shader works only, if you have a large sphere surrounding your scene
+Lightbox version
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -22,4 +22,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

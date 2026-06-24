@@ -2,19 +2,17 @@
 
 ## Description
 
-Gives you the typical Instagram looks.
-
+This Matchbox shader gives you the typical Instagram looks.
 Setup:
-
-    - Look: select the desired Instagram preset
-    - Saturation: adjust overall saturation
-    - Contrast: adjust overall contrast
-    - Gamma: adjust overall gamma
-    - Blend: blend between original image and applied preset
+- Look: select the desired Instagram preset
+- Saturation: adjust overall saturation
+- Contrast: adjust overall contrast
+- Gamma: adjust overall gamma
+- Blend: blend between original image and applied preset
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -28,4 +26,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

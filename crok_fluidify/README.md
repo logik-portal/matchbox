@@ -2,21 +2,21 @@
 
 ## Description
 
-Simulates a 2D fluid system.
-
+This Matchbox shader simulates a 2D fluid system.
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Setup:
-
-    - Detail: amount of detail in the simulation
-    - Resolution: amount of resolution used for the simulation
-    - Noise: amount of noise added to the simulation
+- Detail: amount of detail in the simulation
+- Resolution: amount of resolution used for the simulation
+- Noise: amount of noise added to the simulation
+Demo clip: https://vimeo.com/170348841
+Shader developer: flockaroo
+Based on www.shadertoy.com/view/MdKXRy
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -30,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

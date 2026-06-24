@@ -2,21 +2,20 @@
 
 ## Description
 
-Creates kaleidoscope patterns.
-
+This Matchbox shader creates kaleidoscope patterns.
 Input:
-
-    - Strength: use that input to get the shader react to your music
-    - Depth: only used, if the shader is used as a CameraFX shader
-
+- Strength: use that input to get the shader react to your music
+- Depth: only used, if the shader is used as a CameraFX shader
 Look:
-
-    - Detail: amount of detail
-    - Seed: scrub throughh to get different looks
+- Detail: amount of detail
+- Seed: scrub throughh to get different looks
+Based on shadertoy.com/view/XtcXWM by zackpudil
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+Demo clip: https://vimeo.com/195146573
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -30,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

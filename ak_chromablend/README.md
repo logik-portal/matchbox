@@ -3,14 +3,12 @@
 ## Description
 
 Chroma Blend
-
-	Blend chroma values of front and back, including blur.
-
-	Matchbox shader by Jan Klier https://www.janklier.com
+Blend chroma values of front and back, including blur.
+Matchbox shader
 
 ## Flame Requirements
 
-2017.0
+2017.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Jan Klier
+Jan Klier https://www.janklier.com

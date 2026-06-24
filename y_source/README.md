@@ -2,15 +2,13 @@
 
 ## Description
 
+miles@noesclavo.com
+SOURCE
 Recreate the most useful parts of action's source nodes. Autodesk now has a similar shader, I prefer this one. Back input is optional.
-
-Updates:
-
-    - Fixed for Flame 2025
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

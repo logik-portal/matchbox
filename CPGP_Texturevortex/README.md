@@ -2,11 +2,13 @@
 
 ## Description
 
-This Matchbox allows to bend your video.
+This Matchbox allows to bend your video
+Demo: https://vimeo.com/80257415
+Contact us at dev@cpgp.nu if you want us to customize or create new shaders for you!
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+

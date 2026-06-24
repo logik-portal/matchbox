@@ -46,7 +46,7 @@ void main(void)
 	
 	;}
 	
-	if (lumaColor == 1){
+	if (lumaColor == true){
 	
 		if (buffer>= (luma*0.9)){FragColor=vec4(vec3(0),1);}
 		if (mod((gl_FragCoord.x+0.5),pixelRatio)>=pixelSize && mod((gl_FragCoord.y+0.5),pixelRatio)>=pixelSize){

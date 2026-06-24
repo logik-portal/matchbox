@@ -2,21 +2,21 @@
 
 ## Description
 
-Creates a folding texture, which you can use as a reflection map.
-
+This Matchbox shader creates a folding texture, which you can use as a reflection map.
+Version 1.2
 Setup:
-
-    - Speed : speed of the texture changes
-    - Offset : offset the texture pattern
-    - Zoom : zoom in/out of the texture
-    - Detail : level of detail
-    - Iterations : iterations steps
-    - Aspect : aspect ratio of the generated texture
-    - Duration : choose speed to create loop
+- Speed : speed of the texture changes
+- Offset : offset the texture pattern
+- Zoom : zoom in/out of the texture 
+- Detail : level of detail
+- Iterations : iterations steps 
+- Aspect : aspect ratio of the generated texture
+- Duration : choose speed to create loop
+Demo clip: http://vimeo.com/83624633
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -30,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

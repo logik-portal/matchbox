@@ -2,11 +2,12 @@
 
 ## Description
 
-Relax your colours towards a common shade, to bed things in to mist, smoke, banks of fog, delicous hazes, sweet gentle vapours... pick the target colours from the background you're comping into.
+Relax. Relax your colours towards a common shade, to bed things in to mist, smoke, banks of fog, delicous hazes, sweet gentle vapours... pick the target colours from the background you're comping into.
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

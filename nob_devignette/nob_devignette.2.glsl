@@ -1,9 +1,9 @@
-#version 130
+#version 430
 
 /*
 **MIT License
 **
-**Copyright (c) 2024
+**Copyright (c) 2026
 **
 **Permission is hereby granted, free of charge, to any person obtaining a copy
 **of this software and associated documentation files (the "Software"), to deal
@@ -24,41 +24,47 @@
 **SOFTWARE.
 */
 
-#define C_64_Pi 20.371832
+layout (location = 0) out vec4 fragColor;
 
-uniform float adsk_front_h, adsk_front_frameratio, adsk_result_w, adsk_result_h;
-uniform sampler2D front, adsk_results_pass1;
-uniform bool ring_1;
-uniform float r_1;
-uniform float r_1_px;
-uniform bool ring_2;
-uniform float r_2;
-uniform float r_2_px;
-uniform bool ring_3;
-uniform float r_3;
-uniform float r_3_px;
-uniform bool ring_4;
-uniform float r_4;
-uniform float r_4_px;
-uniform float anamorphic;
-uniform bool highlight_rings;
-uniform bool use_px;
-uniform bool compensation;
-uniform bool invert;
+layout (binding = 1) uniform AdskUniformBlock {
+    float adsk_front_h, adsk_front_frameratio, adsk_result_w, adsk_result_h;
+};
+
+layout (binding = 2) uniform UniformBlock {
+    bool ring_1;
+    float r_1;
+    float r_1_px;
+    bool ring_2;
+    float r_2;
+    float r_2_px;
+    bool ring_3;
+    float r_3;
+    float r_3_px;
+    bool ring_4;
+    float r_4;
+    float r_4_px;
+    float anamorphic;
+    bool highlight_rings;
+    bool use_px;
+    bool compensation;
+    bool invert;
+};
+
+layout (binding = 3) uniform sampler2D front;
+layout (binding = 4) uniform sampler2D adsk_results_pass1;
 
 vec2 centre;
 float r2_arr[4];
 mat4x3 coeff;
 
-void initializalize() {
-    vec4 r2_vec;
+void initialize() {
     mat3x4 coeff_t;
     centre = texelFetch(adsk_results_pass1, ivec2(0), 0).rg;
-    r2_vec = texelFetch(adsk_results_pass1, ivec2(1, 0), 0);
+    const vec4 r2_vec = texelFetch(adsk_results_pass1, ivec2(1, 0), 0);
     r2_arr = float[4](r2_vec.r, r2_vec.g, r2_vec.b, r2_vec.a);
     coeff_t[0] = texelFetch(adsk_results_pass1, ivec2(2, 0), 0);
-    coeff_t[1] = texelFetch(adsk_results_pass1, ivec2(0, 1), 0);
-    coeff_t[2] = texelFetch(adsk_results_pass1, ivec2(1), 0);
+    coeff_t[1] = texelFetch(adsk_results_pass1, ivec2(3, 0), 0);
+    coeff_t[2] = texelFetch(adsk_results_pass1, ivec2(4, 0), 0);
     coeff = transpose(coeff_t);
 }
 
@@ -68,19 +74,21 @@ vec3 highlight_ring(float r, float r_0, vec3 colour, vec3 result) {
 }
 
 void main() {
-    initializalize();
+    initialize();
     vec2 coords = gl_FragCoord.xy / vec2(adsk_result_w, adsk_result_h) - centre;
     vec3 result, gain;
-    float r2;
     coords.x *= adsk_front_frameratio * anamorphic;
     result = texelFetch(front, ivec2(gl_FragCoord.xy), 0).rgb;
-    r2 = dot(coords, coords);
-    gain = r2 * (coeff[0] + (r2 - r2_arr[0]) * (coeff[1] + (r2 - r2_arr[1]) * (coeff[2] + (r2 - r2_arr[2]) * coeff[3]))) + 1.;
+    const float r2 = dot(coords, coords);
+    gain = fma(coeff[3], vec3(r2 - r2_arr[2]), coeff[2]);
+    gain = fma(gain, vec3(r2 - r2_arr[1]), coeff[1]);
+    gain = fma(gain, vec3(r2 - r2_arr[0]), coeff[0]);
+    gain = fma(gain, vec3(r2), vec3(1.));
     gain = invert ? 1. / gain : gain;
     result = gain * (compensation ? vec3(1.) : result);
     if (highlight_rings) {
-        bool a = bool(int(C_64_Pi * atan(coords.y, coords.x) + 64.) % 2);
-        float r = sqrt(r2);
+        const bool a = bool(int(20.3718327 * atan(coords.y, coords.x) + 64.) % 2);
+        const float r = sqrt(r2);
         if (ring_1 || a)
             result = highlight_ring(r, use_px ? r_1_px / adsk_front_h : r_1, vec3(1., 0., 0.), result);
         if (ring_2 || !a)
@@ -90,5 +98,5 @@ void main() {
         if (ring_4 || !a)
             result = highlight_ring(r, use_px ? r_4_px / adsk_front_h : r_4, vec3(1., 0., 1.), result);
     }
-    gl_FragColor = vec4(result, 0.);
+    fragColor = vec4(result, 1.);
 }

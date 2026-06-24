@@ -4,14 +4,9 @@
 
 Draws simple adjustable horizontal and vertical guides for centering reference, measuring, etc.
 
-Updates:
-
-    - Make the horizontal/vertical enable buttons accessible from the timeline.
-    - Re-fix thumbnail.
-
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 

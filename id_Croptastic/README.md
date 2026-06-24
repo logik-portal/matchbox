@@ -6,7 +6,7 @@ A simple image cropper with built-in 2D texture offset and borders. It's Croptas
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 

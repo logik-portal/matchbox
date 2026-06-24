@@ -2,11 +2,13 @@
 
 ## Description
 
-Creates some warning messages, if you need a cup of tea!
+This shader creates some warning messages, if you need a cup of tea!
+Demo clip: http://vimeo.com/107988964
+Based on: https://www.shadertoy.com/view/lsXXRs
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

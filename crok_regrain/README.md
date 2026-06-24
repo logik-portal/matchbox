@@ -2,25 +2,22 @@
 
 ## Description
 
-Simulates film grain.
-
+This Matchbox shader simulates film grain.
 Input:
-
-    - Front: source clip
-    - Matte: external matte input
-
+- Front: source clip
+- Matte: external matte input
 Setup:
-
-    - Stock: Select your film grain presets
-    - Amount: how much grain is applied
-    - Softness: grain softness size
-    - Size: grain size
-    - Red | Green | Blue: adjust the different colour channels independently
-    - Levels: adjust the low, mid and high values for your grain (its only avaiable if the Custom Stock Preset is selected)
+- Stock: Select your film grain presets
+- Amount: how much grain is applied
+- Softness: grain softness size
+- Size: grain size
+- Red | Green | Blue: adjust the different colour channels independently
+- Levels: adjust the low, mid and high values for your grain (its only avaiable if the Custom Stock Preset is selected )
+Demo clip: http://vimeo.com/107276957
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -34,4 +31,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

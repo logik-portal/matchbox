@@ -2,15 +2,13 @@
 
 ## Description
 
-Another multiply and divide an image by it's matte shader.
-
-Updates:
-
-    - Fixed for Flame 2025
+miles@noesclavo.com
+MULT_DIV
+Another multiply and divide an image
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+it's matte shader.

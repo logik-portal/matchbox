@@ -2,25 +2,22 @@
 
 ## Description
 
-Creates a difference matte.
-
+This Matchbox shader creates a difference matte.
 Setup:
-
-    - Red | Green | Blue: adjust the effect of the colour channels
-    - minInput: displays the lower limit of the luminance values (pixels with lower values are mapped to black)
-    - minOutput: displays the lower limit of the luminance values for black pixels
-
-    - maxInput: displays the upper limit of the luminance values (pixels with higher values are mapped to white)
-    - maxOutput: displays the upper limit of the luminance values for white pixels
-
-    - Brightness: adjust the brightness
-    - Contrast: adjust the contrast
-    - Gain: adjust the gain
-    - Gamma: adjust the gamma
+- Red | Green | Blue: adjust the effect of the colour channels
+- minInput: displays the lower limit of the luminance values (pixels with lower values are mapped to black)
+- minOutput: displays the lower limit of the luminance values for black pixels
+- maxInput: displays the upper limit of the luminance values (pixels with higher values are mapped to white)
+- maxOutput: displays the upper limit of the luminance values for white pixels
+- Brightness: adjust the brightness
+- Contrast: adjust the contrast 
+- Gain: adjust the gain
+- Gamma: adjust the gamma 
+Demo clip: http://vimeo.com/106739462
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -34,4 +31,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer and Miles Essmiller
+ivar@inferno-op.com with some huge help from Miles Essmiller

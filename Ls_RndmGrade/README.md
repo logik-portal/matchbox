@@ -2,13 +2,13 @@
 
 ## Description
 
-Generates random grades.  Works best on log footage or low-contrast ungraded video.
-
+RndmGrade - generates random grades.  Works best on log footage or low-contrast ungraded video.
 Demo: http://www.youtube.com/watch?v=joeSPsaVwOE
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

@@ -2,11 +2,11 @@
 
 ## Description
 
-Apply slope, offset and power transfer functions to the input pixels as defined by the ASC CDL standard.
+Apply slope, offset and power transfer functions to the input pixels as defined
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+the ASC CDL standard

@@ -2,15 +2,15 @@
 
 ## Description
 
-Creates a dithering effect.
-
+This Matchbox shader creates a dithering effect.
 Input:
-
-    - Front: source image
+- Front: source image 
+Demo clip: http://vimeo.com/109388558
+Based on: http://oos.moxiecode.com/js_webgl/c64_shader/
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -24,4 +24,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

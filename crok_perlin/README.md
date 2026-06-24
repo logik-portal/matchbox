@@ -2,19 +2,21 @@
 
 ## Description
 
-Creates a perlin noise like pattern.
-
+This Matchbox shader creates a perlin noise like pattern.
 Setup:
-
-    - Frequency: Zoom in / out
-    - Gain: brightness of the patter
-    - Speed: animation speed
-    - Offset: offsets the noise pattern
-    - Colour: colour of the patters
+- Frequency: Zoom in / out
+- Gain: brightness of the patter
+- Speed: animation speed
+- Offset: offsets the noise pattern
+- Colour: colour of the patters	
+Demo clip: http://vimeo.com/85646816
+Shader developer: Stefan Gustavson
+Based on https://github.com/ashima/webgl-noise
+Distributed under the MIT license.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -28,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

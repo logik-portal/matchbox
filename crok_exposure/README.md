@@ -2,22 +2,20 @@
 
 ## Description
 
-Simulates an exposure node, which isn't THAT precise ;)
-
+This Matchbox shader simulates an exposure node, which isn't THAT precise ;)
+For creative use only !
 Input:
-
-    - Front: source clip
-
+- Front: source clip
 Setup:
-
-    - Overall: overall exposure adjustment
-    - Saturation: adjust the saturation for different exposure levels
-    - RGB: single RGB exposure adjustment
-    - Input Data Type: Linear | Video/Rec709 | Logarithmic
+- Overall: overall exposure adjustment
+- Saturation: adjust the saturation for different exposure levels
+- RGB: single RGB exposure adjustment
+- Input Data Type: Linear | Video/Rec709 | Logarithmic
+Demo clip: http://vimeo.com/110009669
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -31,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

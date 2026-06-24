@@ -2,11 +2,11 @@
 
 ## Description
 
-Input 1: Fur position (colour noise 64x64 works fine) - Input 2: Fur texture.
+Fur - Input 1: Fur position (colour noise 64x64 works fine) - Input 2: Fur texture - Author: Eric Pouliot - (c) simon green 2013
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Eric Pouliot
+

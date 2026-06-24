@@ -2,31 +2,29 @@
 
 ## Description
 
-Creates chromatic aberrations and a barrel distortion.
-
+This Matchbox shader creates chromatic aberrations and a barrel distortion.
+Version: 1.9
 Input:
-
-    - Front: source clip
-    - Chromatic Aberration Strength: Chromatic Aberration Strength matte
-    - Distortion Strength: Distortion Strength matte
-
+- Front: source clip
+- Chromatic Aberration Strength: Chromatic Aberration Strength matte
+- Distortion Strength: Distortion Strength matte
 Output:
-
-    - Result: result clip
-    - Matte: alpha channel
-
+- Result: result clip
+- Matte: alpha channel
 Setup:
-
-    - Amount: blur amount
-    - Iterations: number of steps to create the blur
-    - Saturation: Blend in/out the chroma offset
-    - Center: center of the effect
-    - Add Distortion: enable additional distortion
-    - Amount: amount of applied distortion
+- Amount: blur amount
+- Iterations: number of steps to create the blur
+- Saturation: Blend in/out the chroma offset
+- Center: center of the effect
+- Add Distortion: enable additional distortion
+- Amount: amount of applied distortion
+Based on: https://www.shadertoy.com/view/XssGz8
+To the extent possible under law, the author has waived all copyright and related or neighboring rights to this work.
+Demo clip: http://vimeo.com/89781715
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -40,4 +38,4 @@ Matchbox
 
 ## Author
 
-Kyle Obley and Ivar Beer
+Kyle Obley and ivar@inferno-op.com

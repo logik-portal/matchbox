@@ -2,15 +2,13 @@
 
 ## Description
 
+miles@noesclavo.com
+HISTO
 A historgram type shader that updates as you change the settings. Imagine that.
-
-Updates:
-
-    - Fixed for Flame 2025
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -24,4 +22,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller
+

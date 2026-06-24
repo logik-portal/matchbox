@@ -1,9 +1,9 @@
-#version 130
+#version 430
 
 /*
 **MIT License
 **
-**Copyright (c) 2024
+**Copyright (c) 2026
 **
 **Permission is hereby granted, free of charge, to any person obtaining a copy
 **of this software and associated documentation files (the "Software"), to deal
@@ -24,37 +24,45 @@
 **SOFTWARE.
 */
 
-uniform float adsk_front_w, adsk_front_h;
-uniform sampler2D front;
-uniform bool ring_1;
-uniform float r_1;
-uniform float r_1_px;
-uniform float y_1;
-uniform vec3 rgb_1;
-uniform bool ring_2;
-uniform float r_2;
-uniform float r_2_px;
-uniform float y_2;
-uniform vec3 rgb_2;
-uniform bool ring_3;
-uniform float r_3;
-uniform float r_3_px;
-uniform float y_3;
-uniform vec3 rgb_3;
-uniform bool ring_4;
-uniform float r_4;
-uniform float r_4_px;
-uniform float y_4;
-uniform vec3 rgb_4;
-uniform vec2 centre;
-uniform vec2 centre_px;
-uniform bool use_px;
-uniform bool enable_rgb;
+layout (location = 0) out vec4 fragColor;
+
+layout (binding = 1) uniform AdskUniformBlock {
+    float adsk_front_w, adsk_front_h;
+};
+
+layout (binding = 2) uniform UniformBlock {
+    bool ring_1;
+    float r_1;
+    float r_1_px;
+    float y_1;
+    vec3 rgb_1;
+    bool ring_2;
+    float r_2;
+    float r_2_px;
+    float y_2;
+    vec3 rgb_2;
+    bool ring_3;
+    float r_3;
+    float r_3_px;
+    float y_3;
+    vec3 rgb_3;
+    bool ring_4;
+    float r_4;
+    float r_4_px;
+    float y_4;
+    vec3 rgb_4;
+    vec2 centre;
+    vec2 centre_px;
+    bool use_px;
+    bool enable_rgb;
+};
+
+layout (binding = 3) uniform sampler2D front;
 
 float r2_arr[4] = float[4](0., 0., 0., 0.);
 vec3 rgb_arr[4] = vec3[4](vec3(0.), vec3(0.), vec3(0.), vec3(0.));
 
-void initializalize_0(float r, float r_px, float y, vec3 rgb, uint n) {
+void initialize_0(float r, const float r_px, const float y, const vec3 rgb, const uint n) {
     if (use_px)
         r = r_px / adsk_front_h;
     r *= r;
@@ -62,49 +70,48 @@ void initializalize_0(float r, float r_px, float y, vec3 rgb, uint n) {
     rgb_arr[n] = enable_rgb ? rgb : vec3(y);
 }
 
-uint initializalize() {
-    uint n = 0u;
+uint initialize() {
+    uint n = 0;
     if (ring_1)
-        initializalize_0(r_1, r_1_px, y_1, rgb_1, n++);
+        initialize_0(r_1, r_1_px, y_1, rgb_1, n++);
     if (ring_2)
-        initializalize_0(r_2, r_2_px, y_2, rgb_2, n++);
+        initialize_0(r_2, r_2_px, y_2, rgb_2, n++);
     if (ring_3)
-        initializalize_0(r_3, r_3_px, y_3, rgb_3, n++);
+        initialize_0(r_3, r_3_px, y_3, rgb_3, n++);
     if (ring_4)
-        initializalize_0(r_4, r_4_px, y_4, rgb_4, n++);
+        initialize_0(r_4, r_4_px, y_4, rgb_4, n++);
     return n;
 }
 
 void main() {
-    uint n = initializalize();
-    float diff_1_0 = r2_arr[1] - r2_arr[0];
-    float diff_2_0 = r2_arr[2] - r2_arr[0];
-    float diff_2_1 = r2_arr[2] - r2_arr[1];
-    float diff_3_0 = r2_arr[3] - r2_arr[0];
-    float diff_3_1 = r2_arr[3] - r2_arr[1];
-    float diff_3_2 = r2_arr[3] - r2_arr[2];
+    const uint n = initialize();
+    const float diff_1_0 = r2_arr[1] - r2_arr[0];
+    const float diff_2_0 = r2_arr[2] - r2_arr[0];
+    const float diff_2_1 = r2_arr[2] - r2_arr[1];
+    const float diff_3_0 = r2_arr[3] - r2_arr[0];
+    const float diff_3_1 = r2_arr[3] - r2_arr[1];
+    const float diff_3_2 = r2_arr[3] - r2_arr[2];
     mat4x3 coeff;
-    mat3x4 coeff_t;
-    coeff[0] = n < 1u ? vec3(0.) : rgb_arr[0] / r2_arr[0];
-    coeff[1] = n < 2u ? vec3(0.) : (rgb_arr[1] - r2_arr[1] * coeff[0]) / (r2_arr[1] * diff_1_0);
-    coeff[2] = n < 3u ? vec3(0.) : (rgb_arr[2] - r2_arr[2] * (coeff[0] + diff_2_0 * coeff[1])) / (r2_arr[2] * diff_2_0 * diff_2_1);
-    coeff[3] = n < 4u ? vec3(0.) : (rgb_arr[3] - r2_arr[3] * (coeff[0] + diff_3_0 * (coeff[1] + diff_3_1 * coeff[2]))) / (r2_arr[3] * diff_3_0 * diff_3_1 * diff_3_2);
-    coeff_t = transpose(coeff);
-    if (gl_FragCoord.y < 1.) {
-        if (gl_FragCoord.x < 1.) {
-            gl_FragColor = vec4(use_px ? centre_px / vec2(adsk_front_w, adsk_front_h) + vec2(.5) : centre, 0., 0.);
-            return;
-        }
-        else if (gl_FragCoord.x < 2.) {
-            gl_FragColor = vec4(r2_arr[0], r2_arr[1], r2_arr[2], r2_arr[3]);
-            return;
-        }
-        gl_FragColor = coeff_t[0];
-        return;
-    }
+    coeff[0] = n < 1 ? vec3(0.) : rgb_arr[0] / r2_arr[0];
+    coeff[1] = n < 2 ? vec3(0.) : fma(-coeff[0], vec3(r2_arr[1]), rgb_arr[1]) / (r2_arr[1] * diff_1_0);
+    coeff[2] = n < 3 ? vec3(0.) : fma(-fma(coeff[1], vec3(diff_2_0), coeff[0]), vec3(r2_arr[2]), rgb_arr[2]) / (r2_arr[2] * (diff_2_0 * diff_2_1));
+    coeff[3] = n < 4 ? vec3(0.) : fma(-fma(fma(coeff[2], vec3(diff_3_1), coeff[1]), vec3(diff_3_0), coeff[0]), vec3(r2_arr[3]), rgb_arr[3]) / ((r2_arr[3] * diff_3_0) * (diff_3_1 * diff_3_2));
+    const mat3x4 coeff_t = transpose(coeff);
     if (gl_FragCoord.x < 1.) {
-        gl_FragColor = coeff_t[1];
+        fragColor = vec4(use_px ? centre_px / vec2(adsk_front_w, adsk_front_h) + vec2(.5) : centre, 0., 0.);
         return;
     }
-    gl_FragColor = coeff_t[2];
+    if (gl_FragCoord.x < 2.) {
+        fragColor = vec4(r2_arr[0], r2_arr[1], r2_arr[2], r2_arr[3]);
+        return;
+    }
+    if (gl_FragCoord.x < 3.) {
+        fragColor = coeff_t[0];
+        return;
+    }
+    if (gl_FragCoord.x < 4.) {
+        fragColor = coeff_t[1];
+        return;
+    }
+    fragColor = coeff_t[2];
 }

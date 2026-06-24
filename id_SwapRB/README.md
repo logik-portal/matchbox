@@ -6,7 +6,7 @@ Swaps the Red and Blue channels to fix 12-bit DPX coming from Resolve or other b
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 

@@ -2,11 +2,10 @@
 
 ## Description
 
-IBK Keyer.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +19,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+

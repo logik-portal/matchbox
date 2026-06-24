@@ -2,17 +2,18 @@
 
 ## Description
 
-Applies a painterly effet to the image.
-
+This Matchbox shader applies a painterly effet to the image.
 Setup:
-
-    - Radius: how strong the image is filtered
-    - Velocity: how fast the painterly effect is moving
-    - Distortion: postion of the distortion
+- Radius: how strong the image is filtered
+- Velocity: how fast the painterly effect is moving
+- Distortion: postion of the distortion
+Demo clip: http://vimeo.com/92513165
+Based on https://www.shadertoy.com/view/MsXSRN
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -26,4 +27,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -2,16 +2,16 @@
 
 ## Description
 
-Simulates digital glitches.
-
+This Matchbox shader simulates digital glitches.
 Input:
-
-    Front: source clip
-    Matte: Matte clip
+Front: source clip
+Matte: Matte clip
+Based on https://www.shadertoy.com/view/WdX3Wj by and
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -25,4 +25,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

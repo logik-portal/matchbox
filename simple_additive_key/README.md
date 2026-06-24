@@ -6,7 +6,7 @@ Performs an additive operation to restore details in a key
 
 ## Flame Requirements
 
-2017.0
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

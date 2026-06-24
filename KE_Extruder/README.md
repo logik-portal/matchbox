@@ -6,7 +6,7 @@ Creates extruded 3D cubes from your image.
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Ted Kuleshov
+

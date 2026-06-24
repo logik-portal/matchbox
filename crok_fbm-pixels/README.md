@@ -2,18 +2,18 @@
 
 ## Description
 
-Creates a fbm style pattern.
-
+This Matchbox shader creates a fbm style pattern.
 Setup:
-
-    - Scale: adjust scale of the pattern
-    - Detail: adjust pattern detail
-    - Speed: adjust pattern animation speed
-    - Offset: offset pattern in time
+- Scale: adjust scale of the pattern
+- Detail: adjust pattern detail
+- Speed: adjust pattern animation speed
+- Offset: offset pattern in time
+Demo clip: http://vimeo.com/122342353
+Based on: http://glslsandbox.com/e#23659.0 by RAZIK anass
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -27,4 +27,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

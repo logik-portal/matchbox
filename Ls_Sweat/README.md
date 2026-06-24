@@ -2,13 +2,13 @@
 
 ## Description
 
-Makes drips :)  Turn adaptive degradation off to view downstream...
-
+Sweat - makes drips :)  Turn adaptive degradation off to view downstream...
 Demo: https://www.youtube.com/watch?v=xcPzPV_623U
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

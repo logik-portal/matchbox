@@ -2,11 +2,13 @@
 
 ## Description
 
-Create ice structures.
+This LightBox shader will create ice structures.
+Based on https://www.shadertoy.com/view/Msf3Dj
+Ligtbox version
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +22,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

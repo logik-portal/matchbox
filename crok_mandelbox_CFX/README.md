@@ -2,11 +2,10 @@
 
 ## Description
 
-Creates MandelBox Fractals inside Action.
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +19,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+

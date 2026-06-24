@@ -2,13 +2,13 @@
 
 ## Description
 
-Make highlights bloom into stars
-
+Glint - make highlights bloom into stars
 Demo: http://youtube.com/watch?v=0Xa8L4fkPwU
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

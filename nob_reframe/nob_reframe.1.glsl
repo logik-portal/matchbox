@@ -3,7 +3,7 @@
 /*
 **MIT License
 **
-**Copyright (c) 2025
+**Copyright (c) 2026
 **
 **Permission is hereby granted, free of charge, to any person obtaining a copy
 **of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@
 layout (location = 0) out vec4 fragColor;
 
 layout (binding = 1) uniform AdskUniformBlock {
-    float adsk_front_w, adsk_front_h, adsk_front_frameratio, adsk_front_pixelratio, adsk_undist_st_w, adsk_undist_st_h, adsk_undist_st_frameratio, adsk_undist_st_pixelratio, adsk_result_w, adsk_result_h, adsk_result_frameratio;
+    float adsk_front_w, adsk_front_h, adsk_front_frameratio, adsk_front_pixelratio, adsk_r_st_w, adsk_r_st_h, adsk_r_st_frameratio, adsk_r_st_pixelratio, adsk_result_w, adsk_result_h, adsk_result_frameratio;
 };
 
 layout (binding = 2) uniform UniformBlock {
@@ -43,25 +43,30 @@ layout (binding = 2) uniform UniformBlock {
     float scale;
     float f_1;
     float fov_1;
+    uint r_mode;
+    vec2 r_pos;
+    float r_ana;
     uint d_mode;
     vec2 d_pos;
     float d_ana;
-    bool use_undist_map;
     uint force_par;
     float par;
 };
 
 layout (binding = 3) uniform sampler2D front;
-layout (binding = 4) uniform sampler2D undist_st;
+layout (binding = 4) uniform sampler2D r_st;
 
+float dist_1_2(const float x) {
+    return x < .5 ? 1. - x : x;
+}
 
 void main() {
     float front_w, front_h, front_frameratio, front_pixelratio;
-    if (bool(d_mode % 2) && use_undist_map) {
-        front_w = adsk_undist_st_w;
-        front_h = adsk_undist_st_h;
-        front_frameratio = adsk_undist_st_frameratio;
-        front_pixelratio = adsk_undist_st_pixelratio;
+    if (r_mode == 2) {
+        front_w = adsk_r_st_w;
+        front_h = adsk_r_st_h;
+        front_frameratio = adsk_r_st_frameratio;
+        front_pixelratio = adsk_r_st_pixelratio;
     }
     else {
         front_w = adsk_front_w;
@@ -80,15 +85,15 @@ void main() {
     default:
         result_frameratio = par * adsk_result_w / adsk_result_h;
     }
-    float redist_scale, undist_scale_inv;
-    {
-        float x = (.5 + abs(d_pos.x)) / d_ana, y = .5 + abs(d_pos.y);
-        {
-            float x1 = result_frameratio * x;
-            redist_scale = 1. / (x1 * x1 + y * y);
-        }
-        x *= front_frameratio;
-        undist_scale_inv = length(vec2(x, y));
+    float d_s;
+    if (d_mode == 1) {
+        const vec2 d = vec2(result_frameratio * dist_1_2(d_pos.x) / d_ana, dist_1_2(d_pos.y));
+        d_s = 1. / dot(d, d);
+    }
+    float r_s;
+    if (r_mode == 1) {
+        const vec2 d = vec2(front_frameratio * dist_1_2(r_pos.x) / r_ana, dist_1_2(r_pos.y));
+        r_s = inversesqrt(dot(d, d));
     }
     vec2 h;
     if (use_fov)
@@ -106,36 +111,26 @@ void main() {
         h.t = 2. * tan(.5 * radians(fov_1));
     }
     vec2 cos_phi_cos_theta, sin_phi_sin_theta;
-    float rot_correction;
     {
         vec2 coords;
         if (use_abs)
-            coords = h.t * pos_abs / vec2(front_w, front_h);
+            coords = h.t * pos_abs / vec2(adsk_result_w, adsk_result_h);
         else
             coords = h.t * (pos - .5);
         coords.x *= result_frameratio;
-        cos_phi_cos_theta = inversesqrt(coords * coords + 1.);
+        cos_phi_cos_theta.s = inversesqrt(fma(coords.x, coords.x, 1.));
+        coords.y *= cos_phi_cos_theta.s;
+        cos_phi_cos_theta.t = inversesqrt(fma(coords.y, coords.y, 1.));
         sin_phi_sin_theta = coords * cos_phi_cos_theta;
-        rot_correction = atan(sin_phi_sin_theta.s * coords.y);
     }
-    mat2 trans_m = mat2(cos_phi_cos_theta.s, -sin_phi_sin_theta.s * sin_phi_sin_theta.t, 0., cos_phi_cos_theta.t);
-    vec2 trans_v = vec2(-sin_phi_sin_theta.s, -cos_phi_cos_theta.s * sin_phi_sin_theta.t);
-    vec2 cos_psi_sin_psi = vec2(cos(radians(psi) - rot_correction), sin(radians(psi) - rot_correction));
-    if (gl_FragCoord.y < 1.) {
-        if (gl_FragCoord.x < 1.) {
-            fragColor = vec4(result_frameratio, redist_scale, h);
-            return;
-        }
-        if (gl_FragCoord.x < 2.) {
-            fragColor = vec4(trans_m);
-            return;
-        }
-        fragColor = vec4(trans_v, cos_phi_cos_theta);
-    }
+    const vec2 cos_psi_sin_psi = vec2(cos(radians(psi)), sin(radians(psi)));
     if (gl_FragCoord.x < 1.) {
-        fragColor = vec4(sin_phi_sin_theta, cos_psi_sin_psi);
+        fragColor = vec4(result_frameratio, d_s, h);
         return;
     }
-    if (gl_FragCoord.x < 2.)
-        fragColor = vec4(front_frameratio, undist_scale_inv, 0., 0.);
+    if (gl_FragCoord.x < 2.) {
+        fragColor = vec4(cos_phi_cos_theta, sin_phi_sin_theta);
+        return;
+    }
+    fragColor = vec4(cos_psi_sin_psi, front_frameratio, r_s);
 }

@@ -2,20 +2,20 @@
 
 ## Description
 
-Creates tons of different plasma patterns.
-
+This Matchbox shader creates tons of different plasma patterns.
 Setup:
-
-    - Detail: detail of the pattern
-    - Itterations: Itterations
-    - Fractal, Noise, Random: play with those parameters to get crazy results
-    - Speed: how fast the plasma is moving
-    - Offset: offset the time
-    - Colour: color of the plasma
+- Detail: detail of the pattern
+- Itterations: Itterations
+- Fractal, Noise, Random: play with those parameters to get crazy results 
+- Speed: how fast the plasma is moving
+- Offset: offset the time
+- Colour: color of the plasma
+Demo clip: http://vimeo.com/87990219
+Based on: http://glsl.heroku.com/e#14688.0
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -29,4 +29,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

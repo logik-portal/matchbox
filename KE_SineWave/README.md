@@ -2,11 +2,11 @@
 
 ## Description
 
-Distorts your image based on a sine wave.
+Distorts your image based on a sine wave
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Ted Kuleshov
+

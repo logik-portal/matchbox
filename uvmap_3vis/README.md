@@ -2,11 +2,11 @@
 
 ## Description
 
-Remap a texture via a UV Map.
+- 3vis - Remap a texture via a UV Map - Author: Eric Pouliot
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Eric Pouliot
+

@@ -21,14 +21,12 @@ Wind: Constant wind velocity (X, Y) affecting particle motion.
 Turbulence: Strength of random turbulence applied over time and age.
 Fade Out: Toggle fading as particles age (1.0 = fade, 0.0 = no fade).
 Fade Variation: Random variation in fade timing (0 = uniform, 1 = max variation).
-
 **ANIMATE spawnRate.
-
 **UV input for Emitter fun.
 
 ## Flame Requirements
 
-2017.0
+2017.0.0
 
 ## Supported Modes
 
@@ -42,4 +40,4 @@ Matchbox
 
 ## Author
 
-CB
+

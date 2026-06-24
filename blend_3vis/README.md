@@ -2,11 +2,11 @@
 
 ## Description
 
-Photoshop Blending Modes Select the mode you want. Be careful they are additive.
+3vis Blend - Photoshop Blending Modes Select the mode you want - Be careful they are additive - Author: Eric Pouliot - (c) - ~bj.2013
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Eric Pouliot
+

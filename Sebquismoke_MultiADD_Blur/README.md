@@ -2,11 +2,12 @@
 
 ## Description
 
-With Multi_Add_Blur, you can add several alpha. You can adjust transparency and blur for eatch layers. The output is clamped.
+With Multi_Add_Blur, you can add several alpha. You can adjust transparency and blur for eatch layers. The output is clamped
+graphistesmoke@gmail.com (Sebastien Delecour / Sebquismoke)
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Sebastien Delecour
+

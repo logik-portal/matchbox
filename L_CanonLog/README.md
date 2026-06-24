@@ -2,11 +2,11 @@
 
 ## Description
 
-Linearises the Canon Clog curve.
+Linearises the Canon Clog curve
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

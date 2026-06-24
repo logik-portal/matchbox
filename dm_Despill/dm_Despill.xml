@@ -1,0 +1,127 @@
+<ShaderNodePreset
+SupportsAdaptiveDegradation="False"
+SupportsAction="False"
+SupportsTransition="False"
+SupportsTimeline="False"
+TimelineUseBack="False"
+MatteProvider="False"
+CommercialUsePermitted="True"
+ShaderType="Matchbox"
+SoftwareVersion="2017.0.0"
+LimitInputsToTexture="True"
+Version="1.0"
+Description="dm_Despill — Despill shader for Autodesk Flame. Six algorithms, custom colour picker, IBK-style weighted average, spill area correction and spill matte output. Inspired by DespillMadness (Andreas Frickinger, Nukepedia 2010) and the IBKGizmo weighted despill approach."
+Name="dm_Despill">
+
+<Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+
+  <Uniform Index="0" NoInput="Error" DisplayName="Front" InputType="Front"
+    Mipmaps="False"
+    GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+    GL_TEXTURE_MAG_FILTER="GL_LINEAR"    GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+    Type="sampler2D" Name="front">
+  </Uniform>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  PAGE 0 — Despill Settings                -->
+  <!-- ══════════════════════════════════════════ -->
+
+  <Uniform Default="0" Row="0" Col="0" Page="0"
+    Tooltip="Ignored when Use Custom Color is enabled."
+    DisplayName="Screen Type" Type="int" Name="screenType" ValueType="Popup">
+    <PopupEntry Title="RED"   Value="2"></PopupEntry>
+    <PopupEntry Title="BLUE"  Value="1"></PopupEntry>
+    <PopupEntry Title="GREEN" Value="0"></PopupEntry>
+  </Uniform>
+
+  <Uniform Default="False" Row="1" Col="0" Page="0"
+    Tooltip="ON: use colour picker below. OFF: use Screen Type dropdown."
+    DisplayName="Use Custom Color" Type="bool" Name="useCustomColor">
+  </Uniform>
+
+  <Uniform Inc="0.001" Row="2" Col="0" Page="0"
+    Tooltip="Pick the screen colour. The dominant channel becomes the spill channel. Active only when Use Custom Color is ON."
+    DisplayName="Screen Colour" ValueType="Colour"
+    Type="vec3" ChannelName="ScreenColour" Name="customScreenColor">
+    <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0">
+    </SubUniform>
+    <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0">
+    </SubUniform>
+    <SubUniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0">
+    </SubUniform>
+  </Uniform>
+
+  <Uniform Default="0" Row="3" Col="0" Page="0"
+    Tooltip="Presets: use weighted average to unlock the Weighted Avg tab."
+    DisplayName="Despill Algorithm" Type="int" Name="algorithm" ValueType="Popup">
+    <PopupEntry Title="green/blue limit"           Value="4"></PopupEntry>
+    <PopupEntry Title="red limit"                  Value="3"></PopupEntry>
+    <PopupEntry Title="double red average"         Value="2"></PopupEntry>
+    <PopupEntry Title="double green/blue average"  Value="1"></PopupEntry>
+    <PopupEntry Title="weighted average"           Value="5"></PopupEntry>
+    <PopupEntry Title="average"                    Value="0"></PopupEntry>
+  </Uniform>
+
+  <Uniform ResDependent="None" Max="1.15" Min="0.85" Default="1.0" Inc="0.001"
+    Tooltip="Scale the despill limit +-15% around neutral (1.0)."
+    Row="4" Col="0" Page="0"
+    Type="float" ChannelName="fineTune" DisplayName="Fine Tune" Name="fineTune">
+  </Uniform>
+
+  <Uniform Default="True" Row="5" Col="0" Page="0"
+    DisplayName="Restore Source Luminance" Type="bool" Name="restoreLuma">
+  </Uniform>
+
+  <Uniform ResDependent="None" Max="4.0" Min="0.0" Default="1.0" Inc="0.01"
+    Row="6" Col="0" Page="0"
+    Type="float" ChannelName="saturation" DisplayName="Saturation" Name="saturation">
+  </Uniform>
+
+  <Uniform ResDependent="None" Max="5.0" Min="0.2" Default="1.0" Inc="0.01"
+    Row="7" Col="0" Page="0"
+    Type="float" ChannelName="gamma" DisplayName="Gamma" Name="gamma">
+  </Uniform>
+
+  <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.0" Inc="0.001"
+    Row="8" Col="0" Page="0"
+    Type="float" ChannelName="offset" DisplayName="Offset" Name="offset">
+  </Uniform>
+
+  <Uniform Default="False" Row="9" Col="0" Page="0"
+    DisplayName="Output Spill Matte in Alpha" Type="bool" Name="spillMatteInAlpha">
+  </Uniform>
+
+  <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.001"
+    Row="10" Col="0" Page="0"
+    Type="float" ChannelName="mix_amount" DisplayName="Mix" Name="mix_amount">
+  </Uniform>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  PAGE 1 — Weighted Avg                    -->
+  <!-- ══════════════════════════════════════════ -->
+
+  <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.001"
+    Tooltip="Weight of the Red channel. Only used with weighted average algorithm."
+    Row="0" Col="0" Page="1"
+    Type="float" ChannelName="redWeight" DisplayName="Red Weight" Name="redWeight">
+  </Uniform>
+
+  <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.001"
+    Tooltip="Weight of the Blue/Green channel. Only used with weighted average algorithm."
+    Row="1" Col="0" Page="1"
+    Type="float" ChannelName="ch2Weight" DisplayName="Blue/Green Weight" Name="ch2Weight">
+  </Uniform>
+
+</Shader>
+
+<Page Name="Despill Settings" Page="0">
+  <Col Name="CONTROLS" Col="0" Page="0">
+  </Col>
+</Page>
+
+<Page Name="Weighted Avg" Page="1">
+  <Col Name="WEIGHTS" Col="0" Page="1">
+  </Col>
+</Page>
+
+</ShaderNodePreset>

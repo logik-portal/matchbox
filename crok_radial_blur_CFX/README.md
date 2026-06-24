@@ -2,22 +2,19 @@
 
 ## Description
 
-Creates a volumetric radial blur inside action.
-
+This Matchbox shader creates a volumetric radial blur inside action.  Flame 2017 Only
 Setup:
-
-    - Amount : blur strenth
-    - Samples: blur resolution
-    - Gain : adjust gain
-    - Decay: blur decay
-
-    - Position: light position
-
-    - Softness: soften the result
+- Amount : blur strenth
+- Samples: blur resolution
+- Gain : adjust gain
+- Decay: blur decay
+- Position: light position
+- Softness: soften the result
+Based on: https://www.shadertoy.com/view/XsKGRW by Shane
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -31,4 +28,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

@@ -1,12 +1,11 @@
-# crok_blush
+# Crok_blush
 
 ## Description
 
-None
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -20,4 +19,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+

@@ -1,12 +1,11 @@
 <ShaderNodePreset
     Description="This Matchbox shader compensates for vignetting.
 
-Up to four reference points can be defined as radii and the respective gain compensation, optionally separate for red, green &amp; blue colour channels. The vignetting centre is treated as an implicit fifth point with unchanged gain.
+Up to four reference radii can be defined alongside individual gain compensation; optionally separate for red, green &amp; blue colour channels. The vignetting centre is treated as an implicit fifth point with unchanged gain.
 The shader calculates an even polynomial of eighth degree (in the radius from the vignetting centre) to interpolate those points.
-This kind of interpolation may lead to undesired oscillations for higher numbers of data points. However with sensible spacing of radii and lens vignetting being a rather smooth function, so to say, oscillations or overshoot is hardly an issue.
 
 Note that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.
-It is recommended to leave the canvas resolution as &lt;Same As Input 1&gt;.
+It is recommended to leave the [Output Resolution] as [Same As Input 1].
 
 This shader is licensed under the terms of the MIT license.
 
@@ -21,15 +20,15 @@ nobbl211@gmail.com"
     SupportsAdaptiveDegradation="False"
     CommercialUsePermitted="True"
     ShaderType="Matchbox"
-    SoftwareVersion="2024.1"
+    SoftwareVersion="2026.2.1"
     TimelineUseBack="False"
     SupportsTimeline="True"
-    Version="0.3">
+    Version="0.4">
     <Shader
         Index="1"
         OutputBitDepth="Float32"
-        OutputWidth="3"
-        OutputHeight="2">
+        OutputWidth="5"
+        OutputHeight="1">
         <Uniform
             Type="sampler2D"
             DisplayName="Front"
@@ -43,11 +42,10 @@ nobbl211@gmail.com"
             Type="bool"
             Tooltip="enable the first ring"
             DisplayName="Enable"
-            ChannelName="ring_1"
             Name="ring_1"
+            Page="0"
             Col="0"
             Row="0"
-            Page="0"
             Default="False">
         </Uniform>
         <Uniform
@@ -56,9 +54,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_1"
             Name="r_1"
+            Page="0"
             Col="0"
             Row="1"
-            Page="0"
             Default="0.255"
             Inc="0.001"
             Max="1000000.0"
@@ -74,9 +72,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_1_px"
             Name="r_1_px"
+            Page="0"
             Col="0"
             Row="1"
-            Page="0"
             Default="551"
             Inc="2"
             Max="1000000.0"
@@ -92,9 +90,9 @@ nobbl211@gmail.com"
             DisplayName="Gain"
             ChannelName="y_1"
             Name="y_1"
+            Page="0"
             Col="0"
             Row="2"
-            Page="0"
             ResDependant="None"
             Default="0.0"
             Inc="0.001"
@@ -147,11 +145,10 @@ nobbl211@gmail.com"
             Type="bool"
             Tooltip="enable the second ring"
             DisplayName="Enable"
-            ChannelName="ring_2"
             Name="ring_2"
+            Page="0"
             Col="1"
             Row="0"
-            Page="0"
             Default="False">
         </Uniform>
         <Uniform
@@ -160,9 +157,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_2"
             Name="r_2"
+            Page="0"
             Col="1"
             Row="1"
-            Page="0"
             Default="0.5099"
             Inc="0.001"
             Max="1000000.0"
@@ -178,9 +175,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_2_px"
             Name="r_2_px"
+            Page="0"
             Col="1"
             Row="1"
-            Page="0"
             Default="1101"
             Inc="2"
             Max="1000000.0"
@@ -196,9 +193,9 @@ nobbl211@gmail.com"
             DisplayName="Gain"
             ChannelName="y_2"
             Name="y_2"
+            Page="0"
             Col="1"
             Row="2"
-            Page="0"
             ResDependant="None"
             Default="0.0"
             Inc="0.001"
@@ -251,11 +248,10 @@ nobbl211@gmail.com"
             Type="bool"
             Tooltip="enable the third ring"
             DisplayName="Enable"
-            ChannelName="ring_3"
             Name="ring_3"
+            Page="0"
             Col="2"
             Row="0"
-            Page="0"
             Default="False">
         </Uniform>
         <Uniform
@@ -264,9 +260,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_3"
             Name="r_3"
+            Page="0"
             Col="2"
             Row="1"
-            Page="0"
             Default="0.7649"
             Inc="0.001"
             Max="1000000.0"
@@ -282,9 +278,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_3_px"
             Name="r_3_px"
+            Page="0"
             Col="2"
             Row="1"
-            Page="0"
             Default="1652"
             Inc="2"
             Max="1000000.0"
@@ -300,9 +296,9 @@ nobbl211@gmail.com"
             DisplayName="Gain"
             ChannelName="y_3"
             Name="y_3"
+            Page="0"
             Col="2"
             Row="2"
-            Page="0"
             ResDependant="None"
             Default="0.0"
             Inc="0.001"
@@ -355,11 +351,10 @@ nobbl211@gmail.com"
             Type="bool"
             Tooltip="enable the fourth ring"
             DisplayName="Enable"
-            ChannelName="ring_4"
             Name="ring_4"
+            Page="0"
             Col="3"
             Row="0"
-            Page="0"
             Default="True">
         </Uniform>
         <Uniform
@@ -368,9 +363,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_4"
             Name="r_4"
+            Page="0"
             Col="3"
             Row="1"
-            Page="0"
             Default="1.02"
             Inc="0.001"
             Max="1000000.0"
@@ -386,9 +381,9 @@ nobbl211@gmail.com"
             DisplayName="Radius"
             ChannelName="r_4_px"
             Name="r_4_px"
+            Page="0"
             Col="3"
             Row="1"
-            Page="0"
             Default="2203"
             Inc="2"
             Max="1000000.0"
@@ -404,9 +399,9 @@ nobbl211@gmail.com"
             DisplayName="Gain"
             ChannelName="y_4"
             Name="y_4"
+            Page="0"
             Col="3"
             Row="2"
-            Page="0"
             ResDependant="None"
             Default="0.0"
             Inc="0.001"
@@ -461,12 +456,12 @@ nobbl211@gmail.com"
             DisplayName="Centre"
             ChannelName="centre"
             Name="centre"
+            Page="0"
             Col="4"
             Row="0"
-            Page="0"
             IconType="Axis"
-            IconDefaultState="Falase"
-            Action3DWidgets="False"
+            IconDefaultState="False"
+            Action3DWidget="False"
             ValueType="Position"
             UIConditionSource="use_px"
             UIConditionValue="False"
@@ -492,10 +487,12 @@ nobbl211@gmail.com"
             DisplayName="Centre"
             ChannelName="centre_px"
             Name="centre_px"
+            Page="0"
             Col="4"
             Row="0"
-            Page="0"
-            IconType="None"
+            IconType="Axis"
+            IconDefaultState="False"
+            Action3DWidget="True"
             ValueType="Position"
             UIConditionSource="use_px"
             UIConditionValue="True"
@@ -517,24 +514,22 @@ nobbl211@gmail.com"
         </Uniform>
         <Uniform
             Type="bool"
-            Tooltip="use pixels as a unit of measurement insted of relative units"
+            Tooltip="use pixels as a unit of measurement instead of relative units"
             DisplayName="Use Pixels"
-            ChannelName="use_px"
             Name="use_px"
+            Page="0"
             Col="5"
             Row="1"
-            Page="0"
             Default="False">
         </Uniform>
         <Uniform
             Type="bool"
-            Tooltip="enable separate coltrol over red, green and blue gain for vignetting compensation"
+            Tooltip="enable separate control over red, green and blue gain for vignetting compensation"
             DisplayName="Enable RGB Compensation"
-            ChannelName="enable_rgb"
             Name="enable_rgb"
+            Page="0"
             Col="5"
             Row="2"
-            Page="0"
             Default="False">
         </Uniform>
     </Shader>
@@ -629,13 +624,13 @@ nobbl211@gmail.com"
         </Uniform>
         <Uniform
             Type="float"
-            Tooltip="horizontal strech factor"
+            Tooltip="horizontal stretch factor"
             DisplayName="Anamorphic"
             ChannelName="anamorphic"
             Name="anamorphic"
+            Page="0"
             Col="4"
             Row="2"
-            Page="0"
             Default="1.0"
             Inc="0.01"
             Max="1000000.0"
@@ -644,14 +639,13 @@ nobbl211@gmail.com"
         </Uniform>
         <Uniform
             Type="bool"
-            Tooltip="overlay the result with visual repreesentations of the compensation rings
+            Tooltip="overlay the result with visual representations of the compensation rings
 the rings are color coded ascending in index: red, green, blue, magenta"
             DisplayName="Highlight Rings"
-            ChannelName="highlight_rings"
             Name="highlight_rings"
+            Page="0"
             Col="5"
             Row="0"
-            Page="0"
             Default="False">
         </Uniform>
         <Uniform
@@ -664,59 +658,57 @@ the rings are color coded ascending in index: red, green, blue, magenta"
             Type="bool"
             Tooltip="apply the vignetting compensation to a white source instead of the Front input"
             DisplayName="Compensation Only"
-            ChannelName="compensation"
             Name="compensation"
+            Page="0"
             Col="5"
             Row="3"
-            Page="0"
             Default="False">
         </Uniform>
         <Uniform
             Type="bool"
             Tooltip="apply the inverted gain compensation to the image"
             DisplayName="Invert Compensation"
-            ChannelName="invert"
             Name="invert"
+            Page="0"
             Col="5"
             Row="4"
-            Page="0"
             Default="False">
         </Uniform>
     </Shader>
     <Page
         Name="Controls"
         ColName0_2="Rings 1-3"
-        ColName3_5="4 and Settings"
+        ColName3_5="R4 + Set."
         Page="0">
         <Col
             Name="Ring 1"
-            Col="0"
-            Page="0">
+            Page="0"
+            Col="0">
         </Col>
         <Col
             Name="Ring 2"
-            Col="1"
-            Page="0">
+            Page="0"
+            Col="1">
         </Col>
         <Col
             Name="Ring 3"
-            Col="2"
-            Page="0">
+            Page="0"
+            Col="2">
         </Col>
         <Col
             Name="Ring 4"
-            Col="3"
-            Page="0">
+            Page="0"
+            Col="3">
         </Col>
         <Col
             Name="Settings"
-            Col="4"
-            Page="0">
+            Page="0"
+            Col="4">
         </Col>
         <Col
             Name="Toggles"
-            Col="5"
-            Page="0">
+            Page="0"
+            Col="5">
         </Col>
     </Page>
 </ShaderNodePreset>

@@ -7,11 +7,8 @@ Please do RSVP at http://www.flameusers.com ,it really helps with numbers for fo
 It promises to be a great night with wonderful demos by Sean Cochrane and Michael Madeiros, as well as a special appearance by Yann Laforest.
 Also... GIVEAWAYS!!
 Come one, come all, but please do RSVP at http://www.flameusers.com !!!
-
 Demo clip: https://vimeo.com/200512678
-
 Based on www.shadertoy.com/view/MdjGWc by Antonalog
-MatchBox version by ivar@inferno-op.com
 
 ## Flame Requirements
 
@@ -29,4 +26,4 @@ Matchbox
 
 ## Author
 
-Ivar
+ivar@inferno-op.com

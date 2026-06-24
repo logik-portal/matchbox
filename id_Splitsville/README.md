@@ -6,7 +6,7 @@ Takes two inputs and makes a split-screen horizontally or vertically.
 
 ## Flame Requirements
 
-2017.0
+2015.0.0
 
 ## Supported Modes
 

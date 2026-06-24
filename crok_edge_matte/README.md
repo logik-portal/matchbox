@@ -2,17 +2,16 @@
 
 ## Description
 
-Creates a simple edge matte.
-
+This Matchbox shader creates a simple edge matte.
 Setup:
-
-    - Offset: offset amount applied to the matte edge
-    - Gain: amount of gain
-    - Gamma: amount of gamma
+- Offset: offset amount applied to the matte edge
+- Gain: amount of gain
+- Gamma: amount of gamma 
+Demo clip: http://vimeo.com/121816970
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -26,4 +25,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

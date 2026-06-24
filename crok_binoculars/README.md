@@ -2,15 +2,14 @@
 
 ## Description
 
-Creates a binoculars effect
-
+This Matchbox shader creates a binoculars effect
 Input:
-
-    - Front: source clip
+- Front: source clip
+Demo clip: https://vimeo.com/291237944
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -24,4 +23,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

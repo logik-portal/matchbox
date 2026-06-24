@@ -3,7 +3,7 @@
 /*
 **MIT License
 **
-**Copyright (c) 2025
+**Copyright (c) 2026
 **
 **Permission is hereby granted, free of charge, to any person obtaining a copy
 **of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,6 @@
 **OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 **SOFTWARE.
 */
-
 
 layout (location = 0) out vec4 fragColor;
 
@@ -200,5 +199,5 @@ void main() {
         sum += acc_13(off);
     if (bool(n & (1 << 14)))
         sum = acc_14();
-    fragColor = vec4(luma * sum.a / dot(vec3(w_r, 1. - (w_r + w_b), w_b), sum.rgb), 0., 0., 0.);
+    fragColor = vec4(double(luma) * double(sum.a) / dot(dvec3(double(w_r), 1.lf - (double(w_r) + double(w_b)), double(w_b)), dvec3(sum.rgb)), 0., 0., 0.);
 }

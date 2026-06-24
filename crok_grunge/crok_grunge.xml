@@ -1,5 +1,5 @@
-<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="False" ShaderType="Matchbox" SoftwareVersion="2015.0.0" LimitInputsToTexture="True" Version="1.2" Description="
-This shader creates rough edges
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="False" ShaderType="Matchbox" SoftwareVersion="2015.0.0" LimitInputsToTexture="True" Version="1.5" Description="
+This shader creates rough edges.
 
 Demo clip: https://vimeo.com/181366926
 
@@ -102,8 +102,16 @@ UIConditionSource="noise_type" UIConditionValue="11" UIConditionInvert="False" U
       </Uniform>
       <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
       </Uniform>
-      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="2.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="gain" DisplayName="Gain" Name="gain">
-</Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="gain" DisplayName="Gain" Name="gain">
+      </Uniform>
+      <Uniform Max="1000000" Min="0" Default="1" Inc="1" Tooltip="" Row="4" Col="2" Page="0" DisplayName="Blend Mode" Type="int" Name="blendmode" ValueType="Popup">
+               <PopupEntry Title="Color Burn" Value="1">
+               </PopupEntry>
+               <PopupEntry Title="Linear Burn" Value="2">
+               </PopupEntry>
+               <PopupEntry Title="Hard Mix" Value="3">
+               </PopupEntry>
+        </Uniform>
    </Shader>
 
     <Page Name="General" Page="0">
@@ -111,7 +119,7 @@ UIConditionSource="noise_type" UIConditionValue="11" UIConditionInvert="False" U
        </Col>
        <Col Name="Translation" Col="1" Page="0">
        </Col>
-       <Col Name="Timing" Col="2" Page="0">
+       <Col Name="Timing / Blending" Col="2" Page="0">
        </Col>
     </Page>
  </ShaderNodePreset>

@@ -2,11 +2,14 @@
 
 ## Description
 
-Creates random defocused lights.
+This LightBox shader creates random defocused lights.
+Based on https://www.shadertoy.com/view/4lXXDB 
+License CC Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) 
+Ligtbox version
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -20,4 +23,4 @@ Lightbox
 
 ## Author
 
-Ivar Beer
+BigWIngs / Martijn Steinrucken

@@ -6,7 +6,7 @@ Premultiplies or Unpremultiplies the Front input by the Matte input and outputs 
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 

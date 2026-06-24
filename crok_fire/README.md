@@ -2,19 +2,21 @@
 
 ## Description
 
-Creates a noise texture similar to the popular Genarts Texture (start with a white frame).
-
+This Matchbox shader creates a noise texture similar to the popular Genarts Texture (start with a white frame).
 Setup:
-
-    - Noise : noise detail
-    - Offset : offset noise pattern
-    - Speed : speed of fire
-    - Zoom : zoom in and out of fire
-    - Amplitude : amplitude of fire
+- Noise : noise detail
+- Offset : offset noise pattern
+- Speed : speed of fire
+- Zoom : zoom in and out of fire
+- Amplitude : amplitude of fire
+Demo clip: http://vimeo.com/82145674
+Shader developer: 301
+Based on https://www.shadertoy.com/view/Xsl3zN
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -28,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

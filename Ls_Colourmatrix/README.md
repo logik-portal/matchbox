@@ -2,11 +2,12 @@
 
 ## Description
 
-Colourmatrix - apply 3x3 matrices to RGB for white balance, colourspace conversion or well disco grades.
+Colourmatrix - apply 3x3 matrices to RGB for white balance, colourspace conversion or well disco grades
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2015.0.0
 
 ## Supported Modes
 
@@ -20,4 +21,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

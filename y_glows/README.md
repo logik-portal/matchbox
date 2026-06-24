@@ -2,15 +2,12 @@
 
 ## Description
 
-Create a glow effect.
-
-Updates:
-
-    - Fixed for Flame 2025
+GLOWS
+miles@noesclavo.com   Blur
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -24,4 +21,4 @@ Matchbox
 
 ## Author
 
-Miles Essmiller and Lewis Saunders
+Lewis Saunders

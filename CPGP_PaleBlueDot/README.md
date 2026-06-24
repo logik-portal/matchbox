@@ -2,20 +2,18 @@
 
 ## Description
 
-Manage planet generation.
-
+This Matchbox shader manage planet generation.
 Inputs:
-
-    - Front Bump: a bump texture Input
-    - Front Noise: a noise texture Input
-
-Parameter:
-
-    - Speed: the speed of rotation
+- Front Bump: a bump texture Input
+- Front Noise: a noise texture Input
+Params:
+- Speed: the speed of rotation
+Based on https://www.shadertoy.com/view/ld23Rz
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -29,4 +27,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

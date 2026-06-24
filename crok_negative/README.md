@@ -2,16 +2,14 @@
 
 ## Description
 
-Inverts the front and / or the matte.
-
-  Input:
-
-    - Front: front clip
-    - Matte: matte clip
+This Matchbox shader inverse the front and / or the matte.
+Input:
+- Front: front clip
+- Matte: matte clip
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -25,4 +23,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

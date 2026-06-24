@@ -2,17 +2,17 @@
 
 ## Description
 
-Creates an extrusion effect.
-
-  Input:
-
-    - Front: original image
-    - Matte: matte input
-    - Heigt Map: height map to define the strength of the extrusion
+This Matchbox shader creates an extrusion effect.
+Input:
+- Front: original image
+- Matte: matte input
+- Heigt Map: height map to define the strength of the extrusion
+Based on shadertoy.com/view/tsdXDB by shane
+License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 ## Flame Requirements
 
-Not specified
+2017.0.0
 
 ## Supported Modes
 
@@ -26,4 +26,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

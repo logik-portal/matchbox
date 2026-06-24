@@ -1,0 +1,56 @@
+<ShaderNodePreset Name="Fluffy Volumetric Clouds" SupportsAction="False" SupportsTransition="False" SupportsTimeline="True" MatteProvider="False" TimelineUseBack="False" DefaultIsNoOp="False" ShaderType="Matchbox" SoftwareVersion="2026.0.0" Description="High-quality fluffy volumetric clouds using Perlin+Worley noise + proper light marching. Inspired by classic iq-style cloud rendering.                     ////  cb+GrokBuild did this.  ////" SupportsAdaptiveDegradation="True" LimitInputsToTexture="True">
+
+   <Shader Index="1" OutputBitDepth="Output">
+
+      <!-- Shape -->
+      <Uniform Name="cloud_scale" Type="float" DisplayName="Cloud Scale" Page="0" Col="0" Row="0" Tooltip="Size of the main cloud formations" Inc="0.05" Default=".5" Min="0.1" Max="4.5" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="cloud_density" Type="float" DisplayName="Density" Page="0" Col="0" Row="1" Tooltip="Overall thickness and darkness of the clouds" Inc="0.05" Default=".2" Min="0" Max="5.0" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="cloud_speed" Type="float" DisplayName="Wind Speed" Page="0" Col="0" Row="2" Tooltip="How fast the clouds move" Inc="0.02" Default="0.4" Min="0.0" Max="4.0" ResDependent="None">
+      </Uniform>
+
+      <!-- Lighting -->
+      <Uniform Name="sun_dir" Type="vec3" DisplayName="Sun Direction" Page="0" Col="0" Row="3" Tooltip="Direction toward the sun" Inc="0.01" Default="0.5" Min="-1.0" Max="1.0" ResDependent="None">
+         <SubUniform Max="1.0" Min="-1.0" Default="0.5" ResDependent="None"></SubUniform>
+         <SubUniform Max="1.0" Min="-1.0" Default="0.7" ResDependent="None"></SubUniform>
+         <SubUniform Max="1.0" Min="-1.0" Default="0.35" ResDependent="None"></SubUniform>
+      </Uniform>
+
+      <Uniform Name="scattering" Type="float" DisplayName="Scattering Strength" Page="0" Col="1" Row="2" Tooltip="How bright the light scatters inside the clouds" Inc="0.05" Default="1.5" Min="0.3" Max="3.5" ResDependent="None">
+      </Uniform>
+
+      <!-- Quality -->
+      <Uniform Name="quality" Type="float" DisplayName="Quality" Page="0" Col="1" Row="0" Tooltip="Raymarch + lighting quality (higher = much fluffier and more detailed)" Inc="0.05" Default="1.3" Min="0.4" Max="2.2" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="exposure" Type="float" DisplayName="Exposure" Page="0" Col="1" Row="1" Tooltip="Overall brightness" Inc="0.05" Default="1.35" Min="0.5" Max="3.0" ResDependent="None">
+      </Uniform>
+
+      <!-- Camera Positioning -->
+      <Uniform Name="camera_x" Type="float" DisplayName="Camera X" Page="0" Col="2" Row="0" Tooltip="Camera horizontal position" Inc="0.1" Default="0.0" Min="-30.0" Max="30.0" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="camera_y" Type="float" DisplayName="Camera Y" Page="0" Col="2" Row="1" Tooltip="Camera vertical position (height)" Inc="0.1" Default="0.0" Min="-20.0" Max="20.0" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="camera_z" Type="float" DisplayName="Camera Z" Page="0" Col="2" Row="2" Tooltip="Camera forward/back position (negative = further away)" Inc="0.1" Default="-4.5" Min="-40.0" Max="5.0" ResDependent="None">
+      </Uniform>
+
+ 
+
+
+   </Shader>
+
+   <Page Page="0" Name="Fluffy Clouds">
+      <Col Page="0" Col="0" Name="Shape &amp; Density">
+      </Col>
+      <Col Page="0" Col="1" Name="Lighting &amp; Quality">
+      </Col>
+      <Col Page="0" Col="2" Name="Camera">
+      </Col>
+   </Page>
+
+</ShaderNodePreset>

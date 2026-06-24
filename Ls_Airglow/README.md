@@ -2,13 +2,13 @@
 
 ## Description
 
-Exponential falloff glow modelled on how light scatters in air. A bunch of blurs added up, using mipmaps to keep it fast. Accepts alpha input.
-
+Airglow - exponential falloff glow modelled on how light scatters in air. A bunch of blurs added up, using mipmaps to keep it fast.
 Recommended listening: https://soundcloud.com/lone-1/lone-airglow-fires
+lewis@lewissaunders.com
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-Lewis Saunders
+

@@ -2,11 +2,11 @@
 
 ## Description
 
-Uses the supplied Zdepth image to do Screen Space Ambient Occlusion.
+Uses the supplied Zdepth image to do Screen Space Ambient Occlusion
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-Unknown
+

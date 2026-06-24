@@ -2,21 +2,18 @@
 
 ## Description
 
-Creates a photoshop style auto histogram effect.
-
-  Input:
-
-    - Front: source clip
-
-    - Clamp negatives: cuts all the negative values on the incoming clip
-    - Clamp Highlites: cuts the highlite values of the incoming clip
-
-    - Min Threshold: adjust the minimum threshold of the negative values
-    - Max Threshold: adjust the maximum threshold of the highlites
+This Matchbox shader creates a photoshop style auto histogram effect
+Input:
+- Front: source clip
+- Clamp negatives: cuts all the negative values on the incoming clip
+- Clamp Highlites: cuts the highlite values of the incoming clip
+- Min Threshold: adjust the minimum threshold of the negative values
+- Max Threshold: adjust the maximum threshold of the highlites
+Demo clip: https://vimeo.com/265876151
 
 ## Flame Requirements
 
-Not specified
+2016.0.0
 
 ## Supported Modes
 
@@ -30,4 +27,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com

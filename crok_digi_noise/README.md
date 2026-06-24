@@ -2,20 +2,17 @@
 
 ## Description
 
-Creates crezy digital noise structures.
-
+This shader creates crezy digital noise structures.
 IMPORTANT: This shader is TOTALLY random.
 It will create a different pattern, everytime you copy it or replace it.
-
 THIS SHADER ONLY WORKS ON A MAC SYSTEM !!!
-
 Setup:
-
-    - Scale: scale in / out of the texture
+- Scale: scale in / out of the texture
+Demo clip: http://vimeo.com/113834178
 
 ## Flame Requirements
 
-Not specified
+2012.0.0
 
 ## Supported Modes
 
@@ -29,4 +26,4 @@ Matchbox
 
 ## Author
 
-Ivar Beer
+ivar@inferno-op.com
