@@ -30,4 +30,4 @@ Matchbox
 
 ## Author
 
-Ivar
+ivar@inferno-op.com with some HUGE help from Lewis

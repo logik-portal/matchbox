@@ -44,4 +44,4 @@ Matchbox
 
 ## Author
 
-Ivar
+Kyle, Miles, Lewis and Ivar

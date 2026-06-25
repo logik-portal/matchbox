@@ -24,4 +24,4 @@ Lightbox
 
 ## Author
 
-Ivar
+ivar@inferno-op.com

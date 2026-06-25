@@ -43,4 +43,4 @@ Matchbox
 
 ## Author
 
-Ivar
+Erwan Leroy, Joel Osis and ivar@inferno-op.com

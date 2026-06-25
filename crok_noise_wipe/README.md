@@ -35,4 +35,4 @@ Matchbox
 
 ## Author
 
-Ivar
+ivar@inferno-op.com and miles@noesclavo.com

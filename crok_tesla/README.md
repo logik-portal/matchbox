@@ -40,4 +40,4 @@ Matchbox
 
 ## Author
 
-Ivar
+ivar@inferno-op.com with some huge help from Travis and Flamemark Shaders
