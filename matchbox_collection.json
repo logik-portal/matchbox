@@ -84,6 +84,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "Jan Klier https://www.janklier.com",
     "description": "Color Compressor through hue rotation around reference point",
     "flame_min_version": "2018.3.0"
   },
@@ -93,6 +94,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "Jan Klier https://www.janklier.com",
     "description": "Sat vs. Sat curve that works in HSV color science. Additional feautre is tapering the change by the distance from the target hue value. When enabled, the further from the selected target hue the lighter the change is. In additionl that falloff curve, which is linear by default can be re-shaped",
     "flame_min_version": "2018.3.0"
   },
@@ -112,6 +114,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "Jan Klier https://www.janklier.com",
     "description": "Slice Tool - image eval",
     "flame_min_version": "2018.3.0"
   },
