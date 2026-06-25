@@ -45,4 +45,4 @@ Matchbox
 
 ## Author
 
-ivar@inferno-op.com
+Ivar

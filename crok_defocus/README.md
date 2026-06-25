@@ -34,4 +34,4 @@ Matchbox
 
 ## Author
 
-ivar@inferno-op.com and some friendly fokes
+Ivar

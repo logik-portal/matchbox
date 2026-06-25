@@ -38,4 +38,4 @@ Matchbox
 
 ## Author
 
-Kyle Obley and ivar@inferno-op.com
+Ivar

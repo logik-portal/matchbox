@@ -26,4 +26,4 @@ Matchbox
 
 ## Author
 
-Lewis and ivar@inferno-op.com
+Ivar

@@ -28,4 +28,4 @@ Matchbox
 
 ## Author
 
-John and ivar@inferno-op.com
+Ivar

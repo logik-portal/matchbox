@@ -31,4 +31,4 @@ Matchbox
 
 ## Author
 
-ivar@inferno-op.com with some huge help from Miles Essmiller
+Ivar

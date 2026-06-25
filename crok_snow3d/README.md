@@ -22,4 +22,4 @@ Lightbox
 
 ## Author
 
-Dominik Schmid https://www.shadertoy.com/view/llBSWc
+Ivar

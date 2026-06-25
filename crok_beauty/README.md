@@ -42,4 +42,4 @@ Matchbox
 
 ## Author
 
-Lewis, Greg-Paul and ivar@inferno-op.com
+Ivar

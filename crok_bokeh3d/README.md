@@ -21,4 +21,4 @@ Lightbox
 
 ## Author
 
-BigWIngs / Martijn Steinrucken
+Ivar

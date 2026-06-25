@@ -27,4 +27,4 @@ Matchbox
 
 ## Author
 
-ivar@inferno-op.com with huge help from miles@noesclavo.com
+Ivar

@@ -359,7 +359,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a 2 color look.\n\nSetup:\n- Amount: adjust amount of the effect\n- Tint: apply the colour to the low and highlights\n- High / Low: adjust the thresold for the Highs and Lows\n- Saturation: adjust the saturation \n- Brightness: adjust the brightness\n- Contrast: adjust the contrast \n- Exposure: adjust the exposure \n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -369,7 +369,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a 3D Grid.\n\nSetup:\n\nFractal\n - Itterations: how much itterations\n - Resolution: grid resolution\n - Thickness: adjust Thickness of the grid lines\n - Seed: seed value\n - Variance: add a bit of variation to the grid\n\nTiming\n - Overall: Speed: animation speed\n - Offset: offsets the grid in time\n - Speed x: horizontal speed adjustments\n - Speed y: vertical speed adjustments\n - Speed z: depth speed adjustments\n\nPosition / Size\n - Center: adjust the center of the grid\n - Zoom: zoom in/out of the grid\n\nDemo clip: http://vimeo.com/108040299\n\nBased on http://glsl.heroku.com/e#9396.0 by kabuto additional changes by tigrou ind\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -379,7 +379,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates the color palette of a VIC-2 or better known as on of the famous C64 chips.\n\nSetup:\n\n- Pixelsize: size of a single pixel\n- Saturation: adjust the input saturation\n- Noise: how much noise gets applied \n\n\nDemo clip: http://vimeo.com/94839906\n\nBased on https://www.shadertoy.com/view/ldXSz4\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -389,7 +389,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This LightBox shader will create some funky ACID patterns\n\nIMPORTANT: This is a volumetric shader. Please add a large sphere to the scene, to be able to see something.\n\nDemo clip: http://vimeo.com/131350537\n\nBased on http://glslsandbox.com/e#25386\nLigtbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -399,7 +399,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Erwan Leroy, Joel Osis and ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This is an Additive Keyer \n\nInput:\n- FG original: original fg\n- FG Despilled: despilled fg \n- Back: background\n- Matte: matte clip (needed for default Additive Key processing) \n- Matte Holdout: garbage matte input to define the region of interest (optional)\n- FG Clean: despilled clean green / blue sceen clip (optional)\n\n- Enable Joels Version: Enables a differnt kind of additive processing\n- Blend BG: Blends in the BG\n- BG Gamma: adjusts the gamma of the BG\n- BG Offset: offsets the BG\n \n- Global Restore: adjust the overall detail level \n- Restore Darks: dials in darker parts of the fg footage\n- Restore Highlight: dials in lighter parts of the fg footage\n- Desaturate Dark: desaturate the dark parts of the fg footage\n- Desaturate High: desaturate the light parts of the fg footage\n\n- Show Pixel Spread: shows the pixel spread image only\n- Size: adjust the size of the pixelspread\n\n- Enable Matte Denoise: denoise the incomming matte for cleaner edge details\n- Amount: amount of denoise applied to the matte\n- Radius: radius of the applied denoise effect\n\n- Output Background: just output the processed background for further comping\n- Clamp Output: clamp the output to values between 0 and 1 \n\nMatchbox version by Erwan Leroy, Joel Osis and ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -409,7 +409,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader will create random ancient symbols\n\nBased on shadertoy.com/view/wl2yDc by BackwardsCap\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -419,7 +419,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a cartoon style shading on 3D Action geometry.\n\n  Input:\n\n  - Front: source clip\n  - Normals: normal map to create tehe outlines\n\n  Setup:\n\n  - Direction: light direction\n\n  - Softness: amount of blur applied to the outline\n  - Postion: outline position\n\n  - Specular: amount of specular highlite\n  - Shades: amount of shading steps\n\n  Demo clip: https://vimeo.com/172227922\n\n  Shader developer: hughsk\n\n  Based on www.shadertoy.com/view/4dVGRW\n  This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -429,7 +429,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates JPEG compression.\n\nInput:\n- Source: original image\n- Matte: where the effect should be applied\n\nSetup:\n- Enable Black and White: enables Black and white ;)\n- Look: defines the size of the font\n- Brightness: adjust the brightness the created image\n\n\nBased on www.shadertoy.com/view/lsBXzD by CeeJayDK\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -439,7 +439,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a photoshop style auto histogram effect\n\n  Input:\n\n  - Front: source clip\n\n  - Clamp negatives: cuts all the negative values on the incoming clip\n  - Clamp Highlites: cuts the highlite values of the incoming clip\n\n  - Min Threshold: adjust the minimum threshold of the negative values\n  - Max Threshold: adjust the maximum threshold of the highlites\n\n  Demo clip: https://vimeo.com/265876151\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -449,7 +449,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Lewis, Greg-Paul and ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader applies some freshness to the skin ;)\nIt's based on the awesome shader Ls_Dollface by Lewis\n\nInput:\n- Front: original fg\n- Matte: external skin key\n\nSkin:\n- Color: pick the skin color of the talent\n- Weights: adjust the tollerance values for the build in keyer\n- Enable External Matte: enable the use of the optional external skin matte\n- Soften: blurs the skin matte\n\nCleanup:\n- Amount: amount of softening applied to the image\n- Preserve Edges: amount of edge detection applied\n- Dark spots: cleanup dark areas of the skin\n- Highlights: clean up highlights on the skin\n\nRestore Detail | Shine:\n- Amount: restore highfrequency details\n- Soften: soften the highpass filer\n- Shine amount: applied a little bit of shine to the skin\n- Blur Shine: soften the shine key\n\nColor:\n- Saturation: amount of saturation applied to the shine\n- Hue Shift: amount of Hue shift applied to the image\n\n\nMatchbox version by Lewis, Greg-Paul and ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -459,7 +459,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a beer like structure.\n\nInput:\n\n- Noise Texture: additional noise texture\n\n\nSetup:\n\n- Iterations: fractal iterations\n- Flow Noise: noise pattern\n- Distortion: fractal distortion\n- Sphere Size: size of the fractal sphere\n- Step Size: fractal steps\n- Speed: how fast the fractal is moving in x / y /z direction\n- Center: sphere center\n- Zoom: zoom in / out of the fractal\n- Colour: fractal colour\n- Brightness: adjust brightness\n- Glow: adjust glow\n- Fade: fade fractal in / out\n\n\nDemo clip: http://vimeo.com/92339715\n\nBased on http://glsl.heroku.com/e#15616.2\n\nGLSL Shader Developer: Redexe@gmail.com\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -469,7 +469,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a binoculars effect\n\n  Input:\n\n  - Front: source clip\n\n  Demo clip: https://vimeo.com/291237944\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -479,7 +479,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a bleachbypass process.\n\nSetup:\n- Exposure: adjust exposure of the image\n- Amount: adjust amount of the bleachbypass process\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -489,6 +489,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -497,7 +498,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates blob like sturctures.\n\nSetup:\n\n- Layer: how much layer of blobs\n- Shape: shape of the blobs\n- Smoothness: smoothnessof the generated stucture\n- Zoom: zoom in and out\n- Speed: speed of the blobs\n- Offset: offsets the blobs\n- Position: virutal camera postion\n- Blobs: colour of the blobs\n- Depth: depth colour\n\nDemo clip: https://vimeo.com/86783700\n\nBased on http://glsl.heroku.com/e#9535.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -507,7 +508,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates blocky textures.\n\nSetup:\n\n- Detail: texture detail\n- Seed: seed value\n- Speed: how fast the bubbles are moving\n- Offset: offset the animation in time\n- Size: size of the blocks\n- Aspect: aspect in x / y\n- Colour: block colour\n- Gain: adjust colour gain\n\nDemo clip: http://vimeo.com/92192671\n\nBased on http://glsl.heroku.com/e#16104.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -517,7 +518,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates blooming.\n\nInput:\n- Front: source clip\n\nSetup:\n- Offset: offsets the glow to gives a streak like effect\n- Size: glow size\n- Strength: glow strength \n\nBased on http://myheroics.wordpress.com/2008/09/04/glsl-bloom-shader/\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -527,7 +528,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader applies a lightwrap to the image.\n\nInput:\n\n- Front: source image\n\nSetup:\n\n- Bit Depth: amount of bit depth reduction\n- Noise Only: outputs just the blue noise\n- Animated Noise: enable animated blue noise\n- Speed: speed of animated noise\n- Dither in Linear:c enable dithering in linear colour space\n\nBased on www.shadertoy.com/view/4sKBWR by demofox\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -537,6 +538,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -545,6 +547,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -553,7 +556,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "BigWIngs / Martijn Steinrucken",
+    "author": "Ivar",
     "description": "This LightBox shader creates random defocused lights.\n\nBased on https://www.shadertoy.com/view/4lXXDB by BigWIngs / Martijn Steinrucken\n\nLicense CC Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) \n\nLigtbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -563,6 +566,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2015.0.0"
   },
   {
@@ -571,7 +575,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com and Christian",
+    "author": "Ivar",
     "description": "This Matchbox shader creates an Antialiased square with rounded corners.\n\nSetup:\n\n- Roundness: roundness of the corner\n- Blur:; amount of blur applied to the shape \n- Square: adjust the shape to be square\n\n- Scale: scales the shape\n- Offset: offset the shape in x and y\n\nDemo clip: http://vimeo.com/157906000\n\nMatchbox version by ivar@inferno-op.com and Christian",
     "flame_min_version": "2012.0.0"
   },
@@ -581,7 +585,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates bubbles.\n\nSetup:\n\n- Density: amount of bubbles\n- Sharpness: edge sharpness\n- Seed: seed value\n- Speed: how fast the bubbles are moving\n- Offset: offset the animation in time\n- Size: size of the bubbles\n- Size Offset: offseting the size to a min and max value\n- Horizontal Offset: offset the bubbles horizontaly\n- Vertical Offset: offset the bubbles verticaly\n- Colour: bubbles colour \n\nDemo clip: http://vimeo.com/90363196\n\nBased on http://glsl.heroku.com/e#15514.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -591,6 +595,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -599,7 +604,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates black and white images with adjustable RGB values.\n\nSetup:\n\n- Exposure: adjust exposure of the image\n- Amount: adjust the power of the back and white effect\n- Red, Green, Blue: adjust the individual color channels, to get the typical BW look\n\n\nDemo clip: http://vimeo.com/95615845\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -609,7 +614,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates handheld camera shakes.\n\nInput:\n\n- Front: source clip\n- Matte: matte clip\n\nSetup:\n\n- Seed: adjust that slider to get different results\n- Amplitude: overall amplitude of all the effects\n- Frequency: overall frequncy of all the effect\n- Zoom: overall zoom in / out\n- Rotation: overall rotation\n\n- Amplitude X/Y: adjust the postion amplitude\n- Frequency: adjust the position frequency\n- Amplitude Zoom: adjust the zoom amplitude\n- Frequency: adjust the zoom frequency\n- Amplitude Rotation: adjust the rotation amplitude\n- Frequency: adjust the rotation frequency\n- Samples: how many motionblur samples\n- Shutter: adjust shutter speed\n\n\nDemo clip: http://vimeo.com/114378228\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -619,7 +624,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates simple camera flashs.\n\nSetup:\n\n- Flickering: amount of flickering\n- Density: amount of flashes\n- Size: size of the flashes\n- Seed: change seed value\n\nDemo clip: http://vimeo.com/121594578\n\nBased on http://glsl.herokuapp.com/e#15514\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -629,7 +634,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates Cel shading.\n\nInput:\n\n- Front: source clip\n\nSetup:\n\n- Threshold : threshold for the filter\n- Color Levels: numbers of shades\n- Filter Size: blur level\n- Edge Size: size of the outline\n\nDemo clip: http://vimeo.com/82193157\n\nShader developer: Glass\n\nBased on https://www.shadertoy.com/view/lss3R8\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -639,7 +644,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a cell pattern.\n\nSetup:\n\n- Itterations: Itterations\n- Zoom: zoom in / out of the pattern\n- Speed: how fast the cells are moving\n- Offset: offset the time\n- Colour: color of the cells\n\nDemo clip: http://vimeo.com/88092343\n\nBased on: http://glsl.heroku.com/e#14776.1\n\t\t\t\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -649,7 +654,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates tons of cellular-like looking patterns.\n\nSetup:\n\n- Iterations: fractal iterations\n- Noise: noise pattern\n- Scale: noise scale\n- Blend: blend between multiple noise layer\n- Speed: speed of the pattern animation\n- Offset: offset the an animation in time\n- Center: pattern center\n- Zoom: zoom in / out of the fractal\n- Depth: ajust the depth of the pattern\n- Colour: fractal colour\n- Brightness: adjust brightness\n- Gain: adjust gain\n\nBased on http://glslsandbox.com/e#17197.1\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -659,7 +664,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a checkerboard pattern.\n\nSetup:\n\n- Zoom: zoom in / out \n- Rotation: rotates the checkerboard \n- Aspect: aspect of the pattern\n- Colour: colour for the 2 tiles\n- Antialiasing: applies an AA filter to the rotated checkboard\n\nDemo clip: http://vimeo.com/87951862\n\nBased on http://glsl.heroku.com/e#14689.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -669,7 +674,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Kyle Obley and ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates chromatic aberrations and a barrel distortion.\n\nVersion: 1.9\n\nInput:\n\n- Front: source clip\n- Chromatic Aberration Strength: Chromatic Aberration Strength matte\n- Distortion Strength: Distortion Strength matte\n\nOutput:\n\n- Result: result clip\n- Matte: alpha channel\n\nSetup:\n\n- Amount: blur amount\n- Iterations: number of steps to create the blur\n- Saturation: Blend in/out the chroma offset\n- Center: center of the effect\n- Add Distortion: enable additional distortion\n- Amount: amount of applied distortion\n\nBased on: https://www.shadertoy.com/view/XssGz8\nTo the extent possible under law, the author has waived all copyright and related or neighboring rights to this work.\n\nDemo clip: http://vimeo.com/89781715\n\nMatchbox version by Kyle Obley and ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -679,7 +684,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader does a fast chroma key.\n\nInput:\n\n- Front : greenscreen clip\n- Back : background clip\n\nShader developer: Zavie\n\nBased on https://www.shadertoy.com/view/4dX3WN\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -689,6 +694,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "description": "This Matchbox shader creates circuits style patterns.\n\nSetup:\n\n- Width: width of the lines\n- Zoom: zomin in / out of the fractal\n- Speed: speed of the conductive strips animation\n- Offset: offset animation in time\n- Position: position of the fractal\n\nDemo clip: http://vimeo.com/83928036\n\nShader developer: Kali\n\nBased on https://www.shadertoy.com/view/4dSGDW\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version: ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -698,7 +704,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader applies a circular blur to the image.\n\nSetup:\n\n- Amount: amount of blur applied to the image\n\nBased on https://www.shadertoy.com/view/4df3R7 by hornet\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -708,7 +714,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "lewis@lewissaunders.com and ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "Use this shader to get broadcast safe colors\n\nInput:\n- Front: source clip\n\nClamp:\n- Chroma: max chrominance\n- Luma: max luminance \n\n\nDemo clip: http://vimeo.com/117628260\n\nMatchbox version by lewis@lewissaunders.com and ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -718,7 +724,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader will hypnotize your clients.\n\nBased on https://www.shadertoy.com/view/ldBGDc\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -728,7 +734,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates CMYK Halftone patterns.\n\nInput:\n- Front: source clip\n\nSetup:\n- Minimum : minimum pattern\n- Maximum : maximum pattern\n- Gain : brightness of the pattern\n- Scale: scale pattern\n\nShader developer: tsone\nBased on https://www.shadertoy.com/view/Mdf3Dn\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -738,7 +744,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a handdrawn style edge detect.\n\nInput:\n- Source Image: source image \n\nSetup:\n- Resolution: resolution of the effect\n- Radius: radius of the created edges\n\nBased on http://www.forceflow.be/2010/04/14/contour-and-valley-detection-using-glsl/\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -748,7 +754,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a Convolve Blur.\n\nVersion 1.2a\n\nInput:\n- Front: source clip\n\nSetup:\n- Quality: Blur Quality\n- Radius: Blur Radius\n \nShader developer: Pitzik4\nBased on https://www.shadertoy.com/view/Xds3W8\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -758,7 +764,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a crazy 3D Noise texture.\n\nTime:\n\n- Speed : speed of the texture animation\n- Offset : offset the texture in time\n\nTexture:\n\n- Detail : detail of the generated texture\n- Density : density of the genrated texture\n- Morph : morph between different texture patterns\n- Steps: how many texture iterations will be generated\n\nResolution:\n\n- Zoom : zoom in and out of the texture\n- Resolution: resolution of the texture in x / y\n\nColour:\n\n- Contrast: adjust the contrast of the generated texture\n\nDemo clip: https://vimeo.com/83350671\n\nShader developer: ztri\n\nBased on https://www.shadertoy.com/view/4sl3z2\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\t\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -768,7 +774,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a simple pencil sketch.\n\nInput:\n- Front: source clip\n\nSetup:\n- Density : How close together hatch lines should be placed \n- Width : How wide hatch lines are drawn\n\nShader developer: doomedbunnies\nBased on https://www.shadertoy.com/view/MdX3Dr\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -778,7 +784,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a CRT style scan-line effect with additional shadowmasking.\n\nSetup:\n\nScanline:\n- Amount: how many scanlines\n- Contrast: amount of scanline contrast\n\nShadow Mask:\n- Type: select different typeds of shadow masks\n- Amount: amount of shadowmasking\n\nMisc:\n- Warp: adjust the amount of warp applied to the image\n- Blur Input: slightly soften the incoming image\n\nDemo clip: https://vimeo.com/128683471\n\nOriginal shader by Timothy Lottes\nwww.shadertoy.com/view/MtSfRK\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -788,7 +794,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader reduces banding.\n\nInput:\n\n- Source: front image \n\nSetup:\n\n- Amount: amount of debanding applied\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -798,7 +804,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com and some friendly fokes",
+    "author": "Ivar",
     "description": "This Matchbox comps front and back and adds a defocus effect.\n\nInput:\n- Front: front clip\n- Back: background clip\n- Matte: matte clip\n- Front Strength: strength clip for defocus amount\n- Back Strength: strength clip for defocus amount\n\n\nSetup:\n- Style: select different bokeh styles\n- Size: blur size\n- Gain: adjust the gain of the image, to get better highligths\n- Steps: blur resolution\n\n\nDemo clip: http://vimeo.com/110723577\n\nBased on: https://www.shadertoy.com/view/4d2Xzw by David Hoskins\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com and some friendly fokes",
     "flame_min_version": "2015.0.0"
   },
@@ -808,7 +814,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com and some friendly fokes",
+    "author": "Ivar",
     "description": "This Matchbox comps front and back and adds a defocus effect.\n\nInput:\n- Front: front clip\n- Matte: matte clip\n- Strength: strength clip for defocus amount\n\n\nSetup:\n- Style: select different bokeh styles\n- Size: blur size\n- Gain: adjust the gain of the image, to get better highligths\n- Steps: blur resolution\n\n\nDemo clip: http://vimeo.com/110723577\n\nBased on: https://www.shadertoy.com/view/4d2Xzw by David Hoskins\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com and some friendly fokes",
     "flame_min_version": "2018.3.0"
   },
@@ -818,7 +824,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader removes grain / noise\n\nInput:\n\n- Front: source clip\n\nSetup:\n\n- Amount: how much grain is removed\n- Detail: blend in detail\n\n\nShader developer: ttoinou\n\nBased on https://www.shadertoy.com/view/MtcSzH\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -828,7 +834,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This LightBox shader applies a denoise to an image.\n\n\nBased on https://www.shadertoy.com/view/4tfSDr by gongenhao\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -838,7 +844,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader combines multiple LogicOps to streamline your keying batch schematic.\n\nInput:\n\n- Front: greenscreen clips\n- Back: background clip\n- Matte: keyed FG matte\n- Despilled Front: despilled FG clip\n\n\nSetup:\n\n- 2D Histogram: adjust max and min input values of the despilled FG\n\nDemo clip: http://vimeo.com/118993192\n\nBased on this idea: \nhttp://forums.autodesk.com/t5/general-discussion/advanced-keying-spill-suppression/td-p/4270497\n\nVideo showing the general idea for Smoke and Nuke:\nhttps://vimeo.com/62523139\n\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -848,7 +854,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com with some huge help from Miles Essmiller",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a difference matte.\n\n\nSetup:\n\n- Red | Green | Blue: adjust the effect of the colour channels\n- minInput: displays the lower limit of the luminance values (pixels with lower values are mapped to black)\n- minOutput: displays the lower limit of the luminance values for black pixels\n\n- maxInput: displays the upper limit of the luminance values (pixels with higher values are mapped to white)\n- maxOutput: displays the upper limit of the luminance values for white pixels\n\n- Brightness: adjust the brightness\n- Contrast: adjust the contrast \n- Gain: adjust the gain\n- Gamma: adjust the gamma \n\n\nDemo clip: http://vimeo.com/106739462\n\nMatchbox version by ivar@inferno-op.com with some huge help from Miles Essmiller",
     "flame_min_version": "2015.0.0"
   },
@@ -858,7 +864,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a noisy blur.\n\nInput:\n- Front: source clip\n- Strength: strength matte\n\nSetup:\n- Amount: blur strenth\n- Steps: blur resolution\n\nDemo clip: http://vimeo.com/110007581\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -868,7 +874,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates crezy digital noise structures.\n\nIMPORTANT: This shader is TOTALLY random.\nIt will create a different pattern, everytime you copy it or replace it.\n\nTHIS SHADER ONLY WORKS ON A MAC SYSTEM !!!\n\nSetup:\n- Scale: scale in / out of the texture\n\n\nDemo clip: http://vimeo.com/113834178\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -878,7 +884,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates digital glitches.\n\nInput:\n\n- Front: source clip\n\nSetup:\n\n- Bias: adjust the time between the effect kicks in (0 = never 1 = always)\n- Size: size of the applied effects (green lines and bw blocks)\n- RGB Offset: adjust thr RGB offset\n- Blend: adjust the opacity of the effect\n- Lines Threshold: threshold for the green lines\n- BW Threshold: black and white threshold\n- Enable: enable Drunk Vision mode\n- Bias: adjust the time between the effect kicks in (0 = never 1 = always)\n\n\nDemo clip: http://vimeo.com/111442395\n\nBased on https://www.shadertoy.com/view/Md2GDw ,  https://www.shadertoy.com/view/4sBSDd , https://www.shadertoy.com/view/MdfGD2 , https://www.shadertoy.com/view/4sjGRD#\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -888,7 +894,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a directional blur.\n\nVersion: 1.1a\n\nInput:\n- Front: source clip\n\nOutput:\n- Result: result clip\n\nSetup:\n\n- Horizontal: blur amount\n- Vertical: blur amount\n- Iterations: number of steps to create the blur\n- Gain: gain applied to image\n\nBased on: https://github.com/drojdjou/squareroot.js/blob/gl/demo/soundviz/glsl/StrongBlur.glsl\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -898,7 +904,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader adds a lens distortion effect.\n\nInput:\n- Front: source clip\n- Lens: distortion clip\n- Matte: region of interest\n- Strength: strength clip\n\nSetup:\n- Amount: overall distortion\n- Displace: the displacement amount\n- Softness: amount of softness applied to the distortion\n- Rotate: offset the distortion\n\nFiltering:\n- Blur Lens: softens incoming lens clip\n- Blur Strength: softens incoming strength clip\n- Strength Amount: blends in / out strength clip\n- FXAA Amount: amount of Antialiasing applied\n\nMatchbox version by ivar@inferno-op.com\nBig thx to lewis@lewissaunders.com for helping me out on some parts of the shader",
     "flame_min_version": "2015.0.0"
   },
@@ -908,7 +914,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader adds a blured lens distortion effect.\n\nInput:\n- Front: source clip\n- Matte: region of interest\n- Displace: distortion clip\n- Strength: strength clip\n\nSetup:\n- Distortion: overall distortion\n- Blur Distortion: softens the incoming displace matte\n- Blur: amount of blur applied to the Matte to get the directional blur effect\n- Samples: how many samples are used for the directional blur\n\nAntiAliasing:\n- Enable FXAA: enables AntiAliasing\n\nDemo clip: https://vimeo.com/150475472\n\nMatchbox version by ivar@inferno-op.com\n\nBig thx to lewis@lewissaunders.com for helping me out on some parts of the shader",
     "flame_min_version": "2015.0.0"
   },
@@ -918,7 +924,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a dithering effect.\n\nInput:\n\n- Front: source image \n\nDemo clip: http://vimeo.com/109388558\n\nBased on: http://oos.moxiecode.com/js_webgl/c64_shader/\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -928,7 +934,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates depth of field with bokeh.\n\nVersion 3.1\n\nInput:\n\n- Front: source clip\n- Depth Map: depth map\n\nSetup:\n\n- Amount : how much blur is applied\n- Threshold : highlight threshold\n- Gain : highlight gain\n- Chromatic Abe. : highlight chromatic aberration \n- Dither : sample dithering amount\n- Rings : ring amount\n- Samples : how many samples are used for the bokeh\n- Noise : use noise instead of pattern for sample dithering\n- Pentagon Shape : use pentagon as bokeh shape\n- Feather Shape : pentagon shape feather\n- Range : focal range\n- Focal Depth : focal depth, if you use an external matte\n- Autofocus : use autofocus in shader\n- Depth Map Blur : blurs the depth buffer\n- Bias: bokeh edge bias\n\nDemo clip: https://vimeo.com/82195519\n\nShader developer: martins upitis\n\nBased on http://devlog-martinsh.blogspot.fr/2011/12/glsl-depth-of-field-with-bokeh-v23.html\n\nThis work is licensed under a Creative Commons Attribution 3.0 Unported License.\nYou are free to share, modify and adapt it for your needs, and even use it for commercial use.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -938,7 +944,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com and lewis@lewissaunders.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates depth of field with bokeh.\n\nVersion 2.0\n\nInput:\n\n- Front: source clip\n- Depth Map: depth map\n\nSetup:\n\n- Amount: how much blur is applied\n- Gain: highlight gain\n- Chromatic Abe.: highlight chromatic aberration\n- Pentagon Shape: use pentagon as bokeh shape\n- Feather Shape: pentagon shape feather\n- Focal Depth: adjust the field of view\n\nOriginal shader developer: martins upitis\n\nBased on http://devlog-martinsh.blogspot.de/2011/12/glsl-depth-of-field-with-bokeh-v24.html\n\nThis work is licensed under a Creative Commons Attribution 3.0 Unported License.\nYou are free to share, modify and adapt it for your needs, and even use it for commercial use.\n\nMatchbox version by ivar@inferno-op.com and lewis@lewissaunders.com",
     "flame_min_version": "2017.0.0"
   },
@@ -948,7 +954,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a simple edge matte.\n\nSetup:\n\n- Offset: offset amount applied to the matte edge\n- Gain: amount of gain\n- Gamma: amount of gamma \n\nDemo clip: http://vimeo.com/121816970\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -958,7 +964,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates an emboss effect.\n\nInput:\n- Front: source clip\n\nSetup:\n- Height: bump height \n- Specular: adjust the glossiness\n- Light Height: height of the lightsource\n- Position: light position in x / y\n\n\nDemo clip: http://vimeo.com/112310423\n\nBased on https://www.shadertoy.com/view/XdlGz8\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -968,6 +974,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -976,7 +983,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader gives you a max / min - erosion / dilation type of effect simmilar to the nuke one.\n\n\n  Setup:\n\n  - Type: select the desired filter effect\n  - Shape: select the preferred look\n  - Amount: adjust the overal amount applied to the shader\n  - Look: adjust the overal look\n  - Blend: blend between original image and applied preset\n\n  Based on https://www.shadertoy.com/view/XscXRl by FabriceNeyret2\n  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -986,7 +993,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This MatchBox CameraFX shader will create volumetric explosions inside Action.\nThis shader ist 2017 ONLY\n\nDemo movie: https://vimeo.com/171311763\n\nBased on www.shadertoy.com/view/lsySzd by Duke\nLicense: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License\n\nMatchBox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -996,7 +1003,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "The Exponential Blur blurs an image with an exponential falloff.\n\nInput:\n- Front: source clip\n\nSetup:\n- Amount: amount of blur applied\n- Blend: mix between the original image and the blurred one\n\nOutput Options:\n- Clamp output: clamps the result to 0.0 - 1.0\n\nMatchbox version by ivar@inferno-op.com\nAll the code used belongs to Miles / Lewis",
     "flame_min_version": "2015.0.0"
   },
@@ -1006,7 +1013,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates an exposure node, which isn't THAT precise ;)\nFor creative use only !\n\nInput:\n- Front: source clip\n\nSetup:\n- Overall: overall exposure adjustment\n- Saturation: adjust the saturation for different exposure levels\n- RGB: single RGB exposure adjustment\n- Input Data Type: Linear | Video/Rec709 | Logarithmic\n\n\nDemo clip: http://vimeo.com/110009669\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1016,7 +1023,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates an extrusion effect.\n\n  Input:\n  - Front: original image\n  - Matte: matte input\n  - Heigt Map: height map to define the strength of the extrusion\n\n  Based on shadertoy.com/view/tsdXDB by shane\n  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1026,7 +1033,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a film like grain.\n\nInput:\n- Front: source clip\n\nSetup:\n- Amount : how much grain is applied\n- Size : grain size\n- Coloured Grain : enables coloured grain\n- Colour : colour saturation of the grain\n- Luma : brightness of the grain\n\nShader developer: martins upitis\n\nBased on http://devlog-martinsh.blogspot.fr/2013/05/image-imperfections-and-film-grain-post.html\n\nThis work is licensed under a Creative Commons Attribution 3.0 Unported License.\nYou are free to share, modify and adapt it for your needs, and even use it for commercial use.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1036,7 +1043,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a fbm style pattern.\n\n\nSetup:\n\n- Scale: adjust scale of the pattern\n- Detail: adjust pattern detail\n- Speed: adjust pattern animation speed\n- Offset: offset pattern in time\n\nDemo clip: http://vimeo.com/122342353\n\nBased on: http://glslsandbox.com/e#23659.0 by RAZIK anass\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1046,6 +1053,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2015.0.0"
   },
   {
@@ -1054,7 +1062,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader gives you different FilmLook presets.\n\n\nSetup:\n\n- Look: select the desired filmlook preset\n- Saturation: adjust overall saturation\n- Contrast: adjust overall contrast\n- Gamma: adjust overall gamma\n- Blend: blend between original image and applied preset\n\n\nDemo clip: http://vimeo.com/119370189\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1064,7 +1072,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a noise texture similar to the popular Genarts Texture (start with a white frame).\n\nSetup:\n\n- Noise : noise detail\n- Offset : offset noise pattern\n- Speed : speed of fire\n- Zoom : zoom in and out of fire\n- Amplitude : amplitude of fire\n\nDemo clip: http://vimeo.com/82145674\n\nShader developer: 301\n\nBased on https://www.shadertoy.com/view/Xsl3zN\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1074,7 +1082,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates Fireworks.\n\nDemo clip: https://vimeo.com/83036063\n\nShader developer: Qqwy\n\nBased on https://www.shadertoy.com/view/4dBGRw\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1084,7 +1092,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a fisheye effect.\n\nSetup:\n\n- Distortion: adjust the amount of barrel distortion applied\n\n\nDemo clip: https://vimeo.com/128069220\n\nBased on: https://www.shadertoy.com/view/4s2GRR by SanchYESS\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1094,7 +1102,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a simple torch like flame.\n\nSetup:\n\n- Detail: adjust the noise detail of the flame\n- Speed: adjust the speed of the flame animation\n- Offset: offset the animation in time\n\n\nDemo clip: https://vimeo.com/128056903\n\nOriginal shader by Xavier Benech\nwww.shadertoy.com/view/XsXSWS\n\nLicense Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)\ncreativecommons.org/licenses/by-sa/4.0/\n\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1104,7 +1112,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This LightBox shader will create flames.\n\nBased on http://glslsandbox.com/e#17361.0\nLigtbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1114,7 +1122,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This MatchBox CameraFX shader will create volumetric flame and fluid like structures inside Action.\nThis shader ist 2017 ONLY\n\nDemo movie: https://vimeo.com/163419083\n\nBased on http://glslsandbox.com/e#17361.0\nMatchBox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1124,6 +1132,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2015.0.0"
   },
   {
@@ -1132,7 +1141,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a flickering effect.\n\nInput:\n\n- Front: source clip\n\nSetup:\n\n- Amplitude: amplitude of the flickering\n- Frequency: speed of the flickering\n- Seed: offset the random generator\n\n\nDemo clip: http://vimeo.com/115644854\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1142,7 +1151,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a perlin noise pattern.\n\nSetup:\n\n- Itterations: how much itterations\n- Amplitude: noise amplitude\n- Noise: adjust noise\n- Warp: warp the texture\n- Speed: animation speed\n- Offset: offsets the noise pattern\n- Horizontal: horizontal speed adjustments\n- Vertical: vertical speed adjustments\n- Center: move the texture center\n- Zoom: zoom in/out of the texture\n- Tint: define the tint colour\n- Brightness: adjust brightnesss\n- Contrast: adjust contrast\n- Gain: adjusst gain\n\n\nDemo clip: http://vimeo.com/106756517\n\nBased on http://www.kamend.com/2012/06/perlin-noise-and-glsl/\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1152,7 +1161,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a 2D fluid system.\n\nInput:\n\n- Front: source clip\n\nSetup:\n\n- Detail: amount of detail in the simulation\n- Resolution: amount of resolution used for the simulation\n- Noise: amount of noise added to the simulation\n\nDemo clip: https://vimeo.com/170348841\n\nShader developer: flockaroo\n\nBased on www.shadertoy.com/view/MdKXRy\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1162,7 +1171,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a folding texture, which you can use as a reflection map.\n\nVersion 1.2\n\nSetup:\n\n- Speed : speed of the texture changes\n- Offset : offset the texture pattern\n- Zoom : zoom in/out of the texture \n- Detail : level of detail\n- Iterations : iterations steps \n- Aspect : aspect ratio of the generated texture\n- Duration : choose speed to create loop\n\nDemo clip: http://vimeo.com/83624633\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1172,7 +1181,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a fractal pattern.\n\nSetup:\n\n- Zoom : zoom in and out\n- Resolution : fractal detail\n- Offset : offset fractal pattern\n- Speed : speed of building the fractal\n- Zoom : zoom in and out\n- Gain : brightness of the fractal texture\n\nDemo clip: https://vimeo.com/82187477\n\nShader developer: JoshP\n\nBased on https://www.shadertoy.com/view/lslGWr\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1182,7 +1191,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a mandelbrot pattern.\n\nSetup:\n\n- Speed : speed of building the fractal\n- Offset : creates different fractal\n- Gain : changes the brightness of the fractal\n- Colour: fractal base colour\n- Detail: fractal resolution\n\nDemo clip: http://vimeo.com/82553863\n\nShader developer: P_Malin\n\nBased on https://www.shadertoy.com/view/lsB3zR\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1192,7 +1201,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Kyle, Miles, Lewis and Ivar",
+    "author": "Ivar",
     "description": "This shader creates frameguides a letterbox and framecounter.\n\nSetup:\n\nLetterbox\n - Colour: colour of the letterbox\n - Aspect Ratio: dial in the letterbox aspec ratio\n - Blend: opacity for the letterbox\n \nLetterbox Line\n - Colour: colour of the letterbox line\n - Aspect Ratio: dial in the letterbox line aspec ratio\n - Blend: opacity for the letterbox line\n \nGuides\n - Colour: colour of the guidelines\n - Blend: opacity of the guidelines\n - Enable Relative: adjust the guidelines in relation to the Letterbox \n - Relative to Lines: switch to relative to Letterbox Lines\n \nCenter\n - Colour: colour of the center cross\n - Blend: opacity of the center cross\n \nCounter\n - Position: adjust the position of the framecounter\n - Size: adjust the size of the framecounter\n - Offset: offsets the framecounter  \n \n \nDemo clip: http://vimeo.com/107916855\n\nNumber Printing by - @P_Malin\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by Kyle, Miles, Lewis and Ivar",
     "flame_min_version": "2012.0.0"
   },
@@ -1202,7 +1211,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates Glitch Effects\n\n  based on www.shadertoy.com/view/ttBSDR by 104\n  and Ls_Advect by Lewis Saunders\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1212,7 +1221,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader gives you a simple gradient effect which works nice in Action and on the Timeline.\n\nSetup:\n- Gardient Type: select Linear, Radial or Line Dist\n- Bias: adjust the ramp of the gradient\n\n- Start: adjust the start position of the gradient\n- Stop: adjust the stop position of the gradient\n\n- Color: colors being used for the gradient\n\n\nDemo clip: http://vimeo.com/146548233\n\nBased on https://www.shadertoy.com/view/ltjXDt by anastadunbar\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1222,7 +1231,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a grid.\n\nSetup:\n\n- Grid Colour: grid colour\n- Back Colour: bg colour\n- Grid Size : size of the main box\n- Line Width : width of the outline\n- Rotation Center: center of rotation\n- Rotation Value: how much rotation gets applied\n- Blur: apply blur to the grid\n\n \nDemo clip: http://vimeo.com/87956490\n\nBased on: http://glsl.heroku.com/e#13645.1\n\t\t\t\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1232,7 +1241,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates rough edges.\n\nDemo clip: https://vimeo.com/181366926\n\nBased on:\nFBM noise by iq\nSimplex3D noise based on https://www.shadertoy.com/view/XtBGDG by Lallis\nFractal Noise based on https://www.shadertoy.com/view/Msf3Wr by mu6k\nPerlin Noise based on https://www.shadertoy.com/view/MllGzs by guil\nPerlin v2 Noise based on https://www.shadertoy.com/view/MlS3z1 byRenoM\nWater Noise based on https://www.shadertoy.com/view/llsGWl by guil\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1242,7 +1251,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a heat haze effect.\n\nInput:\n\n- Front: source clip\n- Matte: masken input\n- Displace: external Displacement matte\n- Strength: external Strength matte\n\nSetup:\n\n- Amount: strength of the distortion\n- Smoothness: blur the incomming distortion matte (works on internal and external matte)\n\n- Amount: strengt of applied hmotion blur\n- Samples: motion blur samples\n\n- Speed: speed of noise\n- Detail: detail of the noise structure\n- Direction: noise animation direction\n\n- Use External Matte: use an external matte instead of the internal matte for the displacement\n\n- Oversampling: number of pixel samples\n- Softness: spacing between pixel samples\n\n\nDemo clip: http://vimeo.com/115514251\n\nMatchbox version by ivar@inferno-op.com\nBig thx to lewis@lewissaunders.com for help and code snippets",
     "flame_min_version": "2012.0.0"
   },
@@ -1252,7 +1261,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates an exposure node, which isn't THAT precise ;)\n\nInput:\n- Front: source clip\n\nSetup:\n- Size: size of the hexagon tile\n- Edge: thickness of the black edge\n\n-\n\n\nBased on https://www.shadertoy.com/view/ls23Dc by pyalot\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1262,7 +1271,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a HighPass filter effect.\n\nInput:\n- Front: source clip\n\nSetup:\n- Strength: adjust contrast of the generated HighPass\n- Clamp Output: clamps the output of the highpass filter between 0 and 1\n- Overlay on BG: this comps the HighPass in overlay mode ontop of the source image\n \n\nBased on: http://www.ozone3d.net/smf/index.php?topic=68.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1272,6 +1281,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2015.0.0"
   },
   {
@@ -1280,7 +1290,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This LightBox shader will create ice structures.\n\nBased on https://www.shadertoy.com/view/Msf3Dj\n\nLigtbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1290,7 +1300,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader gives you the typical Instagram looks.\n\n\nSetup:\n\n- Look: select the desired Instagram preset\n- Saturation: adjust overall saturation\n- Contrast: adjust overall contrast\n- Gamma: adjust overall gamma\n- Blend: blend between original image and applied preset\n\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1300,7 +1310,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Lewis and ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates JPEG compression.\n  IMPORTANT! This shader does only work correctly, if the output is set to 16fp.\n\n  Setup:\n  - Resolution: overall image resolution\n  - Amount: amount of applied compression\n\n  Based on www.shadertoy.com/view/MslyWr by benzrf\n  This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n  Matchbox version by Lewis and ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1310,6 +1320,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -1318,7 +1329,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates kaleidoscope patterns.\n\nInput:\n\n- Strength: use that input to get the shader react to your music\n- Depth: only used, if the shader is used as a CameraFX shader\n\nLook:\n\n- Detail: amount of detail\n- Seed: scrub throughh to get different looks\n\nBased on shadertoy.com/view/XtcXWM by zackpudil\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nDemo clip: https://vimeo.com/195146573\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1328,7 +1339,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates anisotropic kuwahara filtering.\n\nSetup:\n\n- Radius: adjust filter radius\n\n \nDemo clip: http://vimeo.com/92362155\n\nBased on: https://code.google.com/p/gpuakf/\nGLSL shader: by Jan Eric Kyprianidis\n\t\t\t\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1338,7 +1349,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates flame / fluid like patterns.\n\nSetup:\n\n- Detail: fractal detail\n- Volume Steps: volume steps\n- Step Size: size of the steps\n- Density: density of the different layer\n- Speed: speed of the pattern animation\n- Offset: offset the an animation in time\n- Zoom: zoom in / out of the fractal\n- Aspect: change aspect ratio for x and y\n- Amount: amount of noise\n- Frequence: noise frequence\n- Amplitude: noise amplitude\n- Direction: direction of noise animation \n- Contrast: contrast of the image\n- Saturation: saturation of the image\n- Tint Colour: tint colour \n- Tint: how much tint is applied\n\n\nDemo clip: http://vimeo.com/97611838\n\nBased on http://glsl.heroku.com/e#17361.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1348,7 +1359,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a Lens Blur effect.\n\nInput:\n\n- Front: source clip\n\nSetup:\n\n- Amount: how much lens Blur is applied\n- Aspect: aspect ratio\n- Chroma Offset: how much chromatic abberation\n- Gain: boost the incomming gain\n- Threshold: threshold amount for the gain\n\nDemo clip: https://vimeo.com/228570303\n\nBased on https://www.shadertoy.com/view/ldXBzB by luluco250\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1358,7 +1369,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox creates Light Leaks style effects.\n\n\nInput:\n- Front: front clip\n- Matte: matte clip which will add to the luma key\n- Strength: will drive the Chromatic abberation amount\n\nSetup:\n- Amount: amount of light leak applied\n- Softness: blur the lightleaks in x / y\n- Tint: tint colour for the light leaks\n- Saturation: dial in original saturation for the light leaks\n\n- Density: adjust the denisity of the flicker noise\n- Speed: adjust the speed of the flicker\n- Offset: offset the flicker in time\n\n- Min Input: min input of the luma key\n- Max Input: max input of the luma key\n\n- Light Leak Only: outputs the light leak only\n\n- Enable: Enable chromatic abberations\n- Amount: amount of chromatic abberations applied\n- Itterations: itterations steps for the abberations\n- Center: adjust the center of the chromatic abberations\n\n- Amount: adjust the noise amount of the atmosphere\n- Scale: adjust the scale of the noise\n- Speed: adjust the speed of the noise\n\n- Brightness: adjust noise brightness\n- Contrast: adjust contrast of the brightness\n\n\nDemo clip: http://vimeo.com/122851892\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1368,7 +1379,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates lightning bolts.\n\nSetup:\n\n- Bias: how often the lighning will appear  \n- Branches: how many branches the lightning will have\n- Noise: adde or remove noise from the bolts\n- Smooth Motion: reduce or increase randmness between frame to frame\n- Speed: adjust the speed of the lighning changes\n\n- Postition: position the center of the lightning\n- Rotation: rotate around the center of the lightning\n- Size: adjust the size of the lighning strike\n\n- Thickness: glow amount\n- Intensity: glow intensity\n\nDemo clip: https://vimeo.com/120233578\n\nShader developer: srtuss\n\nBased on https://www.shadertoy.com/view/XlsGRs\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1378,7 +1389,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader applies a lightwrap to the image.\n\nInput:\n\n- Comp: composed FG + BG without LightWrap\n- Back: BG only\n- Matte: FG matte\n\nSetup:\n\n- Logic Op: blend mode applied\n- Size: amount of lightwrap\n- Blend: blend in / out lightwrap\n- Blur BG: amount of blur applied to the incomming BG plate\n\n- Gain: adjust gain of the lighwrap matte\n- Threshold: adjust lightwrap matte threshold\n\n- Gain: adjust gain of the edge matte\n- Threshold: adjust edge matte threshold\n- Size: size of the edge blur\n- Blur: blur the generated edge matte\n\n- Blur Amount: amount of edgeblur applied\n- Grain Amount: amount of grain applied\n\n- Output: Comp / Lightwrap\n\nDemo clip: http://vimeo.com/107401261\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1388,7 +1399,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader applies a lightwrap to the image.\n\nInput:\n\n- Comp: composed FG + BG without LightWrap\n- Back: BG only\n- Matte: FG matte\n\nSetup:\n\n- Logic Op: blend mode applied\n- Size: amount of lightwrap\n- Blend: blend in / out lightwrap\n- Blur BG: amount of blur applied to the incomming BG plate\n\n- Gain: adjust gain of the lighwrap matte\n- Threshold: adjust lightwrap matte threshold\n\n- Gain: adjust gain of the edge matte\n- Threshold: adjust edge matte threshold\n- Size: size of the edge blur\n- Blur: blur the generated edge matte\n\n- Blur Amount: amount of edgeblur applied\n- Grain Amount: amount of grain applied\n\n\nDemo clip: http://vimeo.com/107401261\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1398,7 +1409,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates lines.\n\nSetup:\n\n- Density: amount of lines\n- Sharpness: edge sharpness\n- Itterations: Itterations\n- Speed: how fast the lines are moving\n- Offset: offset the time\n- Colour: color of the lines\n\nDemo clip: https://vimeo.com/87981384\n\nBased on: http://glsl.heroku.com/e#14703.0\n\t\t\t\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1408,6 +1419,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -1416,7 +1428,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox recreates the Photoshop blending modes.\n\nInput:\n\n- Front: front image\n- Back: background image\n- Matte: matte being used to apply effect\n\nOutput:\n- Clamp Color: clamps the color between 0.0 and 1.0\n\nSetup:\n- Selection: select the logic operator to use\n- Blend: dissolve between bg and result\n\nFunction:\n- None: doesn't apply any function\n- Sinus: applies a sinus function to the blend\n- Smooth Saw: applies a smooth saw to the blend\n- Step Random: jumps randomly between diffeend blend values\n\nDemo clip: http://vimeo.com/93495707\n\nBased on http://logik-matchbook.org/shader/blend_3vis\n\nMatchbox additions by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1426,7 +1438,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates NES, EGA and Gameboy video out.\n\nSetup:\n\n- Brightness: adjust brightness of the image\n- NES: apply NES look\n- EGA: apply EGA colour palette \n- GAMEBOY: apply a gameboy type colour pallete\n\n\nDemo clip: http://vimeo.com/95587150\n\nBased on https://www.shadertoy.com/view/MdfXDH\nShader developer: Coldberg\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1436,7 +1448,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Simon Green / nvidia 2012",
+    "author": "Ivar",
     "description": "This LightBox shader creates a lava like structure.\n\nBased on http://developer.download.nvidia.com/assets/gamedev/files/gdc12/GDC2012_Mastering_DirectX11_with_Unity.pdf\nby Simon Green / nvidia 2012\n\nLigtbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1446,7 +1458,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates MandelBox Fractals.   \n\nDemo clip: http://vimeo.com/117839757\n\nBased on: http://hirnsohle.de/test/fractalLab/\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1456,6 +1468,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -1464,7 +1477,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates MandelBulb Fractals.   \n\nDemo clip: http://vimeo.com/117717079\n\nBased on: http://hirnsohle.de/test/fractalLab/\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1474,7 +1487,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates Mandelbulb Fractals inside Action.\n\nDemo clip: http://vimeo.com/117717079\n\nBased on: http://hirnsohle.de/test/fractalLab/\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1484,7 +1497,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader modifies your mattes like the Matte Edge Node and has the additional feature of being able to pixelspread the forground.\n\n    Setup:\n\n    - Gamma: adjust the gamma of the matte\n    - Erode: erodes the matte\n    - Blur: soften the matte\n\n    - Width: adjust the expand or shrink amount\n    - Soften: soften the shrinked or expanded matte\n\n    - Spread Type: select between parallax, stretch and smear mode\n    - Amount: amount of pixel pushing\n    - Width: width of the edge affected by the stretch pixelstretch\n\n    - Aspect: adjust the aspect of the selected operation\n\n    Stretch pixelspread is based on Ls_Advect by Lewis\n\n    Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1494,7 +1507,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader modifies your mattes like the Matte Edge Node and has the additional feature of being able to pixelspread the forground.\n\n    Setup:\n\n    - Gamma: adjust the gamma of the matte\n    - Erode: erodes the matte\n    - Blur: soften the matte\n\n    - Width: adjust the expand or shrink amount\n    - Soften: soften the shrinked or expanded matte\n\n    - Spread Type: select between parallax, stretch and smear mode\n    - Amount: amount of pixel pushing\n    - Width: width of the edge affected by the stretch pixelstretch\n\n    - Aspect: adjust the aspect of the selected operation\n\n    Stretch pixelspread is based on Ls_Advect by Lewis\n\n    Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2018.3.0"
   },
@@ -1504,7 +1517,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a maze like structure.\n\nSetup:\n- Width: wall width\n- Zoom: zoom in | out of the maze\n- Rotation: rotates the maze\n- Position: offset the maze position\n\n\nDemo clip: http://vimeo.com/112577354\n\nBased on: http://glslsandbox.com/e#21316.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1514,7 +1527,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates digital glitches.\n\nInput:\nFront: source clip\nMatte: Matte clip\n\nBased on https://www.shadertoy.com/view/WdX3Wj by and\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1524,7 +1537,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader flies through a menger system.\n\nFractal:\n\n- MaxSteps : MaxSteps\n- MinimumDistance : minimum Distance\n- normalDistance : normal Distance\n- Iterations : number of iterations to be processed\n- Scale : size of the menger\n\nCamera:\n\n- FieldOfView: FieldOfView of the camera\n- FudgeFactor: randomness\n- Twirl: twirl factor\n\nColour:\n\n- Light Color : colour of the 2 avaialble lights\n- Ambient : ambient brightness\n- Diffuse : diffuse amount\n  \nDemo clip: https://vimeo.com/82950101\n\nShader developer: Syntopia\n\nBased on https://www.shadertoy.com/view/Mdf3z7\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1534,7 +1547,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader inverse the front and / or the matte.\n\n  Input:\n  - Front: front clip\n  - Matte: matte clip\n\n  Matchbox by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1544,7 +1557,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com with huge help from miles@noesclavo.com",
+    "author": "Ivar",
     "description": "This Matchbox shader applies the gray world assumption model to the source image\n\nSetup:\n\n- Level: adjust effect applied to the source image\n- Method: select the gray world assumption model \n- Colourspace: select the source image colour space \n\t(most of the time the best result will be archived, if you translate your image to Scene Linear and select Method 1)  \n\n\nDemo clip: http://vimeo.com/96791627\n\nBased on: http://www.ra.cs.uni-tuebingen.de/mitarb/ebner/ColorConstancyBook.html\n\nMatchbox version by ivar@inferno-op.com with huge help from miles@noesclavo.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1554,7 +1567,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox creates a nightvision effect.\n\nInput:\n\n- Source: front image \n\nSetup:\n- Amount: amount of nighvision effect applied\n- Glow: amount of glow applied to the image\n- Blur: amount of blur appliedto the incoming image\n- Noise: amount of noise applied to the image\n- Scnaline: scale the scanlines\n\n- RGB Offset: adjust the RGB offset to define the black and white look\n\n- Tint: define the colour of the tint\n- Exposure: adjust the exposure\n- Brightness: adjust the brightness\n- Contrast: adjust the contrast\n- Saturation: adjust the saturation of the effect\n\n- Size: adjust the vignette size\n- Softness: adjust the softness of the vignette\n- Abberations: amount of chromatic abberations applied to the image\n- Distortion: amount of chromatic distortion abblied to the image \n\nDemo clip: https://vimeo.com/122207232\n\nMatchbox by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1564,7 +1577,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a noise texture similar to the popular Genarts Texture (start with a white frame).\n\nInputs:\n\n- Front : source clip\n\nSetup:\n\n- Zoom : zoom in and out of the texture\n- Rotation: direction of the blur\n- Offset: offsets the texture\n\nDemo clip: https://vimeo.com/82190139\n\nShader developer: Inigo Quilez - http://www.iquilezles.org/\n\nBased on https://www.shadertoy.com/view/4dlGDN\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1574,7 +1587,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com and miles@noesclavo.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a noise wipe / dissolve.\n\n\nSetup:\n\n- Noise: noise detail\n- Amplitude: noise amplitude\n- Softness: softness value for the wipe / dissolve area\n- Rotation: direction of the wipe\n- Scale: zoom in / out of the Noise\n- Mix: amount of wipe applied to the images\n- Dissolve: switch from wipe to dissolve\n- Horizontal: switch from vertical to horizontal wipe\n- Invert: invert the transition\n\n\nOutput:\n\n- RGB Beauty pass\n- Alpha channel\n\nDemo clip: http://vimeo.com/100036530\n\nBased on http://glsl.heroku.com/e#17891.7\n\n\nMatchbox version by ivar@inferno-op.com and miles@noesclavo.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1584,7 +1597,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates an ocean / water like noise pattern.\n\n\nSetup:\n\n- Zoom: zoom in / out of the noise\n- Speed: speed of the pattern animation\n- Offset: offset the an animation in time\n- Saturation: saturation of the image\n- Brightness: brightness of the image\n- Contrast: contrast of the image\n- Tint Colour: tint colour \n- Amount: how much tint is applied\n\n\nOutput:\n\n- RGB seperated noise\n\nDemo clip: http://vimeo.com/99410999\n\nBased on http://pixelshaders.com/examples/noise.html\n\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1594,7 +1607,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader applies a painterly effet to the image.\n\nSetup:\n\n- Radius: how strong the image is filtered\n- Velocity: how fast the painterly effect is moving\n- Distortion: postion of the distortion\n\nDemo clip: http://vimeo.com/92513165\n\nBased on https://www.shadertoy.com/view/MsXSRN\n\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1604,7 +1617,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates an old tube tv.\n\nInput:\n\n- Front: source clip\n\nSetup:\n\n- Slowscan: slow moving scanlines\n- Scanlines: tiny scanlines\n- Lines: rgb coloured lines \n- Vignette softness: softness of the vignette\n- Vignette scale: scale of the vignette\n- TV Tube Vignette: add TV boarder around image\n- Noise Strenght: opacity of the noise\n- Noise Saturation: color saturation of the noise\n- Distort: distort the incoming image\n- Frequency: frequency of the distort effect\n- Speed: how fast the distortion is running through the image\n- Stripes: add VHS stripes\n- Bars: add VHS Bars \n- TV Tube Dots: add CRT style pattern\n- Moire: add moire style noise\n- VCR Distortion: add a vcr distortion like effect\n\nDemo clip: http://vimeo.com/82188245\n\nShader developer: Klowner, Jasper, gtoledo3 and Martin Rykfors\n\nBased on:\n- https://www.shadertoy.com/view/MsXGD4   \n- https://www.shadertoy.com/view/ldjGzV\n- https://www.shadertoy.com/view/4sf3Dr\n- https://www.shadertoy.com/view/4ssGR8\n\t\t\t\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1614,7 +1627,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com with some HUGE help from Lewis",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a typical Amiga style parallax effect.\n\nInput:\n- Texture: clip defining the look of the texture\t\n\nSetup:\n- Intensity: how much texture is applied \n- Spacing: adjust the spacing between the diffeent parallax layers\n- Layers: how many layer are used for the parallax effect\n- Center: move the effect around in x /y \n- Rotation: rotate the texture around the center\n- Speed: adjust the animation speed\n\n\n\nDemo clip: http://vimeo.com/112809911\n\nMatchbox version by ivar@inferno-op.com with some HUGE help from Lewis",
     "flame_min_version": "2015.0.0"
   },
@@ -1624,7 +1637,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a particle type transition between 2 clips.\n\n      Based on shadertoy.com/view/tlsyW7 by zhilichen\n\n      Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1634,7 +1647,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates circles moving in random patterns.\n\nSetup:\n\n- Radius: global size of the circles\n- Seed: seed value\n- Zoom: zoom in and out of the created pattern\n\n- Speed: how fast the pattern is moving \n- Offset: offset the timing\n\n- Gain: adjust gain\n- Saturation: adjust saturation\n\n\t\nBased on http://glslsandbox.com/e#28291.3 by gigatron\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1644,7 +1657,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates diffferent patterns.\n\nPolkaDot2D based on http://briansharpe.files.wordpress.com/2012/01/simplexpolkadotsample.jpg\nZigZag based on http://patriciogonzalezvivo.com/2015/thebookofshaders/edit.html#09/zigzag.frag by patriciogv\nSimple loading screen based on https://www.shadertoy.com/view/XdBXzd by ndel\nIching based on http://patriciogonzalezvivo.com/2015/thebookofshaders/edit.html#09/iching-01.frag by patriciogv\nTruchet based on http://patriciogonzalezvivo.com/2015/thebookofshaders/edit.html#09/truchet.frag by patriciogv\nBinary Noise based on http://glslsandbox.com/e#27146.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1654,7 +1667,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a perlin noise like pattern.\n\nSetup:\n\n- Frequency: Zoom in / out\n- Gain: brightness of the patter\n- Speed: animation speed\n- Offset: offsets the noise pattern\n- Colour: colour of the patters\t\n\n\nDemo clip: http://vimeo.com/85646816\n\nShader developer: Stefan Gustavson\n\nBased on https://github.com/ashima/webgl-noise\n\nDistributed under the MIT license.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1664,7 +1677,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader pixelates the image.\n\nVersion: 1.1\n\nInput:\n\n- Front: source clip\n- Matte: matte to define the affected area\n\nSetup:\n\n- Detail: detail of the pattern\n- Dissolve: blend between original and pixelated image\n\nDemo clip: http://vimeo.com/89225434\n\t\t\t\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1674,7 +1687,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a pixel sort type effect\n\n  Input:\n  - Front: source clip\n  - Matte: matte clip\n\n  Setup:\n  - Amount: amount of effect applied\n  - Invert Direction: invert the direction of the effect\n  - Switch Direction: switch between horizontal and vertical\n  - Switch to Shadow: switch between highlights and shadows\n\n  Rotation:\n  - Enable: enable rotation options\n  - Angle: amount of rotation applied to the effect\n\n  Demo clip: https://vimeo.com/265955050\n\n  Based on shadertoy.com/view/XsBfRG by FMS_Cat\n  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1684,7 +1697,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This LightBox shader applies a pixelspread to the edges of an image.\n\n\nLightbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1694,7 +1707,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a Pixelspread type stretch effect.\n\nSetup:\n\n- Amount: stretch amount\n- Edges Width: amount of softening the incoming matte\n- MidPoint: adjust the midpoint for the stretch matte\n\nShader developer: FabriceNeyret2\nBased on www.shadertoy.com/view/XdX3zj\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1704,7 +1717,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates tons of different plasma patterns.\n\nSetup:\n\n- Detail: detail of the pattern\n- Itterations: Itterations\n- Fractal, Noise, Random: play with those parameters to get crazy results \n- Speed: how fast the plasma is moving\n- Offset: offset the time\n- Colour: color of the plasma\n\nDemo clip: http://vimeo.com/87990219\n\nBased on: http://glsl.heroku.com/e#14688.0\n\t\t\t\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1714,7 +1727,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates puffy clouds.\n\nSetup:\n\n- Rotation : the clouds rotation on X/Y axis\n- Speed : the speed for the auto-movement\n\n- Detail : noise detail of the cloud\n- Density: density of the clouds\n- Volume : volum of a single cloud\n- Steps: far clipping plane\n\n- Use Action Camera: enable linking to action camera\n- Camera Position: action camera postion\n- Camera Interest: action camera point of interest\n- FOV: action camera fov\n- Roll: action camera roll\n\nDemo clip: https://vimeo.com/82775028\n\nShader developer: Inigo Quilez  -  http://www.iquilezles.org/\n\nBased on https://www.shadertoy.com/view/XslGRr\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1724,7 +1737,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates puffy noise.\n\nSetup:\n\n- Rotation : camera rotation around the puffy clouds\n- Speed : speed of the noise animation (use negative values for backward playback)\n\nDemo clip: https://vimeo.com/82495451\n\nShader developer: Inigo Quilez - http://www.iquilezles.org/\n\nBased on https://www.shadertoy.com/view/MsXGRf\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1734,7 +1747,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates radial blur.\n\nVersion: 1.2\n\nInput:\n- Front : source clip\n\nSetup:\n- Amount: blur strenth\n- Center: center of the blur\n- Gain  : brightness of the picture\n- Steps : blur resolution\n\nBased on http://wiki.delphigl.com/index.php/shader_radial_blur\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1744,7 +1757,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a volumetric radial blur inside action.  Flame 2017 Only\n\n\nSetup:\n\n- Amount : blur strenth\n- Samples: blur resolution\n- Gain : adjust gain\n- Decay: blur decay\n\n- Position: light position\n\n- Softness: soften the result\n\nBased on: https://www.shadertoy.com/view/XsKGRW by Shane\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1754,7 +1767,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates film grain.\n\nInput:\n\n- Front: source clip\n- Matte: external matte input\n\nSetup:\n\n- Stock: Select your film grain presets\n- Amount: how much grain is applied\n- Softness: grain softness size\n- Size: grain size\n- Red | Green | Blue: adjust the different colour channels independently\n- Levels: adjust the low, mid and high values for your grain (its only avaiable if the Custom Stock Preset is selected )\n\n\nDemo clip: http://vimeo.com/107276957\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1764,7 +1777,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader adds camera noise / grain to your clip. 2017 ONLY!\n\nInput:\n\n- Front: source clip\n- Matte: external matte input\n\nSetup:\n\n- Type: Select your camera noise presets\n- Size: grain size\n- Gain: adjust the gain value for the noise / grain\n\n- Luma Curve: adjust the distribution of the noise/grain depending of the luma in the source image\n\n- Sharpness: adjust the sharpness of the grain\n- Softness: adjust the softness of the grain\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1774,7 +1787,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates skin type textures.\n\nInput:\n\n- Texture: cleaned up skin or new textures\n- Source: original image\n- Matte: area where the texture should be applied to\n\nSetup:\n- Threshold Org: amount of softening applied\n- Threshold Clean: amount of texture applied\n\nDemo clip: https://vimeo.com/240047838\n\nBased on a Flame Batch done by John Ashby\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1784,7 +1797,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Lewis Saunders and ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "Distorts side-by-side stereo images to be useable with the Oculus Rift\n\nInput:\n\n- Front: source clip\n\n\nHow to use:\n\n- just pipe in a side by side Stereo 3D clip and the shader will convert it to a Oculus Riftenabled clip\n \n\nBased on:\nhttp://lubosz.wordpress.com/2013/08/28/view-side-by-side-stereoscopic-video-with-gstreamer-and-oculus-rift/\n\nMatchbox version by Lewis Saunders and ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1794,7 +1807,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox gives you Resolve style 'Sat vs Sat' curve controls.\n\nInput:\n- Front: front image\n\nSetup:\n- Sat Multiplier: multiplies the saturation of the curves to give you the possibility to go over 1.0 Saturation\n\nMatchbox by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1804,7 +1817,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "Matchbox shader simulates CRT phosphor / shadow mask arrangements.\n\nSetup:\n- RGB Bar\n- MG Bar\n- RGB Triad\n\nBased on Phosphor21x / http://filthypants.blogspot.de/2011/05/more-emulator-pixel-shaders-crt-updated.html\nShader developer: Caligari\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1814,7 +1827,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates scribble stlye images.\n\n  Based on www.shadertoy.com/view/tsV3Rw created by florian berger (flockaroo) - 2018\n  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1824,7 +1837,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates seamless textures.\n\n    Setup:\n\n    - Shuffle: rotate the incoming image to create new patterns\n    - Detail: Zoom in / out of the pattern\n    - Smoothness: smooth the overlapping parts\n\n    Demo clip: https://vimeo.com/119640186\n\n    Shader developer: Inigo Quilez\n\n    Based on https://www.shadertoy.com/view/Xtl3zf and https://www.shadertoy.com/view/4tsGzf\n\n    MIT License\n\n    Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -1834,7 +1847,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a low pass and high pass filter sometimes calles frequency separation\n\nHINT: You need to combine both passes with a PS_LinearLight\n\n\nInput:\n- Front: source clip\n\nOutput:\n- RGB: LowPass filter\n- Matte: HighPass filter  \n\nSetup:\n- Blur: adjust the softness of the LowPass Filter\n- Output HighPass as RGB: outputs the Higpass filter as an RGB image instead of a BW in the Matte output \n\n\nDemo clip: http://vimeo.com/111974170\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1844,7 +1857,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This MatchBox shader will sharpen your image\n\nBased on https://www.shadertoy.com/view/MtcSzH by ttoinou\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchBox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1854,7 +1867,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This LightBox shader will sharpen your image\n\nLigtbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1864,7 +1877,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates depth of field with bokeh.\n\nVersion 4.0\n\nInput:\n\n- Front: source clip\n- Depth Map: depth map\n\nSetup:\n\n- Amount : how much blur is applied\n- Gain : highlight gain\n- Chromatic Abe. : highlight chromatic aberration \n- Pentagon Shape : use pentagon as bokeh shape\n- Feather Shape : pentagon shape feather\n\nShader developer: martins upitis\n\nBased on http://devlog-martinsh.blogspot.de/2011/12/glsl-depth-of-field-with-bokeh-v24.html\n\nThis work is licensed under a Creative Commons Attribution 3.0 Unported License.\nYou are free to share, modify and adapt it for your needs, and even use it for commercial use.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1874,7 +1887,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a sketch type look\n\nSetup:\n\n- Fill / Outline: select what mode you would like to use\n- Blend Outline: blend outline and and out\n- Blend Fill: blend fill in and out\n\n- Strokes: amount of strokes\n- Steps: precision amount\n- Amount: offsetting the strokes\n\n- Blend Modes: selec the diffferent blending modes\n\n\nDemo clip: https://vimeo.com/189508413\n\nShader developer: flockaroo\n\nBased on: shadertoy.com/view/XtVGD1\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1884,6 +1897,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2012.0.0"
   },
   {
@@ -1892,7 +1906,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates snow.\n\nSetup:\n\n- Layers: number of snow layers\n- Depth: depth of field\n- Wind : amplitude of the wind\n- Detail: add aditional noise\n- Speed: animation speed\n- Size: snowflake size\n\nShader developer: baldand\nBased on https://www.shadertoy.com/view/ldsGDn\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1902,7 +1916,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Dominik Schmid https://www.shadertoy.com/view/llBSWc",
+    "author": "Ivar",
     "description": "This LightBox shader creates volumetric snow like particles.\n\n\nBased on https://www.shadertoy.com/view/4tSSzt by FabriceNeyret2 using the base ray-marcher of Trisomie21: https://www.shadertoy.com/view/4tfGRB#\nBias code by Dominik Schmid https://www.shadertoy.com/view/llBSWc\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nLightbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1912,7 +1926,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a snow like texture\n\n  based on https://www.shadertoy.com/view/4dGczd by ssell\n  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2012.0.0"
   },
@@ -1922,7 +1936,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "John and ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This is a Flame sub pixel blur meant for creating natural looking edges.\n\nInput:\n- Front: original front\n- Matte: original matte\n\nSoften:\n- Size: amount of gaussian blur applied to the image\n- Strength: mix amount between original image and blurred one\n\nSmoothness:\n- Amount: how much AA is applied to the image before it runs through the soften process\n\n\nMatchbox by John and ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1932,7 +1946,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a SSAO look with just a Normal Map input.\n\nInput:\n\n- Front: RGB Beauty pass \n- Back: background\n- Matte: matte\n- Normal Map: normal map pass\n\n\nSetup:\n\n- Radius: radius of the ao effect\n- Blur: apply a post blur to the AO pass\n- Gamma: adjust the gamma of the AO only\n\n\nOutput:\n\n- SSAO only: output just the AO pass not the comped image\n- Alpha channel\n\nDemo clip: http://vimeo.com/101860108\n\nBased on: https://github.com/PlumCantaloupe/SSAO-Shader\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1942,7 +1956,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "Lightbox shader which creates a Starfield\n\nNOTE: This shader works only, if you have a large sphere surrounding your scene\n\nLightbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -1952,7 +1966,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates Stars.\n\nSetup:\n\n- Density : density of the stars\n- Seed: seed value for stars pattern\n- Speed: flickering speed\n- Brightness : brightness of the stars\n\n\nDemo clip: http://vimeo.com/82460176\n\nShader developer: Kali\nBased on https://www.shadertoy.com/view/MssGzM\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1962,7 +1976,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates a univers with stars and nebulae.\n\nSetup:\n\n- Iterations : the density of the starfield\n- Vol Steps : how many stars\n- Offset : offset the pattern (if you go extreme you can get interesting effect which look like fractal patterns)\n- Zoom : zoom in/out of the starfiled\n- Position : pic the postion of the starfield (its more like an offset)\n- Tile : similar to offset\n- Brightness : brightness of the whole universe\n- Saturation : color saturation of the universe\n- Contrast : contrast of the whole univers\n\nDemo clip: http://vimeo.com/82972698\n\nShader developer: Kali\n\nBased on https://www.shadertoy.com/view/4dfGDM\n\nThis content is under the MIT License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1972,7 +1986,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates the 2-Striped and 3-Stripes look of old technicolor films.\n\nSetup:\n- Exposure: adjust exposure of the image\n- Amount: adjust amount of the bleachbypass process\n- Desaturate: adjust the saturation of the effect \n- Red, Green, Blue: adjust the individual color channels to finetune your look\n- Technicolor Look: 2-Strip and 3-Strip\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -1982,7 +1996,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com with some huge help from Travis and Flamemark Shaders",
+    "author": "Ivar",
     "description": "This Matchbox shader creates tesla lightning bolts.\n\nSetup:\n\n- Bolts: how much lightning bolts\n- Amplitude: noise amplitude\n- Width High: width of the bolt\n- Width Low: width of the outer glow\n\t\n- Speed: speed of the animation\n- Offset: offset the animation in time\n\n- Lock Bolts: source and target will be merged\n- Scale: scales the Y position for the bolts\n \n- Brightness: adjust brightness\n- Contrast: adjust contrast\n- Gamma: adjust gamma\n- Tint Colour: tint colour \n- Tint Intensity: how much tint is applied\n\n- Left: change the Y postion for the source\n- Center: change the Y postion for for the center\n- Right: change the Y postion for for the target\n\nDemo clip: https://vimeo.com/151690079\n\nBased on https://www.shadertoy.com/view/Mds3W7\nLicense Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com with some huge help from Travis and Flamemark Shaders",
     "flame_min_version": "2015.0.0"
   },
@@ -1992,7 +2006,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates seamless textures.\n\n  Based on shadertoy.com/view/tsVGRd by Suslik\n  License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n  Credits for hex tiling goes to Shane\n\n  Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2002,7 +2016,7 @@
     "action": "No",
     "timeline": "Yes",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates different dissolves.\n\n\nInput:\n\n- From: incomming clip\n- To: outgoing clip\n\n\nSetup:\n\nSimple Fade:\n\nFade to Gray:\n- Phase: defines the kickin of the effect\n\nFade to Color:\n- Phase: defines the kickin of the effect\n- Fade to: defines the fade to color\n\nFade to GP:\n- Saturation Bias: defines the kickin of the saturation effect\n- Exposure Bias: defines the kickin of the exposure effect\n\nBlur:\n- Size: defines the blur size\n- Quality: defines the blur quality\n\nWipe:\n- Smoothness: defines the wipe-gradient\n- Direction: defines the direction of the wipe\n\nCircle:\n- Smoothness: defines the wipe-gradient\n- Invert: dissolves the other way around\n\nFlash:\n- Phase: defines the kickin of the effect\n- Intensity: defines gain of the flash\n- Zoom Effect: defines some vignette type zoom effect\n- Velocity: velocity of the flash\n\nSquares:\n- Smoothness: defines the wipe-gradient\n- Size: defines the square size\n\nMorph:\n- Strength: how much distortion is applied\n\nCross Zoom:\n- Strength: how long the streaks are\n\nSlide:\n- Direction: in which direction the images are moving (up, down, left, right )\n\nRadial:\n- Smoothness: defines the wipe-gradient\n- Center: center of the circle wipe\n\nSimple Flip:\n- Direction: defines the axis of the flip ( horizontal, vertical )\n\nDreamy:\n- Amount: Wave Amount\n- Speed: how fast the waves are moving\n- Distortion: how much wave distortion is applied\n\nBCC Misalignment:\n- RGB Offset: how much the RGB channels are offset\n- Noise: add an additional horizontal offset\n- Zoom: how much you zoom into the picture\n- Tint: add an additional colour tint\n- Saturation: adjust the saturation of the clips\n- Brightness: adjust the brightness of the transition effect\n- Contrast: adjust the contrast of the transition effect\n- Exposure: adjust the exposure of the transition effect\n\nDemo clip: http://vimeo.com/103645432\n\nBased on https://glsl.io/gallery\n\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2012,7 +2026,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a water turbulence texture.\n\nSetup:\n\n- Detail: turbulence steps\n- Zoom: zoom in and out\n- Speed: speed of the wave pattern\n- Offset: offsets wave pattern\n- Position: wave pattern position\n- Colour: colour of the generated pattern\n\nDemo clip: https://vimeo.com/84510250\n\nShader developer: joltz0r\n\nBased on http://glsl.heroku.com/e#12595.1\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2022,7 +2036,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates the typical RGB dots of old TVs.\n\nInput:\n- Front: source clip\n\nSetup:\n- Cellsize : The size of a single RGB dot\n\nShader developer: Daniil\nBased on https://www.shadertoy.com/view/4dX3DM\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2032,7 +2046,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates pulsating stars like pattern\n\nSetup:\n\n- Amount: how many stars are rendered\n- Size: stars size\n- Shape: stars shape\n- Rotation: rotate stars streaks\n- Itterations: how many streaks\n\n- RGB: blur different color channels\n\n- Stars Gain: adjust gain\n- Blend: adjust the blend value\n- Brightness Noise: add brightness variations to the stars\n- Flash Speed: adjust the Fade In/Out of the stars\n\n- Blend Function: switch between different fade In / Out functions\n\n\nDemo clip: https://vimeo.com/126687236\n\nBased on: http://glslsandbox.com/e#23725.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2042,7 +2056,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com with huge help from Erwan Leroy",
+    "author": "Ivar",
     "description": "This Matchbox shader uncompose a compositing scene into its original layer.\n\nVersion: 1.0\n\nInput for Undo Blend:\n\n- Front: wrongly comped element\n- Back: clean BG without the element on it\n- Matte: alpha of the composed element\n\n\nInput for Remove Logo:\n\n- Front: FG element which you want to remove\n- Back: original scene with the element on it\n- Matte: alpha channel of the element\n\n\nModus:\n\n- Undo Blend: remove wrongly comped element from BG needs original matte of the element\n- Remove Logo: removes semitransparent FG element from BG (needs a matte of the element)\n\nBased on this great article: http://erwanleroy.com/compositing-elements-with-a-colored-background-or-how-to-invert-almost-any-comp-operation/\nMatchbox done by ivar@inferno-op.com with huge help from Erwan Leroy",
     "flame_min_version": "2015.0.0"
   },
@@ -2052,6 +2066,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Ivar",
     "flame_min_version": "2017.0.0"
   },
   {
@@ -2060,7 +2075,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates an old VHS player.Setup:- Resolution: input texture resolution- Stripes Amount: amount of horizontal white stripes- Tape Wave: amount of horizontal tape distorion- Tape Crease: amount of horizontal stripes offset- AC Beat: amount of AC interferrences- Color Tint Amount: amount of color tint- Color: tint color- Color Bleeding Amount: amount of color bleeding- Offset: amount of color offset- Speed: how fast the stripes moves- Offset: offset the effect in timeShader developer: FMS_CatBased on www.shadertoy.com/view/MdffD7This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.Matchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2070,7 +2085,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox creates a vignette effect.\n\nInput:\n\n- Front: Source image \n\nSetup:\n\n- Color: vignette color\n- Radius: Radius of the vignette\n- Softness: softness of the vignette\n- Blend: strenght of the vignette effect\n- Center: vignette center position\n- Aspect: Aspect ratio of the vignette\n\nDemo clip: http://vimeo.com/110702478\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2080,7 +2095,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates voronoi noises.\n\nSetup:\n\n- Octaves: Octaves for the noise\n- Type: variations of the noise pattern\n- Zoom : zoom in/out\n- Detail: add aditional noise\n\n- Speed: animation speed\n- Offset: offsets the noise pattern\n\nDemo clip: http://vimeo.com/84470508\n\nShader developer: Pietro De Nicola | denicola.pietro@gmail.com | blog: http://gdevice.blogspot.it\n\nBased on https://www.shadertoy.com/view/lsjGWD\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2090,7 +2105,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This shader creates some warning messages, if you need a cup of tea!\n\nDemo clip: http://vimeo.com/107988964\n\nBased on: https://www.shadertoy.com/view/lsXXRs\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2100,7 +2115,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader simulates watercolor like textures.\n\nInput:\n\n- Use External Matte: use an external displacment matte\n\n\nSetup:\n\n- Zoom: zoom in / out of the texture\n- Detail: amount of detail the texture has \n- Speed: speed of the changing the main structure\n- Depth: depth of the texture\n- Seed: offset the texture\n\n- Blur: blur the painterly effect\n- Radius: define the radius of the paint fx\n- Velocity: define the speed of the paint fx\n- Offset: move the center of the pain fx\n\n\nDemo clip: http://vimeo.com/116442578\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2110,7 +2125,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates a wave line pattern.\n\nSetup:\n\n- Lines: number of waves\n- Speed: speed of the waves\n- Offset: offset lines in time\n- Brightness : brightness of the lines\n- Glow: overall glow \n- Colour: colour for the 4 gradient points  \n\nDemo clip: http://vimeo.com/83878609\n\nBased on http://glsl.heroku.com/e#13475.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2120,7 +2135,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com",
+    "author": "Ivar",
     "description": "This Matchbox shader creates wrinkled paper like sturctures.\n\nSetup:\n\n- Seed: seed value\n- Noise: how much noise gets applied \n- Detail: texture detail\n- Speed: speed of the moving texture\n- Offset: offsets the texture in time\n- Zoom: zoom in and out\n- Position: virutal camera postion\n- Colour: colour of texture\n\nDemo clip: http://vimeo.com/94749437\n\nBased on http://glsl.heroku.com/e#16688.0\n\nMatchbox version by ivar@inferno-op.com",
     "flame_min_version": "2015.0.0"
   },

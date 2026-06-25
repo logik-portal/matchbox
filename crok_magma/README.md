@@ -21,4 +21,4 @@ Lightbox
 
 ## Author
 
-Simon Green / nvidia 2012
+Ivar
