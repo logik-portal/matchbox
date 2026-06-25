@@ -2,7 +2,7 @@
 
 ## Description
 
-Creates a realistic-ish ocean system, with wave height/freq/speed as well as camera control. based on the shader made
+Creates a realistic-ish ocean system, with wave height/freq/speed as well as camera control. based on the shader
 
 ## Flame Requirements
 

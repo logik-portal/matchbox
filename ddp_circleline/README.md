@@ -6,6 +6,7 @@ ddp_circleline - Circle line animation.
 Generate a perfect circle and control the line animation around it.
 Optionally select line cap switching and circle face fill.
 Note: Regarding anti-aliasing, jagged edges will appear in the center due to the specifications.
+(https://www.instagram.com/nbmk1985/)
 
 ## Flame Requirements
 

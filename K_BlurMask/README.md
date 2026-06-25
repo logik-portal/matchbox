@@ -4,7 +4,7 @@
 
 K_BlurMask 1.2
 Blurs an isolated region based on the matte input.
-Shader written by:   Kyle Obley (kyle.obley@gmail.com)
+Shader (kyle.obley@gmail.com)
 
 ## Flame Requirements
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-
+Kyle Obley

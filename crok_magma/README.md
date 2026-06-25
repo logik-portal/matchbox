@@ -4,7 +4,6 @@
 
 This LightBox shader creates a lava like structure.
 Based on http://developer.download.nvidia.com/assets/gamedev/files/gdc12/GDC2012_Mastering_DirectX11_with_Unity.pdf
-Ligtbox version
 
 ## Flame Requirements
 

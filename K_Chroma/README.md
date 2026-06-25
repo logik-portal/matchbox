@@ -4,7 +4,7 @@
 
 K_Chroma v1.1
 Warps chroma channels with the ability to add barrel distortion.
-Shader written by:   Kyle Obley (kyle.obley@gmail.com) and Ivar Beer (ivar@inferno-op.com)
+Shader (kyle.obley@gmail.com) and Ivar Beer (ivar@inferno-op.com)
 Shader adapted from: https://www.shadertoy.com/view/XssGz
 
 ## Flame Requirements
@@ -23,4 +23,4 @@ Matchbox
 
 ## Author
 
-
+Kyle Obley

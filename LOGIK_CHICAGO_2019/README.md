@@ -12,8 +12,7 @@ Eventbrite link to sign up:
 https://bit.ly/2IXutwq
 In addition to the 12-month Sapphire OFX and Mocha OFX subscriptions being raffled off courtesy of Boris FX, we will also be raffling off a 12-month subscription to FXPHD courtesy of John Montgomery.
 Video Demo: https://vimeo.com/345293160
-Based on https://www.shadertoy.com/view/Xd2GW3 
-MatchBox shader
+Based on https://www.shadertoy.com/view/Xd2GW3 by srtuss, 2014
 
 ## Flame Requirements
 
@@ -31,4 +30,4 @@ Matchbox
 
 ## Author
 
-srtuss, 2014
+ivar@inferno-op.com

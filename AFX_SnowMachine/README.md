@@ -3,7 +3,6 @@
 ## Description
 
 Generator for a variety of snow, dust and ash type effects.
-Made
 
 ## Flame Requirements
 

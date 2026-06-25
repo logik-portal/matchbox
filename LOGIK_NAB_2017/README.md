@@ -14,7 +14,6 @@ Many thanks to Autodesk and our Prize Sponsors, for what we know will be another
 We look forward to seeing you all there.
 Based on: Fractal Lab's uber 3D fractal shader
 Demo clip: https://vimeo.com/212383892
-MatchBox shader
 
 ## Flame Requirements
 

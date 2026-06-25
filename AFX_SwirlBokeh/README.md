@@ -2,9 +2,8 @@
 
 ## Description
 
-Bring out your inner Greig Fraser with this plugin that recreates the classic swirl bokeh made popular 
+Bring out your inner Greig Fraser with this plugin that recreates the classic swirl bokeh made popular by vintage lenses such as the Petzval series.
 WARNING: High values will be very demanding on your GPU.
-Made
 
 ## Flame Requirements
 
@@ -22,4 +21,4 @@ Matchbox
 
 ## Author
 
-vintage lenses such as the Petzval series.
+John Ashby

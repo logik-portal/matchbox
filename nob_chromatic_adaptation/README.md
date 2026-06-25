@@ -8,13 +8,13 @@ The core method can be chosen via [CA Method], the following ones are implemente
 [XYZ Scaling]: scales the source to the target white using a diagonal matrix applied in linear CIE XYZ colours;
 [Bradford]: the traditional Bradford Transform (Luo et al., 1998), notably with its nonlinearity in the blue intermediate channel;
 [Lin. Bradford]: a linear variant of the Bradford transformation; used, among other, for most of Flame's own internal transformation matrices;
-[Lin. CAT02]: the full chromatic adaptation as described 
+[Lin. CAT02]: the full chromatic adaptation as described by the CAM02/CAT02, for equal source & target viewing conditions;
 [CAM16]: implements the nonlinear CAM16 (extended to support negative achromatic responses symmetrically), with respect to individual source & target viewing conditions; and
-[Lin. CAT16]: the full chromatic adaptation as described 
-This shader's pipeline identifies input- & output colour-spaces (assumed scene-, or display-referred linear) 
+[Lin. CAT16]: the full chromatic adaptation as described by the CAM16/CAT16, for equal source & target viewing conditions.
+This shader's pipeline identifies input- & output colour-spaces (assumed scene-, or display-referred linear) by their primaries & white point.
 The former can be chosen as a preset in [Colour Primaries], or selected [Custom], in which case the user is to define the coordinates for red green & blue primaries via [Primaries x] & [Primaries y] in the CIE xy chromaticity space.
-Note that (and the controls for which are disabled). To convert from and/or to XYZ spaces with different virtual white points, use the overrides on the [CA Override] page. This is consistent with for example Flame's own CIE XYZ-D65 colour-space when setting the override to [HD D65].
-In all other cases, choosing the white point is done 
+Note that by nature, [CIE XYZ] always uses the E white point (and the controls for which are disabled). To convert from and/or to XYZ spaces with different virtual white points, use the overrides on the [CA Override] page. This is consistent with for example Flame's own CIE XYZ-D65 colour-space when setting the override to [HD D65].
+In all other cases, choosing the white point is done by one of several methods, determined by the respective setting of [Illuminant Type]:
 [Native]: automatically chooses the white point corresponding to the primaries; note that this might be ambiguous or unintended for certain cases such as P3, for which one best selects another setting;
 [Standard]: provides a selection of common white points in their usual (rounded) forms:
 [ACES]: (0.32168, 0.33767) in CIE xy chromaticity space, as per ACES specification,
@@ -25,7 +25,7 @@ In all other cases, choosing the white point is done
 [Temperature]: implements the Illuminant series D white, defined by:
 [Temp]: the correlated colour temperature in Kelvin,
 [Tint]: orthogonal tint to the daylight locus in CIE 1976 UCS, in units thereof, and
-[Temperature shift]: since the definition of this illuminant series predates the fixing of the second radiation constant c₂, and (0.01438 m×K); and
+[Temperature shift]: since the definition of this illuminant series predates the fixing of the second radiation constant c₂, and by design, this method models the exact illuminant; the original illuminants correlate to now shifted temperatures - activating this toggle mimics the traditional behavior by multiplying [Temp] with c₂/(0.01438 m×K); and
 [xy Coords]: CIE xy chromaticity space coordinates of the white point.
 Note: for [Native], ACES primaries default to ACES white, [CIE XYZ] to E, and all others (including [Custom]) to [HD D65].
 These controls are identical for the source & target colour-space.
@@ -34,7 +34,7 @@ Further, for using a white point different from the colour-space's innate one to
 [From Colour]: provides a colour selector to set the scene white to a colour with respect to the in, or output colour-space; the selected colour is internally normalized to CIE Y=1.
 These controls are identical for the source & target white point override.
 When using the CAM16, the following additional controls become available in the [Viewing Conditions] column (on page 1: [Controls] for 6 a column view, and page 2: [Target+Con] otherwise):
-[Force Full CA]: (and back), the exact degree of which depending on the viewing conditions; this setting allows for instead forcing to use a full adaptation, for forward & backward transformation, respectively; as well as 
+[Force Full CA]: by default, CAM16 does a partial chromatic adaptation to the internal working E white point (and back), the exact degree of which depending on the viewing conditions; this setting allows for instead forcing to use a full adaptation, for forward & backward transformation, respectively; as well as 
 controls for the parametric source & target viewing conditions ([Source] & [Target]):
 [S]: encodes the surround parameters, as linearly interpolated between the CAM16 values for Dark, Dim & Average corresponding to entries of -1, 0 and 1, respectively,
 [L_W]: the luminance of the reference white in nits, and
@@ -47,7 +47,7 @@ Mirroring the set of quantities from which CAM16-UCS is derived.
 Note that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.
 It is recommended to leave the [Output Resolution] as [Same As Input 1] - however, for tagging the [Result] with different colour-space, [User Defined] must be chosen. Still, in such cases, the format (in pixels and aspect ratio) must match the [Front]'s.
 Colour-spaces themselves are neither inferred from [Front] nor automatically tagged for [Result], the user shall take care to maintain a consistent colour-space journey either through the aforementioned Matchbox setting, or Colour Mgmt nodes.
-Adaptive Degradation is supported 
+Adaptive Degradation is supported by this shader, which if active disables double precision processing.
 This shader is licensed under the terms of the MIT license.
 For questions contact:
 nobbl211@gmail.com
@@ -68,4 +68,4 @@ Matchbox
 
 ## Author
 
-the CAM02/CAT02, for equal source & target viewing conditions;
+nobbl211@gmail.com

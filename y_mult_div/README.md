@@ -4,7 +4,7 @@
 
 miles@noesclavo.com
 MULT_DIV
-Another multiply and divide an image
+Another multiply and divide an image by it's matte shader.
 
 ## Flame Requirements
 
@@ -22,4 +22,4 @@ Matchbox
 
 ## Author
 
-it's matte shader.
+

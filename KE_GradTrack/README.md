@@ -2,7 +2,7 @@
 
 ## Description
 
-Generates a gradient between two or four tracked points 
+Generates a gradient between two or four tracked points by continuously sampling the color underneath them.
 Front input required, matte input optional.
 Get tracking data from Action axis nodes, then link those channels to the Tracking fields.
 Use the Adjustments fields to dial in where the sample should come from.
@@ -15,7 +15,7 @@ There are three Output options:
 -Comp will put the gradient over the Front input, through a matte.
 Matte output is a black-and-white version of the gradient, so each color could be adjusted downstream.
 (Matte output only works for a 2-point gradient)
-4-point gradients can be created differently 
+4-point gradients can be created differently by changing the Version drop down.
 Demo:
 https://vimeo.com/953262222
 Live Demo:
@@ -39,4 +39,4 @@ Matchbox
 
 ## Author
 
-continuously sampling the color underneath them.
+

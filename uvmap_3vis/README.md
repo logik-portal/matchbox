@@ -2,7 +2,7 @@
 
 ## Description
 
-- 3vis - Remap a texture via a UV Map - Author: Eric Pouliot
+- 3vis - Remap a texture via a UV Map -
 
 ## Flame Requirements
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-
+Eric Pouliot

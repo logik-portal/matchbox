@@ -39,4 +39,3 @@ Matchbox
 ## Author
 
 ivar@inferno-op.com
-Big thx to lewis@lewissaunders.com for help and code snippets

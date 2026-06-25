@@ -2,7 +2,7 @@
 
 ## Description
 
-- 3vis - PageCurl between 1 and 2, uses 3 for back page - Author: Eric Pouliot
+- 3vis - PageCurl between 1 and 2, uses 3 for back page -
 
 ## Flame Requirements
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-
+Eric Pouliot

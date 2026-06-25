@@ -64,7 +64,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "vintage lenses such as the Petzval series.",
+    "author": "John Ashby",
     "description": "Bring out your inner Greig Fraser with this plugin that recreates the classic swirl bokeh made popular by vintage lenses such as the Petzval series.\n\nWARNING: High values will be very demanding on your GPU.\n    \nMade by John Ashby",
     "flame_min_version": "2025.0.0"
   },
@@ -93,7 +93,6 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "the distance from the target hue value. When enabled, the further from the selected target hue the lighter the change is. In additionl that falloff curve, which is linear by default can be re-shaped",
     "description": "Sat vs. Sat curve that works in HSV color science. Additional feautre is tapering the change by the distance from the target hue value. When enabled, the further from the selected target hue the lighter the change is. In additionl that falloff curve, which is linear by default can be re-shaped",
     "flame_min_version": "2018.3.0"
   },
@@ -160,6 +159,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Eric Pouliot",
     "description": "3vis Blend - Photoshop Blending Modes Select the mode you want - Be careful they are additive - Author: Eric Pouliot - (c) - ~bj.2013",
     "flame_min_version": "2012.0.0"
   },
@@ -205,7 +205,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "threshold, clamped 0-1.",
     "description": "Validates Rec709 color and luma values with waveform overlay.\n\nfront - Input image\nlumaThreshold - Sensitivity for illegal luma detection\nchromaThreshold - Sensitivity for illegal chroma detection\nhighlightStrength - Strength of illegal value highlighting\nshowWaveform - Toggle waveform display\nwaveformHeight - Height of waveform overlay\nwaveformOpacity - Opacity of waveform overlay\nresolution - Image resolution (width, height)\n\nIllegal Rec709 Value Calculation:\nConversion: RGB to YCbCr using Rec709 coefficients (Y = luma, Cb/Cr = chroma).\nLegal Ranges: Luma: 16/255 to 235/255; Chroma: 16/255 to 240/255.\nCheck: Illegal if Y, Cb, or Cr exceeds range ± threshold.\nIntensity: Measures violation distance beyond range, scaled by threshold, clamped 0-1.\nVisualization: Red for luma, green for chroma, yellow for both; waveform shows luma with illegal in red.",
     "flame_min_version": "2025.0.0"
   },
@@ -215,7 +214,6 @@
     "action": "No",
     "timeline": "Yes",
     "transition": "No",
-    "author": "classic iq-style cloud rendering.                     ////  cb+GrokBuild did this.  ////",
     "description": "High-quality fluffy volumetric clouds using Perlin+Worley noise + proper light marching. Inspired by classic iq-style cloud rendering.                     ////  cb+GrokBuild did this.  ////",
     "flame_min_version": "2026.0.0"
   },
@@ -225,6 +223,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader performs a chromatic adaptation.\nIt also takes care of any necessary color space conversions.\n\nNote that this shader does not perform any image scaling or reformatting, so that the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as <Same As Input 1>.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2020.0.0"
   },
@@ -896,7 +895,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com\nBig thx to lewis@lewissaunders.com for helping me out on some parts of the shader",
+    "author": "ivar@inferno-op.com",
     "description": "This Matchbox shader adds a lens distortion effect.\n\nInput:\n- Front: source clip\n- Lens: distortion clip\n- Matte: region of interest\n- Strength: strength clip\n\nSetup:\n- Amount: overall distortion\n- Displace: the displacement amount\n- Softness: amount of softness applied to the distortion\n- Rotate: offset the distortion\n\nFiltering:\n- Blur Lens: softens incoming lens clip\n- Blur Strength: softens incoming strength clip\n- Strength Amount: blends in / out strength clip\n- FXAA Amount: amount of Antialiasing applied\n\nMatchbox version by ivar@inferno-op.com\nBig thx to lewis@lewissaunders.com for helping me out on some parts of the shader",
     "flame_min_version": "2015.0.0"
   },
@@ -906,7 +905,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com\n\nBig thx to lewis@lewissaunders.com for helping me out on some parts of the shader",
+    "author": "ivar@inferno-op.com",
     "description": "This Matchbox shader adds a blured lens distortion effect.\n\nInput:\n- Front: source clip\n- Matte: region of interest\n- Displace: distortion clip\n- Strength: strength clip\n\nSetup:\n- Distortion: overall distortion\n- Blur Distortion: softens the incoming displace matte\n- Blur: amount of blur applied to the Matte to get the directional blur effect\n- Samples: how many samples are used for the directional blur\n\nAntiAliasing:\n- Enable FXAA: enables AntiAliasing\n\nDemo clip: https://vimeo.com/150475472\n\nMatchbox version by ivar@inferno-op.com\n\nBig thx to lewis@lewissaunders.com for helping me out on some parts of the shader",
     "flame_min_version": "2015.0.0"
   },
@@ -994,7 +993,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com\nAll the code used belongs to Miles / Lewis",
+    "author": "ivar@inferno-op.com",
     "description": "The Exponential Blur blurs an image with an exponential falloff.\n\nInput:\n- Front: source clip\n\nSetup:\n- Amount: amount of blur applied\n- Blend: mix between the original image and the blurred one\n\nOutput Options:\n- Clamp output: clamps the result to 0.0 - 1.0\n\nMatchbox version by ivar@inferno-op.com\nAll the code used belongs to Miles / Lewis",
     "flame_min_version": "2015.0.0"
   },
@@ -1240,7 +1239,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "ivar@inferno-op.com\nBig thx to lewis@lewissaunders.com for help and code snippets",
+    "author": "ivar@inferno-op.com",
     "description": "This Matchbox shader creates a heat haze effect.\n\nInput:\n\n- Front: source clip\n- Matte: masken input\n- Displace: external Displacement matte\n- Strength: external Strength matte\n\nSetup:\n\n- Amount: strength of the distortion\n- Smoothness: blur the incomming distortion matte (works on internal and external matte)\n\n- Amount: strengt of applied hmotion blur\n- Samples: motion blur samples\n\n- Speed: speed of noise\n- Detail: detail of the noise structure\n- Direction: noise animation direction\n\n- Use External Matte: use an external matte instead of the internal matte for the displacement\n\n- Oversampling: number of pixel samples\n- Softness: spacing between pixel samples\n\n\nDemo clip: http://vimeo.com/115514251\n\nMatchbox version by ivar@inferno-op.com\nBig thx to lewis@lewissaunders.com for help and code snippets",
     "flame_min_version": "2012.0.0"
   },
@@ -1900,7 +1899,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "FabriceNeyret2 using the base ray-marcher of Trisomie21: https://www.shadertoy.com/view/4tfGRB#",
+    "author": "Dominik Schmid https://www.shadertoy.com/view/llBSWc",
     "description": "This LightBox shader creates volumetric snow like particles.\n\n\nBased on https://www.shadertoy.com/view/4tSSzt by FabriceNeyret2 using the base ray-marcher of Trisomie21: https://www.shadertoy.com/view/4tfGRB#\nBias code by Dominik Schmid https://www.shadertoy.com/view/llBSWc\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\nLightbox version by ivar@inferno-op.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2128,7 +2127,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Arnold/Clarisse/Mantra's Cryptomatte shaders.",
     "description": "Cryptomatte - extract up to four mattes from the ID/coverage pairs generated by Arnold/Clarisse/Mantra's Cryptomatte shaders.  \n\nThere's no need for this shader unless using very old Flame versions - since 2020 there's a built-in node for it: https://help.autodesk.com/view/FLAME/2023/ENU/?guid=GUID-0402116E-B47C-4E32-9010-DB8C334853E0\n\nIt's crucially important to use the floating colour sampler window - pick the colours from the first input, add them to the floating swatches and only then transfer them to the shader controls!  Auto Key needs to be off as well. This works in Flame 2018 Update 1 and above. See demo:\nhttp://youtube.com/watch?v=p5D1FRRlplU\n\nlewis@lewissaunders.com",
     "flame_min_version": "2018.1.0"
   },
@@ -2246,7 +2244,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "DespillMadness",
     "description": "dm_Despill — Despill shader for Autodesk Flame. Six algorithms, custom colour picker, IBK-style weighted average, spill area correction and spill matte output. Inspired by DespillMadness (Andreas Frickinger, Nukepedia 2010) and the IBKGizmo weighted despill approach.",
     "flame_min_version": "2017.0.0"
   },
@@ -2256,7 +2253,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "Eduardo Pricinato.",
+    "author": "Eduardo Pricinato",
     "description": "Version 1.2 - Created by Eduardo Pricinato.\n\nThis Matchbox tries to create a cleaner background for keying.\nIt creates a matte from the channels differences and use it to apply the reference color.\n\nIf the created matte is affecting something that shouldn't be, use the input matte as a cutout.\n\nFor questions contact: edupricinato@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2266,6 +2263,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Eric Pouliot",
     "description": "Fur - Input 1: Fur position (colour noise 64x64 works fine) - Input 2: Fur texture - Author: Eric Pouliot - (c) simon green 2013",
     "flame_min_version": "2012.0.0"
   },
@@ -2429,6 +2427,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "automatic multimatte node. For more informations contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2438,6 +2437,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "Remaps RGB of input1 using RGB of input 2. For more informations contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2447,6 +2447,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "Simple erode node. For more informations contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2456,6 +2457,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "simple fractal generator. For more informations contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2465,7 +2467,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "a lidar. For more informations contact: julienbrami.vfx@gmail.com",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "This node tries to emulate a fake point cloud data provided by a lidar. For more informations contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2475,6 +2477,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "Manages up to three inputs RGB to output one combined mulitmatte with alpha. For more informations contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2494,6 +2497,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "Transforms input1 using input2 rgb values. For questions contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2503,6 +2507,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "juilenbrami.vfx@gmail.com",
     "description": "generates a sky system suitable for timelapse effects. For more informations contact: juilenbrami.vfx@gmail.com",
     "flame_min_version": "2016.0.0"
   },
@@ -2531,6 +2536,7 @@
     "action": "Yes",
     "timeline": "No",
     "transition": "No",
+    "author": "Kyle Obley",
     "description": "K_BlurMask 1.2\n\n    Blurs an isolated region based on the matte input.\n\n    Shader written by:   Kyle Obley (kyle.obley@gmail.com)",
     "flame_min_version": "2015.0.0"
   },
@@ -2549,6 +2555,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Kyle Obley",
     "description": "K_Chroma v1.1\n\tWarps chroma channels with the ability to add barrel distortion.\n\t\n\tShader written by:   Kyle Obley (kyle.obley@gmail.com) and Ivar Beer (ivar@inferno-op.com)\n\t\n\tShader adapted from: https://www.shadertoy.com/view/XssGz",
     "flame_min_version": "2012.0.0"
   },
@@ -2558,6 +2565,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Kyle Obley",
     "description": "Normalize an input based on a single channel. Useful when you need to normalize a 32-bit image so to avoid banding when creating mattes from position passes.\n   \nShader written by:   Kyle Obley (kyle.obley@gmail.com)",
     "flame_min_version": "2017.0.0"
   },
@@ -2576,6 +2584,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "post@kan.dk",
     "description": "Adjusts the exposure of the whole image so that the luminance of the selected pixels hits the target.\n\nCan be used to remove in-camera exposure adjustments.\n\n'Show measured luminance' enables a bar indicating the measured luminance.\nIf you're monitoring in HD then the x-coordinate of the end of the bar\nis the value you'll want to enter in 'Target luminance' to get unaltered exposure on that frame.\n\nI've written the shader for Baselight for Avid, but hope it'll work in Flame too... The shader expects linear input. Baselights converts automatically, for other hosts you might need to convert manually.\n\nDemonstration: https://youtu.be/Vl4PXTvA8X8\nLatest version at https://github.com/knejmann/kan_shaders.\nFor questions contact post@kan.dk",
     "flame_min_version": "2015.0.0"
   },
@@ -2602,7 +2611,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "continuously sampling the color underneath them.",
     "description": "Generates a gradient between two or four tracked points by continuously sampling the color underneath them.\n\nFront input required, matte input optional.\n\nGet tracking data from Action axis nodes, then link those channels to the Tracking fields.\nUse the Adjustments fields to dial in where the sample should come from.\n\n•Sample Blur will average a larger area under the point.\n•Bias will move the center of the gradient closer or further to the Start or End location.\n(Bias only works for a 2-point gradient)\n\nThere are three Output options:\n-UI Overlay will show where the samples are coming from, and the direction of the gradient.\n-Gradient will draw the full frame gradient.\n-Comp will put the gradient over the Front input, through a matte.\n\nMatte output is a black-and-white version of the gradient, so each color could be adjusted downstream.\n(Matte output only works for a 2-point gradient)\n\n4-point gradients can be created differently by changing the Version drop down.\n\nDemo:\nhttps://vimeo.com/953262222\nLive Demo:\nhttps://www.youtube.com/watch?v=O7nElwMPi48\nBegins six minutes in.\n\nBased on Ivar's crok_gradient: https://logik-matchbook.org/shader/crok_gradient",
     "flame_min_version": "2017.0.0"
   },
@@ -2675,7 +2683,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "the ASC CDL standard",
     "description": "Apply slope, offset and power transfer functions to the input pixels as defined by the ASC CDL standard",
     "flame_min_version": "2012.0.0"
   },
@@ -2766,7 +2773,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "srtuss, 2014",
+    "author": "ivar@inferno-op.com",
     "description": "Join us on Thursday, August 8 at Framestore Chicago for the summer 2019 Flame User Group featuring:\n\n  Will Harris\n  Frédéric Warren\n  Andy Milkis\n  Brian Higgins\n  Ross Shain\n\n  Eventbrite link to sign up:\n  https://bit.ly/2IXutwq\n\n  In addition to the 12-month Sapphire OFX and Mocha OFX subscriptions being raffled off courtesy of Boris FX, we will also be raffling off a 12-month subscription to FXPHD courtesy of John Montgomery.\n\n  Video Demo: https://vimeo.com/345293160\n\n  Based on https://www.shadertoy.com/view/Xd2GW3 by srtuss, 2014\n\n  MatchBox shader by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -2816,7 +2823,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "our event sponsors, Autodesk and CineSys-Oceana.",
+    "author": "ivar@inferno-op.com",
     "description": "You are invited to the NY Flame User Group One Frame of White Summer Party!\n\nTuesday, July 19th at 7pm.\n\nWe are going to dedicate the whole night to this years One Frame of White entries and announce the winners.\nAnd for the first time...we are going to stream the event LIVE!\nAs always, fabulous food and drink will be provided by our event sponsors, Autodesk and CineSys-Oceana.\n\nRegistration is required and space is limited! Sign up using the link below.\nhttp://tinyurl.com/hxr48rw\n\nThank you to everyone who contributed to this years One Frame of White contest\nand a special thank you to our contest sponsors, Autodesk, CineSys-Oceana, Alt Systems, HP, Nvidia, GenArts and Wacom.\n\n\nBased on: https://www.shadertoy.com/view/ldcSR7 by Hsiang Yun\n\nDemo clip: https://vimeo.com/173253034\nMatchBox shader by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -2826,7 +2833,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "our sponsors, Autodesk and Cinesys/Oceana.",
+    "author": "ivar@inferno-op.com",
     "description": "The NY Flame User Group Summer bash is just a few days away, featuring the winners of our 2017 One Frame of White contest!\n\nTo make the event even more exciting: We will be streaming it LIVE!\nPlus, one lucky person at the meeting is going to go home with a license of Flamemark Shaders Matchbox Plugins!\n\nAs always, there will be fabulous food and drinks provided by our sponsors, Autodesk and Cinesys/Oceana.\n\nTuesday, July 25th at 7:00pm. Doors open at 6:30pm and registration is required!\nhttps://docs.google.com/forms/d/e/1FAIpQLSdlOSsH2iugdKmN2tdazSghQyZNM6rx6llDM0lmMPnxIk3P8w/viewform\n\nBased on: https://www.shadertoy.com/view/ldcSR7 by Hsiang Yun\n\nDemo clip: https://vimeo.com/226553936\nMatchBox shader by ivar@inferno-op.com",
     "flame_min_version": "2017.0.0"
   },
@@ -2902,7 +2909,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "default the movement is 'around' the shapes in the map input, but the 'Rotate 90' button switches it to move inwards/outwards, or the 'Use map as vectors directly' allows you to use motion vectors or x/y red/green displacement maps.",
     "description": "Advect - pushes an image along the contours of another, like ink in a river; try big soft noise on the second input.\n\nBy default the movement is 'around' the shapes in the map input, but the 'Rotate 90' button switches it to move inwards/outwards, or the 'Use map as vectors directly' allows you to use motion vectors or x/y red/green displacement maps.\n\nlewis@lewissaunders.com",
     "flame_min_version": "2015.0.0"
   },
@@ -2957,7 +2963,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "first converting to ACES and then using primaries/ACES_to_LinearRec709-sRGB.ctf)",
     "description": "Converts between various colourspaces, mainly perceptual ones (ColorMgmt already handles most camera and display spaces)\n\nAll the spaces use illuminant/reference white D65 and are as follows:\n\nlinear sRGB: scene-referred (un-tonemapped) linear with sRGB/Rec709 primaries (you can convert to this space from most camera spaces with a Colour Mgmt node, by first converting to ACES and then using primaries/ACES_to_LinearRec709-sRGB.ctf)\n\nXYZ: the classic CIE 1931 XYZ space with white at Y=1, again useful as an interchange space by using the various CIE-XYZ .ctf options in Colour Mgmt\n\nxyY: the CIE 1931 xyY space where x and y are chromaticities in [0,1] and Y is brightness\n\nL*a*b*: CIELAB 1976 where L* is perceptual lightness with white at 1, a* is broadly green/red and b* blue/yellow, both centred around 0.0 so likely using negatives\n\nL*a*b* (0.5-centred chroma): as above but with a* and b* centred around 0.5, so easier to see and work with\n\nLCHab: cylindrical version of L*a*b* where L* is as before, but C is colorfulness and H is hue\n\nLUV: CIELUV 1976 space similar to L*a*b* but better suited for screens and emissive surfaces\n\nLUV (0.5-centred chroma): as above but with u and v centred around 0.5\n\nLCHuv: cylindrical version of LUV\n\nOklab: recent (2020) perceptual space designed to be similar to but faster and better behaved than the above CIE spaces\n\nOklab (0.5-centred chroma): as above but with a and b centred around 0.5\n\nHSV: classic hue/saturation/value space used in CG and colour picking - we convert to BT1886 2.4 gamma before converting to HSV, rather than converting from linear colour directly, to better match other apps\n\nHSL: similar to HSV but with higher L values tending towards white rather than saturated colours - we convert to BT1886 2.4 gamma before converting to HSL, rather than converting from linear colour directly, to match other apps (unlike Flame's Separate node which assumes the input is already in video space)\n\nYCbCr: YUV space used in digital video with Y including head/footroom and Cb/Cr centred around 0.5\n\nYPbPr: YUV space used in analog video with Pb/Pr centred around 0\n\nlewis@lewissaunders.com",
     "flame_min_version": "2017.0.0"
   },
@@ -3048,7 +3053,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "copying the values from an Action camera node at the frame you want to project on.  On that frame you should see your projection image as-is.  It should then be glued onto the CG for all other frames.",
     "description": "Project an image onto a position pass, to glue it onto a CG render.  Demo video, including how to render the P pass: http://youtube.com/watch?v=YkgHAMwtmpw\n\nConnect the front and optional matte images to project, and a world Position pass.  Then set up the position, rotation and FOV of the projection, usually by copying the values from an Action camera node at the frame you want to project on.  On that frame you should see your projection image as-is.  It should then be glued onto the CG for all other frames.\n\nlewis@lewissaunders.com",
     "flame_min_version": "2015.0.0"
   },
@@ -3139,7 +3143,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "motion vectors, to stick it to something.  Make sure bit depth is 16-bit fp! Supply backward motion vectors to the vector input, i.e. the second output of Motion Analysis, or even better the backward channel from Nuke 9's VectorGenerator.  The front and matte inputs should normally be a still lined up on the Accumulate From frame.",
     "description": "Recursively warp an image by motion vectors, to stick it to something.  Make sure bit depth is 16-bit fp! Supply backward motion vectors to the vector input, i.e. the second output of Motion Analysis, or even better the backward channel from Nuke 9's VectorGenerator.  The front and matte inputs should normally be a still lined up on the Accumulate From frame.\n\nWorks in version 2017 only!\n\nDemo: https://www.youtube.com/watch?v=m27XZX7dtJU\n\nlewis@lewissaunders.com",
     "flame_min_version": "2015.0.0"
   },
@@ -3204,7 +3207,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "the CAM02/CAT02, for equal source & target viewing conditions;",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader performs chromatic adaptation alongside linear colour-space conversion, optionally utilizing the perceptual CAM16.\n\nThe core method can be chosen via [CA Method], the following ones are implemented:\n    [Disable]: no chromatic adaptation, instead only transforms between input & output colour-spaces, also sometimes called absolute colourimetric;\n    [XYZ Scaling]: scales the source to the target white using a diagonal matrix applied in linear CIE XYZ colours;\n    [Bradford]: the traditional Bradford Transform (Luo et al., 1998), notably with its nonlinearity in the blue intermediate channel;\n    [Lin. Bradford]: a linear variant of the Bradford transformation; used, among other, for most of Flame's own internal transformation matrices;\n    [Lin. CAT02]: the full chromatic adaptation as described by the CAM02/CAT02, for equal source & target viewing conditions;\n    [CAM16]: implements the nonlinear CAM16 (extended to support negative achromatic responses symmetrically), with respect to individual source & target viewing conditions; and\n    [Lin. CAT16]: the full chromatic adaptation as described by the CAM16/CAT16, for equal source & target viewing conditions.\n\nThis shader's pipeline identifies input- & output colour-spaces (assumed scene-, or display-referred linear) by their primaries & white point.\nThe former can be chosen as a preset in [Colour Primaries], or selected [Custom], in which case the user is to define the coordinates for red green & blue primaries via [Primaries x] & [Primaries y] in the CIE xy chromaticity space.\nNote that by nature, [CIE XYZ] always uses the E white point (and the controls for which are disabled). To convert from and/or to XYZ spaces with different virtual white points, use the overrides on the [CA Override] page. This is consistent with for example Flame's own CIE XYZ-D65 colour-space when setting the override to [HD D65].\nIn all other cases, choosing the white point is done by one of several methods, determined by the respective setting of [Illuminant Type]:\n    [Native]: automatically chooses the white point corresponding to the primaries; note that this might be ambiguous or unintended for certain cases such as P3, for which one best selects another setting;\n    [Standard]: provides a selection of common white points in their usual (rounded) forms:\n        [ACES]: (0.32168, 0.33767) in CIE xy chromaticity space, as per ACES specification,\n        [ICC D50]: (0.9642, 1, 0.8249) in CIE XYZ, as per the ICC profile specification,\n        [HD D65]: (0.3127, 0.329) in CIE xy chromaticity space,\n        [DCI]: (0.314, 0.351) in CIE xy chromaticity space, as per SMPTE specification, and\n        [E]: equal energy white (1, 1, 1) in CIE XYZ;\n    [Temperature]: implements the Illuminant series D white, defined by:\n        [Temp]: the correlated colour temperature in Kelvin,\n        [Tint]: orthogonal tint to the daylight locus in CIE 1976 UCS, in units thereof, and\n        [Temperature shift]: since the definition of this illuminant series predates the fixing of the second radiation constant c₂, and by design, this method models the exact illuminant; the original illuminants correlate to now shifted temperatures - activating this toggle mimics the traditional behavior by multiplying [Temp] with c₂/(0.01438 m×K); and\n    [xy Coords]: CIE xy chromaticity space coordinates of the white point.\nNote: for [Native], ACES primaries default to ACES white, [CIE XYZ] to E, and all others (including [Custom]) to [HD D65].\nThese controls are identical for the source & target colour-space.\n\nFurther, for using a white point different from the colour-space's innate one to adapt from and/or to, the [CA Override] page provides controls for such overrides. Those utilize the same methods and settings as the in- & output colour-space controls, except for [Native]; but additionally implement:\n    [Disable]: doesn't override the white point; and\n    [From Colour]: provides a colour selector to set the scene white to a colour with respect to the in, or output colour-space; the selected colour is internally normalized to CIE Y=1.\nThese controls are identical for the source & target white point override.\n\nWhen using the CAM16, the following additional controls become available in the [Viewing Conditions] column (on page 1: [Controls] for 6 a column view, and page 2: [Target+Con] otherwise):\n    [Force Full CA]: by default, CAM16 does a partial chromatic adaptation to the internal working E white point (and back), the exact degree of which depending on the viewing conditions; this setting allows for instead forcing to use a full adaptation, for forward & backward transformation, respectively; as well as \n    controls for the parametric source & target viewing conditions ([Source] & [Target]):\n        [S]: encodes the surround parameters, as linearly interpolated between the CAM16 values for Dark, Dim & Average corresponding to entries of -1, 0 and 1, respectively,\n        [L_W]: the luminance of the reference white in nits, and\n        [L_A]: the luminance of the adapting field in nits.\nGenerally, L_A×Y_W=L_W×Y_b, where Y_b is the luminance factor of the background and Y_W is the luminance factor of the reference white. This relation can be used to derive either L_W or L_A if the other and Y_b (as well as Y_W) are fixed instead.\n\nFor enhanced accuracy, intermediate matrices and values are always processed in double precision arithmetic; yet since instead of performing these computations for each pixel, an interposed data sampler is generated, the computational overhead is constant and insignificant.\nIf even higher accuracy is needed, [Double Precision Processing] can be enabled, at the cost of performance.\n\nThe CAM16 implementation used behaves as if forward-transforming to the triplet of hue angle h, correlate lightness J, and correlate colorfulness M; and back.\nMirroring the set of quantities from which CAM16-UCS is derived.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the [Output Resolution] as [Same As Input 1] - however, for tagging the [Result] with different colour-space, [User Defined] must be chosen. Still, in such cases, the format (in pixels and aspect ratio) must match the [Front]'s.\nColour-spaces themselves are neither inferred from [Front] nor automatically tagged for [Result], the user shall take care to maintain a consistent colour-space journey either through the aforementioned Matchbox setting, or Colour Mgmt nodes.\n\nAdaptive Degradation is supported by this shader, which if active disables double precision processing.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2026.2.1"
   },
@@ -3214,6 +3217,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader compensates for vignetting.\n\nUp to four reference radii can be defined alongside individual gain compensation; optionally separate for red, green & blue colour channels. The vignetting centre is treated as an implicit fifth point with unchanged gain.\nThe shader calculates an even polynomial of eighth degree (in the radius from the vignetting centre) to interpolate those points.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the [Output Resolution] as [Same As Input 1].\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2026.2.1"
   },
@@ -3223,6 +3227,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader compensates for vignetting.\n\nUp to four reference points can be defined as radii and the respective gain compensation, optionally separate for red, green & blue colour channels. The vignetting centre is treated as an implicit fifth point with unchanged gain.\nThe shader calculates an even polynomial of eighth degree (in the radius from the vignetting centre) to interpolate those points.\nThis kind of interpolation may lead to undesired oscillations for higher numbers data points. However with sensible spacing of radii and lens vignetting being a rather smooth function, so to say, oscillations or overshoot is hardly an issue.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as <Same As Input 1>.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2024.1.0"
   },
@@ -3242,7 +3247,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "the code-points in ITU-T H.273 - except where stated otherwise.",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader performs forward luma/chroma (or RGB/XYZ) conversions for storage and compression.\n\nThe entries of the selectors for [Colour Primaries], [Transfer Function] & [Colourmatrix] correspond to their respective definitions as given by the code-points in ITU-T H.273 - except where stated otherwise.\nAdditionally, where applicable, the corresponding indices are given in parenthesis.\n\nThe available operations performed depend on the source colour-model, selected by [Source] in the column of the same name:\n    [Linear XYZ]: treats the input as display-referred linear CIE XYZ - transfer characteristic, all colourmatrices and range are accessible;\n    [Encoded]: the input is already encoded to destination colour primaries and transfer characteristic - only non-constant-luminance YCbCr colourmatrices and range are accessible;\n    [Luma/Chroma]: indicates the input is in luma/chroma representation itself - no further colour transformation is performed.\nNote that chroma subsampling is available for all source colour-models.\n\n[Colour Primaries] defines the colourspace to transform into, if [Source] is [Linear XYZ]; and serves as an indicator if [Source] is [Encoded].\n[P3] refers to DCI white, which since Flame 2026 is no longer accommodated by the supplied OCIO configuration.\n\nIn the [Characteristics] column, [Transfer Function] denotes the encoding to apply for [Linear XYZ] sources.\nNote that:\n    [Rec.709] represents the traditional piecewise linear transfer characteristic;\n    [Rec.1886] is a pure power function of exponent 1/2.4;\n    for [PQ] & [HLG], this shader follows Flame's convention of interpreting a linear code value of 1 as a luminance of 100 nits; and\n    the luminance of the reference white for [HLG] can be chosen via the parameter [L_W] (in nits).\n\nNote that the selection of [Colourmatrix] is dependent on [Source] and may change with modifications to the latter.\n\n[Range] controls the data encoding range, offering [SMPTE] & [Full] levels.\nThe exact range-transformation further depends on the target bit-depth, set by [Bit-Depth].\nOnly formats with an equal number of bits per component for the luma and chroma planes are supported by this shader (as Flame is limited to writing such formats too).\n\nThe [Chroma Subsampling] column then provides parameters controlling just that.\n[Type] defines the horizontal and vertical downsampling ratios, supporting the three formats: [4:2:0], [4:2:2] & [4:4:4].\nFor [4:2:0], this shader supports the chroma locations: [Left], [Centre] & [Top-left], controlled by [Chromaloc].\nNote that [4:2:2] is always sampled left-anchored.\nThe downsampled chroma planes are stored bottom-left justified, padded with neutral values. In case of [Colourmatrix] equal to [Identity], R & B / X & Z planes are padded to range-adjusted black.\nNote that if [Source] is [Luma/Chroma], padding is always done analogous to luma/chroma formats instead of RGB/XYZ.\n\nFinally, this shader also supports the backwards transformation to reconstruct an image for preview. The resulting image uses the same representation as the source, that is: colour-model, and if applicable, primaries, transfer characteristic, …(See below for hints on monitoring display-referred linear CIE XYZ).\nToggled by [Preview Reconstruction] in the [Preview] column, alongside controls for clamping ([Clamp Preview]) and quantization ([Quantize Preview]). The latter two behaving analogous to how storing the original output in the integer format determined by [Bit-Depth] would affect the image.\nFurther, [Upsampling Filter] determines the algorithm used for chroma-upsampling from [4:2:0] and [4:2:2] formats:\n    [Sharp] is effectively a set of point-filter, weighting the connecting samples equal on edges and vertices;\n    [Balanced] is the set of smallest footprint filters which have the property of co-located weighted centres with the target samples; and\n    [Soft] is a set of softer balanced filters, the reconstruction footprints of which are uniform.\nNote that for a [Chromaloc] of [Centre], [Balanced] & [Soft] are identical, since the kernel footprints are symmetric by nature; similarly, for [Top-left], [Sharp] & [Balanced] are identical, since its point filters are balanced innately.\n\nTake care to deactivate the preview reconstruction prior to rendering the desired master.\n\nThis shader does a rudimentary conformance check on the chosen parameters, and if a dubious configuration is detected, it overlays the output with a repeating pattern of coloured exclamation marks.\nHowever, said behaviour can be overridden by enabling [Allow Non-Conformance] in the [Advanced] column. If active, no such pattern is ever produced regardless of the configuration.\nIt is recommended to use this option cautiously, the shader indeed always works precisely as formally requested - and every permutation of available input parameters is mathematically realizable. It never falls back to a 'closest sensible' state.\nConfigurations tripping the safeguard are:\n    narrow-gamut primaries ([Rec.709], [Rec.601 (PAL)] or [Rec.601 (NTSC)]) with an HDR [Transfer Function] ([PQ] or [HLG]),\n    primaries other than [XYZ] with [SMPTE ST 428-1] [Transfer Function],\n    mis-matching primaries with native colourmatrices,\n    primaries other than [Rec.2020] with [ICtCp (PQ)], [ICtCp (HLG)] or [IPT-C2] [Colourmatrix],\n    [Transfer Function] other than [PQ] with [ICtCp (PQ)], or [IPT-C2] [Colourmatrix],\n    [Transfer Function] other than [HLG] with the [ICtCp (HLG)] [Colourmatrix], and\n    [Identity] [Colourmatrix] with chroma subsampling [Type] other than [4:4:4].\nThis feature does NOT protect from mis-matching indicated input & actual input formats, and no such information is inferred from colourspace tags. Neither does it detect errors in prior colour management or tagging.\n\nFor [Colourmatrix] equal to [Identity], the shader maps RGB/XYZ planes to RGB/XYZ output; otherwise R stores Cr/Cp/T, G stores Y/I and B stores Cb/Ct/P (depending on the luma/chroma format).\nThis might be uncommon a layout of planes, yet it translates better to a perceptual context, where the respective channels are most strongly correlated with R, G & B (except for IPT-C2, where by design, T correlates positively with skin tones & P is chosen orthogonally).\n\nAll operations of the forward transformation are performed unclamped. Specifically, the transfer characteristics are analytically continued for values greater than their nominal ranges, and mirrored for negative input values.\n\nNote that this shader does not perform any image scaling or reformatting (other than chroma subsampling), so the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the [Output Resolution] as [Same As Input 1].\n\n\nFor maximum flexibility (within the context of this shader), using a [Linear XYZ] source is preferable.\nSuch can be provided by Flame in for example an ACES workflow via a Colour Mgmt node set to {Colour Transform} ({Custom} active):\n    the first entry removing the linear working colour space, via {Type}: {OCIO → Colour Spaces} and selecting the correct space in {Transform}, do not activate {Invert} here; and\n    the second entry being the RRT, via {Type}: {OCIO → View Transforms} and {Transform} set to the desired RRT instance, do not use invert here either.\nTo correctly monitor the output of this node, set {Tagged Colour Space} to {Utility → Linear → CIE XYZ-D65 - Scene-referred}, and the Viewport/Scopes {Viewing Transformation} to {Un-tone-mapped}.\nFor context: here, the colour space-journey goes from the working space to ACES2065-1 - both scene-referred with the first entry, and from scene-referred ACES2065-1 to display-referred CIE-XYZ with the second one.\n\nIn order to inspect the resulting luma/chroma-encoded image, the Flame Viewport and Scope colour management can be set to {Bypass}, allowing for probing raw values with the Colour Sampler, and displaying luma/chroma Waveform-Parades as RGB.\nTo show only select planes, use Flame's Source- or Display Isolation feature.\n\n\nThe result of this shader is designed to be stored entirely unprocessed, save for the rounding from the working 32fp precision down to the desired integer bit-depth (matching the setting of [Bit-Depth]) via Media Hub export or Write File node in Batch.\nBecause for most use-cases, lossy compression is to be applied externally, a mathematically lossless intermediate format is desirable; such as a packed DPX sequence, or RAW/R210 QuickTime formats (for 8/10 bit, respectively).\nSince the resulting video stream encodes a potentially chroma-subsampled luma/format in an RGB image container, the tool importing it is to be configured manually to correctly interpret it.\n\nTaking the default configuration of this shader as example, for FFmpeg, the 10-bit 4:2:0 encode (read as 'gbrp10le' pixel format) can be cast to the actual 'yuv420p10' data using the following video filtergraph ('-vf'): 'split=2[orig][tmp];[tmp]crop=in_w/2:in_h/2:0:in_h/2[crop];[orig][crop]mergeplanes=0x001112:yuv420p10'.\nFrom there, it behaves like usual 4:2:0 content and can be directly encoded to (for example) H.265 using libx265.\nThe use of the '-noautoscale' option before the filtergraph is encouraged, since for mismatching formats it leads to FFmpeg throwing an error instead of silently (for default 'loglevel') reformatting the source at a loss of image information.\nNote that FFmpeg internally stores planar RGB formats as GBR, in turn producing the GBR/YZX/YCbCr/ICtCp/IPT layout as indexed by mergeplanes.\nThe appropriate colour tags can be set as options to '-x265-params', in this case: 'range=limited:colorprim=bt2020:transfer=bt2020-10:colormatrix=bt2020nc:chromaloc=2'.\nThe full FFmpeg prompt can be customized further.\n\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2027.0.0"
   },
@@ -3252,6 +3257,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader performs image luminance normalization.\n\nAll frames will be individually adjusted to match the same arithmetic mean exposure, optionally weighted via a supplied selective.\nThis is especially handy for removing flicker from a disturbed source, especially in combination with isolating a known static area of the image via selective.\n\nNote that the source and target colour spaces are implied to be scene linear.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result and input image formats don't match.\nIt is recommended to leave the [Output Resolution] as [Same As Input 1].\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2026.2.1"
   },
@@ -3261,7 +3267,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "default, antialiasing is disabled for performance reasons, though it is strongly encouraged to enable it for final output.",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader reframes a shot with respect to perspective distortion.\n\nThe concept of this shader is to simulate a different focal length and camera orientation while maintaining the camera's position.\nImage-wise only spatial transformations are applied to acquire this alternate view, thus brightness is retained and bokeh is transformed with the image (note that this can lead to deformed bokeh when extremely wide source FoV and strong off-centreing come together).\n\nThe input [Image Parameters], namely [Image Height], [Focal Length] and [Field of View] are all in relation to the undistorted source, including potential (black) padded areas. Thus, depending on the frame of reference, the equivalent [Image Height] and [Field of View] might be larger, or the [Focal Length] smaller than what the visible portion is comprised of.\nThe [Image Height] parameter can be omitted if [Use Field of View] is enabled, and [Scaling Mode] is not [Focal Length].\n\nThe resulting image format can be customized to any canvas resolution as well as frame and pixel aspect ratios. In cases of different frame aspect ratios, the content is automatically scaled to fit the resulting frame height. Downscaling images to smaller formats while applying reframing, rectification and rotation at the same time is a particular strength of this shader, since it applies all operations simultaneously. In contrast to a multi-node pipeline, this circumvents generational loss due to multiple introductions of softness and/or aliasing in the individual steps.\nBy default, antialiasing is disabled for performance reasons, though it is strongly encouraged to enable it for final output.\nFiltering is done through either a Box- or a Gauss-Kernel. The former - in combination with the default [sigma] of 0.289… (corresponding to a width of 1) ideal for retaining perfect sharpness; whereas the latter is better suited towards soft filtering, preventing not only aliasing but also temporal flickering (which might occur for the highest spatial-frequency sources & strong non-integer-ratio downsampling) - [sigma] values around 0.4 should be a decent starting point.\nIn either case, the number of samples should be set high enough to accommodate for a smooth filtering. In the case of Gauss filtering with a [sigma] larger than 0.5, even as high as 4096.\n\nIn lens-distortion rectification (un-distortion) and re-distortion workflows, the order of operations matters. Logically, the image is first rectified, then perspectively transformed, and lastly re-distorted (albeit internally, for creating the ST map, those operations are ordered reversed & individually performed inverted). The transformation itself is only correct for undistorted images, hence the rectification module in this shader. Do not attempt to correct existing distortion using the re-distortion settings and parameters, as this would result in incorrect perspective transformations nonetheless, due to improper order of operations.\nOptionally, a external ST maps can be used for rectification and re-distortion, compatible with those generated by Flame's own Lens Distortion node.\nIf using a rectification map, shader adopts this map's format as the input format instead of Front's.\nOn the other hand, Re-distortion maps are implicitly expected to be of equal format as the output.\n\nFor enhanced performance, this shader internally uses an ST map representing the aggregate transformation which itself is bilinearly filtered; the nature of which is well behaved for typical use, resulting in negligible interpolation errors. Supersampling then takes place during the application of this ST map.\nNote that this may cause a loss of information for border pixels, which would interpolate from sample locations outside the target-frame.\nTo eliminate this error, one can specify a higher & wider [Output Resolution], accommodating the filtering kernel size; to then crop the output to the desired format using the Resize & Crop node.\nTake care to maintain correct pixel- & frame aspect ratios between reframing & crop. Use the [Force Result PAR] selector if necessary (for certain versions of Flame, the frame aspect ratio can snap to close-but-not-exact presets such as 16:9).\nThis shader, however, does not convert between Colour Spaces, thus when changing to a user defined [Output Resolution], make sure to use the Front's colour space tag; of for ST Map output, optionally use a data space tag.\n\nUpressing is best done with other means than this shader. Significant enlargements of image portions for equal in- and output resolution might also result in strong pixelation.\nFor this, one can output the intermediate ST map and feed it into an external filter better suited towards upressing. Note that when outputting an ST map, the Matte output is then intentionally left black to incentivize running it too through external filtering.\n\nAdaptive Degradation is supported by this shader, which if active bypasses antialiasing.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2027.0.0"
   },
@@ -3271,7 +3277,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "default, antialiasing is disabled for performance reasons, though it is strongly encouraged to enable it for final output. Filtering is done through either a Box- or a Gauss-Kernel, the former - in combination with a width of 1, corresponding to the default <sigma> of 0.289 is for retaining perfect sharpness; whereas the latter is better suited towards soft filtering, preventing not only aliasing but also temporal flickering",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader reframes spherical footage in equirectangular format to rectilinear images.\n\nImage-wise only spatial transformations are applied to acquire the planar view, thus brightness is retained.\n\nThe resulting image format can be customized to any canvas resolution as well as frame and pixel aspect ratios, downscaling being a particular strength of this shader and its filtering options.\nBy default, antialiasing is disabled for performance reasons, though it is strongly encouraged to enable it for final output. Filtering is done through either a Box- or a Gauss-Kernel, the former - in combination with a width of 1, corresponding to the default <sigma> of 0.289 is for retaining perfect sharpness; whereas the latter is better suited towards soft filtering, preventing not only aliasing but also temporal flickering (which might occur for the highest spatial-frequency sources & strong non-integer ratio downsampling) - <sigma> values around 0.4 should be a decent starting point. In any case, the samples number should be selected high enough to accommodate for a smooth filtering, for Gauss filtering with a <sigma> larger than 0.5, even as high as 4096.\n\nOptionally, lens-distortion can be added to the output, either through numeric parameters or an external ST map. The latter is implicitly expected to be of equal format to the output, fully compatible with <Inverse STMap> as generated by Flame's <Lens Distortion> node.\n\nFor enhanced performance, this shader internally uses a ST map representing the aggregate transformation which itself is bilinearly filtered; the nature of which is well behaved for typical use, resulting in negligible interpolation errors. Supersampling then takes place on the application of this ST map.\nNote that this may cause a loss of information for border pixels, which would interpolate from sample locations outside the target-frame.\nTo eliminate this error, one can specify a higher & wider canvas resolution, accommodating the filtering kernel size; to then crop the output to the desired format using the <Resize & Crop> node.\nMake sure to maintain correct pixel- & frame aspect ratios between reframing & crop. Use the <Force Result PAR> selector if necessary (for certain versions of Flame, the frame aspect ratio can snap to close-but-not-exact presets such as 16:9).\n\nUpressing is best done with other means than this shader, since significant enlargements on pixel-level might result in strong pixelation. This is especially true for 360° footage, and unless reframing a source at least 8 times the resolution of the output format (64 times the pixel number) with not too narrow a field of view - smoother external filtering such as linear or EWA+linear might be preferable.\nFor this, one can output the intermediate ST map.\nThe ST map generated doesn't wrap in S-dimension, thus repeating wrapping to normalized values might be required. Additionally, since mapping equirectangular to rectilinear coordinates inevitably results in lines of discontinuity for S; a second map for S - with the discontinuity shifted by 180 degrees - is calculated and stored to the blue channel. The matte output for STs is white where the blue channel holds continuous data for S, and black for the green one.\n\nAdaptive Degradation is supported by this shader, which if active bypasses antialiasing.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2025.1.0"
   },
@@ -3281,6 +3287,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader applies a threshold filter to an image.\n\nIf a threshold for luminance is applied, the blue channel weight is implicitly calculated for normalization.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as <Same As Input 1>.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2025.1.0"
   },
@@ -3290,7 +3297,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "up to three colour-vector mappings.",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader performs a linear - or perceptually linear - colour-grade, defined by up to three colour-vector mappings.\n\nEach vector mapping is defined by a source-colour and exactly one of three possible methods for assigning a target-colour, as determined by the individual Vector Modes:\n<Colour> maps the source colour to the specified target colour,\n<Shift> determines the target colour through an additive offset to the source colour, and\n<Gain> multiplies the source colour by a given triplet as the target colour.\nAlternatively, if fewer than three vectors are required, each vector can be disabled individually.\nIn such cases, the orthogonal complement to the basis spanned by the active source colour vectors is mapped to itself. Note that in general, this orthogonal complement depends on the working colour-space, thus even if source and target colours for the active vector mappings are identical (in true colour, not value-triplets), the results may still differ.\nHowever, if all three vector mappings are active and the source and target colours are kept consistent, the transformation yields the same result for any scene-linear working colour-space.\n\nEach vector can optionally be normalised in luminance (active by default), which is calculated with the luma coefficients given by <W_R> and <W_B> (assuming ACEScg by default). This can be useful for shifting chromatics iso-luminance with the provided <Shift>- and <Gain>-modes.\n\nWhen enabling <Perceptual Processing>, the shader operates according to the Oklab colour appearance model; most notably using the nonlinear response, and Euclidean perceptual colour-distances.\nFor correct transformations to this model, the working colour-space (of Front as well as Result) has to be set via <Working CS>.\nBy default, the target vector controls remain in working-space colourimetry, and results should be similar for small, well-conditioned adjustments. However, the Shift- and Gain controls can also be switched to Oklab Lab representation by activating <Perceptual Shift and Gain>. While <Shift> works mostly analogous to RGB-colour-shifts, <Gain> in Lab behaves noticeably differently for chromatic changes.\nColour selectors (for vector sources and targets) always are relative to the working colour-space.\nNote that in perceptual processing, luminance normalization for vectors does not rely on the <W_R> and <W_B> coefficients but uses the Oklab lightness, and thus may produce slightly different results.\n\nFinally, the image saturation can be adjusted via <Post-Saturation> - applied after the vector-based grade.\nFor native processing, the luma coefficients <W_R> and <W_B> are used to calculate saturation; while for perceptual mode, the adjustment is applied in nonlinear ab chromatics.\n\nInternally, a single colour matrix is computed, comprising the entire grade. For ill-conditioned source-bases - that is: similar source colours - this matrix might also get ill-conditioned, leading to extreme colour-shifts for image colours further to source-vectors. Even for only slight adjustments in target colours.\nFurther, linearly-dependent source-colours lead to undefined results.\nConversely, if the source colours are spaced sensibly far apart, the entire transformation is well-conditioned.\nFor enhanced accuracy, this matrix and the intermediate values are always processed in double precision arithmetic; yet since instead of computing the matrix for each pixel, an interposed data sampler is used, the computational overhead is constant and insignificant.\nIf even higher accuracy is needed, <Double Precision Processing> can be enabled, at the cost of performance.\nThis causes the application of the colour matrix on a pixel-basis (as well as the perceptual transformations) to be processed in double precision.\nWhile for real-world images and use cases, the rounding error is negligible for standard processing; full double-precision can be useful if correctly-rounded Float32 results are paramount.\n\nNote that this shader does not perform any image scaling or reformatting, so the operation may be incorrect if the result and input image formats don't match.\nIt is recommended to leave the canvas resolution as <Same As Input 1>.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2026.1.0"
   },
@@ -3310,6 +3317,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Eric Pouliot",
     "description": "- 3vis - PageCurl between 1 and 2, uses 3 for back page - Author: Eric Pouliot",
     "flame_min_version": "2012.0.0"
   },
@@ -3319,6 +3327,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "julienbrami.vfx@gmail.com",
     "description": "Transforms input1 using input2 rgb values. For questions contact: julienbrami.vfx@gmail.com",
     "flame_min_version": "2015.0.0"
   },
@@ -3328,7 +3337,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
-    "author": "the focal length.",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader reframes a shot with respect to perspective distortion.\n\nThe concept of this shader is to simulate a different focal length and camera orientation while maintaining the camera position.\nImage-wise only transformations are applied to acquire alternate view frames, thus brightness is retained and bokeh is transformed with the image (note that this can lead to deformed bokeh when extremely wide source FoV and strong off-centreing come together).\n\nThe <Image Height> parameter can be omitted if neither the source image nor the <Scaling Mode> is defined by the focal length.\n\nThe resulting image format can be customized to any canvas resolution, including but not limited to Flame <Scaling Presets>. Downscaling images to smaller formats while applying reframing, rectification and rotation at the same time is a particular strength of this shader, since it performs all operations at the same time. In contrast to a multi-node pipeline, this circumvents multiple introductions of softness or aliasing from intermediate image manipulations.\nNote that this shader uses <GL_NEAREST> texture filtering to conserve a maximum level of image detail, thus aliasing might be severe in certain cases if uncorrected. To counteract this, multisampling antialiasing can be activated, and the filter size enlarged (one may want to try to exhaust the number of samples first before using the <Softness> setting).\n\nSince the combined transformations per pixel are well-behaved over the resulting frame (for typical use), an intermediate pass containing the UV coordinates is calculated. The final pass transforming the image itself then uses those UVs, which is where the antialiasing is also applied (for performance reasons). Note that this can cause a loss of information for the very border pixels that would ideally interpolate from antialiasing sample locations outside the frame too.\nTo eliminate this error, one can specify a canvas resolution exactly 2 pixels wider & higher to then crop it back to the desired format using the <Resize & Crop> node.\nNote that Flame may automatically & forcefully snap to the closest <Aspect Ratio Preset> which might be undesired behaviour. This can be compensated by using the <Force Result PAR> selector. While the image aspect ratio intermediate result between the two nodes will be incorrectly flagged, the <Resize & Crop> revises this error in that it too incorrectly handles aspect ratios. The image is cropped pixel-perfectly, yet the image aspect ratio is kept at the now correct target specification.\n\nUpressing is best done with other means than this shader. Significant enlargements of small image viewports to a canvas of the same resolution as the input also might result in strong pixelation.\nIf need be, one can output the intermediate (continuous) UV coordinates and feed them into an external filter better suited towards upressing. Note that when outputting UV coordinates, the Matte result is intentionally black to incentivize running it too through the external filter.\n\nThe shader correctly handles conversions between all source and result formats, no matter the image- and pixel aspect ratios. In cases of deviating image aspect ratios, the width of the virtual result is matched according to the relative image height (which is retained from the source).\n\nAdaptive Degradation is supported by this shader, which conditionally bypasses antialiasing.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2024.1.0"
   },
@@ -3374,7 +3383,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "https://www.shadertoy.com/view/XtlSD7 by  knarkowicz",
     "description": "based on by https://www.shadertoy.com/view/XtlSD7 by  knarkowicz",
     "flame_min_version": "2012.0.0"
   },
@@ -3424,6 +3432,7 @@
     "action": "Yes",
     "timeline": "Yes",
     "transition": "No",
+    "author": "nobbl211@gmail.com",
     "description": "This Matchbox shader applies a threshold filter to an image.\n\nNote that this shader does not perform any image scaling or reformatting, so that the operation may be incorrect if the result image format does not match the input image format.\nIt is recommended to leave the canvas resolution as <Same As Input 1>.\n\nThis shader is licensed under the terms of the MIT license.\n\nFor questions contact:\nnobbl211@gmail.com",
     "flame_min_version": "2019.0.0"
   },
@@ -3457,6 +3466,7 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
+    "author": "Eric Pouliot",
     "description": "- 3vis - Remap a texture via a UV Map - Author: Eric Pouliot",
     "flame_min_version": "2012.0.0"
   },
@@ -3602,7 +3612,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "the value of the strength channel.",
     "description": "miles@noesclavo.com\n\nIXFORM\n\nTransform a thing. This is only cool if you input the optional black and white strength channel. The transormation will be multiplied by the value of the strength channel.",
     "flame_min_version": "2015.0.0"
   },
@@ -3612,7 +3621,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "the great crew at  https://www.facebook.com/groups/1380015128921288/  Create a lens blur with custom kernels. Alpha output is a representation of the focal map.  Helpful links. //http://www.crytek.com/download/Sousa_Graphics_Gems_CryENGINE3.pdf //http://psgraphics.blogspot.com/2011/01/improved-code-for-concentric-map.html //http://ivizlab.sfu.ca/papers/cgf2012.pdf //https://www.shadertoy.com/view/MtlGRn",
     "description": "miles@noesclavo.com, ivar@inferno-op.com.\n\nLENS BLUR\n\nThe gaussian blur algorithm is the artistry of Lewis Saunders.  Helpful inspiration and troubleshooting by the great crew at  https://www.facebook.com/groups/1380015128921288/  Create a lens blur with custom kernels. Alpha output is a representation of the focal map.  Helpful links. //http://www.crytek.com/download/Sousa_Graphics_Gems_CryENGINE3.pdf //http://psgraphics.blogspot.com/2011/01/improved-code-for-concentric-map.html //http://ivizlab.sfu.ca/papers/cgf2012.pdf //https://www.shadertoy.com/view/MtlGRn",
     "flame_min_version": "2016.0.0"
   },
@@ -3667,7 +3675,6 @@
     "action": "No",
     "timeline": "No",
     "transition": "No",
-    "author": "it's matte shader.",
     "description": "miles@noesclavo.com\n\nMULT_DIV\n\nAnother multiply and divide an image by it's matte shader.",
     "flame_min_version": "2015.0.0"
   },

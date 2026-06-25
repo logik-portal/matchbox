@@ -2,7 +2,7 @@
 
 ## Description
 
-High-quality fluffy volumetric clouds using Perlin+Worley noise + proper light marching. Inspired
+High-quality fluffy volumetric clouds using Perlin+Worley noise + proper light marching. Inspired by classic iq-style cloud rendering.                     ////  cb+GrokBuild did this.  ////
 
 ## Flame Requirements
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-classic iq-style cloud rendering.                     ////  cb+GrokBuild did this.  ////
+

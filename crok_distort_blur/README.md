@@ -35,5 +35,3 @@ Matchbox
 ## Author
 
 ivar@inferno-op.com
-
-Big thx to lewis@lewissaunders.com for helping me out on some parts of the shader

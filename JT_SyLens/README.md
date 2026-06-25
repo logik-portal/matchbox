@@ -3,7 +3,7 @@
 ## Description
 
 Straightens and distorts footage according to the Syntheyes lens distortion model. Send a mail to me@julik.nl if you have questions.
-See this tutorial video made 
+See this tutorial video 
 https://www.youtube.com/watch?v=S_mfdIyCSWE
 
 ## Flame Requirements

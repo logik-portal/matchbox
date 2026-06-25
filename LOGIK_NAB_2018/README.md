@@ -14,7 +14,6 @@ Thanks, as always to Autodesk for their support.
 See you in Vegas!!
 http://gems.autodesk.com/d/ktqh11
 Video Demo: https://vimeo.com/260622477
-MatchBox shader
 
 ## Flame Requirements
 

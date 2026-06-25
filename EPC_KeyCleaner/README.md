@@ -2,7 +2,7 @@
 
 ## Description
 
-Version 1.2 - Created 
+Version 1.2 - 
 This Matchbox tries to create a cleaner background for keying.
 It creates a matte from the channels differences and use it to apply the reference color.
 If the created matte is affecting something that shouldn't be, use the input matte as a cutout.
@@ -24,4 +24,4 @@ Matchbox
 
 ## Author
 
-Eduardo Pricinato.
+Eduardo Pricinato

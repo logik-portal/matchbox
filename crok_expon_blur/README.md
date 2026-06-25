@@ -29,4 +29,3 @@ Matchbox
 ## Author
 
 ivar@inferno-op.com
-All the code used belongs to Miles / Lewis

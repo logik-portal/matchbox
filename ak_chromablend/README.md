@@ -4,7 +4,6 @@
 
 Chroma Blend
 Blend chroma values of front and back, including blur.
-Matchbox shader
 
 ## Flame Requirements
 

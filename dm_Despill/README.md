@@ -2,7 +2,7 @@
 
 ## Description
 
-dm_Despill — Despill shader for Autodesk Flame. Six algorithms, custom colour picker, IBK-style weighted average, spill area correction and spill matte output. Inspired (Andreas Frickinger, Nukepedia 2010) and the IBKGizmo weighted despill approach.
+dm_Despill — Despill shader for Autodesk Flame. Six algorithms, custom colour picker, IBK-style weighted average, spill area correction and spill matte output. Inspired by DespillMadness (Andreas Frickinger, Nukepedia 2010) and the IBKGizmo weighted despill approach.
 
 ## Flame Requirements
 
@@ -20,4 +20,4 @@ Matchbox
 
 ## Author
 
-DespillMadness
+

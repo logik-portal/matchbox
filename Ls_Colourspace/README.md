@@ -4,8 +4,8 @@
 
 Converts between various colourspaces, mainly perceptual ones (ColorMgmt already handles most camera and display spaces)
 All the spaces use illuminant/reference white D65 and are as follows:
-linear sRGB: scene-referred (un-tonemapped) linear with sRGB/Rec709 primaries (you can convert to this space from most camera spaces with a Colour Mgmt node, 
-XYZ: the classic CIE 1931 XYZ space with white at Y=1, again useful as an interchange space 
+linear sRGB: scene-referred (un-tonemapped) linear with sRGB/Rec709 primaries (you can convert to this space from most camera spaces with a Colour Mgmt node, by first converting to ACES and then using primaries/ACES_to_LinearRec709-sRGB.ctf)
+XYZ: the classic CIE 1931 XYZ space with white at Y=1, again useful as an interchange space by using the various CIE-XYZ .ctf options in Colour Mgmt
 xyY: the CIE 1931 xyY space where x and y are chromaticities in [0,1] and Y is brightness
 L*a*b*: CIELAB 1976 where L* is perceptual lightness with white at 1, a* is broadly green/red and b* blue/yellow, both centred around 0.0 so likely using negatives
 L*a*b* (0.5-centred chroma): as above but with a* and b* centred around 0.5, so easier to see and work with
@@ -37,4 +37,4 @@ Matchbox
 
 ## Author
 
-first converting to ACES and then using primaries/ACES_to_LinearRec709-sRGB.ctf)
+

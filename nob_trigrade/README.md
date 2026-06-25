@@ -2,17 +2,18 @@
 
 ## Description
 
-This Matchbox shader performs a linear - or perceptually linear - colour-grade, defined 
-Each vector mapping is defined 
+This Matchbox shader performs a linear - or perceptually linear - colour-grade, defined by up to three colour-vector mappings.
+Each vector mapping is defined by a source-colour and exactly one of three possible methods for assigning a target-colour, as determined by the individual Vector Modes:
 <Colour> maps the source colour to the specified target colour,
 <Shift> determines the target colour through an additive offset to the source colour, and
-<Gain> multiplies the source colour 
+<Gain> multiplies the source colour by a given triplet as the target colour.
 Alternatively, if fewer than three vectors are required, each vector can be disabled individually.
-In such cases, the orthogonal complement to the basis spanned (in true colour, not value-triplets), the results may still differ.
+In such cases, the orthogonal complement to the basis spanned by the active source colour vectors is mapped to itself. Note that in general, this orthogonal complement depends on the working colour-space, thus even if source and target colours for the active vector mappings are identical (in true colour, not value-triplets), the results may still differ.
 However, if all three vector mappings are active and the source and target colours are kept consistent, the transformation yields the same result for any scene-linear working colour-space.
-Each vector can optionally be normalised in luminance (active (assuming ACEScg 
+Each vector can optionally be normalised in luminance (active by default), which is calculated with the luma coefficients given by <W_R> and <W_B> (assuming ACEScg by default). This can be useful for shifting chromatics iso-luminance with the provided <Shift>- and <Gain>-modes.
 When enabling <Perceptual Processing>, the shader operates according to the Oklab colour appearance model; most notably using the nonlinear response, and Euclidean perceptual colour-distances.
 For correct transformations to this model, the working colour-space (of Front as well as Result) has to be set via <Working CS>.
+By default, the target vector controls remain in working-space colourimetry, and results should be similar for small, well-conditioned adjustments. However, the Shift- and Gain controls can also be switched to Oklab Lab representation by activating <Perceptual Shift and Gain>. While <Shift> works mostly analogous to RGB-colour-shifts, <Gain> in Lab behaves noticeably differently for chromatic changes.
 Colour selectors (for vector sources and targets) always are relative to the working colour-space.
 Note that in perceptual processing, luminance normalization for vectors does not rely on the <W_R> and <W_B> coefficients but uses the Oklab lightness, and thus may produce slightly different results.
 Finally, the image saturation can be adjusted via <Post-Saturation> - applied after the vector-based grade.
@@ -46,4 +47,4 @@ Matchbox
 
 ## Author
 
-up to three colour-vector mappings.
+nobbl211@gmail.com

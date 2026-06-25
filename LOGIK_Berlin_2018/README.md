@@ -11,8 +11,7 @@ Große Hamburger Straße 17, 10115 Berlin, Germany
 Hope to see you there!
 logik-matchbook.org/shader/LOGIK_Berlin_2018
 Music Creditz: Die 4 | EFX Solo
-Based on shadertoy.com/view/MdKyRw 
-Shader Demo: vimeo.com/261693435
+Based on shadertoy.com/view/MdKyRw
 
 ## Flame Requirements
 

@@ -3,10 +3,8 @@
 ## Description
 
 This LightBox shader creates volumetric snow like particles.
-Based on https://www.shadertoy.com/view/4tSSzt 
-Bias code 
-This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-Lightbox version
+Based on https://www.shadertoy.com/view/4tSSzt by FabriceNeyret2 using the base ray-marcher of Trisomie21: https://www.shadertoy.com/view/4tfGRB#
+Bias code
 
 ## Flame Requirements
 
@@ -24,4 +22,4 @@ Lightbox
 
 ## Author
 
-FabriceNeyret2 using the base ray-marcher of Trisomie21: https://www.shadertoy.com/view/4tfGRB#
+Dominik Schmid https://www.shadertoy.com/view/llBSWc

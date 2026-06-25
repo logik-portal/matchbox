@@ -13,7 +13,6 @@ HighPass Filter ignors any pixels where either of the HSV values are below thres
 often make for unreliable hue readings.
 Post processes can blur, erode or dialte the mask.
 The input gamma has no effect on the math of the mask, it soley influeces the overlay colors.
-Matchbox shader 
 Blur filter based on Pyramid blur in ADSK shader samples
 Erode/Dialte filter based on code from https://github.com/kajott/GIPS
 
