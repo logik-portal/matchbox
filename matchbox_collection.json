@@ -3332,6 +3332,15 @@
     "flame_min_version": "2015.0.0"
   },
   {
+    "name": "PS_Confetti",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Cinematic Confetti Pro",
+    "flame_min_version": "2017.0.0"
+  },
+  {
     "name": "Reframe",
     "shader_type": "Matchbox",
     "action": "Yes",
