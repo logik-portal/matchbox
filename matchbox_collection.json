@@ -146,6 +146,89 @@
     "flame_min_version": "2012.0.0"
   },
   {
+    "name": "BB_BokehGenerator",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "author": "Bayley",
+    "description": "Procedural bokeh generator by Bayley (BB). No input required — connect a background for compositing. Generates cinematic lens bokeh with full shape control (polygon sides, rotation, aspect, edge softness, hollow, rim brightness), color and brightness variation, optical effects (chromatic aberration, diffraction spikes with blur and length control, lens blur), depth layering (near/far with parallax drift), spatial distribution, and time-driven animation (drift, flicker, fade). Blend Mode controls how bokeh composites over the background (Add, Screen, Normal, Multiply, Overlay). Animate Time Offset to drive all motion. GLSL 120 compatible. Multipass: Pass 1 renders bokeh, Pass 2 applies lens blur.",
+    "flame_min_version": "2017.0.0"
+  },
+  {
+    "name": "BB_Clouds",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Procedural animated sky and cloud layer with perspective camera. No input required – pure generator.",
+    "flame_min_version": "2026.0.0"
+  },
+  {
+    "name": "BB_ColorDensity",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Film-style color density adjustment. Reduces luminance while boosting saturation to create deep, rich colors. Individual control for R, G, B, C, M, Y vectors.",
+    "flame_min_version": "2020.0.0"
+  },
+  {
+    "name": "BB_FutureHUD",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Animated sci-fi HUD overlay. Inspired by the holographic interfaces of Minority Report, Iron Man, and Pacific Rim. Camera locked to screen. All elements independently enabled and colour-controlled.",
+    "flame_min_version": "2026.0.0"
+  },
+  {
+    "name": "BB_PerspectiveLines",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Perspective vanishing point line overlay. Draw a fan of lines between two outer lines (A and B). A vanishing point widget shows where the lines converge. Coordinates: 0,0 = bottom-left, 1,1 = top-right.",
+    "flame_min_version": "2026.0.0"
+  },
+  {
+    "name": "BB_RetroHUD",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Retro sci-fi HUD overlay. Inspired by Alien, Aliens, Blade Runner, 2001 A Space Odyssey, and TRON. Two-pass: pass 1 draws 13 animated HUD elements on a black background, pass 2 applies a CRT/old-TV filter.",
+    "flame_min_version": "2026.0.0"
+  },
+  {
+    "name": "BB_Seascape",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "author": "Alexander Alekseev aka TDM",
+    "description": "Procedural animated ocean. Based on Seascape by Alexander Alekseev aka TDM (CC BY-NC-SA 3.0). No input required – pure generator.",
+    "flame_min_version": "2026.0.0"
+  },
+  {
+    "name": "BB_ShadowDensity",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Shadow density and saturation control. Uses a smooth luminance mask to isolate the shadow zone (full effect at black, fading to zero at the pivot). Shadow Lift pulls down luminance; Shadow Desat reduces saturation toward neutral grey. Both effects share the same mask so lift and desat are always spatially consistent. Supports Rec.709, Scene-Linear, ACEScg, ACEScct, and ARRI LogC4.",
+    "flame_min_version": "2026.0.0"
+  },
+  {
+    "name": "BB_SocialSafeZones",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Overlays safe zone guides for social media delivery formats. Select a Delivery format, adjust overlay colour and opacity, toggle the border and UI cutouts, and use the Adjustments controls to reposition or scale the source image.",
+    "flame_min_version": "2016.0.0"
+  },
+  {
     "name": "BKM_BLADES",
     "shader_type": "Matchbox",
     "action": "No",
