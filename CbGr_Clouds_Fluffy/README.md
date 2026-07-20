@@ -2,7 +2,7 @@
 
 ## Description
 
-High-quality fluffy volumetric clouds using Perlin+Worley noise + proper light marching. Inspired by classic iq-style cloud rendering.                     ////  cb+GrokBuild did this.  ////
+High-quality fluffy volumetric clouds — domain-warped Perlin+Worley, dual-lobe HG scattering, beer-powder multi-scatter, adaptive raymarch.                     ////  cb+Grok 4.5  ////
 
 ## Flame Requirements
 

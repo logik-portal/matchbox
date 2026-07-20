@@ -1,55 +1,72 @@
-<ShaderNodePreset Name="Fluffy Volumetric Clouds" SupportsAction="False" SupportsTransition="False" SupportsTimeline="True" MatteProvider="False" TimelineUseBack="False" DefaultIsNoOp="False" ShaderType="Matchbox" SoftwareVersion="2026.0.0" Description="High-quality fluffy volumetric clouds using Perlin+Worley noise + proper light marching. Inspired by classic iq-style cloud rendering.                     ////  cb+GrokBuild did this.  ////" SupportsAdaptiveDegradation="True" LimitInputsToTexture="True">
+<ShaderNodePreset Name="Fluffy Volumetric Clouds" SupportsAction="False" SupportsTransition="False" SupportsTimeline="True" MatteProvider="False" TimelineUseBack="False" DefaultIsNoOp="False" ShaderType="Matchbox" SoftwareVersion="2026.0.0" Description="High-quality fluffy volumetric clouds — domain-warped Perlin+Worley, dual-lobe HG scattering, beer-powder multi-scatter, adaptive raymarch.                     ////  cb+Grok 4.5  ////" SupportsAdaptiveDegradation="True" LimitInputsToTexture="True">
 
    <Shader Index="1" OutputBitDepth="Output">
 
       <!-- Shape -->
-      <Uniform Name="cloud_scale" Type="float" DisplayName="Cloud Scale" Page="0" Col="0" Row="0" Tooltip="Size of the main cloud formations" Inc="0.05" Default=".5" Min="0.1" Max="4.5" ResDependent="None">
+      <Uniform Name="cloud_scale" Type="float" DisplayName="Cloud Scale" Page="0" Col="0" Row="0" Tooltip="Size of the main cloud formations" Inc="0.05" Default="0.55" Min="0.1" Max="4.5" ResDependent="None">
       </Uniform>
 
-      <Uniform Name="cloud_density" Type="float" DisplayName="Density" Page="0" Col="0" Row="1" Tooltip="Overall thickness and darkness of the clouds" Inc="0.05" Default=".2" Min="0" Max="5.0" ResDependent="None">
+      <Uniform Name="cloud_density" Type="float" DisplayName="Density" Page="0" Col="0" Row="1" Tooltip="Overall thickness and darkness of the clouds" Inc="0.05" Default="0.85" Min="0" Max="5.0" ResDependent="None">
       </Uniform>
 
-      <Uniform Name="cloud_speed" Type="float" DisplayName="Wind Speed" Page="0" Col="0" Row="2" Tooltip="How fast the clouds move" Inc="0.02" Default="0.4" Min="0.0" Max="4.0" ResDependent="None">
+      <Uniform Name="coverage" Type="float" DisplayName="Coverage" Page="0" Col="0" Row="2" Tooltip="How much of the sky is filled with cloud" Inc="0.02" Default="0.58" Min="0.1" Max="0.95" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="detail_amount" Type="float" DisplayName="Detail / Fluff" Page="0" Col="0" Row="3" Tooltip="High-frequency billowy detail and edge erosion" Inc="0.05" Default="0.9" Min="0.0" Max="1.8" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="cloud_speed" Type="float" DisplayName="Wind Speed" Page="0" Col="0" Row="4" Tooltip="How fast the clouds drift and billow" Inc="0.02" Default="0.4" Min="0.0" Max="4.0" ResDependent="None">
+      </Uniform>
+
+      <!-- Layer -->
+      <Uniform Name="cloud_altitude" Type="float" DisplayName="Altitude" Page="0" Col="1" Row="0" Tooltip="Vertical center of the cloud layer" Inc="0.05" Default="0.0" Min="-8.0" Max="12.0" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="cloud_thickness" Type="float" DisplayName="Thickness" Page="0" Col="1" Row="1" Tooltip="Vertical depth of the cloud layer" Inc="0.05" Default="2.4" Min="0.3" Max="10.0" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="quality" Type="float" DisplayName="Quality" Page="0" Col="1" Row="2" Tooltip="Raymarch + lighting quality (higher = fluffier, slower)" Inc="0.05" Default="1.2" Min="0.4" Max="2.2" ResDependent="None">
+      </Uniform>
+
+      <Uniform Name="exposure" Type="float" DisplayName="Exposure" Page="0" Col="1" Row="3" Tooltip="Overall brightness" Inc="0.05" Default="1.25" Min="0.5" Max="3.0" ResDependent="None">
       </Uniform>
 
       <!-- Lighting -->
-      <Uniform Name="sun_dir" Type="vec3" DisplayName="Sun Direction" Page="0" Col="0" Row="3" Tooltip="Direction toward the sun" Inc="0.01" Default="0.5" Min="-1.0" Max="1.0" ResDependent="None">
-         <SubUniform Max="1.0" Min="-1.0" Default="0.5" ResDependent="None"></SubUniform>
-         <SubUniform Max="1.0" Min="-1.0" Default="0.7" ResDependent="None"></SubUniform>
-         <SubUniform Max="1.0" Min="-1.0" Default="0.35" ResDependent="None"></SubUniform>
+      <Uniform Name="sun_dir" Type="vec3" DisplayName="Sun Direction" Page="0" Col="2" Row="0" Tooltip="Direction toward the sun" Inc="0.01" Default="0.5" Min="-1.0" Max="1.0" ResDependent="None">
+         <SubUniform Max="1.0" Min="-1.0" Default="0.55" ResDependent="None"></SubUniform>
+         <SubUniform Max="1.0" Min="-1.0" Default="0.72" ResDependent="None"></SubUniform>
+         <SubUniform Max="1.0" Min="-1.0" Default="0.32" ResDependent="None"></SubUniform>
       </Uniform>
 
-      <Uniform Name="scattering" Type="float" DisplayName="Scattering Strength" Page="0" Col="1" Row="2" Tooltip="How bright the light scatters inside the clouds" Inc="0.05" Default="1.5" Min="0.3" Max="3.5" ResDependent="None">
+      <Uniform Name="scattering" Type="float" DisplayName="Scattering" Page="0" Col="2" Row="1" Tooltip="How bright light scatters inside the clouds" Inc="0.05" Default="1.45" Min="0.3" Max="3.5" ResDependent="None">
       </Uniform>
 
-      <!-- Quality -->
-      <Uniform Name="quality" Type="float" DisplayName="Quality" Page="0" Col="1" Row="0" Tooltip="Raymarch + lighting quality (higher = much fluffier and more detailed)" Inc="0.05" Default="1.3" Min="0.4" Max="2.2" ResDependent="None">
+      <Uniform Name="silver_lining" Type="float" DisplayName="Silver Lining" Page="0" Col="2" Row="2" Tooltip="Bright rim when looking near the sun through thin cloud" Inc="0.05" Default="1.0" Min="0.0" Max="2.5" ResDependent="None">
       </Uniform>
 
-      <Uniform Name="exposure" Type="float" DisplayName="Exposure" Page="0" Col="1" Row="1" Tooltip="Overall brightness" Inc="0.05" Default="1.35" Min="0.5" Max="3.0" ResDependent="None">
+      <Uniform Name="ambient" Type="float" DisplayName="Ambient Fill" Page="0" Col="2" Row="3" Tooltip="Cool fill light in shadowed cloud regions" Inc="0.02" Default="0.35" Min="0.0" Max="1.2" ResDependent="None">
       </Uniform>
 
-      <!-- Camera Positioning -->
-      <Uniform Name="camera_x" Type="float" DisplayName="Camera X" Page="0" Col="2" Row="0" Tooltip="Camera horizontal position" Inc="0.1" Default="0.0" Min="-30.0" Max="30.0" ResDependent="None">
+      <!-- Camera -->
+      <Uniform Name="camera_x" Type="float" DisplayName="Camera X" Page="0" Col="3" Row="0" Tooltip="Camera horizontal position" Inc="0.1" Default="0.0" Min="-30.0" Max="30.0" ResDependent="None">
       </Uniform>
 
-      <Uniform Name="camera_y" Type="float" DisplayName="Camera Y" Page="0" Col="2" Row="1" Tooltip="Camera vertical position (height)" Inc="0.1" Default="0.0" Min="-20.0" Max="20.0" ResDependent="None">
+      <Uniform Name="camera_y" Type="float" DisplayName="Camera Y" Page="0" Col="3" Row="1" Tooltip="Camera vertical position (height)" Inc="0.1" Default="0.0" Min="-20.0" Max="20.0" ResDependent="None">
       </Uniform>
 
-      <Uniform Name="camera_z" Type="float" DisplayName="Camera Z" Page="0" Col="2" Row="2" Tooltip="Camera forward/back position (negative = further away)" Inc="0.1" Default="-4.5" Min="-40.0" Max="5.0" ResDependent="None">
+      <Uniform Name="camera_z" Type="float" DisplayName="Camera Z" Page="0" Col="3" Row="2" Tooltip="Camera forward/back (negative = further away)" Inc="0.1" Default="-4.5" Min="-40.0" Max="5.0" ResDependent="None">
       </Uniform>
-
- 
-
 
    </Shader>
 
    <Page Page="0" Name="Fluffy Clouds">
-      <Col Page="0" Col="0" Name="Shape &amp; Density">
+      <Col Page="0" Col="0" Name="Shape">
       </Col>
-      <Col Page="0" Col="1" Name="Lighting &amp; Quality">
+      <Col Page="0" Col="1" Name="Layer &amp; Quality">
       </Col>
-      <Col Page="0" Col="2" Name="Camera">
+      <Col Page="0" Col="2" Name="Lighting">
+      </Col>
+      <Col Page="0" Col="3" Name="Camera">
       </Col>
    </Page>
 
