@@ -3285,6 +3285,53 @@
     "flame_min_version": "2015.0.0"
   },
   {
+    "name": "MM_AtmosphericMist",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "Yes",
+    "transition": "No",
+    "author": "Marcus M",
+    "description": "Procedural animated atmospheric mist using fBm noise. Made by Marcus M.",
+    "flame_min_version": "2025.0.0"
+  },
+  {
+    "name": "MM_Earthquake",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Simulates handheld camera shake and random brightness flicker. Useful for earthquake, impact, and tension effects.",
+    "flame_min_version": "2027.0.0"
+  },
+  {
+    "name": "MM_Fireflies",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "author": "Marcus M",
+    "description": "Procedural fireflies - drifting movement, asymmetric flash (fast rise, slow decay, intermittent bursts). Generator over black - Screen or Add downstream onto your plate.\n\nSetup:\n\n- Count: number of fireflies\n- Seed: reshuffle placement/timing\n- EdgeMargin: inset of spawn field from frame edge\n- DriftSpeed / DriftAmount: wander motion\n- FlashSpeed / FlashRandomness / FlashAttack / FlashDecayPower / FlashSparsity: flash timing\n- ColorR/G/B, Brightness, TwinkleVariation: look\n- GlowSize, CoreSize, CoreBrightness: glow shape\n- ZSpeed, ZNear, ZFar, Spread: depth travel - fireflies swoop in close/huge and recede into the distance, looping\n- TargetX/Y, TargetLooseness: vanishing point fireflies travel toward/from - animate to fake a camera move's trajectory\n- ShowTarget: red crosshair at the Target position, setup aid only - turn off before final render\n- Hero: one always-lit firefly that weaves organically in front of the swarm, its own depth/wander/look, with its own Hero Target X/Y it's roughly attracted to\n- Show Hero Target: blue crosshair at the Hero Target position, setup aid only - turn off before final render\n\nMade by Marcus M.",
+    "flame_min_version": "2015.0.0"
+  },
+  {
+    "name": "MM_Rain",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Procedural rain with turbulence, swirl, clustering and depth layers. Output on black - Screen or Add, or composite directly over an optional Background Plate.",
+    "flame_min_version": "2015.0.0"
+  },
+  {
+    "name": "MM_Snow",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Procedural snow with sway, sparkle, clustering and depth layers. Output on black - Screen or Add.",
+    "flame_min_version": "2015.0.0"
+  },
+  {
     "name": "nob_chromatic_adaptation",
     "shader_type": "Matchbox",
     "action": "Yes",

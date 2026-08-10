@@ -1,0 +1,46 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2027.0.0" LimitInputsToTexture="True" Version="1" Description="Simulates handheld camera shake and random brightness flicker. Useful for earthquake, impact, and tension effects." Name="MM Earthquake">
+<Shader OutputBitDepth="Output" Index="1">
+<Uniform Index="0" NoInput="Error" Tooltip="Source image" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+</Uniform>
+
+<Uniform Row="0" Col="0" Page="0" Default="True" Tooltip="Enable camera shake" Type="bool" DisplayName="Shake On" Name="shakeEnabled">
+</Uniform>
+<Uniform ResDependent="None" Max="0.1" Min="0.0" Default="0.015" Inc="0.001" Tooltip="Maximum shake displacement as a fraction of frame width." Row="1" Col="0" Page="0" Type="float" DisplayName="Shake Amount" Name="shakeAmount">
+</Uniform>
+<Uniform ResDependent="None" Max="60.0" Min="0.1" Default="8.0" Inc="0.1" Tooltip="Speed of the shake oscillation in cycles per second." Row="2" Col="0" Page="0" Type="float" DisplayName="Shake Speed" Name="shakeSpeed">
+</Uniform>
+<Uniform Row="3" Col="0" Page="0" Default="True" Tooltip="Allow horizontal (X) shake" Type="bool" DisplayName="Shake X" Name="shakeX">
+</Uniform>
+<Uniform Row="4" Col="0" Page="0" Default="True" Tooltip="Allow vertical (Y) shake" Type="bool" DisplayName="Shake Y" Name="shakeY">
+</Uniform>
+
+<Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="Enable rotation shake" Type="bool" DisplayName="Rotation On" Name="rotationEnabled">
+</Uniform>
+<Uniform ResDependent="None" Max="10.0" Min="0.0" Default="1.0" Inc="0.1" Tooltip="Maximum rotation shake in degrees." Row="1" Col="1" Page="0" Type="float" DisplayName="Rotation Amount" Name="rotationAmount">
+</Uniform>
+<Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="Enable motion blur across the shake path. Takes 8 samples across the shutter window." Type="bool" DisplayName="Motion Blur On" Name="motionBlurEnabled">
+</Uniform>
+<Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.01" Tooltip="Width of the simulated shutter window as a fraction of the shake cycle. Higher values = longer smear." Row="3" Col="1" Page="0" Type="float" DisplayName="Shutter" Name="motionBlurShutter">
+</Uniform>
+
+<Uniform Row="0" Col="2" Page="0" Default="True" Tooltip="Enable brightness flicker" Type="bool" DisplayName="Flicker On" Name="flickerEnabled">
+</Uniform>
+<Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.15" Inc="0.01" Tooltip="Maximum brightness swing as a fraction of full exposure." Row="1" Col="2" Page="0" Type="float" DisplayName="Flicker Amount" Name="flickerAmount">
+</Uniform>
+<Uniform ResDependent="None" Max="60.0" Min="0.1" Default="12.0" Inc="0.1" Tooltip="How many random brightness samples fire per second." Row="2" Col="2" Page="0" Type="float" DisplayName="Flicker Speed" Name="flickerSpeed">
+</Uniform>
+
+</Shader>
+<Page Name="MM Earthquake" Page="0">
+
+<Col Name="Camera Shake" Col="0" Page="0">
+</Col>
+
+<Col Name="Rotation / Blur" Col="1" Page="0">
+</Col>
+
+<Col Name="Flicker" Col="2" Page="0">
+</Col>
+
+</Page>
+</ShaderNodePreset>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderNodePreset SupportsAdaptiveDegradation="0" LimitInputsToTexture="True" Description="Procedural rain with turbulence, swirl, clustering and depth layers. Output on black - Screen or Add, or composite directly over an optional Background Plate." Name="MM_Rain">
+
+   <Shader OutputBitDepth="Output" Index="1">
+
+      <Uniform Index="0" Name="front" DisplayName="Background Plate (optional)" Type="sampler2D"
+          InputType="Front" NoInput="Black" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Optional - leave unconnected to output rain on black for Screen/Add downstream, as before. Connect a plate to have the rain composite additively directly onto it.">
+      </Uniform>
+
+      <Uniform Index="1" Name="matteFG" DisplayName="FG Occlusion Matte" Type="sampler2D"
+          InputType="Matte" NoInput="Black" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Optional - white hides the foreground rain layer there (an object in front of it). Leave unconnected for no occlusion.">
+      </Uniform>
+
+      <Uniform Index="2" Name="matteMid" DisplayName="Mid Occlusion Matte" Type="sampler2D"
+          InputType="Matte" NoInput="Black" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Optional - white hides the mid rain layer there. Leave unconnected for no occlusion.">
+      </Uniform>
+
+      <Uniform Index="3" Name="matteBG" DisplayName="BG Occlusion Matte" Type="sampler2D"
+          InputType="Matte" NoInput="Black" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Optional - white hides the background rain layer there. Leave unconnected for no occlusion.">
+      </Uniform>
+
+      <!-- Page 0 Col 0 – Shape (5 rows max) -->
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.86" Inc="0.01" Row="0" Col="0" Page="0" DisplayName="Density" Type="float" Name="Density" Tooltip="Master drop density">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.05" Default="0.6" Inc="0.01" Row="1" Col="0" Page="0" DisplayName="Length" Type="float" Name="Length" Tooltip="Streak length">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.05" Default="0.05" Inc="0.01" Row="2" Col="0" Page="0" DisplayName="Width" Type="float" Name="Width" Tooltip="Streak width and softness">
+      </Uniform>
+      <Uniform ResDependent="None" Max="45.0" Min="-45.0" Default="0.0" Inc="0.5" Row="3" Col="0" Page="0" DisplayName="Wind Angle" Type="float" Name="WindAngle" Tooltip="Fall angle. 0 = straight down, positive = right">
+      </Uniform>
+      <Uniform ResDependent="None" Max="20.0" Min="0.0" Default="5.0" Inc="0.5" Row="4" Col="0" Page="0" DisplayName="Gust Strength" Type="float" Name="GustStrength" Tooltip="Gust swing amplitude in degrees">
+      </Uniform>
+
+      <!-- Page 0 Col 1 – Turbulence (5 rows max) -->
+      <Uniform ResDependent="None" Max="4.0" Min="0.0" Default="0.9" Inc="0.1" Row="0" Col="1" Page="0" DisplayName="Gust Speed" Type="float" Name="GustSpeed" Tooltip="How fast gusts and turbulence evolve">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Row="1" Col="1" Page="0" DisplayName="Turbulence" Type="float" Name="TurbulenceAmount" Tooltip="Domain warp intensity - pushes rain into billowing organic clusters">
+      </Uniform>
+      <Uniform ResDependent="None" Max="4.0" Min="0.2" Default="1.1" Inc="0.1" Row="2" Col="1" Page="0" DisplayName="Turb Scale" Type="float" Name="TurbulenceScale" Tooltip="Scale of turbulent eddies - lower = huge billows, higher = fine chaotic detail">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.01" Row="3" Col="1" Page="0" DisplayName="Patchiness" Type="float" Name="SwirlAmount" Tooltip="FBM brightness variation - darker and lighter volumes of rain breaking up the flat look">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.8" Inc="0.01" Row="4" Col="1" Page="0" DisplayName="Clustering" Type="float" Name="ClusterAmount" Tooltip="Large masses of dense rain separated by near-empty gaps - the bellowing curtain effect">
+      </Uniform>
+
+      <!-- Page 0 Col 2 – Mist + Light (5 rows max) -->
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.35" Inc="0.01" Row="0" Col="2" Page="0" DisplayName="Mist Amount" Type="float" Name="MistAmount" Tooltip="Atmospheric mist between the rain layers">
+      </Uniform>
+      <Uniform ResDependent="None" Max="4.0" Min="0.2" Default="1.5" Inc="0.05" Row="1" Col="2" Page="0" DisplayName="Patch Scale" Type="float" Name="MistScale" Tooltip="Size of brightness patches - low = huge slow masses, high = fine mottled variation">
+      </Uniform>
+      <Uniform ResDependent="None" Max="360.0" Min="0.0" Default="30.0" Inc="1.0" Row="2" Col="2" Page="0" DisplayName="Light Angle" Type="float" Name="LightAngle" Tooltip="Light direction for specular glint (degrees, 0=top 90=right)">
+      </Uniform>
+      <Uniform ResDependent="None" Max="3.0" Min="0.0" Default="0.6" Inc="0.05" Row="3" Col="2" Page="0" DisplayName="Light Intensity" Type="float" Name="LightIntensity" Tooltip="Specular glint brightness on foreground streaks">
+      </Uniform>
+      <Uniform ResDependent="None" Max="16.0" Min="0.5" Default="6.0" Inc="0.5" Row="4" Col="2" Page="0" DisplayName="Glint Sharpness" Type="float" Name="GlintSharpness" Tooltip="How tight the specular highlight is">
+      </Uniform>
+
+      <!-- Page 1 Col 0 – Speed (3 rows) -->
+      <Uniform ResDependent="None" Max="4.0" Min="0.2" Default="2.2" Inc="0.05" Row="0" Col="0" Page="1" DisplayName="FG Speed" Type="float" Name="FGSpeed" Tooltip="Foreground layer fall speed - large bright drops">
+      </Uniform>
+      <Uniform ResDependent="None" Max="4.0" Min="0.1" Default="1.3" Inc="0.05" Row="1" Col="0" Page="1" DisplayName="Mid Speed" Type="float" Name="MidSpeed" Tooltip="Mid layer fall speed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.05" Default="0.6" Inc="0.05" Row="2" Col="0" Page="1" DisplayName="BG Speed" Type="float" Name="BGSpeed" Tooltip="Background layer fall speed - fine dense texture">
+      </Uniform>
+
+      <!-- Page 1 Col 1 – Enable (4 rows) -->
+      <Uniform Row="0" Col="1" Page="1" DisplayName="Rain On" Default="True" Tooltip="Master on/off for the whole effect" Type="bool" Name="RainEnable">
+      </Uniform>
+      <Uniform Row="1" Col="1" Page="1" DisplayName="FG On" Default="True" Tooltip="Toggle the foreground drop layer" Type="bool" Name="FGEnable">
+      </Uniform>
+      <Uniform Row="2" Col="1" Page="1" DisplayName="Mid On" Default="True" Tooltip="Toggle the mid drop layer" Type="bool" Name="MidEnable">
+      </Uniform>
+      <Uniform Row="3" Col="1" Page="1" DisplayName="BG On" Default="True" Tooltip="Toggle the background drop layer" Type="bool" Name="BGEnable">
+      </Uniform>
+
+      <!-- Page 1 Col 2 – Density (3 rows) -->
+      <Uniform ResDependent="None" Max="3.0" Min="0.0" Default="1.0" Inc="0.01" Row="0" Col="2" Page="1" DisplayName="FG Density" Type="float" Name="FGDensity" Tooltip="Foreground layer density multiplier. Above 1.0, cells shrink to pack in more drops for genuinely heavier rain rather than just raising the odds.">
+      </Uniform>
+      <Uniform ResDependent="None" Max="3.0" Min="0.0" Default="1.0" Inc="0.01" Row="1" Col="2" Page="1" DisplayName="Mid Density" Type="float" Name="MidDensity" Tooltip="Mid layer density multiplier. Above 1.0, cells shrink to pack in more drops for genuinely heavier rain rather than just raising the odds.">
+      </Uniform>
+      <Uniform ResDependent="None" Max="3.0" Min="0.0" Default="1.0" Inc="0.01" Row="2" Col="2" Page="1" DisplayName="BG Density" Type="float" Name="BGDensity" Tooltip="Background layer density multiplier. Above 1.0, cells shrink to pack in more drops for genuinely heavier rain rather than just raising the odds.">
+      </Uniform>
+
+      <!-- Page 2 Col 0 – Position (3 rows) -->
+      <Uniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.0" Inc="1.0" Row="0" Col="0" Page="2" DisplayName="Position X" Type="float" Name="PosX" Tooltip="Horizontal position in pixels">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.0" Inc="1.0" Row="1" Col="0" Page="2" DisplayName="Position Y" Type="float" Name="PosY" Tooltip="Vertical position in pixels">
+      </Uniform>
+      <Uniform ResDependent="None" Max="180.0" Min="-180.0" Default="0.0" Inc="0.1" Row="2" Col="0" Page="2" DisplayName="Rotation" Type="float" Name="Rotation" Tooltip="Rotates the whole rain field">
+      </Uniform>
+
+      <!-- Page 2 Col 1 – Global Transform (3 rows) -->
+      <Uniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.0" Inc="1.0" Row="0" Col="1" Page="2" DisplayName="Global X" Type="float" Name="GlobalX" Tooltip="Global horizontal offset, applied after Position/Rotation">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.0" Inc="1.0" Row="1" Col="1" Page="2" DisplayName="Global Y" Type="float" Name="GlobalY" Tooltip="Global vertical offset, applied after Position/Rotation">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.1" Default="1.0" Inc="0.01" Row="2" Col="1" Page="2" DisplayName="Global Scale" Type="float" Name="GlobalScale" Tooltip="Zooms the whole rain field around frame centre">
+      </Uniform>
+
+      <!-- Page 3 Col 0 – Crop (4 rows) -->
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Row="0" Col="0" Page="3" DisplayName="Crop Left" Type="float" Name="CropL">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Row="1" Col="0" Page="3" DisplayName="Crop Right" Type="float" Name="CropR">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Row="2" Col="0" Page="3" DisplayName="Crop Top" Type="float" Name="CropT">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01" Row="3" Col="0" Page="3" DisplayName="Crop Bottom" Type="float" Name="CropB">
+      </Uniform>
+
+      <!-- Page 3 Col 1 – Edge Softness (4 rows) -->
+      <Uniform ResDependent="None" Max="0.5" Min="0.0" Default="0.0" Inc="0.01" Row="0" Col="1" Page="3" DisplayName="Soft Left" Type="float" Name="SoftL">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.5" Min="0.0" Default="0.0" Inc="0.01" Row="1" Col="1" Page="3" DisplayName="Soft Right" Type="float" Name="SoftR">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.5" Min="0.0" Default="0.0" Inc="0.01" Row="2" Col="1" Page="3" DisplayName="Soft Top" Type="float" Name="SoftT">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.5" Min="0.0" Default="0.0" Inc="0.01" Row="3" Col="1" Page="3" DisplayName="Soft Bottom" Type="float" Name="SoftB">
+      </Uniform>
+
+      <!-- Page 3 Col 2 – Enable (4 rows) -->
+      <Uniform Row="0" Col="2" Page="3" DisplayName="Left On" Default="False" Type="bool" Name="CropLOn">
+      </Uniform>
+      <Uniform Row="1" Col="2" Page="3" DisplayName="Right On" Default="False" Type="bool" Name="CropROn">
+      </Uniform>
+      <Uniform Row="2" Col="2" Page="3" DisplayName="Top On" Default="False" Type="bool" Name="CropTOn">
+      </Uniform>
+      <Uniform Row="3" Col="2" Page="3" DisplayName="Bottom On" Default="False" Type="bool" Name="CropBOn">
+      </Uniform>
+
+      <!-- Page 4 Col 1 – Defocus (3 rows). Occlusion mattes are the texture
+           inputs declared above - no float controls needed for them. -->
+      <Uniform ResDependent="None" Max="20.0" Min="0.0" Default="0.0" Inc="0.1" Row="0" Col="1" Page="4" DisplayName="FG Defocus" Type="float" Name="FGDefocus" Tooltip="Foreground layer soft-focus blur">
+      </Uniform>
+      <Uniform ResDependent="None" Max="20.0" Min="0.0" Default="0.0" Inc="0.1" Row="1" Col="1" Page="4" DisplayName="Mid Defocus" Type="float" Name="MidDefocus" Tooltip="Mid layer soft-focus blur">
+      </Uniform>
+      <Uniform ResDependent="None" Max="20.0" Min="0.0" Default="0.0" Inc="0.1" Row="2" Col="1" Page="4" DisplayName="BG Defocus" Type="float" Name="BGDefocus" Tooltip="Background layer soft-focus blur">
+      </Uniform>
+      <Uniform ResDependent="None" Max="20.0" Min="0.0" Default="0.0" Inc="0.1" Row="3" Col="1" Page="4" DisplayName="Mist Defocus" Type="float" Name="MistDefocus" Tooltip="Mist layer soft-focus blur">
+      </Uniform>
+
+      <!-- Page 4 Col 2 – Enable (1 row) -->
+      <Uniform Row="0" Col="2" Page="4" DisplayName="Mist On" Default="True" Tooltip="Toggle the mist/fine-spray micro layer independently of FG/Mid/BG" Type="bool" Name="MistEnable">
+      </Uniform>
+
+   </Shader>
+
+   <Page Name="Rain" Page="0">
+      <Col Name="Shape" Col="0" Page="0">
+      </Col>
+      <Col Name="Turbulence" Col="1" Page="0">
+      </Col>
+      <Col Name="Light" Col="2" Page="0">
+      </Col>
+   </Page>
+
+   <Page Name="Speed" Page="1">
+      <Col Name="Speed" Col="0" Page="1">
+      </Col>
+      <Col Name="Enable" Col="1" Page="1">
+      </Col>
+      <Col Name="Density" Col="2" Page="1">
+      </Col>
+   </Page>
+
+   <Page Name="Transform" Page="2">
+      <Col Name="Position" Col="0" Page="2">
+      </Col>
+      <Col Name="Global" Col="1" Page="2">
+      </Col>
+   </Page>
+
+   <Page Name="Crop" Page="3">
+      <Col Name="Crop" Col="0" Page="3">
+      </Col>
+      <Col Name="Soft Edge" Col="1" Page="3">
+      </Col>
+      <Col Name="Enable" Col="2" Page="3">
+      </Col>
+   </Page>
+
+   <Page Name="Composite" Page="4">
+      <Col Name="Defocus" Col="1" Page="4">
+      </Col>
+      <Col Name="Enable" Col="2" Page="4">
+      </Col>
+   </Page>
+
+</ShaderNodePreset>

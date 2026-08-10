@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderNodePreset
+    Name="MM Atmospheric Mist"
+    Description="Procedural animated atmospheric mist using fBm noise. Made by Marcus M."
+    ShaderType="Matchbox"
+    SoftwareVersion="2025"
+    SupportsTimeline="True"
+    TimelineUseBack="False"
+    SupportsAction="False"
+    DefaultIsNoOp="False"
+    LimitInputsToTexture="True"
+    SupportsAdaptiveDegradation="False"
+    CommercialUsePermitted="True"
+    Version="1.4">
+
+    <Shader Index="1" OutputBitDepth="Output">
+
+        <Uniform Index="0" Name="front" DisplayName="Front" Type="sampler2D"
+            InputType="Front" NoInput="Error" Mipmaps="False"
+            GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+            GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" />
+
+        <!-- ═══ PAGE 0: Mist Controls ═══ -->
+
+        <!-- Col 0: Wind -->
+        <Uniform Name="WindDir" Type="float" DisplayName="Wind Direction"
+            Default="0.0" Min="0.0" Max="360.0" Inc="1.0"
+            ResDependent="None" Page="0" Col="0" Row="0" />
+        <Uniform Name="WindSpeed" Type="float" DisplayName="Wind Speed"
+            Default="5.0" Min="0.0" Max="100.0" Inc="0.1"
+            ResDependent="None" Page="0" Col="0" Row="1" />
+        <Uniform Name="Turbulence" Type="float" DisplayName="Turbulence"
+            Default="0.3" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="0" Col="0" Row="2" />
+        <Uniform Name="TurbulenceSpeed" Type="float" DisplayName="Turbulence Speed"
+            Default="5.0" Min="0.0" Max="100.0" Inc="0.1"
+            ResDependent="None" Page="0" Col="0" Row="3" />
+        <Uniform Name="Height" Type="float" DisplayName="Height"
+            Default="0.5" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="0" Col="0" Row="4" />
+
+        <!-- Col 1: Look -->
+        <Uniform Name="Density" Type="float" DisplayName="Density"
+            Default="0.5" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="0" Col="1" Row="0" />
+        <Uniform Name="Scale" Type="float" DisplayName="Scale"
+            Default="3.0" Min="0.1" Max="10.0" Inc="0.1"
+            ResDependent="None" Page="0" Col="1" Row="1" />
+
+        <!-- Col 2: Crop -->
+        <Uniform Name="CropL" Type="float" DisplayName="Crop Left"
+            Default="0.0" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="0" Col="2" Row="0" />
+        <Uniform Name="CropR" Type="float" DisplayName="Crop Right"
+            Default="0.0" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="0" Col="2" Row="1" />
+        <Uniform Name="CropT" Type="float" DisplayName="Crop Top"
+            Default="0.0" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="0" Col="2" Row="2" />
+        <Uniform Name="CropB" Type="float" DisplayName="Crop Bottom"
+            Default="0.0" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="0" Col="2" Row="3" />
+        <Uniform Name="Seed" Type="float" DisplayName="Seed"
+            Default="0.0" Min="0.0" Max="100.0" Inc="1.0"
+            ResDependent="None" Page="0" Col="2" Row="4" />
+
+        <!-- Col 3: Edge Softness -->
+        <Uniform Name="SoftL" Type="float" DisplayName="Soft Left"
+            Default="0.0" Min="0.0" Max="0.5" Inc="0.01"
+            ResDependent="None" Page="0" Col="3" Row="0" />
+        <Uniform Name="SoftR" Type="float" DisplayName="Soft Right"
+            Default="0.0" Min="0.0" Max="0.5" Inc="0.01"
+            ResDependent="None" Page="0" Col="3" Row="1" />
+        <Uniform Name="SoftT" Type="float" DisplayName="Soft Top"
+            Default="0.0" Min="0.0" Max="0.5" Inc="0.01"
+            ResDependent="None" Page="0" Col="3" Row="2" />
+        <Uniform Name="SoftB" Type="float" DisplayName="Soft Bottom"
+            Default="0.0" Min="0.0" Max="0.5" Inc="0.01"
+            ResDependent="None" Page="0" Col="3" Row="3" />
+
+        <!-- Col 4: Enable -->
+        <Uniform Name="CropLOn" Type="bool" DisplayName="Left On"
+            Default="True" Page="0" Col="4" Row="0" />
+        <Uniform Name="CropROn" Type="bool" DisplayName="Right On"
+            Default="True" Page="0" Col="4" Row="1" />
+        <Uniform Name="CropTOn" Type="bool" DisplayName="Top On"
+            Default="True" Page="0" Col="4" Row="2" />
+        <Uniform Name="CropBOn" Type="bool" DisplayName="Bottom On"
+            Default="True" Page="0" Col="4" Row="3" />
+
+        <!-- ═══ PAGE 1: Transform ═══ -->
+
+        <Uniform Name="PosX" Type="float" DisplayName="Position X"
+            Default="0.0" Min="-100000.0" Max="100000.0" Inc="1.0"
+            ResDependent="None" Page="1" Col="0" Row="0"
+            Tooltip="Horizontal position in pixels. Matches Flame axis X." />
+        <Uniform Name="PosY" Type="float" DisplayName="Position Y"
+            Default="0.0" Min="-100000.0" Max="100000.0" Inc="1.0"
+            ResDependent="None" Page="1" Col="0" Row="1"
+            Tooltip="Vertical position in pixels. Matches Flame axis Y." />
+        <Uniform Name="Rotation" Type="float" DisplayName="Rotation"
+            Default="0.0" Min="-180.0" Max="180.0" Inc="0.1"
+            ResDependent="None" Page="1" Col="0" Row="2" />
+        <Uniform Name="GlobalX" Type="float" DisplayName="Global X"
+            Default="0.0" Min="-100000.0" Max="100000.0" Inc="1.0"
+            ResDependent="None" Page="1" Col="0" Row="3" />
+        <Uniform Name="GlobalY" Type="float" DisplayName="Global Y"
+            Default="0.0" Min="-100000.0" Max="100000.0" Inc="1.0"
+            ResDependent="None" Page="1" Col="0" Row="4" />
+        <Uniform Name="WindZ" Type="float" DisplayName="Wind Z (Depth)"
+            Default="0.0" Min="-10.0" Max="10.0" Inc="0.1"
+            ResDependent="None" Page="1" Col="0" Row="5"
+            Tooltip="Simulates mist moving in Z depth. Positive = approaching, negative = receding." />
+        <Uniform Name="GlobalScale" Type="float" DisplayName="Global Scale"
+            Default="1.0" Min="0.1" Max="10.0" Inc="0.01"
+            ResDependent="None" Page="1" Col="0" Row="6" />
+
+        <!-- ═══ PAGE 2: Colour ═══ -->
+
+        <Uniform Name="ColourR" Type="float" DisplayName="Colour R"
+            Default="1.0" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="2" Col="0" Row="0" />
+        <Uniform Name="ColourG" Type="float" DisplayName="Colour G"
+            Default="1.0" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="2" Col="0" Row="1" />
+        <Uniform Name="ColourB" Type="float" DisplayName="Colour B"
+            Default="1.0" Min="0.0" Max="1.0" Inc="0.01"
+            ResDependent="None" Page="2" Col="0" Row="2" />
+
+    </Shader>
+
+    <Page Name="Mist Controls" Page="0">
+        <Col Name="Wind" Col="0" Page="0" />
+        <Col Name="Look" Col="1" Page="0" />
+        <Col Name="Crop" Col="2" Page="0" />
+        <Col Name="Edge Softness" Col="3" Page="0" />
+        <Col Name="Enable" Col="4" Page="0" />
+    </Page>
+
+    <Page Name="Transform" Page="1">
+        <Col Name="Position and Rotation" Col="0" Page="1" />
+    </Page>
+
+    <Page Name="Colour" Page="2">
+        <Col Name="RGB" Col="0" Page="2" />
+    </Page>
+
+</ShaderNodePreset>

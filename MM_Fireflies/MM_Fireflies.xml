@@ -1,0 +1,188 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="
+Procedural fireflies - drifting movement, asymmetric flash (fast rise, slow decay, intermittent bursts). Generator over black - Screen or Add downstream onto your plate.
+
+Setup:
+
+- Count: number of fireflies
+- Seed: reshuffle placement/timing
+- EdgeMargin: inset of spawn field from frame edge
+- DriftSpeed / DriftAmount: wander motion
+- FlashSpeed / FlashRandomness / FlashAttack / FlashDecayPower / FlashSparsity: flash timing
+- ColorR/G/B, Brightness, TwinkleVariation: look
+- GlowSize, CoreSize, CoreBrightness: glow shape
+- ZSpeed, ZNear, ZFar, Spread: depth travel - fireflies swoop in close/huge and recede into the distance, looping
+- TargetX/Y, TargetLooseness: vanishing point fireflies travel toward/from - animate to fake a camera move's trajectory
+- ShowTarget: red crosshair at the Target position, setup aid only - turn off before final render
+- Hero: one always-lit firefly that weaves organically in front of the swarm, its own depth/wander/look, with its own Hero Target X/Y it's roughly attracted to
+- Show Hero Target: blue crosshair at the Hero Target position, setup aid only - turn off before final render
+
+Made by Marcus M." Name="MM Fireflies">
+   <Shader OutputBitDepth="Output" Index="1">
+
+      <Uniform Index="0" Name="front" DisplayName="Front (optional)" Type="sampler2D"
+          InputType="Front" NoInput="Black" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Not used by this generator - present only because Matchbox requires a Front input alongside any other texture input. Leave unconnected.">
+      </Uniform>
+
+      <Uniform Index="1" Name="sprite" DisplayName="External Sprite" Type="sampler2D"
+          NoInput="Black" InputColor="200, 130, 40" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Optional colour image drawn in place of the procedural glow/core shape when Use External Input is on. Scales with Glow Size and depth like the normal fireflies. Shape comes from the separate External Sprite Alpha input, not this image's own alpha.">
+      </Uniform>
+
+      <Uniform Index="2" Name="spriteAlpha" DisplayName="External Sprite Alpha" Type="sampler2D"
+          InputType="Matte" NoInput="White" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Greyscale shape/matte for the External Sprite - white = fully visible, black = hidden. Leave unconnected to treat the sprite as a fully opaque square.">
+      </Uniform>
+
+      <Uniform Index="3" Name="heroSprite" DisplayName="Hero External Sprite" Type="sampler2D"
+          NoInput="Black" InputColor="200, 130, 40" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Optional colour image for the Hero firefly, drawn in place of its procedural glow/core shape when Hero Use External Input is on. Shape comes from the separate Hero External Sprite Alpha input.">
+      </Uniform>
+
+      <Uniform Index="4" Name="heroSpriteAlpha" DisplayName="Hero External Sprite Alpha" Type="sampler2D"
+          InputType="Matte" NoInput="White" Mipmaps="False"
+          GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+          Tooltip="Greyscale shape/matte for the Hero External Sprite - white = fully visible, black = hidden. Leave unconnected to treat the sprite as a fully opaque square.">
+      </Uniform>
+
+      <Uniform Max="300" Min="0" Default="8" Inc="1" Tooltip="Each firefly is a per-pixel loop iteration - very high counts will cost render time." Row="0" Col="0" Page="0" DisplayName="Count" Type="int" Name="Count">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="0.0" Inc="1.0" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Seed" Type="float" Name="Seed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.5" Min="0.0" Default="0.08" Inc="0.001" Tooltip="" Row="2" Col="0" Page="0" DisplayName="Edge Margin" Type="float" Name="EdgeMargin">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="4.0" Min="0.0" Default="0.04" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" DisplayName="Drift Speed" Type="float" Name="DriftSpeed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.143" Inc="0.001" Tooltip="" Row="1" Col="1" Page="0" DisplayName="Drift Amount" Type="float" Name="DriftAmount">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="0.08" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" DisplayName="Flash Speed" Type="float" Name="FlashSpeed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.4" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" DisplayName="Flash Randomness" Type="float" Name="FlashRandomness">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.001" Default="0.08" Inc="0.001" Tooltip="" Row="2" Col="2" Page="0" DisplayName="Flash Attack" Type="float" Name="FlashAttack">
+      </Uniform>
+      <Uniform ResDependent="None" Max="8.0" Min="0.5" Default="2.5" Inc="0.01" Tooltip="" Row="3" Col="2" Page="0" DisplayName="Flash Decay Power" Type="float" Name="FlashDecayPower">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.35" Inc="0.01" Tooltip="" Row="4" Col="2" Page="0" DisplayName="Flash Sparsity" Type="float" Name="FlashSparsity">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.65" Inc="0.001" Tooltip="" Row="0" Col="3" Page="0" DisplayName="Colour R" Type="float" Name="ColorR">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="" Row="1" Col="3" Page="0" DisplayName="Colour G" Type="float" Name="ColorG">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.35" Inc="0.001" Tooltip="" Row="2" Col="3" Page="0" DisplayName="Colour B" Type="float" Name="ColorB">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="1.5" Inc="0.01" Tooltip="" Row="3" Col="3" Page="0" DisplayName="Brightness" Type="float" Name="Brightness">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.91" Inc="0.01" Tooltip="" Row="4" Col="3" Page="0" DisplayName="Twinkle Variation" Type="float" Name="TwinkleVariation">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.2" Min="0.0001" Default="0.02" Inc="0.0005" Tooltip="" Row="5" Col="3" Page="0" DisplayName="Glow Size" Type="float" Name="GlowSize">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.05" Min="0.0001" Default="0.004" Inc="0.0005" Tooltip="" Row="6" Col="3" Page="0" DisplayName="Core Size" Type="float" Name="CoreSize">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="2.0" Inc="0.01" Tooltip="" Row="7" Col="3" Page="0" DisplayName="Core Brightness" Type="float" Name="CoreBrightness">
+      </Uniform>
+      <Uniform Row="8" Col="3" Page="0" DisplayName="Use External Input" Default="False" Tooltip="Draw the connected External Sprite image instead of the procedural glow/core shape." Type="bool" Name="UseSprite">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="0.05" Default="1.0" Inc="0.01" Row="9" Col="3" Page="0" DisplayName="Sprite Size" Type="float" Name="SpriteSize" Tooltip="Size multiplier for the External Sprite image, on top of Glow Size/depth scaling.">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.020" Inc="0.001" Tooltip="How fast fireflies travel through depth. 0 = no forward travel (static depth per firefly)." Row="0" Col="0" Page="1" DisplayName="Z Speed" Type="float" Name="ZSpeed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.005" Default="0.035" Inc="0.001" Tooltip="How close/huge fireflies start out - as if swooping in from right out of camera. Lower = bigger, punchier swoop." Row="1" Col="0" Page="1" DisplayName="Z Near" Type="float" Name="ZNear">
+      </Uniform>
+      <Uniform ResDependent="None" Max="50.0" Min="1.0" Default="10.0" Inc="0.1" Tooltip="How far into the distance fireflies recede before looping back to close/huge. Higher = they vanish further away." Row="2" Col="0" Page="1" DisplayName="Z Far" Type="float" Name="ZFar">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="1.0" Inc="0.01" Tooltip="How far fireflies sweep outward/inward from centre with depth. 0 = only the size changes, 1 = full perspective swoop." Row="3" Col="0" Page="1" DisplayName="Spread" Type="float" Name="Spread">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.507" Inc="0.001" Tooltip="Horizontal position of the vanishing point fireflies travel toward/from, 0-1 across the frame (can go outside 0-1 to sit off-screen). Animate to fake the trajectory implied by a camera move." Row="0" Col="1" Page="1" DisplayName="Target X" Type="float" Name="TargetX">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.493" Inc="0.001" Tooltip="Vertical position of the vanishing point, 0-1 across the frame." Row="1" Col="1" Page="1" DisplayName="Target Y" Type="float" Name="TargetY">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.15" Inc="0.001" Tooltip="How loosely each firefly sticks to the target point, in frame-height units. 0 = every firefly converges to exactly the same point; higher scatters each firefly's own vanishing point around it." Row="2" Col="1" Page="1" DisplayName="Target Looseness" Type="float" Name="TargetLooseness">
+      </Uniform>
+      <Uniform Row="4" Col="1" Page="1" DisplayName="Show Target" Default="False" Tooltip="Draws a red crosshair at the Target position as a setup aid. Turn off before final render." Type="bool" Name="ShowTarget">
+      </Uniform>
+
+      <Uniform Row="0" Col="0" Page="2" DisplayName="Hero Enable" Default="True" Tooltip="Turn on a single always-lit hero firefly that weaves organically in front of the swarm." Type="bool" Name="HeroEnable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.07" Inc="0.01" Tooltip="How fast the hero weaves around the frame." Row="1" Col="0" Page="2" DisplayName="Hero Speed" Type="float" Name="HeroSpeed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.5" Min="0.0" Default="0.55" Inc="0.01" Tooltip="How far the hero wanders from centre, in frame-height units. Large values let it drift briefly off-screen and back." Row="2" Col="0" Page="2" DisplayName="Hero Wander" Type="float" Name="HeroWander">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.25" Inc="0.01" Tooltip="How fast the hero's distance from camera wanders." Row="3" Col="0" Page="2" DisplayName="Hero Z Speed" Type="float" Name="HeroZSpeed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.005" Default="0.03" Inc="0.001" Tooltip="Closest/huge-est the hero gets." Row="4" Col="0" Page="2" DisplayName="Hero Z Near" Type="float" Name="HeroZNear">
+      </Uniform>
+      <Uniform ResDependent="None" Max="50.0" Min="1.0" Default="6.0" Inc="0.1" Tooltip="Farthest/tiniest the hero recedes to." Row="5" Col="0" Page="2" DisplayName="Hero Z Far" Type="float" Name="HeroZFar">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.001" Tooltip="Hero glow tint - red channel." Row="1" Col="1" Page="2" DisplayName="Hero Colour R" Type="float" Name="HeroColorR">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.75" Inc="0.001" Tooltip="Hero glow tint - green channel." Row="2" Col="1" Page="2" DisplayName="Hero Colour G" Type="float" Name="HeroColorG">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.25" Inc="0.001" Tooltip="Hero glow tint - blue channel." Row="3" Col="1" Page="2" DisplayName="Hero Colour B" Type="float" Name="HeroColorB">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="2.5" Inc="0.01" Tooltip="Hero overall intensity multiplier." Row="4" Col="1" Page="2" DisplayName="Hero Brightness" Type="float" Name="HeroBrightness">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="0.0" Default="0.8" Inc="0.01" Tooltip="How fast the hero's glow gently breathes brighter/dimmer." Row="5" Col="1" Page="2" DisplayName="Hero Pulse Speed" Type="float" Name="HeroPulseSpeed">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.3" Inc="0.01" Tooltip="How much the hero's breathing dips its brightness. 0 = always fully lit." Row="6" Col="1" Page="2" DisplayName="Hero Pulse Depth" Type="float" Name="HeroPulseDepth">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.3" Min="0.0001" Default="0.03" Inc="0.0005" Tooltip="Hero soft glow radius, in frame-height units, before depth scaling." Row="7" Col="1" Page="2" DisplayName="Hero Glow Size" Type="float" Name="HeroGlowSize">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.1" Min="0.0001" Default="0.006" Inc="0.0005" Tooltip="Hero hot core radius, before depth scaling." Row="8" Col="1" Page="2" DisplayName="Hero Core Size" Type="float" Name="HeroCoreSize">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.0" Default="3.0" Inc="0.01" Tooltip="Extra intensity the hero's hot core adds on top of its soft glow." Row="9" Col="1" Page="2" DisplayName="Hero Core Brightness" Type="float" Name="HeroCoreBrightness">
+      </Uniform>
+      <Uniform Row="10" Col="1" Page="2" DisplayName="Hero Use External Input" Default="False" Tooltip="Draw the connected Hero External Sprite image instead of the procedural glow/core shape." Type="bool" Name="HeroUseSprite">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="0.05" Default="1.0" Inc="0.01" Row="11" Col="1" Page="2" DisplayName="Hero Sprite Size" Type="float" Name="HeroSpriteSize" Tooltip="Size multiplier for the Hero External Sprite image, on top of Hero Glow Size/depth scaling.">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.5" Inc="0.001" Tooltip="Where the hero is roughly attracted to, horizontally, 0-1 across the frame. Its own wander still orbits loosely around this point." Row="0" Col="0" Page="3" DisplayName="Hero Target X" Type="float" Name="HeroTargetX">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="-1.0" Default="0.5" Inc="0.001" Tooltip="Where the hero is roughly attracted to, vertically, 0-1 across the frame." Row="1" Col="0" Page="3" DisplayName="Hero Target Y" Type="float" Name="HeroTargetY">
+      </Uniform>
+      <Uniform Row="2" Col="0" Page="3" DisplayName="Show Hero Target" Default="False" Tooltip="Draws a blue crosshair at the Hero Target position as a setup aid. Turn off before final render." Type="bool" Name="ShowHeroTarget">
+      </Uniform>
+   </Shader>
+   <Page Name="Firefly" Page="0">
+      <Col Name="Population" Col="0" Page="0">
+      </Col>
+      <Col Name="Movement" Col="1" Page="0">
+      </Col>
+      <Col Name="Flash" Col="2" Page="0">
+      </Col>
+      <Col Name="Look" Col="3" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Depth" Page="1">
+      <Col Name="Depth" Col="0" Page="1">
+      </Col>
+      <Col Name="Target" Col="1" Page="1">
+      </Col>
+   </Page>
+   <Page Name="Hero" Page="2">
+      <Col Name="Motion" Col="0" Page="2">
+      </Col>
+      <Col Name="Look" Col="1" Page="2">
+      </Col>
+   </Page>
+   <Page Name="Hero Target" Page="3">
+      <Col Name="Target" Col="0" Page="3">
+      </Col>
+   </Page>
+</ShaderNodePreset>
