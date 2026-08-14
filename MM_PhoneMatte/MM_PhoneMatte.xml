@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderNodePreset SupportsAdaptiveDegradation="0" Description="Resolution-independent rounded-rect phone matte with an adjustable lozenge-shaped camera cutout, for matting real phone camera plates back into a mockup." Name="MM_PhoneMatte">
+
+   <Shader OutputBitDepth="Output" Index="1">
+
+      <!-- Page 0 Col 0 – Position (2 rows) -->
+      <Uniform ResDependent="None" Max="2000.0" Min="-2000.0" Default="0.0" Inc="1.0" Row="0" Col="0" Page="0" DisplayName="Pos X" Type="float" Name="PosX" Tooltip="Horizontal position of the phone matte, in pixels">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2000.0" Min="-2000.0" Default="0.0" Inc="1.0" Row="1" Col="0" Page="0" DisplayName="Pos Y" Type="float" Name="PosY" Tooltip="Vertical position of the phone matte, in pixels">
+      </Uniform>
+
+      <!-- Page 0 Col 1 – Shape (4 rows) -->
+      <Uniform ResDependent="None" Max="2.0" Min="0.01" Default="0.5" Inc="0.005" Row="0" Col="1" Page="0" DisplayName="Width" Type="float" Name="Width" Tooltip="Phone matte width, as a proportion of frame height">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.01" Default="1.0" Inc="0.005" Row="1" Col="1" Page="0" DisplayName="Height" Type="float" Name="Height" Tooltip="Phone matte height, as a proportion of frame height">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.5" Min="0.0" Default="0.06" Inc="0.001" Row="2" Col="1" Page="0" DisplayName="Corner Radius" Type="float" Name="CornerRadius" Tooltip="Roundness of the phone body's corners">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.02" Min="0.0001" Default="0.0015" Inc="0.0005" Row="3" Col="1" Page="0" DisplayName="Edge Softness" Type="float" Name="EdgeSoftness" Tooltip="Feather on the matte edges - 0 for a hard-edged garbage matte, higher to soften for compositing">
+      </Uniform>
+
+      <!-- Page 0 Col 2 – Camera Hole (1 row) -->
+      <Uniform Row="0" Col="2" Page="0" DisplayName="Camera Hole On" Default="False" Tooltip="Toggle a cutout hole where the camera lens sits, so real camera-plate footage can be matted back in behind it" Type="bool" Name="HoleOn">
+      </Uniform>
+
+      <!-- Page 0 Col 3 – Hole Shape (5 rows) -->
+      <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.0" Inc="0.001" Row="0" Col="3" Page="0" DisplayName="Hole Pos X" Type="float" Name="HolePosX" Tooltip="Horizontal offset of the camera hole from the phone matte's centre, as a proportion of frame height">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.42" Inc="0.001" Row="1" Col="3" Page="0" DisplayName="Hole Pos Y" Type="float" Name="HolePosY" Tooltip="Vertical offset of the camera hole from the phone matte's centre, as a proportion of frame height">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.3" Min="0.001" Default="0.035" Inc="0.001" Row="2" Col="3" Page="0" DisplayName="Hole Width" Type="float" Name="HoleWidth" Tooltip="Width of the camera cutout">
+      </Uniform>
+      <Uniform ResDependent="None" Max="0.3" Min="0.001" Default="0.035" Inc="0.001" Row="3" Col="3" Page="0" DisplayName="Hole Height" Type="float" Name="HoleHeight" Tooltip="Height of the camera cutout - set taller/narrower than Width for a lozenge covering a camera+sensor cluster">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Row="4" Col="3" Page="0" DisplayName="Hole Roundness" Type="float" Name="HoleRoundness" Tooltip="0 = sharp rounded-rect cutout, 1 = full lozenge/pill shape with fully rounded ends">
+      </Uniform>
+
+   </Shader>
+
+   <Page Name="Phone" Page="0">
+      <Col Name="Position" Col="0" Page="0">
+      </Col>
+      <Col Name="Shape" Col="1" Page="0">
+      </Col>
+      <Col Name="Camera Hole" Col="2" Page="0">
+      </Col>
+      <Col Name="Hole Shape" Col="3" Page="0">
+      </Col>
+   </Page>
+
+</ShaderNodePreset>

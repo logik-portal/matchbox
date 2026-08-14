@@ -3314,6 +3314,15 @@
     "flame_min_version": "2015.0.0"
   },
   {
+    "name": "MM_PhoneMatte",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Resolution-independent rounded-rect phone matte with an adjustable lozenge-shaped camera cutout, for matting real phone camera plates back into a mockup.",
+    "flame_min_version": "2015.0.0"
+  },
+  {
     "name": "MM_Rain",
     "shader_type": "Matchbox",
     "action": "No",
