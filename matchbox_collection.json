@@ -3314,6 +3314,15 @@
     "flame_min_version": "2015.0.0"
   },
   {
+    "name": "MM_Jumbo",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "description": "Turns a clip into a jumbotron/LED-wall look - resolves the image into individual glowing RGB (or mono) sub-diode dots with black gaps and bloom, matching a real LED video wall close-up.",
+    "flame_min_version": "2015.0.0"
+  },
+  {
     "name": "MM_PhoneMatte",
     "shader_type": "Matchbox",
     "action": "No",

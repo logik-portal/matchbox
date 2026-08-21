@@ -32,7 +32,11 @@
       </Uniform>
       <Uniform ResDependent="None" Max="0.3" Min="0.001" Default="0.035" Inc="0.001" Row="3" Col="3" Page="0" DisplayName="Hole Height" Type="float" Name="HoleHeight" Tooltip="Height of the camera cutout - set taller/narrower than Width for a lozenge covering a camera+sensor cluster">
       </Uniform>
-      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Row="4" Col="3" Page="0" DisplayName="Hole Roundness" Type="float" Name="HoleRoundness" Tooltip="0 = sharp rounded-rect cutout, 1 = full lozenge/pill shape with fully rounded ends">
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01" Row="4" Col="3" Page="0" DisplayName="Hole Roundness" Type="float" Name="HoleRoundness" Tooltip="0 = sharp rounded-rect cutout, 1 = full lozenge/pill shape with fully rounded ends. Not used when Hole Style is set to Waterdrop.">
+      </Uniform>
+
+      <!-- Page 0 Col 4 – Hole Style (1 row) -->
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.0" Inc="1.0" Row="0" Col="4" Page="0" DisplayName="Hole Style" Type="float" Name="HoleStyle" Tooltip="0 = lozenge/pill cutout (uses Hole Roundness), 1 = waterdrop/teardrop notch - a circle with a small subtle point on top, 2 = Phone Lens notch - traced from a real reference photo: a narrow rounded-bottom capsule flaring out to the full cutout width at the top via concave fillets. For style 2, Hole Width sets the flat top edge width and Hole Height sets how deep it extends down">
       </Uniform>
 
    </Shader>
@@ -45,6 +49,8 @@
       <Col Name="Camera Hole" Col="2" Page="0">
       </Col>
       <Col Name="Hole Shape" Col="3" Page="0">
+      </Col>
+      <Col Name="Hole Style" Col="4" Page="0">
       </Col>
    </Page>
 
