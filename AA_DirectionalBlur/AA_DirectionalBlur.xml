@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderNodePreset
+  Name="AA_DirectionalBlur"
+  Description="Directional blur with angle and 0°/180° pairing. Proportional toggle for symmetric lengths; optional Matte to constrain. Center point biases strength away from a chosen focus. Made by AnthonyAugustaCreations@gmail.com"
+  Version="10"
+  SoftwareVersion="2025.0.0"
+  ShaderType="Matchbox"
+  SupportsAction="False"
+  SupportsTimeline="False"
+  SupportsTransition="False"
+  SupportsAdaptiveDegradation="False"
+  TimelineUseBack="False"
+  MatteProvider="False"
+  CommercialUsePermitted="True"
+  LimitInputsToTexture="True">
+
+  <Shader Index="1" OutputBitDepth="Output" GridSubdivision="1" Clear="0">
+    <!-- Inputs: Front + Matte sockets -->
+    <Uniform Type="sampler2D" Name="front" DisplayName="Front" InputType="Front"
+             GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+             GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+             Index="0" NoInput="Error"/>
+    <Uniform Type="sampler2D" Name="matte" DisplayName="Matte" InputType="Matte"
+             GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+             GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+             Index="1" NoInput="Black"/>
+
+    <!-- LEFT COLUMN (Col=1) -->
+    <Uniform Type="bool"  Name="use_matte" DisplayName="Use Matte Input" ChannelName="Use Matte"
+             Default="False" Row="1" Col="1" Page="0"
+             Tooltip="If ON, the Matte input blends the blur over the Front. If OFF, blur affects the full frame."/>
+
+    <Uniform Type="float" Name="angle_deg" DisplayName="Angle (°)" ChannelName="Angle"
+             Min="0.0" Max="360.0" Default="0.0" Inc="0.1" Row="2" Col="1" Page="0"/>
+
+    
+    <Uniform Type="bool"  Name="use_center" DisplayName="Use Center Bias" ChannelName="Use Center"
+             Default="True" Row="1" Col="3" Page="0"
+             Tooltip="ON: blur grows away from the chosen center. OFF: uniform directional blur."/>
+<!-- Center point as two floats -->
+    <Uniform Type="float" Name="center_x" DisplayName="Center X (±1)" ChannelName="Center X"
+             Min="-1.0" Max="1.0" Default="0.0" Inc="0.001" Row="2" Col="3" Page="0"/>
+    <Uniform Type="float" Name="center_y" DisplayName="Center Y (±1)" ChannelName="Center Y"
+             Min="-1.0" Max="1.0" Default="0.0" Inc="0.001" Row="3" Col="3" Page="0"/>
+
+    <Uniform Type="int"   Name="samples" DisplayName="Samples" ChannelName="Samples"
+             Min="1" Max="256" Default="64" Inc="1" Row="3" Col="1" Page="0"
+             Tooltip="Total taps across both directions. Higher = smoother/softer (slower)."/>
+
+    <!-- RIGHT COLUMN (Col=2) -->
+    <Uniform Type="bool"  Name="proportional" DisplayName="Proportional (± equal)" ChannelName="Proportional"
+             Default="True" Row="2" Col="2" Page="0"
+             Tooltip="ON: single length controls both directions. OFF: set + and − independently."/>
+    <Uniform Type="bool"  Name="swap_lr" DisplayName="Swap Left/Right" ChannelName="Swap L/R"
+             Default="True" Row="1" Col="2" Page="0"
+             Tooltip="If your viewer or upstream transform flips the image, toggle this so Length + is to the right and Length − is to the left."/><Uniform Type="float" Name="len_pos_px" DisplayName="Length +" ChannelName="Length + (px)"
+             Min="0.0" Max="2000.0" Default="0.0" Inc="0.5" Row="3" Col="2" Page="0"/>
+
+    <!-- Length − is conditionally active ONLY when proportional == False -->
+    <Uniform Type="float" Name="len_neg_px" DisplayName="Length −" ChannelName="Length − (px)"
+             Min="0.0" Max="2000.0" Default="0.0" Inc="0.5" Row="4" Col="2" Page="0"
+             Tooltip="Shown only when Proportional is OFF." UIConditionSource="proportional" UIConditionValue="False"/>
+
+  </Shader>
+</ShaderNodePreset>

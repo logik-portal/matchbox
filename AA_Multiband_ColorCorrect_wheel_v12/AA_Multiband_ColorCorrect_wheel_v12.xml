@@ -1,0 +1,210 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" LimitInputsToTexture="True" Version="1" Name="AA_Multiband_ColorCorrect_wheel_v12" CommercialUsePermitted="True" Description="Six-band colour corrector: Master plus fixed Low, Low Mid, Mid, High Mid and High luminance bands. Each tab includes Gamma, Gain, Offset, Exposure, Contrast, Saturation and a Colour Wheel. Wheel Hue sets the target hue; Gain sets strength; Mix scales the wheel effect. Use Picker limits a tab by colour; Picker Tol sets range and Picker Soft feathers the selection. Show Matte displays the active selection in white. Optional external Matte limits all corrections: white = full, black = protected, gray = partial. Bypass disables the current tab. Made by Anthony Augusta. AnthonyAugustaCreations@gmail.com" SupportsAction="True" SupportsTransition="False" SupportsTimeline="True" MatteProvider="False" TimelineUseBack="False" DefaultIsNoOp="True" ShaderType="Matchbox" SoftwareVersion="2016.0.0">
+  <Shader OutputBitDepth="Output" Index="1">
+    <Uniform Name="master_show_matte" DisplayName="Show Matte" Type="bool" Tooltip="Preview this tab’s active selection as a black-and-white matte. White is affected; black is protected." Row="0" Col="0" Page="0" Default="False"/>
+    <Uniform Name="master_bypass" DisplayName="Bypass" Type="bool" Row="0" Col="4" Page="0" Default="False" Tooltip="Bypass all controls on this tab."/>
+    <Uniform Name="master_picker_enable" DisplayName="Use Picker" Type="bool" Row="1" Col="0" Page="0" Default="False" Tooltip="Restrict this tab to the colour chosen with Pick Color. Picker Tol sets the range; Picker Soft feathers the edge."/>
+    <Uniform Name="master_picker_color" DisplayName="Pick Color" Type="vec3" Row="2" Col="0" Page="0" ValueType="Colour" Tooltip="Use the colour control / picker to select the master colour range. This drives the picker matte only when Use Picker is enabled.">
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+    </Uniform>
+    <Uniform Name="master_picker_tolerance" DisplayName="Picker Tol" Type="float" Tooltip="Colour-picker tolerance. Higher values include a wider range of colours around Pick Color." Row="3" Col="0" Page="0" Min="0.001" Max="1.0" Inc="0.01" Default="0.12"/>
+    <Uniform Name="master_picker_softness" DisplayName="Picker Soft" Type="float" Tooltip="Softens/feathers the edge of the colour-picker selection." Row="4" Col="0" Page="0" Min="0.001" Max="1.0" Inc="0.01" Default="0.08"/>
+    <Uniform Name="master_curve_control" DisplayName="Gamma" Type="float" Tooltip="Adjusts midtone brightness within this tab’s active selection." Row="0" Col="1" Page="0" Min="0.1" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="master_gain" DisplayName="Gain" Type="float" Tooltip="Multiplies RGB intensity within this tab’s active selection." Row="1" Col="1" Page="0" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="master_offset" DisplayName="Offset" Type="float" Tooltip="Adds or subtracts a constant RGB value within this tab’s active selection." Row="2" Col="1" Page="0" Min="-1.0" Max="1.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="master_exposure" DisplayName="Exposure" Type="float" Tooltip="Exposure adjustment in stops within this tab’s active selection." Row="3" Col="1" Page="0" Min="-5.0" Max="5.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="master_contrast" DisplayName="Contrast" Type="float" Tooltip="Adjusts contrast around a 0.5 pivot within this tab’s active selection." Row="4" Col="1" Page="0" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="master_saturation" DisplayName="Saturation" Type="float" Tooltip="Adjusts colour saturation within this tab’s active selection." Row="0" Col="2" Page="0" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Inc="0.1" Tooltip="Colour Wheel: Hue chooses the target hue, Gain controls how strongly that hue is added, and Mix scales the wheel contribution. The wheel is limited by this tab’s tonal/picker/external matte selection." Row="0" Col="3" Page="0" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour Wheel" Name="masterColourWheel" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Mix">
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0"/>
+    </Uniform>
+    <Uniform Name="low_show_matte" DisplayName="Show Matte" Type="bool" Tooltip="Preview this tab’s active selection as a black-and-white matte. White is affected; black is protected." Row="0" Col="0" Page="1" Default="False"/>
+    <Uniform Name="low_bypass" DisplayName="Bypass" Type="bool" Row="0" Col="4" Page="1" Default="False" Tooltip="Bypass all controls on this tab."/>
+    <Uniform Name="low_picker_enable" DisplayName="Use Picker" Type="bool" Row="1" Col="0" Page="1" Default="False" Tooltip="Restrict this tab to the colour chosen with Pick Color. Picker Tol sets the range; Picker Soft feathers the edge."/>
+    <Uniform Name="low_picker_color" DisplayName="Pick Color" Type="vec3" Row="2" Col="0" Page="1" ValueType="Colour" Tooltip="Use the colour control / picker to select the colour range. This drives the picker matte only when Use Picker is enabled.">
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+    </Uniform>
+    <Uniform Name="low_picker_tolerance" DisplayName="Picker Tol" Type="float" Tooltip="Colour-picker tolerance. Higher values include a wider range of colours around Pick Color." Row="3" Col="0" Page="1" Min="0.001" Max="1.0" Inc="0.01" Default="0.12"/>
+    <Uniform Name="low_picker_softness" DisplayName="Picker Soft" Type="float" Tooltip="Softens/feathers the edge of the colour-picker selection." Row="4" Col="0" Page="1" Min="0.001" Max="1.0" Inc="0.01" Default="0.08"/>
+    <Uniform Name="low_curve_control" DisplayName="Gamma" Type="float" Tooltip="Adjusts midtone brightness within this tab’s active selection." Row="0" Col="1" Page="1" Min="0.1" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="low_gain" DisplayName="Gain" Type="float" Tooltip="Multiplies RGB intensity within this tab’s active selection." Row="1" Col="1" Page="1" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="low_offset" DisplayName="Offset" Type="float" Tooltip="Adds or subtracts a constant RGB value within this tab’s active selection." Row="2" Col="1" Page="1" Min="-1.0" Max="1.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="low_exposure" DisplayName="Exposure" Type="float" Tooltip="Exposure adjustment in stops within this tab’s active selection." Row="3" Col="1" Page="1" Min="-5.0" Max="5.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="low_contrast" DisplayName="Contrast" Type="float" Tooltip="Adjusts contrast around a 0.5 pivot within this tab’s active selection." Row="4" Col="1" Page="1" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="low_saturation" DisplayName="Saturation" Type="float" Tooltip="Adjusts colour saturation within this tab’s active selection." Row="0" Col="2" Page="1" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Inc="0.1" Tooltip="Colour Wheel: Hue chooses the target hue, Gain controls how strongly that hue is added, and Mix scales the wheel contribution. The wheel is limited by this tab’s tonal/picker/external matte selection." Row="0" Col="3" Page="1" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour Wheel" Name="lowColourWheel" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Mix">
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0"/>
+    </Uniform>
+    <Uniform Name="low_mid_show_matte" DisplayName="Show Matte" Type="bool" Tooltip="Preview this tab’s active selection as a black-and-white matte. White is affected; black is protected." Row="0" Col="0" Page="2" Default="False"/>
+    <Uniform Name="low_mid_bypass" DisplayName="Bypass" Type="bool" Row="0" Col="4" Page="2" Default="False" Tooltip="Bypass all controls on this tab."/>
+    <Uniform Name="low_mid_picker_enable" DisplayName="Use Picker" Type="bool" Row="1" Col="0" Page="2" Default="False" Tooltip="Restrict this tab to the colour chosen with Pick Color. Picker Tol sets the range; Picker Soft feathers the edge."/>
+    <Uniform Name="low_mid_picker_color" DisplayName="Pick Color" Type="vec3" Row="2" Col="0" Page="2" ValueType="Colour" Tooltip="Use the colour control / picker to select the colour range. This drives the picker matte only when Use Picker is enabled.">
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+    </Uniform>
+    <Uniform Name="low_mid_picker_tolerance" DisplayName="Picker Tol" Type="float" Tooltip="Colour-picker tolerance. Higher values include a wider range of colours around Pick Color." Row="3" Col="0" Page="2" Min="0.001" Max="1.0" Inc="0.01" Default="0.12"/>
+    <Uniform Name="low_mid_picker_softness" DisplayName="Picker Soft" Type="float" Tooltip="Softens/feathers the edge of the colour-picker selection." Row="4" Col="0" Page="2" Min="0.001" Max="1.0" Inc="0.01" Default="0.08"/>
+    <Uniform Name="low_mid_curve_control" DisplayName="Gamma" Type="float" Tooltip="Adjusts midtone brightness within this tab’s active selection." Row="0" Col="1" Page="2" Min="0.1" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="low_mid_gain" DisplayName="Gain" Type="float" Tooltip="Multiplies RGB intensity within this tab’s active selection." Row="1" Col="1" Page="2" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="low_mid_offset" DisplayName="Offset" Type="float" Tooltip="Adds or subtracts a constant RGB value within this tab’s active selection." Row="2" Col="1" Page="2" Min="-1.0" Max="1.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="low_mid_exposure" DisplayName="Exposure" Type="float" Tooltip="Exposure adjustment in stops within this tab’s active selection." Row="3" Col="1" Page="2" Min="-5.0" Max="5.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="low_mid_contrast" DisplayName="Contrast" Type="float" Tooltip="Adjusts contrast around a 0.5 pivot within this tab’s active selection." Row="4" Col="1" Page="2" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="low_mid_saturation" DisplayName="Saturation" Type="float" Tooltip="Adjusts colour saturation within this tab’s active selection." Row="0" Col="2" Page="2" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Inc="0.1" Tooltip="Colour Wheel: Hue chooses the target hue, Gain controls how strongly that hue is added, and Mix scales the wheel contribution. The wheel is limited by this tab’s tonal/picker/external matte selection." Row="0" Col="3" Page="2" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour Wheel" Name="lowMidColourWheel" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Mix">
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0"/>
+    </Uniform>
+    <Uniform Name="mid_show_matte" DisplayName="Show Matte" Type="bool" Tooltip="Preview this tab’s active selection as a black-and-white matte. White is affected; black is protected." Row="0" Col="0" Page="3" Default="False"/>
+    <Uniform Name="mid_bypass" DisplayName="Bypass" Type="bool" Row="0" Col="4" Page="3" Default="False" Tooltip="Bypass all controls on this tab."/>
+    <Uniform Name="mid_picker_enable" DisplayName="Use Picker" Type="bool" Row="1" Col="0" Page="3" Default="False" Tooltip="Restrict this tab to the colour chosen with Pick Color. Picker Tol sets the range; Picker Soft feathers the edge."/>
+    <Uniform Name="mid_picker_color" DisplayName="Pick Color" Type="vec3" Row="2" Col="0" Page="3" ValueType="Colour" Tooltip="Use the colour control / picker to select the colour range. This drives the picker matte only when Use Picker is enabled.">
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+    </Uniform>
+    <Uniform Name="mid_picker_tolerance" DisplayName="Picker Tol" Type="float" Tooltip="Colour-picker tolerance. Higher values include a wider range of colours around Pick Color." Row="3" Col="0" Page="3" Min="0.001" Max="1.0" Inc="0.01" Default="0.12"/>
+    <Uniform Name="mid_picker_softness" DisplayName="Picker Soft" Type="float" Tooltip="Softens/feathers the edge of the colour-picker selection." Row="4" Col="0" Page="3" Min="0.001" Max="1.0" Inc="0.01" Default="0.08"/>
+    <Uniform Name="mid_curve_control" DisplayName="Gamma" Type="float" Tooltip="Adjusts midtone brightness within this tab’s active selection." Row="0" Col="1" Page="3" Min="0.1" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="mid_gain" DisplayName="Gain" Type="float" Tooltip="Multiplies RGB intensity within this tab’s active selection." Row="1" Col="1" Page="3" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="mid_offset" DisplayName="Offset" Type="float" Tooltip="Adds or subtracts a constant RGB value within this tab’s active selection." Row="2" Col="1" Page="3" Min="-1.0" Max="1.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="mid_exposure" DisplayName="Exposure" Type="float" Tooltip="Exposure adjustment in stops within this tab’s active selection." Row="3" Col="1" Page="3" Min="-5.0" Max="5.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="mid_contrast" DisplayName="Contrast" Type="float" Tooltip="Adjusts contrast around a 0.5 pivot within this tab’s active selection." Row="4" Col="1" Page="3" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="mid_saturation" DisplayName="Saturation" Type="float" Tooltip="Adjusts colour saturation within this tab’s active selection." Row="0" Col="2" Page="3" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Inc="0.1" Tooltip="Colour Wheel: Hue chooses the target hue, Gain controls how strongly that hue is added, and Mix scales the wheel contribution. The wheel is limited by this tab’s tonal/picker/external matte selection." Row="0" Col="3" Page="3" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour Wheel" Name="midColourWheel" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Mix">
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0"/>
+    </Uniform>
+    <Uniform Name="high_mid_show_matte" DisplayName="Show Matte" Type="bool" Tooltip="Preview this tab’s active selection as a black-and-white matte. White is affected; black is protected." Row="0" Col="0" Page="4" Default="False"/>
+    <Uniform Name="high_mid_bypass" DisplayName="Bypass" Type="bool" Row="0" Col="4" Page="4" Default="False" Tooltip="Bypass all controls on this tab."/>
+    <Uniform Name="high_mid_picker_enable" DisplayName="Use Picker" Type="bool" Row="1" Col="0" Page="4" Default="False" Tooltip="Restrict this tab to the colour chosen with Pick Color. Picker Tol sets the range; Picker Soft feathers the edge."/>
+    <Uniform Name="high_mid_picker_color" DisplayName="Pick Color" Type="vec3" Row="2" Col="0" Page="4" ValueType="Colour" Tooltip="Use the colour control / picker to select the colour range. This drives the picker matte only when Use Picker is enabled.">
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+    </Uniform>
+    <Uniform Name="high_mid_picker_tolerance" DisplayName="Picker Tol" Type="float" Tooltip="Colour-picker tolerance. Higher values include a wider range of colours around Pick Color." Row="3" Col="0" Page="4" Min="0.001" Max="1.0" Inc="0.01" Default="0.12"/>
+    <Uniform Name="high_mid_picker_softness" DisplayName="Picker Soft" Type="float" Tooltip="Softens/feathers the edge of the colour-picker selection." Row="4" Col="0" Page="4" Min="0.001" Max="1.0" Inc="0.01" Default="0.08"/>
+    <Uniform Name="high_mid_curve_control" DisplayName="Gamma" Type="float" Tooltip="Adjusts midtone brightness within this tab’s active selection." Row="0" Col="1" Page="4" Min="0.1" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="high_mid_gain" DisplayName="Gain" Type="float" Tooltip="Multiplies RGB intensity within this tab’s active selection." Row="1" Col="1" Page="4" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="high_mid_offset" DisplayName="Offset" Type="float" Tooltip="Adds or subtracts a constant RGB value within this tab’s active selection." Row="2" Col="1" Page="4" Min="-1.0" Max="1.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="high_mid_exposure" DisplayName="Exposure" Type="float" Tooltip="Exposure adjustment in stops within this tab’s active selection." Row="3" Col="1" Page="4" Min="-5.0" Max="5.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="high_mid_contrast" DisplayName="Contrast" Type="float" Tooltip="Adjusts contrast around a 0.5 pivot within this tab’s active selection." Row="4" Col="1" Page="4" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="high_mid_saturation" DisplayName="Saturation" Type="float" Tooltip="Adjusts colour saturation within this tab’s active selection." Row="0" Col="2" Page="4" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Inc="0.1" Tooltip="Colour Wheel: Hue chooses the target hue, Gain controls how strongly that hue is added, and Mix scales the wheel contribution. The wheel is limited by this tab’s tonal/picker/external matte selection." Row="0" Col="3" Page="4" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour Wheel" Name="highMidColourWheel" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Mix">
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0"/>
+    </Uniform>
+    <Uniform Name="high_show_matte" DisplayName="Show Matte" Type="bool" Tooltip="Preview this tab’s active selection as a black-and-white matte. White is affected; black is protected." Row="0" Col="0" Page="5" Default="False"/>
+    <Uniform Name="high_bypass" DisplayName="Bypass" Type="bool" Row="0" Col="4" Page="5" Default="False" Tooltip="Bypass all controls on this tab."/>
+    <Uniform Name="high_picker_enable" DisplayName="Use Picker" Type="bool" Row="1" Col="0" Page="5" Default="False" Tooltip="Restrict this tab to the colour chosen with Pick Color. Picker Tol sets the range; Picker Soft feathers the edge."/>
+    <Uniform Name="high_picker_color" DisplayName="Pick Color" Type="vec3" Row="2" Col="0" Page="5" ValueType="Colour" Tooltip="Use the colour control / picker to select the colour range. This drives the picker matte only when Use Picker is enabled.">
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+      <SubUniform Min="0.0" Max="1.0" Inc="0.01" Default="1.0"/>
+    </Uniform>
+    <Uniform Name="high_picker_tolerance" DisplayName="Picker Tol" Type="float" Tooltip="Colour-picker tolerance. Higher values include a wider range of colours around Pick Color." Row="3" Col="0" Page="5" Min="0.001" Max="1.0" Inc="0.01" Default="0.12"/>
+    <Uniform Name="high_picker_softness" DisplayName="Picker Soft" Type="float" Tooltip="Softens/feathers the edge of the colour-picker selection." Row="4" Col="0" Page="5" Min="0.001" Max="1.0" Inc="0.01" Default="0.08"/>
+    <Uniform Name="high_curve_control" DisplayName="Gamma" Type="float" Tooltip="Adjusts midtone brightness within this tab’s active selection." Row="0" Col="1" Page="5" Min="0.1" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="high_gain" DisplayName="Gain" Type="float" Tooltip="Multiplies RGB intensity within this tab’s active selection." Row="1" Col="1" Page="5" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="high_offset" DisplayName="Offset" Type="float" Tooltip="Adds or subtracts a constant RGB value within this tab’s active selection." Row="2" Col="1" Page="5" Min="-1.0" Max="1.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="high_exposure" DisplayName="Exposure" Type="float" Tooltip="Exposure adjustment in stops within this tab’s active selection." Row="3" Col="1" Page="5" Min="-5.0" Max="5.0" Inc="0.01" Default="0.0"/>
+    <Uniform Name="high_contrast" DisplayName="Contrast" Type="float" Tooltip="Adjusts contrast around a 0.5 pivot within this tab’s active selection." Row="4" Col="1" Page="5" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Name="high_saturation" DisplayName="Saturation" Type="float" Tooltip="Adjusts colour saturation within this tab’s active selection." Row="0" Col="2" Page="5" Min="0.0" Max="4.0" Inc="0.01" Default="1.0"/>
+    <Uniform Inc="0.1" Tooltip="Colour Wheel: Hue chooses the target hue, Gain controls how strongly that hue is added, and Mix scales the wheel contribution. The wheel is limited by this tab’s tonal/picker/external matte selection." Row="0" Col="3" Page="5" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Colour Wheel" Name="highColourWheel" HueShift="False" AngleName="Hue"
+         IntensityName1="Gain" IntensityName2="Mix">
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0"/>
+      <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0"/>
+    </Uniform>
+    <Uniform Name="front" Type="sampler2D" DisplayName="Front" Index="0" NoInput="Error" InputType="Front" Mipmaps="False" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST"/>
+    <Uniform Name="matte" Type="sampler2D" DisplayName="Matte" Index="1" NoInput="White" InputType="Matte" Mipmaps="False" GL_TEXTURE_MAG_FILTER="GL_NEAREST" GL_TEXTURE_MIN_FILTER="GL_NEAREST" Tooltip="Optional external matte input. White allows the correction, black protects the image, gray applies partial strength. The matte multiplies all corrections and Show Matte previews."/>
+  </Shader>
+  <Page Name="Master" Page="0">
+    <Col Name="Picker" Col="0" Page="0">
+    </Col>
+    <Col Name="Correction" Col="1" Page="0">
+    </Col>
+    <Col Name="Saturation" Col="2" Page="0">
+    </Col>
+    <Col Name="Colour Wheel" Col="3" Page="0">
+    </Col>
+    <Col Name="Bypass" Col="4" Page="0">
+    </Col>
+  </Page>
+  <Page Name="Low" Page="1">
+    <Col Name="Picker" Col="0" Page="1">
+    </Col>
+    <Col Name="Correction" Col="1" Page="1">
+    </Col>
+    <Col Name="Saturation" Col="2" Page="1">
+    </Col>
+    <Col Name="Colour Wheel" Col="3" Page="1">
+    </Col>
+    <Col Name="Bypass" Col="4" Page="1">
+    </Col>
+  </Page>
+  <Page Name="Low Mid" Page="2">
+    <Col Name="Picker" Col="0" Page="2">
+    </Col>
+    <Col Name="Correction" Col="1" Page="2">
+    </Col>
+    <Col Name="Saturation" Col="2" Page="2">
+    </Col>
+    <Col Name="Colour Wheel" Col="3" Page="2">
+    </Col>
+    <Col Name="Bypass" Col="4" Page="2">
+    </Col>
+  </Page>
+  <Page Name="Mid" Page="3">
+    <Col Name="Picker" Col="0" Page="3">
+    </Col>
+    <Col Name="Correction" Col="1" Page="3">
+    </Col>
+    <Col Name="Saturation" Col="2" Page="3">
+    </Col>
+    <Col Name="Colour Wheel" Col="3" Page="3">
+    </Col>
+    <Col Name="Bypass" Col="4" Page="3">
+    </Col>
+  </Page>
+  <Page Name="High Mid" Page="4">
+    <Col Name="Picker" Col="0" Page="4">
+    </Col>
+    <Col Name="Correction" Col="1" Page="4">
+    </Col>
+    <Col Name="Saturation" Col="2" Page="4">
+    </Col>
+    <Col Name="Colour Wheel" Col="3" Page="4">
+    </Col>
+    <Col Name="Bypass" Col="4" Page="4">
+    </Col>
+  </Page>
+  <Page Name="High" Page="5">
+    <Col Name="Picker" Col="0" Page="5">
+    </Col>
+    <Col Name="Correction" Col="1" Page="5">
+    </Col>
+    <Col Name="Saturation" Col="2" Page="5">
+    </Col>
+    <Col Name="Colour Wheel" Col="3" Page="5">
+    </Col>
+    <Col Name="Bypass" Col="4" Page="5">
+    </Col>
+  </Page>
+</ShaderNodePreset>
