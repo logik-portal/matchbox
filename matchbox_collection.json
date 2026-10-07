@@ -2702,6 +2702,15 @@
     "flame_min_version": "2015.0.0"
   },
   {
+    "name": "KE_AdditiveDissolve",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "Yes",
+    "description": "Additive dissolve with optional linear-light mixing",
+    "flame_min_version": "2016.0.0"
+  },
+  {
     "name": "KE_Ascii",
     "shader_type": "Matchbox",
     "action": "No",
