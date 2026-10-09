@@ -156,6 +156,16 @@
     "flame_min_version": "2018.3.0"
   },
   {
+    "name": "AM_BlockShadow",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "author": "Andrew Miller",
+    "description": "Block style drop shadow. Extrudes the matte along an angle, or towards a vanishing point, to create a solid shadow, which can be set back from the fill, shaded along its length, softened and outlined. The fill (Front or a colour) is comped over it. The shadow can be coloured with a flat colour or the optional Shadow Fill input. Outputs premultiplied RGB and the combined matte. Written by Andrew Miller (andrew.miller@mtifilm.com).",
+    "flame_min_version": "2016.0.0"
+  },
+  {
     "name": "Atlanta_UG_2016",
     "shader_type": "Matchbox",
     "action": "No",
