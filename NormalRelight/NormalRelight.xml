@@ -1,0 +1,288 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="True" MatteProvider="True" TimelineUseBack="False" CommercialUsePermitted="True" DefaultIsNoOp="False" ShaderType="Matchbox" SoftwareVersion="2027.1.0" LimitInputsToTexture="True" Version="1" Description="v3: Normal map ve/veya depth ile relight, temas golgesi, yon/derinlik maskesi, normal duzeltme (FlameLab). Front = plate, Back = normal (opsiyonel), Matte = alan, Depth = derinlik (opsiyonel)." Name="Normal Relight">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="front">
+      </Uniform>
+      <Uniform Index="1" NoInput="Black" Tooltip="" DisplayName="Normal" InputType="Back" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="normalTex">
+      </Uniform>
+      <Uniform Index="2" NoInput="White" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="matte">
+      </Uniform>
+      <Uniform Index="3" NoInput="Black" Tooltip="" DisplayName="Depth" InputType="Z-Depth" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="depthTex">
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="From Depth: normal girisi gerekmez (Depth Mode acik olmali). ML depthten normal KABA olur: mumkunse NormalCrafter normalini kullan, bu modda Smooth 8+ yap" Row="1" Col="3" Page="0" DisplayName="Normal Source" Type="int" ValueType="Popup" ChannelName="nSource" Name="nSource">
+         <PopupEntry Title="Normal Map" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="From Depth" Value="1">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="NormalCrafter PNG/MP4 = 0..1" Row="0" Col="0" Page="0" DisplayName="Encoding" Type="int" ValueType="Popup" ChannelName="nEncoding" Name="nEncoding">
+         <PopupEntry Title="0..1 (PNG / Video)" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="-1..1 (EXR float)" Value="1">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="" Row="1" Col="0" Page="0" DisplayName="Convention" Type="int" ValueType="Popup" ChannelName="nConvention" Name="nConvention">
+         <PopupEntry Title="OpenGL (+Y up)" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="DirectX (+Y down)" Value="1">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="" Row="2" Col="0" Page="0" DisplayName="Swizzle" Type="int" ValueType="Popup" ChannelName="nSwizzle" Name="nSwizzle">
+         <PopupEntry Title="XYZ" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="XZY" Value="1">
+         </PopupEntry>
+         <PopupEntry Title="YXZ" Value="2">
+         </PopupEntry>
+         <PopupEntry Title="YZX" Value="3">
+         </PopupEntry>
+         <PopupEntry Title="ZXY" Value="4">
+         </PopupEntry>
+         <PopupEntry Title="ZYX" Value="5">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Flip X" Type="bool" ChannelName="nFlipX" Name="nFlipX">
+      </Uniform>
+      <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Flip Y" Type="bool" ChannelName="nFlipY" Name="nFlipY">
+      </Uniform>
+      <Uniform Row="2" Col="1" Page="0" Default="False" Tooltip="" DisplayName="Flip Z" Type="bool" ChannelName="nFlipZ" Name="nFlipZ">
+      </Uniform>
+      <Uniform ResDependent="None" Max="180" Min="-180" Default="0.0" Inc="0.5" Tooltip="" Row="0" Col="2" Page="0" DisplayName="Rotate X" Type="float" ChannelName="nRotX" Name="nRotX">
+      </Uniform>
+      <Uniform ResDependent="None" Max="180" Min="-180" Default="0.0" Inc="0.5" Tooltip="" Row="1" Col="2" Page="0" DisplayName="Rotate Y" Type="float" ChannelName="nRotY" Name="nRotY">
+      </Uniform>
+      <Uniform ResDependent="None" Max="180" Min="-180" Default="0.0" Inc="0.5" Tooltip="" Row="2" Col="2" Page="0" DisplayName="Rotate Z" Type="float" ChannelName="nRotZ" Name="nRotZ">
+      </Uniform>
+      <Uniform ResDependent="None" Max="50" Min="0" Default="0.0" Inc="0.1" Tooltip="Normal haritasini yumusatir (kumlanma/titreme icin)" Row="0" Col="3" Page="0" DisplayName="Smooth (px)" Type="float" ChannelName="nSmooth" Name="nSmooth">
+      </Uniform>
+      <Uniform Row="0" Col="0" Page="1" Default="True" Tooltip="" DisplayName="Key On" Type="bool" ChannelName="kOn" Name="kOn">
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="Icon: viewer'daki isik ikonunu surukle. Angles: azimut/yukseklik ile yonlu isik" Row="1" Col="0" Page="1" DisplayName="Control" Type="int" ValueType="Popup" ChannelName="kMode" Name="kMode">
+         <PopupEntry Title="Icon (Point)" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="Angles (Directional)" Value="1">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="2" Col="0" Page="1" DisplayName="Colour" IconType="None" ValueType="Colour" Type="vec3" ChannelName="kCol" Name="kCol">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.95">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.9">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="100" Min="0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="1" DisplayName="Intensity" Type="float" ChannelName="kInt" Name="kInt">
+      </Uniform>
+      <Uniform Inc="0.001" Tooltip="Isigi viewer'da surukle" Row="0" Col="1" Page="1" DisplayName="Key Position" IconType="Light" Type="vec2" ChannelName="kPos" Name="kPos" UIConditionSource="kMode" UIConditionValue="0" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.75">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.75">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="10" Min="-10" Default="0.5" Inc="0.01" Tooltip="Depth kapali: isigin derinligi (kare yuksekligi = 1), + kamera tarafi, - ozne arkasi (rim). Depth acik: ikonun altindaki yuzeyden kameraya dogru METRE (- = yuzeyin arkasi)" Row="1" Col="1" Page="1" DisplayName="Height" Type="float" ChannelName="kHeight" Name="kHeight" UIConditionSource="kMode" UIConditionValue="0" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100" Min="0" Default="0.0" Inc="0.1" Tooltip="Mesafeyle zayiflama (0 = yok)" Row="2" Col="1" Page="1" DisplayName="Falloff" Type="float" ChannelName="kFalloff" Name="kFalloff" UIConditionSource="kMode" UIConditionValue="0" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="360" Min="-360" Default="45.0" Inc="1" Tooltip="0 = kameradan, +90 = sagdan, -90 = soldan, 180 = arkadan" Row="3" Col="1" Page="1" DisplayName="Azimuth" Type="float" ChannelName="kAz" Name="kAz" UIConditionSource="kMode" UIConditionValue="1" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="90" Min="-90" Default="30.0" Inc="1" Tooltip="+90 = yukaridan, -90 = asagidan" Row="4" Col="1" Page="1" DisplayName="Elevation" Type="float" ChannelName="kEl" Name="kEl" UIConditionSource="kMode" UIConditionValue="1" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1" Min="0" Default="0.0" Inc="0.01" Tooltip="Isigi golge tarafina sardirir (yumusak gecis)" Row="0" Col="2" Page="1" DisplayName="Wrap" Type="float" ChannelName="kWrap" Name="kWrap">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10" Min="0" Default="0.2" Inc="0.01" Tooltip="" Row="1" Col="2" Page="1" DisplayName="Specular" Type="float" ChannelName="kSpec" Name="kSpec">
+      </Uniform>
+      <Uniform ResDependent="None" Max="512" Min="1" Default="32.0" Inc="1" Tooltip="Yuksek = kucuk, keskin parlama" Row="2" Col="2" Page="1" DisplayName="Gloss" Type="float" ChannelName="kGloss" Name="kGloss">
+      </Uniform>
+      <Uniform Row="0" Col="3" Page="1" Default="False" Tooltip="" DisplayName="Fill On" Type="bool" ChannelName="fOn" Name="fOn">
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="Icon: viewer'daki isik ikonunu surukle. Angles: azimut/yukseklik ile yonlu isik" Row="1" Col="3" Page="1" DisplayName="Control" Type="int" ValueType="Popup" ChannelName="fMode" Name="fMode">
+         <PopupEntry Title="Icon (Point)" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="Angles (Directional)" Value="1">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="2" Col="3" Page="1" DisplayName="Colour" IconType="None" ValueType="Colour" Type="vec3" ChannelName="fCol" Name="fCol">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.6">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.7">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="100" Min="0" Default="0.5" Inc="0.01" Tooltip="" Row="3" Col="3" Page="1" DisplayName="Intensity" Type="float" ChannelName="fInt" Name="fInt">
+      </Uniform>
+      <Uniform Inc="0.001" Tooltip="Isigi viewer'da surukle" Row="0" Col="4" Page="1" DisplayName="Fill Position" IconType="Light" Type="vec2" ChannelName="fPos" Name="fPos" UIConditionSource="fMode" UIConditionValue="0" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.2">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.6">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="10" Min="-10" Default="-0.3" Inc="0.01" Tooltip="Depth kapali: isigin derinligi (kare yuksekligi = 1), + kamera tarafi, - ozne arkasi (rim). Depth acik: ikonun altindaki yuzeyden kameraya dogru METRE (- = yuzeyin arkasi)" Row="1" Col="4" Page="1" DisplayName="Height" Type="float" ChannelName="fHeight" Name="fHeight" UIConditionSource="fMode" UIConditionValue="0" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100" Min="0" Default="0.0" Inc="0.1" Tooltip="Mesafeyle zayiflama (0 = yok)" Row="2" Col="4" Page="1" DisplayName="Falloff" Type="float" ChannelName="fFalloff" Name="fFalloff" UIConditionSource="fMode" UIConditionValue="0" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="360" Min="-360" Default="-120.0" Inc="1" Tooltip="0 = kameradan, +90 = sagdan, -90 = soldan, 180 = arkadan" Row="3" Col="4" Page="1" DisplayName="Azimuth" Type="float" ChannelName="fAz" Name="fAz" UIConditionSource="fMode" UIConditionValue="1" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="90" Min="-90" Default="10.0" Inc="1" Tooltip="+90 = yukaridan, -90 = asagidan" Row="4" Col="4" Page="1" DisplayName="Elevation" Type="float" ChannelName="fEl" Name="fEl" UIConditionSource="fMode" UIConditionValue="1" UIConditionType="Hide">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1" Min="0" Default="0.0" Inc="0.01" Tooltip="Isigi golge tarafina sardirir (yumusak gecis)" Row="0" Col="5" Page="1" DisplayName="Wrap" Type="float" ChannelName="fWrap" Name="fWrap">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10" Min="0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="5" Page="1" DisplayName="Specular" Type="float" ChannelName="fSpec" Name="fSpec">
+      </Uniform>
+      <Uniform ResDependent="None" Max="512" Min="1" Default="16.0" Inc="1" Tooltip="Yuksek = kucuk, keskin parlama" Row="2" Col="5" Page="1" DisplayName="Gloss" Type="float" ChannelName="fGloss" Name="fGloss">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="3" Page="2" DisplayName="Ambient Colour" IconType="None" ValueType="Colour" Type="vec3" ChannelName="aCol" Name="aCol">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="10" Min="0" Default="0.0" Inc="0.01" Tooltip="Isigi degistir modunda taban aydinlatma" Row="1" Col="3" Page="2" DisplayName="Ambient" Type="float" ChannelName="aInt" Name="aInt">
+      </Uniform>
+      <Uniform Inc="0.01" Tooltip="" Row="2" Col="3" Page="2" DisplayName="Rim Colour" IconType="None" ValueType="Colour" Type="vec3" ChannelName="rimCol" Name="rimCol">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+      <Uniform ResDependent="None" Max="10" Min="0" Default="0.0" Inc="0.01" Tooltip="Fresnel kenar isigi (kameraya donuk olmayan yuzeyler)" Row="3" Col="3" Page="2" DisplayName="Rim" Type="float" ChannelName="rimInt" Name="rimInt">
+      </Uniform>
+      <Uniform ResDependent="None" Max="20" Min="0.1" Default="3.0" Inc="0.1" Tooltip="" Row="4" Col="3" Page="2" DisplayName="Rim Falloff" Type="float" ChannelName="rimPower" Name="rimPower">
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="Light Pass/Diffuse/Specular lineer verilir" Row="0" Col="0" Page="2" DisplayName="Output" Type="int" ValueType="Popup" ChannelName="outMode" Name="outMode">
+         <PopupEntry Title="Result" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="Light Pass" Value="1">
+         </PopupEntry>
+         <PopupEntry Title="Diffuse" Value="2">
+         </PopupEntry>
+         <PopupEntry Title="Specular" Value="3">
+         </PopupEntry>
+         <PopupEntry Title="Mask" Value="4">
+         </PopupEntry>
+         <PopupEntry Title="Corrected Normals" Value="5">
+         </PopupEntry>
+         <PopupEntry Title="Depth (m)" Value="6">
+         </PopupEntry>
+         <PopupEntry Title="Shadow" Value="7">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="" Row="1" Col="0" Page="2" DisplayName="Blend" Type="int" ValueType="Popup" ChannelName="blendMode" Name="blendMode">
+         <PopupEntry Title="Add Light" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="Replace Light" Value="1">
+         </PopupEntry>
+         <PopupEntry Title="Screen" Value="2">
+         </PopupEntry>
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="Isik hesabi lineerde yapilir" Row="2" Col="0" Page="2" DisplayName="Front Space" Type="int" ValueType="Popup" ChannelName="colourSpace" Name="colourSpace">
+         <PopupEntry Title="Linear" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="Log (Cineon)" Value="1">
+         </PopupEntry>
+         <PopupEntry Title="Video (2.2)" Value="2">
+         </PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1" Min="0" Default="1.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="2" DisplayName="Mix" Type="float" ChannelName="mixAmt" Name="mixAmt">
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="Alpha'ya yazilir (Matte ile carpilir)" Row="0" Col="1" Page="2" DisplayName="Mask Type" Type="int" ValueType="Popup" ChannelName="maskMode" Name="maskMode">
+         <PopupEntry Title="Direction" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="Facing Camera" Value="1">
+         </PopupEntry>
+         <PopupEntry Title="Edge (Fresnel)" Value="2">
+         </PopupEntry>
+         <PopupEntry Title="Key Light" Value="3">
+         </PopupEntry>
+         <PopupEntry Title="Fill Light" Value="4">
+         </PopupEntry>
+         <PopupEntry Title="Depth (m)" Value="5">
+         </PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="360" Min="-360" Default="0.0" Inc="1" Tooltip="" Row="1" Col="1" Page="2" DisplayName="Mask Azimuth" Type="float" ChannelName="mAz" Name="mAz">
+      </Uniform>
+      <Uniform ResDependent="None" Max="90" Min="-90" Default="90.0" Inc="1" Tooltip="Varsayilan: yukari bakan yuzeyler" Row="2" Col="1" Page="2" DisplayName="Mask Elevation" Type="float" ChannelName="mEl" Name="mEl">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000" Min="-1000" Default="0.0" Inc="0.01" Tooltip="Depth (m) maskesinde metre" Row="0" Col="2" Page="2" DisplayName="Low" Type="float" ChannelName="mLow" Name="mLow">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000" Min="-1000" Default="1.0" Inc="0.01" Tooltip="Depth (m) maskesinde metre" Row="1" Col="2" Page="2" DisplayName="High" Type="float" ChannelName="mHigh" Name="mHigh">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10" Min="0.01" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="2" DisplayName="Gamma" Type="float" ChannelName="mGamma" Name="mGamma">
+      </Uniform>
+      <Uniform Row="3" Col="2" Page="2" Default="False" Tooltip="" DisplayName="Invert" Type="bool" ChannelName="mInvert" Name="mInvert">
+      </Uniform>
+      <Uniform Default="0" Inc="1" Tooltip="Off: depth girisi kullanilmaz. Metric: Video Depth Anything Metric gibi metre cikti" Row="0" Col="0" Page="3" DisplayName="Depth Mode" Type="int" ValueType="Popup" ChannelName="dMode" Name="dMode">
+         <PopupEntry Title="Off" Value="0">
+         </PopupEntry>
+         <PopupEntry Title="Metric (m)" Value="1">
+         </PopupEntry>
+         <PopupEntry Title="Depth 0..1 (near dark)" Value="2">
+         </PopupEntry>
+         <PopupEntry Title="Disparity 0..1 (near bright)" Value="3">
+         </PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000" Min="0.001" Default="1.0" Inc="0.01" Tooltip="Metrik degeri carpar (cm ise 0.01)" Row="1" Col="0" Page="3" DisplayName="Metric Scale" Type="float" ChannelName="dScale" Name="dScale" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000" Min="0.001" Default="0.5" Inc="0.1" Tooltip="0..1 modlarinda en yakin mesafe" Row="2" Col="0" Page="3" DisplayName="Near (m)" Type="float" ChannelName="dNear" Name="dNear" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10000" Min="0.001" Default="20.0" Inc="0.1" Tooltip="0..1 modlarinda en uzak mesafe" Row="3" Col="0" Page="3" DisplayName="Far (m)" Type="float" ChannelName="dFar" Name="dFar" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2000" Min="1" Default="35.0" Inc="0.5" Tooltip="Kamera odak uzunlugu: 3B isik mesafesi ve golge buna gore hesaplanir, biliniyorsa gercek degeri gir" Row="0" Col="1" Page="3" DisplayName="Focal (mm)" Type="float" ChannelName="dFocal" Name="dFocal" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100" Min="1" Default="36.0" Inc="0.1" Tooltip="Sensor genisligi (Full Frame 36, S35 ~24.9)" Row="1" Col="1" Page="3" DisplayName="Filmback W (mm)" Type="float" ChannelName="dFilmback" Name="dFilmback" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1" Min="0" Default="0.8" Inc="0.01" Tooltip="Depth ile temas golgesi (0 = kapali)" Row="0" Col="2" Page="3" DisplayName="Shadow" Type="float" ChannelName="sAmt" Name="sAmt" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100" Min="0.01" Default="1.0" Inc="0.01" Tooltip="Isiga dogru tarama mesafesi" Row="1" Col="2" Page="3" DisplayName="Shadow Length (m)" Type="float" ChannelName="sLen" Name="sLen" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100" Min="0.001" Default="0.3" Inc="0.01" Tooltip="Engelin varsayilan kalinligi; buyuk = uzun golgeler" Row="2" Col="2" Page="3" DisplayName="Thickness (m)" Type="float" ChannelName="sThick" Name="sThick" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1" Min="0" Default="0.01" Inc="0.001" Tooltip="Kendi kendine golgeyi onler" Row="3" Col="2" Page="3" DisplayName="Bias (m)" Type="float" ChannelName="sBias" Name="sBias" UIConditionSource="dMode" UIConditionValue="0" UIConditionInvert="True" UIConditionType="Disable">
+      </Uniform>
+   </Shader>
+   <Page Name="Normal" Page="0">
+      <Col Name="Input" Col="0" Page="0">
+      </Col>
+      <Col Name="Flip" Col="1" Page="0">
+      </Col>
+      <Col Name="Rotate" Col="2" Page="0">
+      </Col>
+      <Col Name="Filter / Source" Col="3" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Lights" Page="1">
+      <Col Name="Key Light" Col="0" Page="1">
+      </Col>
+      <Col Name="Key Position" Col="1" Page="1">
+      </Col>
+      <Col Name="Key Shading" Col="2" Page="1">
+      </Col>
+      <Col Name="Fill / Rim Light" Col="3" Page="1">
+      </Col>
+      <Col Name="Fill Position" Col="4" Page="1">
+      </Col>
+      <Col Name="Fill Shading" Col="5" Page="1">
+      </Col>
+   </Page>
+   <Page Name="Output" Page="2">
+      <Col Name="Output" Col="0" Page="2">
+      </Col>
+      <Col Name="Mask" Col="1" Page="2">
+      </Col>
+      <Col Name="Mask Range" Col="2" Page="2">
+      </Col>
+      <Col Name="Ambient + Rim" Col="3" Page="2">
+      </Col>
+   </Page>
+   <Page Name="Depth" Page="3">
+      <Col Name="Depth Input" Col="0" Page="3">
+      </Col>
+      <Col Name="Camera" Col="1" Page="3">
+      </Col>
+      <Col Name="Contact Shadow" Col="2" Page="3">
+      </Col>
+   </Page>
+</ShaderNodePreset>

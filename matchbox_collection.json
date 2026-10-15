@@ -3499,6 +3499,15 @@
     "flame_min_version": "2026.1.0"
   },
   {
+    "name": "NormalRelight",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "Yes",
+    "transition": "No",
+    "description": "v3: Normal map ve/veya depth ile relight, temas golgesi, yon/derinlik maskesi, normal duzeltme (FlameLab). Front = plate, Back = normal (opsiyonel), Matte = alan, Depth = derinlik (opsiyonel).",
+    "flame_min_version": "2027.1.0"
+  },
+  {
     "name": "pac_man",
     "shader_type": "Matchbox",
     "action": "No",
