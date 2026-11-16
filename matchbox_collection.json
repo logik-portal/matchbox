@@ -3621,6 +3621,16 @@
     "flame_min_version": "2012.0.0"
   },
   {
+    "name": "sv_Depth_Temporal_Stabilizer",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "Yes",
+    "transition": "No",
+    "author": "sinan@sinanvural.com",
+    "description": "Two-point affine temporal stabilizer for relative depth maps. Feed raw model output, before any inversion or falloff curve. Video: https://www.youtube.com/live/5Ctu55gq2Ec Contact: sinan@sinanvural.com",
+    "flame_min_version": "2018.3.0"
+  },
+  {
     "name": "Sydney_UG_2016",
     "shader_type": "Matchbox",
     "action": "No",

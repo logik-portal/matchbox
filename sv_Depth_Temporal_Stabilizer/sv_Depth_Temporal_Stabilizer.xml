@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShaderNodePreset
+    SupportsAdaptiveDegradation="False"
+    SupportsAction="False"
+    SupportsTransition="False"
+    SupportsTimeline="True"
+    TimelineUseBack="False"
+    MatteProvider="True"
+    DefaultIsNoOp="False"
+    CommercialUsePermitted="True"
+    ShaderType="Matchbox"
+    SoftwareVersion="2018.3.0"
+    LimitInputsToTexture="True"
+    Version="1"
+    Description="Two-point affine temporal stabilizer for relative depth maps. Feed raw model output, before any inversion or falloff curve. Video: https://www.youtube.com/live/5Ctu55gq2Ec Contact: sinan@sinanvural.com"
+    Name="Depth Temporal Stabilizer">
+
+<Shader GridSubdivision="1" OutputBitDepth="Output" Index="1">
+
+    <Uniform
+        Index="0"
+        NoInput="Error"
+        InputType="Front"
+        DisplayName="Depth Map"
+        Mipmaps="False"
+        GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+        GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+        Type="sampler2D"
+        Name="front">
+    </Uniform>
+
+    <Uniform
+        Index="1"
+        NoInput="Black"
+        InputType="Back"
+        DisplayName="Original"
+        Mipmaps="False"
+        GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+        GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+        Type="sampler2D"
+        Name="back">
+    </Uniform>
+
+    <!-- ===== Col 0 : Points ===== -->
+
+    <Uniform Inc="0.001"
+        ToolTip="Sample point 1. Drag the axis in the viewer, or paste Action tracker curves with Action Coords on."
+        Row="0" Col="0" Page="0" DisplayName="Point 1" Type="vec2"
+        IconType="Axis" IconDefaultState="True" Name="point1">
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.25"></SubUniform>
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.5"></SubUniform>
+    </Uniform>
+
+    <Uniform Inc="0.001"
+        ToolTip="Sample point 2. Drag the axis in the viewer, or paste Action tracker curves with Action Coords on."
+        Row="2" Col="0" Page="0" DisplayName="Point 2" Type="vec2"
+        IconType="Axis" IconDefaultState="True" Name="point2">
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.75"></SubUniform>
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.5"></SubUniform>
+    </Uniform>
+
+    <!-- ===== Col 1 : Solve ===== -->
+
+    <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.9" Inc="0.001"
+        ToolTip="Value the depth map should read at point 1. Pick this off the raw input on your reference frame: colour picker, Front view (F1)."
+        Row="0" Col="1" Page="0" DisplayName="Target 1" Type="float" Name="target1">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.1" Inc="0.001"
+        ToolTip="Value the depth map should read at point 2. Pick it the same way as Target 1. Keep well separated from Target 1. Swapping the targets or the points inverts the map."
+        Row="1" Col="1" Page="0" DisplayName="Target 2" Type="float" Name="target2">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="1.0" Min="0.001" Default="0.1" Inc="0.01"
+        ToolTip="How far apart the two samples must read, as a fraction of their depth: 0.1 is 10 percent. Closer than this, the solve fades to a flat map rather than exploding. Raise it if close points give harsh contrast."
+        Row="2" Col="1" Page="0" DisplayName="Min Separation" Type="float" Name="minSep">
+    </Uniform>
+
+    <!-- ===== Col 2 : Options ===== -->
+
+    <Uniform Page="0" Row="0" Col="2" DisplayName="Action Coords" Type="bool"
+        ToolTip="Enable when pasting Action tracker data, which reports pixel positions relative to image centre. Leave off when dragging the on-screen axes. The axes will not line up with the image while this is on, so check placement with Show Markers."
+        Name="centerOrigin" Default="False">
+    </Uniform>
+
+    <Uniform Page="0" Row="2" Col="2" DisplayName="Show Markers" Type="bool"
+        ToolTip="Draw the sample footprints: red for point 1, green for point 2. Turn off before rendering."
+        Name="showMarkers" Default="False">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="200.0" Min="0.0" Default="8.0" Inc="0.5"
+        ToolTip="Averaging radius in pixels. Large enough to reject model noise, small enough to stay on one surface."
+        Row="3" Col="2" Page="0" DisplayName="Sample Radius" Type="float" Name="sampleRadius">
+    </Uniform>
+
+    <!-- ===== Output Range: Col 3 selects the mode, Col 4 and Col 5 hold its values ===== -->
+
+    <Uniform Default="0" ValueType="Popup"
+        ToolTip="Distance passes the stabilized depth through, Near/Far normalizes a window to 0-1, Range isolates a band."
+        Row="0" Col="3" Page="0" DisplayName="Mode" Type="int" Name="rangeMode">
+        <PopupEntry Title="Distance" Value="0"></PopupEntry>
+        <PopupEntry Title="Near/Far" Value="1"></PopupEntry>
+        <PopupEntry Title="Range" Value="2"></PopupEntry>
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.0" Inc="0.001"
+        ToolTip="Near bound of the window. Values at or below this go to black."
+        Row="0" Col="4" Page="0" DisplayName="Near" Type="float" Name="nearVal">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="1.0" Inc="0.001"
+        ToolTip="Far bound of the window. Values at or above this go to white."
+        Row="1" Col="4" Page="0" DisplayName="Far" Type="float" Name="farVal">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="8.0" Min="0.05" Default="1.0" Inc="0.01"
+        ToolTip="Curve shaping the Near/Far ramp. 1.0 is linear, above 1 pushes detail toward Far, below 1 toward Near."
+        Row="2" Col="4" Page="0" DisplayName="Falloff" Type="float" Name="nfFalloff">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.5" Inc="0.001"
+        ToolTip="Depth that returns white."
+        Row="0" Col="5" Page="0" DisplayName="Depth" Type="float" Name="rangeCenter">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="0.1" Inc="0.001"
+        ToolTip="Width of the fully white band around the selected depth."
+        Row="1" Col="5" Page="0" DisplayName="Range" Type="float" Name="rangeWidth">
+    </Uniform>
+
+    <Uniform ResDependent="None" Max="100.0" Min="0.0001" Default="0.05" Inc="0.001"
+        ToolTip="Softness of both edges of the band."
+        Row="2" Col="5" Page="0" DisplayName="Falloff" Type="float" Name="rangeFalloff">
+    </Uniform>
+
+</Shader>
+
+<Page Name="Stabilizer" Page="0">
+    <Col Name="Points" Col="0" Page="0"></Col>
+    <Col Name="Solve" Col="1" Page="0"></Col>
+    <Col Name="Options" Col="2" Page="0"></Col>
+    <Col Name="Output Range" Col="3" Page="0"></Col>
+    <Col Name="Near / Far" Col="4" Page="0"></Col>
+    <Col Name="Range" Col="5" Page="0"></Col>
+</Page>
+
+</ShaderNodePreset>
