@@ -3631,6 +3631,26 @@
     "flame_min_version": "2018.3.0"
   },
   {
+    "name": "sv_Triangle_Mosaic",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "Yes",
+    "author": "sinan@sinanvural.com",
+    "description": "Triangle mosaic with per-tile size, rotation and offset, edges, bevel and colour variation, and a tile-by-tile transition from Front to Back driven by a matte or a built-in wipe: tiles shrink, fade, spin, or flip over on a hinge or in place. Contact: sinan@sinanvural.com",
+    "flame_min_version": "2017.0.0"
+  },
+  {
+    "name": "sv_Voronoi_Scatter",
+    "shader_type": "Matchbox",
+    "action": "No",
+    "timeline": "No",
+    "transition": "No",
+    "author": "sinan@sinanvural.com",
+    "description": "Voronoi-based texture filling with organic motion. Contact: sinan@sinanvural.com",
+    "flame_min_version": "2017.0.0"
+  },
+  {
     "name": "Sydney_UG_2016",
     "shader_type": "Matchbox",
     "action": "No",

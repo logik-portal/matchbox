@@ -1,0 +1,396 @@
+<ShaderNodePreset
+    SupportsAdaptiveDegradation="False"
+    SupportsAction="False"
+    SupportsTransition="True"
+    SupportsTimeline="False"
+    TimelineUseBack="True"
+    MatteProvider="True"
+    CommercialUsePermitted="True"
+    ShaderType="Matchbox"
+    SoftwareVersion="2017.0.0"
+    LimitInputsToTexture="True"
+    Version="3"
+    Description="Triangle mosaic with per-tile size, rotation and offset, edges, bevel and colour variation, and a tile-by-tile transition from Front to Back driven by a matte or a built-in wipe: tiles shrink, fade, spin, or flip over on a hinge or in place. Contact: sinan@sinanvural.com"
+    Name="Triangle Mosaic">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform
+        Index="0"
+        NoInput="Error"
+        InputType="Front"
+        ToolTip=""
+        DisplayName="Front"
+        Mipmaps="False"
+        GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+        GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+        Type="sampler2D"
+        Name="front">
+      </Uniform>
+      <Uniform
+        Index="1"
+        NoInput="Black"
+        InputType="Back"
+        ToolTip=""
+        DisplayName="Back"
+        Mipmaps="False"
+        GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+        GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+        Type="sampler2D"
+        Name="back">
+      </Uniform>
+      <Uniform
+        Index="2"
+        NoInput="White"
+        InputType="Matte"
+        ToolTip=""
+        DisplayName="Matte"
+        Mipmaps="False"
+        GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+        GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+        Type="sampler2D"
+        Name="matte">
+      </Uniform>
+
+      <!-- Grid page: Shape (Col 0) -->
+      <Uniform Default="0" ValueType="Popup"
+        ToolTip="Triangle shape. Isosceles and Right use Stretch; Right also uses Diagonal."
+        Row="0" Col="0" Page="0" Type="int"
+        DisplayName="Shape" Name="tri_shape">
+         <PopupEntry Title="Equilateral" Value="0"></PopupEntry>
+         <PopupEntry Title="Isosceles" Value="1"></PopupEntry>
+         <PopupEntry Title="Right" Value="2"></PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.1" Default="1.0" Inc="0.01"
+        ToolTip="Height of the triangles relative to their width. Isosceles and Right only. At 1, Isosceles matches Equilateral."
+        Row="1" Col="0" Page="0" Type="float"
+        ChannelName="Stretch" DisplayName="Stretch" Name="stretch">
+      </Uniform>
+      <Uniform Default="0" ValueType="Popup"
+        ToolTip="Right only. How each square of the grid is cut: all the same way, alternating, at random, or into four along both diagonals."
+        Row="2" Col="0" Page="0" Type="int"
+        DisplayName="Diagonal" Name="diagonal">
+         <PopupEntry Title="Same" Value="0"></PopupEntry>
+         <PopupEntry Title="Alternating" Value="1"></PopupEntry>
+         <PopupEntry Title="Random" Value="2"></PopupEntry>
+         <PopupEntry Title="Four-Way" Value="3"></PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="Width" Max="10000.0" Min="2.0" Default="80.0" Inc="1.0"
+        ToolTip="Width of a tile in pixels. Scales with the resolution, so the pattern holds when the resolution changes."
+        Row="3" Col="0" Page="0" Type="float"
+        ChannelName="Size" DisplayName="Size" Name="tile_size">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.0" Inc="0.1"
+        ToolTip="Rotation of the whole grid, in degrees."
+        Row="4" Col="0" Page="0" Type="float"
+        ChannelName="Rotation" DisplayName="Rotation" Name="grid_rotation">
+      </Uniform>
+
+      <!-- Position (Col 1) -->
+      <Uniform Inc="0.001"
+        ToolTip="Origin of the grid. Drag the axis in the viewer, or paste Action tracker data with Action Coords on."
+        Row="0" Col="1" Page="0" DisplayName="Grid Centre" Type="vec2"
+        IconType="Axis" IconDefaultState="True" Name="grid_centre">
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.5"></SubUniform>
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.5"></SubUniform>
+      </Uniform>
+      <Uniform Default="False"
+        ToolTip="Read Grid Centre and Wipe Centre as Action coordinates: pixels from the image centre, as Action trackers give them."
+        Row="2" Col="1" Page="0" Type="bool"
+        ChannelName="Action Coords" DisplayName="Action Coords" Name="action_coords">
+      </Uniform>
+
+      <!-- Tiles (Col 2) -->
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="1.0" Inc="0.01"
+        ToolTip="Size of every tile relative to its place in the grid. Below 1 opens gaps that show Back."
+        Row="0" Col="2" Page="0" Type="float"
+        ChannelName="Tile Scale" DisplayName="Tile Scale" Name="tile_scale">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="Random size change per tile, up to this fraction either way."
+        Row="1" Col="2" Page="0" Type="float"
+        ChannelName="Scale Variance" DisplayName="Scale Variance" Name="scale_variance">
+      </Uniform>
+      <Uniform ResDependent="None" Max="180.0" Min="0.0" Default="0.0" Inc="0.1"
+        ToolTip="Random rotation per tile, up to this many degrees either way."
+        Row="2" Col="2" Page="0" Type="float"
+        ChannelName="Rotation Variance" DisplayName="Rotation Variance" Name="rotation_variance">
+      </Uniform>
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="Random shift per tile, as a fraction of tile size."
+        Row="3" Col="2" Page="0" Type="float"
+        ChannelName="Offset Variance" DisplayName="Offset Variance" Name="offset_variance">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.0" Inc="0.01"
+        ToolTip="Sizes tiles by brightness. Positive shrinks dark tiles, negative shrinks bright tiles. 0 is off."
+        Row="4" Col="2" Page="0" Type="float"
+        ChannelName="Luma Scale" DisplayName="Luma Scale" Name="luma_scale">
+      </Uniform>
+
+      <!-- Random (Col 3) -->
+      <Uniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.0" Inc="1.0"
+        ToolTip="Picks a new set of random values for every tile. Whole numbers give unrelated results."
+        Row="0" Col="3" Page="0" Type="float"
+        ChannelName="Variation" DisplayName="Variation" Name="variation">
+      </Uniform>
+      <Uniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.0" Inc="0.01"
+        ToolTip="Animate to make the random size, rotation and offset drift smoothly."
+        Row="1" Col="3" Page="0" Type="float"
+        ChannelName="Evolution" DisplayName="Evolution" Name="evolution">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="Fraction of tiles removed at random, showing Back."
+        Row="2" Col="3" Page="0" Type="float"
+        ChannelName="Dropout" DisplayName="Dropout" Name="dropout">
+      </Uniform>
+
+      <!-- Look page: Fill (Col 0) -->
+      <Uniform Default="1" ValueType="Popup"
+        ToolTip="Image: each tile carries its piece of the picture. Flat: each tile is one colour, averaged over the tile."
+        Row="0" Col="0" Page="1" Type="int"
+        DisplayName="Fill" Name="fill_mode">
+         <PopupEntry Title="Image" Value="0"></PopupEntry>
+         <PopupEntry Title="Flat" Value="1"></PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="180.0" Min="0.0" Default="0.0" Inc="0.1"
+        ToolTip="Random hue shift per tile, up to this many degrees either way."
+        Row="1" Col="0" Page="1" Type="float"
+        ChannelName="Hue" DisplayName="Hue" Name="hue_variation">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="Random saturation change per tile, up to this fraction either way."
+        Row="2" Col="0" Page="1" Type="float"
+        ChannelName="Saturation" DisplayName="Saturation" Name="saturation_variation">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="Random brightness change per tile, up to this fraction either way."
+        Row="3" Col="0" Page="1" Type="float"
+        ChannelName="Brightness" DisplayName="Brightness" Name="brightness_variation">
+      </Uniform>
+
+      <!-- Edges (Col 1) -->
+      <Uniform Default="True"
+        ToolTip="Paint lines along the tile borders. The Edges matte works whether this is on or off."
+        Row="0" Col="1" Page="1" Type="bool"
+        ChannelName="Draw Edges" DisplayName="Draw Edges" Name="draw_edges">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.03" Inc="0.001"
+        ToolTip="Full width of the lines, as a fraction of tile size."
+        Row="1" Col="1" Page="1" Type="float"
+        ChannelName="Edge Width" DisplayName="Edge Width" Name="edge_width">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.01" Inc="0.001"
+        ToolTip="Falloff on each side of the lines, as a fraction of tile size."
+        Row="2" Col="1" Page="1" Type="float"
+        ChannelName="Edge Softness" DisplayName="Edge Softness" Name="edge_softness">
+      </Uniform>
+      <Uniform Type="vec3" ValueType="Colour" Action3DWidget="False" IconType="None"
+        ToolTip="Colour of the lines."
+        DisplayName="Edge Colour" ChannelName="Edge Colour" Inc="0.01"
+        Row="3" Col="1" Page="1" Name="edge_colour">
+        <SubUniform ResDependent="None" Min="-1000.0" Max="1000.0" Default="0.0"></SubUniform>
+        <SubUniform ResDependent="None" Min="-1000.0" Max="1000.0" Default="0.0"></SubUniform>
+        <SubUniform ResDependent="None" Min="-1000.0" Max="1000.0" Default="0.0"></SubUniform>
+      </Uniform>
+
+      <!-- Bevel (Col 2) -->
+      <Uniform ResDependent="None" Max="2.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="Strength of a raised-tile look: borders facing the light brighten, borders facing away darken. 0 is off."
+        Row="0" Col="2" Page="1" Type="float"
+        ChannelName="Bevel" DisplayName="Bevel" Name="bevel_amount">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.1" Inc="0.001"
+        ToolTip="Width of the bevel, as a fraction of tile size."
+        Row="1" Col="2" Page="1" Type="float"
+        ChannelName="Bevel Width" DisplayName="Bevel Width" Name="bevel_width">
+      </Uniform>
+
+      <!-- Light (Col 3) -->
+      <Uniform ResDependent="None" Max="360.0" Min="-360.0" Default="135.0" Inc="1.0"
+        ToolTip="Direction the light comes from, in degrees: 0 from the right, 90 from above. Used by Bevel and the flip shading."
+        Row="0" Col="3" Page="1" Type="float"
+        ChannelName="Light Angle" DisplayName="Light Angle" Name="light_angle">
+      </Uniform>
+      <Uniform ResDependent="None" Max="90.0" Min="1.0" Default="45.0" Inc="1.0"
+        ToolTip="Height of the light above the frame, in degrees. Lower gives stronger shading."
+        Row="1" Col="3" Page="1" Type="float"
+        ChannelName="Light Height" DisplayName="Light Height" Name="light_height">
+      </Uniform>
+
+      <!-- Transition page: Wipe (Col 0) -->
+      <Uniform Default="0" ValueType="Popup"
+        ToolTip="What drives each tile from Front to Back. Matte: the matte value is the progress, grey is part-way. Matte Wipe: Progress sweeps through the matte, white first. Linear, Radial, Random: built-in wipes driven by Progress."
+        Row="0" Col="0" Page="2" Type="int"
+        DisplayName="Wipe" Name="wipe_mode">
+         <PopupEntry Title="None" Value="0"></PopupEntry>
+         <PopupEntry Title="Matte" Value="1"></PopupEntry>
+         <PopupEntry Title="Matte Wipe" Value="2"></PopupEntry>
+         <PopupEntry Title="Linear" Value="3"></PopupEntry>
+         <PopupEntry Title="Radial" Value="4"></PopupEntry>
+         <PopupEntry Title="Random" Value="5"></PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.001"
+        ToolTip="Animate from 0 to 1 to run the wipe. Not used by Wipe: Matte, where the matte is the progress."
+        Row="1" Col="0" Page="2" Type="float"
+        ChannelName="Progress" DisplayName="Progress" Name="progress">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.3" Inc="0.01"
+        ToolTip="Width of the band of tiles in motion. Small values move a narrow line of tiles, large values move most of them at once."
+        Row="2" Col="0" Page="2" Type="float"
+        ChannelName="Softness" DisplayName="Softness" Name="wipe_softness">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="Random delay per tile, so the wipe breaks up instead of moving as a clean line."
+        Row="3" Col="0" Page="2" Type="float"
+        ChannelName="Spread" DisplayName="Spread" Name="spread">
+      </Uniform>
+      <Uniform ResDependent="None" Max="360.0" Min="-360.0" Default="0.0" Inc="1.0"
+        ToolTip="Direction of the Linear wipe, in degrees: 0 moves left to right, 90 bottom to top."
+        Row="4" Col="0" Page="2" Type="float"
+        ChannelName="Wipe Angle" DisplayName="Wipe Angle" Name="wipe_angle">
+      </Uniform>
+
+      <!-- Wipe Centre (Col 1) -->
+      <Uniform Inc="0.001"
+        ToolTip="Centre of the Radial wipe. Uses Action Coords like Grid Centre."
+        Row="0" Col="1" Page="2" DisplayName="Wipe Centre" Type="vec2"
+        IconType="Axis" IconDefaultState="True" Name="wipe_centre">
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.5"></SubUniform>
+        <SubUniform ResDependent="None" Max="100000.0" Min="-100000.0" Default="0.5"></SubUniform>
+      </Uniform>
+
+      <!-- Motion (Col 2) -->
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="1.0" Inc="0.01"
+        ToolTip="How much a tile shrinks over its transition. 1 shrinks it away to nothing."
+        Row="0" Col="2" Page="2" Type="float"
+        ChannelName="Shrink" DisplayName="Shrink" Name="tr_scale">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.0" Inc="0.01"
+        ToolTip="How much a tile fades out over its transition."
+        Row="1" Col="2" Page="2" Type="float"
+        ChannelName="Fade" DisplayName="Fade" Name="tr_fade">
+      </Uniform>
+      <Uniform ResDependent="None" Max="3600.0" Min="-3600.0" Default="0.0" Inc="1.0"
+        ToolTip="Degrees a tile spins over its transition."
+        Row="2" Col="2" Page="2" Type="float"
+        ChannelName="Spin" DisplayName="Spin" Name="tr_spin">
+      </Uniform>
+
+      <!-- Flip (Col 3) -->
+      <Uniform Default="0" ValueType="Popup"
+        ToolTip="Hinge: the tile folds over one edge onto its neighbour, its underside showing Back. Card: the tile turns over in place, Front on one side and Back on the other."
+        Row="0" Col="3" Page="2" Type="int"
+        DisplayName="Flip" Name="flip_mode">
+         <PopupEntry Title="Off" Value="0"></PopupEntry>
+         <PopupEntry Title="Hinge" Value="1"></PopupEntry>
+         <PopupEntry Title="Card" Value="2"></PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="360.0" Min="0.0" Default="180.0" Inc="1.0"
+        ToolTip="Degrees a tile turns over its transition. 180 lands it face down, showing Back."
+        Row="1" Col="3" Page="2" Type="float"
+        ChannelName="Flip Angle" DisplayName="Flip Angle" Name="flip_angle">
+      </Uniform>
+      <Uniform Default="0" ValueType="Popup"
+        ToolTip="Which way tiles turn. Follow Wipe tips them in the direction the wipe travels, like falling dominoes."
+        Row="2" Col="3" Page="2" Type="int"
+        DisplayName="Direction" Name="flip_direction">
+         <PopupEntry Title="Follow Wipe" Value="0"></PopupEntry>
+         <PopupEntry Title="Random" Value="1"></PopupEntry>
+         <PopupEntry Title="Against Wipe" Value="2"></PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.6" Inc="0.01"
+        ToolTip="How much a turning tile darkens as it faces away from the light."
+        Row="3" Col="3" Page="2" Type="float"
+        ChannelName="Shading" DisplayName="Shading" Name="flip_shading">
+      </Uniform>
+      <Uniform ResDependent="None" Max="4.0" Min="0.0" Default="0.3" Inc="0.01"
+        ToolTip="Glint as a turning tile passes through the angle that reflects the light."
+        Row="4" Col="3" Page="2" Type="float"
+        ChannelName="Highlight" DisplayName="Highlight" Name="highlight">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.5" Inc="0.01"
+        ToolTip="Makes the turning tiles read as 3D: the lifting side grows as it comes toward camera. 0 is flat."
+        Row="5" Col="3" Page="2" Type="float"
+        ChannelName="Perspective" DisplayName="Perspective" Name="perspective">
+      </Uniform>
+
+      <!-- Output page: Matte (Col 0) -->
+      <Uniform Default="0" ValueType="Popup"
+        ToolTip="What the matte output carries. Tile Coverage: white where tiles are. Edges: the border lines. Tile Gradient: white at each tile centre, black at its border. Tile ID: a random grey per tile. Progress: each tile at its transition progress."
+        Row="0" Col="0" Page="3" Type="int"
+        DisplayName="Matte" Name="matte_mode">
+         <PopupEntry Title="Tile Coverage" Value="0"></PopupEntry>
+         <PopupEntry Title="Edges" Value="1"></PopupEntry>
+         <PopupEntry Title="Tile Gradient" Value="2"></PopupEntry>
+         <PopupEntry Title="Tile ID" Value="3"></PopupEntry>
+         <PopupEntry Title="Progress" Value="4"></PopupEntry>
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="0.01" Default="1.0" Inc="0.01"
+        ToolTip="Shapes the Tile Gradient. 1 is linear, above 1 tightens the bright centre, below 1 widens it."
+        Row="1" Col="0" Page="3" Type="float"
+        ChannelName="Falloff" DisplayName="Falloff" Name="gradient_falloff">
+      </Uniform>
+
+      <!-- Quality (Col 1) -->
+      <Uniform Default="1" ValueType="Popup"
+        ToolTip="Samples per pixel, for smoother borders on fine detail. Higher is slower."
+        Row="0" Col="1" Page="3" Type="int"
+        DisplayName="Samples" Name="samples">
+         <PopupEntry Title="1" Value="1"></PopupEntry>
+         <PopupEntry Title="4" Value="4"></PopupEntry>
+         <PopupEntry Title="9" Value="9"></PopupEntry>
+         <PopupEntry Title="16" Value="16"></PopupEntry>
+      </Uniform>
+      <Uniform Default="0" ValueType="Popup"
+        ToolTip="Shows an input as it arrives, or a per-tile value in grey. Front, Back and Matte check the inputs are wired; Tile ID and Progress check the maths."
+        Row="1" Col="1" Page="3" Type="int"
+        DisplayName="Debug" Name="debug_mode">
+         <PopupEntry Title="Off" Value="0"></PopupEntry>
+         <PopupEntry Title="Front" Value="1"></PopupEntry>
+         <PopupEntry Title="Back" Value="2"></PopupEntry>
+         <PopupEntry Title="Matte" Value="3"></PopupEntry>
+         <PopupEntry Title="Tile ID" Value="4"></PopupEntry>
+         <PopupEntry Title="Progress" Value="5"></PopupEntry>
+      </Uniform>
+   </Shader>
+   <Page Name="Grid" Page="0">
+      <Col Name="Shape" Col="0" Page="0">
+      </Col>
+      <Col Name="Position" Col="1" Page="0">
+      </Col>
+      <Col Name="Tiles" Col="2" Page="0">
+      </Col>
+      <Col Name="Random" Col="3" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Look" Page="1">
+      <Col Name="Fill" Col="0" Page="1">
+      </Col>
+      <Col Name="Edges" Col="1" Page="1">
+      </Col>
+      <Col Name="Bevel" Col="2" Page="1">
+      </Col>
+      <Col Name="Light" Col="3" Page="1">
+      </Col>
+   </Page>
+   <Page Name="Transition" Page="2">
+      <Col Name="Wipe" Col="0" Page="2">
+      </Col>
+      <Col Name="Wipe Centre" Col="1" Page="2">
+      </Col>
+      <Col Name="Motion" Col="2" Page="2">
+      </Col>
+      <Col Name="Flip" Col="3" Page="2">
+      </Col>
+   </Page>
+   <Page Name="Output" Page="3">
+      <Col Name="Matte" Col="0" Page="3">
+      </Col>
+      <Col Name="Quality" Col="1" Page="3">
+      </Col>
+   </Page>
+</ShaderNodePreset>

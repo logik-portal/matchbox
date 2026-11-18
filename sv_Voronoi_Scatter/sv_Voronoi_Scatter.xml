@@ -1,0 +1,408 @@
+<ShaderNodePreset
+    SupportsAdaptiveDegradation="False"
+    SupportsAction="False"
+    SupportsTransition="False"
+    SupportsTimeline="False"
+    TimelineUseBack="False"
+    MatteProvider="True"
+    CommercialUsePermitted="True"
+    ShaderType="Matchbox"
+    SoftwareVersion="2017.0.0"
+    LimitInputsToTexture="True"
+    Version="8"
+    Description="Voronoi-based texture filling with organic motion. Contact: sinan@sinanvural.com"
+    Name="Voronoi Scatter">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform
+        Index="0"
+        NoInput="Error"
+        InputType="Front"
+        ToolTip=""
+        DisplayName="Source"
+        Mipmaps="False"
+        GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_MAG_FILTER="GL_LINEAR"
+        GL_TEXTURE_MIN_FILTER="GL_LINEAR"
+        Type="sampler2D"
+        Name="front">
+      </Uniform>
+
+      <!-- Source Controls (Col 0) -->
+      <Uniform
+         Type="vec2"
+         Name="selection_tl"
+         DisplayName="Corner A"
+         ToolTip="One corner of the source patch. Drag the axis in the viewer."
+         Row="0" Col="0" Page="0"
+         ValueType="Position"
+         IconType="Axis">
+         <SubUniform Index="0" DisplayName="X" Min="0.0" Max="10000.0" Default="0.0" Type="float"/>
+         <SubUniform Index="1" DisplayName="Y" Min="0.0" Max="10000.0" Default="0.0" Type="float"/>
+      </Uniform>
+      <Uniform
+         Type="vec2"
+         Name="selection_br"
+         DisplayName="Corner B"
+         ToolTip="The opposite corner of the source patch. Either corner can be on either side."
+         Row="2" Col="0" Page="0"
+         ValueType="Position"
+         IconType="Axis">
+         <SubUniform Index="0" DisplayName="X" Min="0.0" Max="10000.0" Default="1.0" Type="float"/>
+         <SubUniform Index="1" DisplayName="Y" Min="0.0" Max="10000.0" Default="1.0" Type="float"/>
+      </Uniform>
+      <Uniform
+        Default="False"
+        ToolTip="Outline the source patch in red. Turn off before rendering."
+        Row="4"
+        Col="0"
+        Page="0"
+        Type="bool"
+        ChannelName="Show Source"
+        DisplayName="Show Source"
+        Name="show_source">
+      </Uniform>
+
+      <!-- Cell Controls (Col 1) -->
+      <Uniform
+        ResDependent="None"
+        Max="1000.0"
+        Min="1.0"
+        Default="10.0"
+        Inc="1.0"
+        ToolTip="Number of cells across the longer side of the frame."
+        Row="0"
+        Col="1"
+        Page="0"
+        Type="float"
+        ChannelName="Density"
+        DisplayName="Density"
+        Name="grid_density">
+      </Uniform>
+      <Uniform
+        ResDependent="None"
+        Max="1.0"
+        Min="0.0"
+        Default="0.5"
+        Inc="0.01"
+        ToolTip="How far cell centres wander from a regular grid. 0 gives square cells."
+        Row="1"
+        Col="1"
+        Page="0"
+        Type="float"
+        ChannelName="Scatter"
+        DisplayName="Scatter"
+        Name="scatter_amount">
+      </Uniform>
+      <Uniform
+        ResDependent="None"
+        Max="1.0"
+        Min="0.0"
+        Default="0.0"
+        Inc="0.01"
+        ToolTip="Width of the soft blend across cell borders, as a fraction of cell size."
+        Row="2"
+        Col="1"
+        Page="0"
+        Type="float"
+        ChannelName="Softness"
+        DisplayName="Border Softness"
+        Name="border_softness">
+      </Uniform>
+      <Uniform
+        ResDependent="None"
+        Max="10000.0"
+        Min="0.0"
+        Default="0.0"
+        Inc="1.0"
+        ToolTip="Reshuffles each cell's random rotation, scale and source offset. The cells keep their shape. Whole numbers give unrelated results."
+        Row="3"
+        Col="1"
+        Page="0"
+        Type="float"
+        ChannelName="Variation"
+        DisplayName="Variation"
+        Name="variation">
+      </Uniform>
+      <Uniform
+        ResDependent="None"
+        Max="10000.0"
+        Min="0.0"
+        Default="1.0"
+        Inc="0.01"
+        ToolTip="Moves the cell centres. Animate it for organic motion."
+        Row="4"
+        Col="1"
+        Page="0"
+        Type="float"
+        ChannelName="Seed"
+        DisplayName="Evolution"
+        Name="seed">
+      </Uniform>
+
+      <!-- Fill Controls (Col 2) -->
+      <Uniform
+        ResDependent="None"
+        Max="10.0"
+        Min="0.1"
+        Default="1.0"
+        Inc="0.1"
+        ToolTip="Size of the patch inside each cell, relative to the cell."
+        Row="0"
+        Col="2"
+        Page="0"
+        Type="float"
+        ChannelName="Fill Scale"
+        DisplayName="Fill Scale"
+        Name="fill_scale">
+      </Uniform>
+      <Uniform
+        ResDependent="None"
+        Max="1.0"
+        Min="0.0"
+        Default="0.2"
+        Inc="0.01"
+        ToolTip="Random variation in patch size per cell."
+        Row="1"
+        Col="2"
+        Page="0"
+        Type="float"
+        ChannelName="Scale Var"
+        DisplayName="Scale Variance"
+        Name="scale_variance">
+      </Uniform>
+      <Uniform
+        ResDependent="None"
+        Max="180.0"
+        Min="0.0"
+        Default="0.0"
+        Inc="1.0"
+        ToolTip="Maximum random rotation of the patch per cell, in degrees."
+        Row="2"
+        Col="2"
+        Page="0"
+        Type="float"
+        ChannelName="Rotation"
+        DisplayName="Max Rotation"
+        Name="max_rotation">
+      </Uniform>
+      <Uniform
+        ResDependent="None"
+        Max="1.0"
+        Min="0.0"
+        Default="0.0"
+        Inc="0.01"
+        ToolTip="Shifts each cell to a random point in the patch, so cells stop showing the same image. 0 is off, 1 covers the whole patch."
+        Row="3"
+        Col="2"
+        Page="0"
+        Type="float"
+        ChannelName="Source Offset"
+        DisplayName="Source Offset"
+        Name="source_offset">
+      </Uniform>
+      <Uniform
+        Default="0"
+        ValueType="Popup"
+        ToolTip="How the patch repeats when it is smaller than its cell. Mirror has no hard seams."
+        Row="4"
+        Col="2"
+        Page="0"
+        Type="int"
+        DisplayName="Fill Mode"
+        Name="fill_mode">
+         <PopupEntry Title="Mirror" Value="0"></PopupEntry>
+         <PopupEntry Title="Repeat" Value="1"></PopupEntry>
+      </Uniform>
+
+      <!-- Quality (Col 3) -->
+      <Uniform
+        Default="1"
+        ValueType="Popup"
+        ToolTip="Samples per pixel for smoother cell borders. Higher is slower."
+        Row="0"
+        Col="3"
+        Page="0"
+        Type="int"
+        DisplayName="Samples"
+        Name="samples">
+         <PopupEntry Title="1" Value="1"></PopupEntry>
+         <PopupEntry Title="4" Value="4"></PopupEntry>
+         <PopupEntry Title="9" Value="9"></PopupEntry>
+         <PopupEntry Title="16" Value="16"></PopupEntry>
+      </Uniform>
+
+
+      <!-- ===== Page 1 : Look ===== -->
+
+      <!-- Edge Controls (Col 0) -->
+      <Uniform 
+        Default="False" 
+        ToolTip="Paint the edge lines into the image. The edge matte works whether this is on or off." 
+        Row="0" 
+        Col="0" 
+        Page="1" 
+        Type="bool" 
+        ChannelName="Draw Edges" 
+        DisplayName="Draw Edges" 
+        Name="draw_edges">
+      </Uniform>
+      <Uniform 
+        ResDependent="None" 
+        Max="0.5" 
+        Min="0.0" 
+        Default="0.05" 
+        Inc="0.005" 
+        ToolTip="Full width of the edge lines, as a fraction of cell size, so lines scale with Density." 
+        Row="1" 
+        Col="0" 
+        Page="1" 
+        Type="float" 
+        ChannelName="Edge Width" 
+        DisplayName="Edge Width" 
+        Name="edge_width">
+      </Uniform>
+      <Uniform 
+        ResDependent="None" 
+        Max="0.5" 
+        Min="0.0" 
+        Default="0.01" 
+        Inc="0.005" 
+        ToolTip="Falloff on both sides of the edge lines, as a fraction of cell size." 
+        Row="2" 
+        Col="0" 
+        Page="1" 
+        Type="float" 
+        ChannelName="Edge Softness" 
+        DisplayName="Edge Softness" 
+        Name="edge_softness">
+      </Uniform>
+      <Uniform 
+        Type="vec3" 
+        ValueType="Colour" 
+        Action3DWidget="False" 
+        IconType="None" 
+        ToolTip="Colour of the edge lines." 
+        DisplayName="Edge Colour" 
+        ChannelName="Edge Colour" 
+        Inc="0.01" 
+        Row="3" 
+        Col="0" 
+        Page="1" 
+        Name="edge_colour">
+         <SubUniform ResDependent="None" Min="-1000.0" Max="1000.0" Default="0.0"></SubUniform>
+         <SubUniform ResDependent="None" Min="-1000.0" Max="1000.0" Default="0.0"></SubUniform>
+         <SubUniform ResDependent="None" Min="-1000.0" Max="1000.0" Default="0.0"></SubUniform>
+      </Uniform>
+
+      <!-- Matte Controls (Col 1) -->
+      <Uniform 
+        Default="0" 
+        ValueType="Popup" 
+        ToolTip="What the node's matte output carries. Source Alpha passes the source's alpha through, as before." 
+        Row="0" 
+        Col="1" 
+        Page="1" 
+        Type="int" 
+        DisplayName="Matte" 
+        Name="matte_mode">
+         <PopupEntry Title="Source Alpha" Value="0"></PopupEntry>
+         <PopupEntry Title="Edges" Value="1"></PopupEntry>
+         <PopupEntry Title="Cell Gradient" Value="2"></PopupEntry>
+         <PopupEntry Title="Edges + Gradient" Value="3"></PopupEntry>
+      </Uniform>
+      <Uniform 
+        Default="0" 
+        ValueType="Popup" 
+        ToolTip="Cell Shape rings follow each cell's outline. Circular uses round rings from the centre, black outside the largest circle that fits the cell." 
+        Row="1" 
+        Col="1" 
+        Page="1" 
+        Type="int" 
+        DisplayName="Gradient Shape" 
+        Name="gradient_shape">
+         <PopupEntry Title="Cell Shape" Value="0"></PopupEntry>
+         <PopupEntry Title="Circular" Value="1"></PopupEntry>
+      </Uniform>
+      <Uniform 
+        ResDependent="None" 
+        Max="8.0" 
+        Min="0.05" 
+        Default="1.0" 
+        Inc="0.01" 
+        ToolTip="Shapes the cell gradient. 1 is linear, above 1 tightens the bright centre, below 1 widens it." 
+        Row="2" 
+        Col="1" 
+        Page="1" 
+        Type="float" 
+        ChannelName="Gradient Falloff" 
+        DisplayName="Falloff" 
+        Name="gradient_falloff">
+      </Uniform>
+
+      <!-- Colour Variation Controls (Col 2) -->
+      <Uniform 
+        ResDependent="None" 
+        Max="180.0" 
+        Min="0.0" 
+        Default="0.0" 
+        Inc="1.0" 
+        ToolTip="Random hue shift per cell, up to this many degrees either way." 
+        Row="0" 
+        Col="2" 
+        Page="1" 
+        Type="float" 
+        ChannelName="Hue Variation" 
+        DisplayName="Hue" 
+        Name="hue_variation">
+      </Uniform>
+      <Uniform 
+        ResDependent="None" 
+        Max="1.0" 
+        Min="0.0" 
+        Default="0.0" 
+        Inc="0.01" 
+        ToolTip="Random saturation change per cell, up to this fraction either way." 
+        Row="1" 
+        Col="2" 
+        Page="1" 
+        Type="float" 
+        ChannelName="Saturation Variation" 
+        DisplayName="Saturation" 
+        Name="saturation_variation">
+      </Uniform>
+      <Uniform 
+        ResDependent="None" 
+        Max="1.0" 
+        Min="0.0" 
+        Default="0.0" 
+        Inc="0.01" 
+        ToolTip="Random brightness change per cell, up to this fraction either way." 
+        Row="2" 
+        Col="2" 
+        Page="1" 
+        Type="float" 
+        ChannelName="Brightness Variation" 
+        DisplayName="Brightness" 
+        Name="brightness_variation">
+      </Uniform>
+   </Shader>
+   <Page Name="Main" Page="0">
+      <Col Name="Source" Col="0" Page="0">
+      </Col>
+      <Col Name="Cells" Col="1" Page="0">
+      </Col>
+      <Col Name="Fill" Col="2" Page="0">
+      </Col>
+      <Col Name="Quality" Col="3" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Look" Page="1">
+      <Col Name="Edges" Col="0" Page="1">
+      </Col>
+      <Col Name="Matte" Col="1" Page="1">
+      </Col>
+      <Col Name="Colour Variation" Col="2" Page="1">
+      </Col>
+   </Page>
+</ShaderNodePreset>
